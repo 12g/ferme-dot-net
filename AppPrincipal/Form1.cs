@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace AppPrincipal
 {
@@ -16,6 +17,10 @@ namespace AppPrincipal
         {
             InitializeComponent();
         }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
 
 
         //SE CREA EL MOVIMIENTO DE MENU PARA AGRANDAR Y ACHICAR LA PANTALLA
