@@ -26,7 +26,6 @@ namespace AppPrincipal
         private extern static void SendMessage(System.IntPtr hwnd,int wmsg,int wparam,int lparam);
 
 
-
         //SE CREA EL MOVIMIENTO DE MENU PARA AGRANDAR Y ACHICAR LA PANTALLA
         private void BtnDeslizarMenu_Click(object sender, EventArgs e)
         {
@@ -79,6 +78,27 @@ namespace AppPrincipal
         {
             ReleaseCapture();
             SendMessage(this.Handle,0x112,0xf012,0);
+        }
+
+        //FUNCION ABRIR VENTANA
+        private void AbrirFormInPanel(object FormHijo)
+        {
+            if (this.PanelContendorFormulario.Controls.Count >0)
+            
+                this.PanelContendorFormulario.Controls.RemoveAt(0);
+                Form fh = FormHijo as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.PanelContendorFormulario.Controls.Add(fh);
+                this.PanelContendorFormulario.Tag = fh;
+                fh.Show();
+            
+        }
+
+        //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Producto());
         }
     }
 }

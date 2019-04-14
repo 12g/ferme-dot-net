@@ -153,6 +153,7 @@
             this.btnProducto.TabIndex = 3;
             this.btnProducto.Text = "Producto";
             this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // lblTituloMenu2
             // 
@@ -263,6 +264,7 @@
             // 
             // PanelContendorFormulario
             // 
+            this.PanelContendorFormulario.BackColor = System.Drawing.Color.White;
             this.PanelContendorFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContendorFormulario.Location = new System.Drawing.Point(250, 50);
             this.PanelContendorFormulario.Name = "PanelContendorFormulario";
@@ -319,7 +321,6 @@
         private System.Windows.Forms.Label lblTitulomenu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox BtnDeslizarMenu;
-        private System.Windows.Forms.Panel PanelContendorFormulario;
         private System.Windows.Forms.PictureBox IconoCerrarApp;
         private System.Windows.Forms.PictureBox IconoMinimizarApp;
         private System.Windows.Forms.PictureBox IconoResetearApp;
@@ -330,6 +331,7 @@
         private System.Windows.Forms.Button BtnProveedor;
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button BtnCliente;
+        private System.Windows.Forms.Panel PanelContendorFormulario;
     }
 }
 
