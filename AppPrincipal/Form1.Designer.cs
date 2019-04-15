@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.PanelMenuVertical = new System.Windows.Forms.Panel();
+            this.BtnCliente = new System.Windows.Forms.Button();
             this.BtnInformes = new System.Windows.Forms.Button();
             this.BtnUsuario = new System.Windows.Forms.Button();
             this.BtnVentas = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
-            this.BtnCliente = new System.Windows.Forms.Button();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -73,6 +73,22 @@
             this.PanelMenuVertical.Name = "PanelMenuVertical";
             this.PanelMenuVertical.Size = new System.Drawing.Size(250, 612);
             this.PanelMenuVertical.TabIndex = 0;
+            // 
+            // BtnCliente
+            // 
+            this.BtnCliente.FlatAppearance.BorderSize = 0;
+            this.BtnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCliente.ForeColor = System.Drawing.Color.White;
+            this.BtnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
+            this.BtnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCliente.Location = new System.Drawing.Point(0, 258);
+            this.BtnCliente.Name = "BtnCliente";
+            this.BtnCliente.Size = new System.Drawing.Size(244, 43);
+            this.BtnCliente.TabIndex = 8;
+            this.BtnCliente.Text = "Cliente";
+            this.BtnCliente.UseVisualStyleBackColor = true;
             // 
             // BtnInformes
             // 
@@ -271,22 +287,6 @@
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
             // 
-            // BtnCliente
-            // 
-            this.BtnCliente.FlatAppearance.BorderSize = 0;
-            this.BtnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
-            this.BtnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCliente.Location = new System.Drawing.Point(0, 258);
-            this.BtnCliente.Name = "BtnCliente";
-            this.BtnCliente.Size = new System.Drawing.Size(244, 43);
-            this.BtnCliente.TabIndex = 8;
-            this.BtnCliente.Text = "Cliente";
-            this.BtnCliente.UseVisualStyleBackColor = true;
-            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,7 +298,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioPrincipal";
             this.PanelMenuVertical.ResumeLayout(false);
             this.PanelMenuVertical.PerformLayout();

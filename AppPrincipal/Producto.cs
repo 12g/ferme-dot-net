@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace AppPrincipal
 {
@@ -21,6 +22,14 @@ namespace AppPrincipal
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        //SE CREA EL EVENTO PARA IR AL MENU CREAR PRODUCTO
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            PanelProducto frp = new PanelProducto();
+            frp.ShowDialog();
         }
     }
 }
