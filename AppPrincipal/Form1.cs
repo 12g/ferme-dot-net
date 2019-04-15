@@ -43,7 +43,22 @@ namespace AppPrincipal
         //SE CREA INSTANCIA DE BOTON CERRAR APLICACION
         private void IconoCerrarApp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
+            try
+            {
+                //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
+
+                MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
+                DialogResult dr = MessageBox.Show("SEGURO DESEA SALIR ?","",botones, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error al cerrar Aplicacion");
+            }
         }
 
 

@@ -46,6 +46,7 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
+            this.ImagenPanelPrincipal = new System.Windows.Forms.PictureBox();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -54,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).BeginInit();
+            this.PanelContendorFormulario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenPanelPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuVertical
@@ -281,11 +284,23 @@
             // PanelContendorFormulario
             // 
             this.PanelContendorFormulario.BackColor = System.Drawing.Color.White;
+            this.PanelContendorFormulario.Controls.Add(this.ImagenPanelPrincipal);
             this.PanelContendorFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContendorFormulario.Location = new System.Drawing.Point(250, 50);
             this.PanelContendorFormulario.Name = "PanelContendorFormulario";
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
+            // 
+            // ImagenPanelPrincipal
+            // 
+            this.ImagenPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImagenPanelPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("ImagenPanelPrincipal.Image")));
+            this.ImagenPanelPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.ImagenPanelPrincipal.Name = "ImagenPanelPrincipal";
+            this.ImagenPanelPrincipal.Size = new System.Drawing.Size(1034, 562);
+            this.ImagenPanelPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImagenPanelPrincipal.TabIndex = 1;
+            this.ImagenPanelPrincipal.TabStop = false;
             // 
             // FormularioPrincipal
             // 
@@ -309,6 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).EndInit();
+            this.PanelContendorFormulario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenPanelPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,6 +349,7 @@
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Panel PanelContendorFormulario;
+        private System.Windows.Forms.PictureBox ImagenPanelPrincipal;
     }
 }
 

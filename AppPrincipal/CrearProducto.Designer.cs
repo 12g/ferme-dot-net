@@ -199,9 +199,9 @@
             // PanelCrearPro
             // 
             this.PanelCrearPro.BackColor = System.Drawing.Color.SteelBlue;
-            this.PanelCrearPro.Location = new System.Drawing.Point(-2, 0);
+            this.PanelCrearPro.Location = new System.Drawing.Point(-2, -2);
             this.PanelCrearPro.Name = "PanelCrearPro";
-            this.PanelCrearPro.Size = new System.Drawing.Size(551, 23);
+            this.PanelCrearPro.Size = new System.Drawing.Size(551, 25);
             this.PanelCrearPro.TabIndex = 17;
             this.PanelCrearPro.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
@@ -209,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(549, 516);
             this.Controls.Add(this.PanelCrearPro);
@@ -234,7 +234,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PanelProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PanelProducto";
+            this.Text = "Producto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
