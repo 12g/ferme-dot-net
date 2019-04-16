@@ -46,7 +46,7 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.LblDescripcion = new System.Windows.Forms.Label();
-            this.PanelCrearPro = new System.Windows.Forms.Panel();
+            this.BtnNuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTituloProducto
@@ -54,7 +54,7 @@
             this.lblTituloProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloProducto.AutoSize = true;
             this.lblTituloProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloProducto.Location = new System.Drawing.Point(192, 29);
+            this.lblTituloProducto.Location = new System.Drawing.Point(178, 5);
             this.lblTituloProducto.Name = "lblTituloProducto";
             this.lblTituloProducto.Size = new System.Drawing.Size(154, 37);
             this.lblTituloProducto.TabIndex = 0;
@@ -162,16 +162,17 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(89, 446);
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.BtnGuardar.Location = new System.Drawing.Point(33, 446);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(127, 39);
             this.BtnGuardar.TabIndex = 13;
-            this.BtnGuardar.Text = "GUARDAR";
+            this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(325, 446);
+            this.BtnCancelar.Location = new System.Drawing.Point(376, 446);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(120, 39);
             this.BtnCancelar.TabIndex = 14;
@@ -196,14 +197,14 @@
             this.LblDescripcion.TabIndex = 16;
             this.LblDescripcion.Text = "Descripcion";
             // 
-            // PanelCrearPro
+            // BtnNuevo
             // 
-            this.PanelCrearPro.BackColor = System.Drawing.Color.SteelBlue;
-            this.PanelCrearPro.Location = new System.Drawing.Point(-2, -2);
-            this.PanelCrearPro.Name = "PanelCrearPro";
-            this.PanelCrearPro.Size = new System.Drawing.Size(551, 25);
-            this.PanelCrearPro.TabIndex = 17;
-            this.PanelCrearPro.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
+            this.BtnNuevo.Location = new System.Drawing.Point(212, 446);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(106, 39);
+            this.BtnNuevo.TabIndex = 17;
+            this.BtnNuevo.Text = "Nuevo";
+            this.BtnNuevo.UseVisualStyleBackColor = true;
             // 
             // PanelProducto
             // 
@@ -212,7 +213,8 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(549, 516);
-            this.Controls.Add(this.PanelCrearPro);
+            this.ControlBox = false;
+            this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.BtnCancelar);
@@ -230,11 +232,13 @@
             this.Controls.Add(this.txtCodigoProducto);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.lblTituloProducto);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PanelProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Producto";
+            this.Text = "PRODUCTO";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,6 +263,6 @@
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label LblDescripcion;
-        private System.Windows.Forms.Panel PanelCrearPro;
+        private System.Windows.Forms.Button BtnNuevo;
     }
 }

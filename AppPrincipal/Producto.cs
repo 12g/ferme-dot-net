@@ -31,5 +31,12 @@ namespace AppPrincipal
             PanelProducto frp = new PanelProducto();
             frp.ShowDialog();
         }
+
+        //SE CREA EL EVENTO PARA IR AL MENU EDITAR PRODUCTO
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            PanelProducto frp = new PanelProducto();
+            frp.ShowDialog();
+        }
     }
 }

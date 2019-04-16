@@ -49,7 +49,7 @@ namespace AppPrincipal
                 //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
 
                 MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
-                DialogResult dr = MessageBox.Show("SEGURO DESEA SALIR ?","",botones, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("¿Está seguro que desea salir del sistema?", "",botones, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     Application.Exit();

@@ -18,20 +18,6 @@ namespace AppPrincipal
             InitializeComponent();
         }
 
-        //1-SE USA ESTAS PALABRAS QUE SON RESERVADAS DE LA LIBRERIA Y SE CREA LAS FUNCIONES
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-
-        //SE LLAMAN LAS FUNCIONES QUE SE CREARON EN LAS LIBRERIA
-        private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
 
         //EVENTO CANELAR Y SALIR DEL MENU CREAR PRODUCTO
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -41,11 +27,12 @@ namespace AppPrincipal
                 //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
 
                 MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
-                DialogResult dr = MessageBox.Show("SEGURO DESEA SALIR ?","",botones,MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("¿Está seguro que desea salir?", "",botones,MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
                 }
+                
             }
             catch
             {
@@ -53,6 +40,5 @@ namespace AppPrincipal
             }
         }
 
-    
     }
 }
