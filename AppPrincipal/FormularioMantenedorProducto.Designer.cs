@@ -42,13 +42,13 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.LblStockActual = new System.Windows.Forms.Label();
-            this.DUDStockActual = new System.Windows.Forms.DomainUpDown();
             this.LblStockCritico = new System.Windows.Forms.Label();
-            this.DUDStockCritico = new System.Windows.Forms.DomainUpDown();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.TxtStockActual = new System.Windows.Forms.TextBox();
+            this.TxtStockCritico = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -175,13 +175,6 @@
             this.LblStockActual.TabIndex = 13;
             this.LblStockActual.Text = "Stock Actual";
             // 
-            // DUDStockActual
-            // 
-            this.DUDStockActual.Location = new System.Drawing.Point(27, 320);
-            this.DUDStockActual.Name = "DUDStockActual";
-            this.DUDStockActual.Size = new System.Drawing.Size(156, 20);
-            this.DUDStockActual.TabIndex = 14;
-            // 
             // LblStockCritico
             // 
             this.LblStockCritico.AutoSize = true;
@@ -191,13 +184,6 @@
             this.LblStockCritico.Size = new System.Drawing.Size(80, 13);
             this.LblStockCritico.TabIndex = 15;
             this.LblStockCritico.Text = "Stock Critico";
-            // 
-            // DUDStockCritico
-            // 
-            this.DUDStockCritico.Location = new System.Drawing.Point(27, 376);
-            this.DUDStockCritico.Name = "DUDStockCritico";
-            this.DUDStockCritico.Size = new System.Drawing.Size(156, 20);
-            this.DUDStockCritico.TabIndex = 16;
             // 
             // TxtDescripcion
             // 
@@ -238,18 +224,32 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // TxtStockActual
+            // 
+            this.TxtStockActual.Location = new System.Drawing.Point(27, 321);
+            this.TxtStockActual.Name = "TxtStockActual";
+            this.TxtStockActual.Size = new System.Drawing.Size(156, 20);
+            this.TxtStockActual.TabIndex = 21;
+            // 
+            // TxtStockCritico
+            // 
+            this.TxtStockCritico.Location = new System.Drawing.Point(30, 375);
+            this.TxtStockCritico.Name = "TxtStockCritico";
+            this.TxtStockCritico.Size = new System.Drawing.Size(153, 20);
+            this.TxtStockCritico.TabIndex = 22;
+            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 497);
+            this.Controls.Add(this.TxtStockCritico);
+            this.Controls.Add(this.TxtStockActual);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.TxtDescripcion);
-            this.Controls.Add(this.DUDStockCritico);
             this.Controls.Add(this.LblStockCritico);
-            this.Controls.Add(this.DUDStockActual);
             this.Controls.Add(this.LblStockActual);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.lblPrecio);
@@ -276,23 +276,23 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label LblNombreProducto;
-        private System.Windows.Forms.TextBox TxtCodigo;
-        private System.Windows.Forms.TextBox TxtNombreProducto;
         private System.Windows.Forms.Label LblTipoProducto;
-        private System.Windows.Forms.ComboBox CbTipoproducto;
         private System.Windows.Forms.Label LblFamilia;
-        private System.Windows.Forms.TextBox TxtFamilia;
         private System.Windows.Forms.Label LblProveedor;
-        private System.Windows.Forms.ComboBox CbProveedor;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.Label LblStockActual;
-        private System.Windows.Forms.DomainUpDown DUDStockActual;
         private System.Windows.Forms.Label LblStockCritico;
-        private System.Windows.Forms.DomainUpDown DUDStockCritico;
-        private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
+        public System.Windows.Forms.TextBox TxtCodigo;
+        public System.Windows.Forms.TextBox TxtNombreProducto;
+        public System.Windows.Forms.ComboBox CbTipoproducto;
+        public System.Windows.Forms.TextBox TxtFamilia;
+        public System.Windows.Forms.ComboBox CbProveedor;
+        public System.Windows.Forms.TextBox TxtPrecio;
+        public System.Windows.Forms.TextBox TxtDescripcion;
+        public System.Windows.Forms.TextBox TxtStockActual;
+        public System.Windows.Forms.TextBox TxtStockCritico;
     }
 }

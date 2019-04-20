@@ -46,6 +46,7 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -54,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).BeginInit();
+            this.PanelContendorFormulario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuVertical
@@ -282,11 +285,21 @@
             // PanelContendorFormulario
             // 
             this.PanelContendorFormulario.BackColor = System.Drawing.Color.White;
+            this.PanelContendorFormulario.Controls.Add(this.pictureBox2);
             this.PanelContendorFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContendorFormulario.Location = new System.Drawing.Point(250, 50);
             this.PanelContendorFormulario.Name = "PanelContendorFormulario";
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(410, 154);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(257, 270);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // FormularioPrincipal
             // 
@@ -310,6 +323,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).EndInit();
+            this.PanelContendorFormulario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,6 +348,7 @@
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Panel PanelContendorFormulario;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

@@ -94,29 +94,55 @@ namespace AppPrincipal
         }
 
         //METODO PARA ABRIR FORMULARIOS DENTROL DEL PANEL
-        private void AbrirFormInPanel(object FormHijo)
+        /*private void AbrirFormInPanel(object FormHijo)
+         {
+             if (this.PanelContendorFormulario.Controls.Count >0)
+
+                 this.PanelContendorFormulario.Controls.RemoveAt(0);
+                 Form fh = FormHijo as Form;
+                 fh.TopLevel = false;
+                 fh.Dock = DockStyle.Fill;
+                 this.PanelContendorFormulario.Controls.Add(fh);
+                 this.PanelContendorFormulario.Tag = fh;
+                 fh.Show();
+
+         }*/
+
+        private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
-            if (this.PanelContendorFormulario.Controls.Count >0)
-            
-                this.PanelContendorFormulario.Controls.RemoveAt(0);
-                Form fh = FormHijo as Form;
-                fh.TopLevel = false;
-                fh.Dock = DockStyle.Fill;
-                this.PanelContendorFormulario.Controls.Add(fh);
-                this.PanelContendorFormulario.Tag = fh;
-                fh.Show();
-            
+            Form Formulario;
+            Formulario = PanelContendorFormulario.Controls.OfType<MIForm>().FirstOrDefault();//busca en la coleccion el formulario
+            //si el formulario / instancia no exite
+
+            if (Formulario == null)
+            {
+                Formulario = new MIForm();
+                Formulario.TopLevel = false;
+                Formulario.FormBorderStyle = FormBorderStyle.None;
+                Formulario.Dock = DockStyle.Fill;
+                PanelContendorFormulario.Controls.Add(Formulario);
+                PanelContendorFormulario.Tag = Formulario;
+                Formulario.Show();
+                Formulario.BringToFront();
+            }
+            //SI EL FORMULARIO /INSTANCIA EXISTE
+            else
+            {
+                Formulario.BringToFront();
+            }
         }
+
+
 
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormularioProducto());
+         AbrirFormInPanel<FormularioProducto>();
         }
 
         private void BtnProveedor_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormularioProveedor());
+            AbrirFormInPanel<FormularioProveedor>();
         }
     }
 }
