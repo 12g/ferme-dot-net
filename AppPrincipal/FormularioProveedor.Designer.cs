@@ -88,6 +88,7 @@
             this.BtnCrear.TabIndex = 4;
             this.BtnCrear.Text = "Nuevo";
             this.BtnCrear.UseVisualStyleBackColor = true;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnEditar
             // 
@@ -99,6 +100,7 @@
             this.BtnEditar.TabIndex = 5;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnEliminar
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMantenedorProducto));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.LblNombreProducto = new System.Windows.Forms.Label();
@@ -142,6 +143,7 @@
             // 
             // CbProveedor
             // 
+            this.CbProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CbProveedor.FormattingEnabled = true;
             this.CbProveedor.Location = new System.Drawing.Point(27, 194);
             this.CbProveedor.Name = "CbProveedor";
@@ -160,6 +162,8 @@
             // 
             // TxtPrecio
             // 
+            this.TxtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPrecio.Location = new System.Drawing.Point(27, 260);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(156, 20);
@@ -187,6 +191,7 @@
             // 
             // TxtDescripcion
             // 
+            this.TxtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtDescripcion.Location = new System.Drawing.Point(243, 260);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
@@ -205,6 +210,7 @@
             // 
             // BtnGuardar
             // 
+            this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.Location = new System.Drawing.Point(96, 427);
             this.BtnGuardar.Name = "BtnGuardar";
@@ -215,6 +221,7 @@
             // 
             // BtnCancelar
             // 
+            this.BtnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.Location = new System.Drawing.Point(302, 427);
             this.BtnCancelar.Name = "BtnCancelar";
@@ -226,6 +233,8 @@
             // 
             // TxtStockActual
             // 
+            this.TxtStockActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtStockActual.Location = new System.Drawing.Point(27, 321);
             this.TxtStockActual.Name = "TxtStockActual";
             this.TxtStockActual.Size = new System.Drawing.Size(156, 20);
@@ -233,6 +242,8 @@
             // 
             // TxtStockCritico
             // 
+            this.TxtStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtStockCritico.Location = new System.Drawing.Point(30, 375);
             this.TxtStockCritico.Name = "TxtStockCritico";
             this.TxtStockCritico.Size = new System.Drawing.Size(153, 20);
@@ -243,6 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 497);
+            this.ControlBox = false;
             this.Controls.Add(this.TxtStockCritico);
             this.Controls.Add(this.TxtStockActual);
             this.Controls.Add(this.BtnCancelar);
@@ -264,8 +276,12 @@
             this.Controls.Add(this.LblNombreProducto);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormularioMantenedorProducto";
-            this.Text = "FormularioMantenedorProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mantenedor de Producto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
