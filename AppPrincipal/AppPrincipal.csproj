@@ -52,19 +52,37 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioMantenedorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorProducto.Designer.cs">
+      <DependentUpon>FormularioMantenedorProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormularioProducto.Designer.cs">
       <DependentUpon>FormularioProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioProveedor.Designer.cs">
+      <DependentUpon>FormularioProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorProducto.resx">
+      <DependentUpon>FormularioMantenedorProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioProducto.resx">
       <DependentUpon>FormularioProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioProveedor.resx">
+      <DependentUpon>FormularioProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

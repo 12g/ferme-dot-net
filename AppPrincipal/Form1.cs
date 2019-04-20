@@ -19,7 +19,7 @@ namespace AppPrincipal
         }
 
 
-        //1-SE USA ESTAS PALABRAS QUE SON RESERVADAS DE LA LIBRERIA Y SE CREA LAS FUNCIONES
+        //METODO PARA ARRASTRAR EL FORMULARIO
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -93,7 +93,7 @@ namespace AppPrincipal
             this.WindowState = FormWindowState.Minimized;
         }
 
-        //FUNCION ABRIR VENTANA
+        //METODO PARA ABRIR FORMULARIOS DENTROL DEL PANEL
         private void AbrirFormInPanel(object FormHijo)
         {
             if (this.PanelContendorFormulario.Controls.Count >0)
@@ -112,6 +112,11 @@ namespace AppPrincipal
         private void btnProducto_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormularioProducto());
+        }
+
+        private void BtnProveedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormularioProveedor());
         }
     }
 }

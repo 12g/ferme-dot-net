@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace AppPrincipal
 {
-    public partial class FormularioProducto : Form
+    public partial class FormularioProveedor : Form
     {
-        public FormularioProducto()
+        public FormularioProveedor()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void BtnCrear_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

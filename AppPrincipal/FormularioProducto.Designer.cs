@@ -36,6 +36,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.LblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadeproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,18 +57,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Location = new System.Drawing.Point(25, 50);
+            this.txtBuscar.Location = new System.Drawing.Point(73, 50);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(847, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(799, 20);
             this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.Text = "Buscar...";
             // 
             // DGlistadeproductos
             // 
             this.DGlistadeproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGlistadeproductos.BackgroundColor = System.Drawing.Color.White;
+            this.DGlistadeproductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DGlistadeproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistadeproductos.GridColor = System.Drawing.Color.SteelBlue;
             this.DGlistadeproductos.Location = new System.Drawing.Point(25, 89);
@@ -82,6 +82,7 @@
             this.BtnCrear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCrear.BackgroundImage")));
             this.BtnCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrear.ForeColor = System.Drawing.Color.White;
             this.BtnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCrear.Location = new System.Drawing.Point(892, 89);
@@ -89,39 +90,53 @@
             this.BtnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnCrear.Size = new System.Drawing.Size(104, 36);
             this.BtnCrear.TabIndex = 3;
-            this.BtnCrear.Text = "NUEVO";
+            this.BtnCrear.Text = "Nuevo";
             this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Location = new System.Drawing.Point(893, 152);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(103, 36);
             this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(893, 215);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
             this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(428, 501);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(129, 36);
             this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.Text = "CERRAR";
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // LblBuscar
+            // 
+            this.LblBuscar.AutoSize = true;
+            this.LblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuscar.Location = new System.Drawing.Point(18, 56);
+            this.LblBuscar.Name = "LblBuscar";
+            this.LblBuscar.Size = new System.Drawing.Size(54, 13);
+            this.LblBuscar.TabIndex = 7;
+            this.LblBuscar.Text = "Buscar..";
             // 
             // FormularioProducto
             // 
@@ -129,6 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -155,5 +171,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label LblBuscar;
     }
 }

@@ -153,6 +153,7 @@
             this.BtnProveedor.TabIndex = 4;
             this.BtnProveedor.Text = "Proveedor";
             this.BtnProveedor.UseVisualStyleBackColor = true;
+            this.BtnProveedor.Click += new System.EventHandler(this.BtnProveedor_Click);
             // 
             // btnProducto
             // 
