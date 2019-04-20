@@ -111,7 +111,7 @@ namespace AppPrincipal
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
-           
+            AbrirFormInPanel(new FormularioProducto());
         }
     }
 }
