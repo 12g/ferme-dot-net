@@ -26,6 +26,13 @@ namespace AppPrincipal
         private extern static void SendMessage(System.IntPtr hwnd,int wmsg,int wparam,int lparam);
 
 
+        //SE LLAMAN LAS FUNCIONES QUE SE CREARON EN LAS LIBRERIA
+        private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         //SE CREA EL MOVIMIENTO DE MENU PARA AGRANDAR Y ACHICAR LA PANTALLA
         private void BtnDeslizarMenu_Click(object sender, EventArgs e)
         {
@@ -86,15 +93,6 @@ namespace AppPrincipal
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-
-        //SE LLAMAN LAS FUNCIONES QUE SE CREARON EN LAS LIBRERIA
-        private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
-        }
-
         //FUNCION ABRIR VENTANA
         private void AbrirFormInPanel(object FormHijo)
         {
@@ -113,7 +111,7 @@ namespace AppPrincipal
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Producto());
+           
         }
     }
 }
