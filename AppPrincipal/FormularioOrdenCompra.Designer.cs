@@ -30,7 +30,7 @@
         {
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DGlistadoOrdenCompra = new System.Windows.Forms.DataGridView();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
@@ -59,14 +59,14 @@
             this.LblBuscar.TabIndex = 2;
             this.LblBuscar.Text = "Buscar..";
             // 
-            // textBox1
+            // TxtBuscar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(74, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(774, 20);
-            this.textBox1.TabIndex = 3;
+            this.TxtBuscar.Location = new System.Drawing.Point(74, 42);
+            this.TxtBuscar.Name = "TxtBuscar";
+            this.TxtBuscar.Size = new System.Drawing.Size(774, 20);
+            this.TxtBuscar.TabIndex = 3;
             // 
             // DGlistadoOrdenCompra
             // 
@@ -90,6 +90,7 @@
             this.BtnCrear.TabIndex = 5;
             this.BtnCrear.Text = "Nuevo";
             this.BtnCrear.UseVisualStyleBackColor = true;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnEditar
             // 
@@ -136,7 +137,7 @@
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnCrear);
             this.Controls.Add(this.DGlistadoOrdenCompra);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioOrdenCompra";
@@ -151,7 +152,7 @@
 
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblBuscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridView DGlistadoOrdenCompra;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.Button BtnEditar;

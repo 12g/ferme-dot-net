@@ -10,25 +10,24 @@ using System.Windows.Forms;
 
 namespace AppPrincipal
 {
-    public partial class FormularioOrdenCompra : Form
+    public partial class FormularioUsuario : Form
     {
-        public FormularioOrdenCompra()
+        public FormularioUsuario()
         {
             InitializeComponent();
         }
 
-        //BOTON CERRAR EL FORMULARIO DE ORDEN DE COMPRA
+        //BOTON QUE CIERRA EL FORMULARIO DE USUARIO
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-        //BOTON CREAR ORDEN DE COMPRA
+        //BOTON CREAR USUARIO EL CUAL LLAMA AL FORMULARIO MANTENEDOR DE USUARIO
         private void BtnCrear_Click(object sender, EventArgs e)
         {
-            FormularioMantenedorOrdenCompra fmoc = new FormularioMantenedorOrdenCompra();
-            fmoc.ShowDialog();
+            FormularioMantenedorUsuario fmu = new FormularioMantenedorUsuario();
+            fmu.ShowDialog();
         }
     }
 }

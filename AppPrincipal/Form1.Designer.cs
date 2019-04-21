@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.PanelMenuVertical = new System.Windows.Forms.Panel();
+            this.BtnOrdenCompra = new System.Windows.Forms.Button();
+            this.LblGrupoN1 = new System.Windows.Forms.Label();
             this.BtnRecepcion = new System.Windows.Forms.Button();
             this.BtnCliente = new System.Windows.Forms.Button();
             this.BtnInformes = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
-            this.LblGrupoN1 = new System.Windows.Forms.Label();
-            this.BtnOrdenCompra = new System.Windows.Forms.Button();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -79,6 +79,34 @@
             this.PanelMenuVertical.Name = "PanelMenuVertical";
             this.PanelMenuVertical.Size = new System.Drawing.Size(250, 612);
             this.PanelMenuVertical.TabIndex = 0;
+            // 
+            // BtnOrdenCompra
+            // 
+            this.BtnOrdenCompra.FlatAppearance.BorderSize = 0;
+            this.BtnOrdenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BtnOrdenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOrdenCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOrdenCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnOrdenCompra.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrdenCompra.Image")));
+            this.BtnOrdenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnOrdenCompra.Location = new System.Drawing.Point(0, 219);
+            this.BtnOrdenCompra.Name = "BtnOrdenCompra";
+            this.BtnOrdenCompra.Size = new System.Drawing.Size(250, 35);
+            this.BtnOrdenCompra.TabIndex = 9;
+            this.BtnOrdenCompra.Text = "Orden Compra";
+            this.BtnOrdenCompra.UseVisualStyleBackColor = true;
+            this.BtnOrdenCompra.Click += new System.EventHandler(this.BtnOrdenCompra_Click);
+            // 
+            // LblGrupoN1
+            // 
+            this.LblGrupoN1.AutoSize = true;
+            this.LblGrupoN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblGrupoN1.ForeColor = System.Drawing.Color.White;
+            this.LblGrupoN1.Location = new System.Drawing.Point(2, 594);
+            this.LblGrupoN1.Name = "LblGrupoN1";
+            this.LblGrupoN1.Size = new System.Drawing.Size(66, 13);
+            this.LblGrupoN1.TabIndex = 10;
+            this.LblGrupoN1.Text = "Grupo N°1";
             // 
             // BtnRecepcion
             // 
@@ -144,6 +172,7 @@
             this.BtnUsuario.TabIndex = 6;
             this.BtnUsuario.Text = "Usuario";
             this.BtnUsuario.UseVisualStyleBackColor = true;
+            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
             // 
             // BtnVentas
             // 
@@ -310,34 +339,6 @@
             this.PanelContendorFormulario.Name = "PanelContendorFormulario";
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
-            // 
-            // LblGrupoN1
-            // 
-            this.LblGrupoN1.AutoSize = true;
-            this.LblGrupoN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGrupoN1.ForeColor = System.Drawing.Color.White;
-            this.LblGrupoN1.Location = new System.Drawing.Point(2, 594);
-            this.LblGrupoN1.Name = "LblGrupoN1";
-            this.LblGrupoN1.Size = new System.Drawing.Size(66, 13);
-            this.LblGrupoN1.TabIndex = 10;
-            this.LblGrupoN1.Text = "Grupo N°1";
-            // 
-            // BtnOrdenCompra
-            // 
-            this.BtnOrdenCompra.FlatAppearance.BorderSize = 0;
-            this.BtnOrdenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BtnOrdenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOrdenCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOrdenCompra.ForeColor = System.Drawing.Color.White;
-            this.BtnOrdenCompra.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrdenCompra.Image")));
-            this.BtnOrdenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnOrdenCompra.Location = new System.Drawing.Point(0, 219);
-            this.BtnOrdenCompra.Name = "BtnOrdenCompra";
-            this.BtnOrdenCompra.Size = new System.Drawing.Size(250, 35);
-            this.BtnOrdenCompra.TabIndex = 9;
-            this.BtnOrdenCompra.Text = "Orden Compra";
-            this.BtnOrdenCompra.UseVisualStyleBackColor = true;
-            this.BtnOrdenCompra.Click += new System.EventHandler(this.BtnOrdenCompra_Click);
             // 
             // FormularioPrincipal
             // 

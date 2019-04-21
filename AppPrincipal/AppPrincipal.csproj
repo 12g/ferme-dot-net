@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarProducto.Designer.cs">
+      <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="FormularioMantenedorCliente.Designer.cs">
       <DependentUpon>FormularioMantenedorCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioMantenedorOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorOrdenCompra.Designer.cs">
+      <DependentUpon>FormularioMantenedorOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioMantenedorProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     </Compile>
     <Compile Include="FormularioMantenedorProveedor.Designer.cs">
       <DependentUpon>FormularioMantenedorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioMantenedorUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorUsuario.Designer.cs">
+      <DependentUpon>FormularioMantenedorUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioOrdenCompra.cs">
       <SubType>Form</SubType>
@@ -100,10 +118,19 @@
     <Compile Include="FormularioProveedor.Designer.cs">
       <DependentUpon>FormularioProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioUsuario.Designer.cs">
+      <DependentUpon>FormularioUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarProducto.resx">
+      <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCliente.resx">
       <DependentUpon>FormularioCliente.cs</DependentUpon>
@@ -111,11 +138,17 @@
     <EmbeddedResource Include="FormularioMantenedorCliente.resx">
       <DependentUpon>FormularioMantenedorCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorOrdenCompra.resx">
+      <DependentUpon>FormularioMantenedorOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorProducto.resx">
       <DependentUpon>FormularioMantenedorProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorProveedor.resx">
       <DependentUpon>FormularioMantenedorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorUsuario.resx">
+      <DependentUpon>FormularioMantenedorUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioOrdenCompra.resx">
       <DependentUpon>FormularioOrdenCompra.cs</DependentUpon>
@@ -125,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioProveedor.resx">
       <DependentUpon>FormularioProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioUsuario.resx">
+      <DependentUpon>FormularioUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

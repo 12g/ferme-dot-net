@@ -146,6 +146,11 @@ namespace AppPrincipal
             AbrirFormInPanel<FormularioOrdenCompra>();
         }
 
+        private void BtnUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel<FormularioUsuario>();
+        }
+
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
         /*private void TimehorayFecha_Tick(object sender, EventArgs e)
