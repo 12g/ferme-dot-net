@@ -46,6 +46,7 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
+            this.BtnRecepcion = new System.Windows.Forms.Button();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -59,6 +60,7 @@
             // PanelMenuVertical
             // 
             this.PanelMenuVertical.BackColor = System.Drawing.Color.Maroon;
+            this.PanelMenuVertical.Controls.Add(this.BtnRecepcion);
             this.PanelMenuVertical.Controls.Add(this.BtnCliente);
             this.PanelMenuVertical.Controls.Add(this.BtnInformes);
             this.PanelMenuVertical.Controls.Add(this.BtnUsuario);
@@ -89,6 +91,7 @@
             this.BtnCliente.TabIndex = 8;
             this.BtnCliente.Text = "Cliente";
             this.BtnCliente.UseVisualStyleBackColor = true;
+            this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
             // 
             // BtnInformes
             // 
@@ -99,7 +102,7 @@
             this.BtnInformes.ForeColor = System.Drawing.Color.White;
             this.BtnInformes.Image = ((System.Drawing.Image)(resources.GetObject("BtnInformes.Image")));
             this.BtnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInformes.Location = new System.Drawing.Point(0, 473);
+            this.BtnInformes.Location = new System.Drawing.Point(0, 521);
             this.BtnInformes.Name = "BtnInformes";
             this.BtnInformes.Size = new System.Drawing.Size(244, 43);
             this.BtnInformes.TabIndex = 7;
@@ -115,7 +118,7 @@
             this.BtnUsuario.ForeColor = System.Drawing.Color.White;
             this.BtnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuario.Image")));
             this.BtnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnUsuario.Location = new System.Drawing.Point(0, 400);
+            this.BtnUsuario.Location = new System.Drawing.Point(0, 460);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Size = new System.Drawing.Size(244, 43);
             this.BtnUsuario.TabIndex = 6;
@@ -288,6 +291,22 @@
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
             // 
+            // BtnRecepcion
+            // 
+            this.BtnRecepcion.FlatAppearance.BorderSize = 0;
+            this.BtnRecepcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BtnRecepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRecepcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRecepcion.ForeColor = System.Drawing.Color.White;
+            this.BtnRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("BtnRecepcion.Image")));
+            this.BtnRecepcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRecepcion.Location = new System.Drawing.Point(0, 396);
+            this.BtnRecepcion.Name = "BtnRecepcion";
+            this.BtnRecepcion.Size = new System.Drawing.Size(244, 43);
+            this.BtnRecepcion.TabIndex = 9;
+            this.BtnRecepcion.Text = "Recepcion";
+            this.BtnRecepcion.UseVisualStyleBackColor = true;
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,7 +352,7 @@
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Panel PanelContendorFormulario;
-        
+        private System.Windows.Forms.Button BtnRecepcion;
     }
 }
 

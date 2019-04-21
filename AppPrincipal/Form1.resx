@@ -118,10 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnRecepcion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAA3NCSVQICAjb4U/gAAAAAXNSR0IArs4c
+        6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAB6IAAAeiAeJoUCEAAAAZdEVYdFNvZnR3YXJlAHd3dy5p
+        bmtzY2FwZS5vcmeb7jwaAAACGUlEQVRYR82XzUsCQRjG7VT9AdmlQ0RE16Ag6lB0SiWqQ0SH7l3q3r2P
+        S4fo3KFjBBX0RZi1GiTVurNKWqmBym6i7rYfahRUTDvSiusIhbhjh4flZT6e3zszvDtjgRBa6qm6mqPE
+        6w8gOFsOBKf1/S8SndbZWm+XRTOGf9aZNZt2tXbUEqIIkD5ry3Gu3uBv4l2D2wFqqb9aRU82GksTKAJw
+        rn5/gFqBZoulVtv/N0CI2Ynl5SdopnJydFhfBcMWhHw7CfZ231RzlFhFgAi9ngA3e7AUQBEeYZoPFIHk
+        zD0UknfF+CUVhEj6aqE21EeP0Vg0R/lqYgAZTx+T4gBESvPgZ0D05TlOC8z14VteCvNIsciVdAdO83oc
+        Dl6oSHqM2lAfPUZj0Rx6rH+zyd1JmR1t57xTzYUtEC97vQZKEdCKf/xNBnZophRgf6gIoEYWgZnGJXPT
+        OIAUScrA8UUIYAEDyCUP3ITMP3LA1oIBqKG5KBEAxn5U+B0bDqF0/0jEXDvcCmObxgCyiS0PIQA1Rg03
+        lQN8KoGZDCGATUMpLtQBEfgImWu1xTaEAahPa15CAHHt7DUYATw9V4p/4pUEgMI4lrH7gEh1UiTMkYfo
+        G+vGAKTrAYYQAF1+n0R1gNPMCZVexzwGILq7zgllXyi9GIB8OxImAsDaDytd5y0KcBxrAO8mi1fZ0b6K
+        ALV8ZFQzV/3fhtVQ13LMNwQ0KLHUEtjXAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="BtnCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAA3NCSVQICAjb4U/gAAAAAXNSR0IArs4c
-        6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAAQ0AAAENAUTgGrQAAAAZdEVYdFNvZnR3YXJlAHd3dy5p
+        6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAAQwAAAEMAZan+FAAAAAZdEVYdFNvZnR3YXJlAHd3dy5p
         bmtzY2FwZS5vcmeb7jwaAAAFAUlEQVRYR7VWW0xUVxQlbT/8Mk362QSJ2trWtGnSfhCpigZ5CgMVrZQo
         dwYYfESbGIFKCNpawFKL2lCitMVQQBGwKqKpQWCAUpS2gAMIFIuAfZjykJcO8pjVs+7MJSMzMMOjHytz
         cs/aa62zz51zrhMApzmhMdAdelWbwH3oA2NM4Fg849wc9eZm3hD0njAaEcAMGAE5cwgxtwB6VeMs5kqo
@@ -5168,7 +5184,7 @@
   <data name="BtnDeslizarMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAAmJL
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAAmJL
         R0QAAKqNIzIAAAAHdElNRQfjBBUFFxtHbk1wAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA0LTIxVDAz
         OjIzOjI3KzAyOjAwZDSOzwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNC0yMVQwMzoyMzoyNyswMjow
         MBVpNnMAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAACa0lEQVRYR82Wyy9kQRSH

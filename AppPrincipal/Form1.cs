@@ -134,6 +134,12 @@ namespace AppPrincipal
          AbrirFormInPanel<FormularioProducto>();
         }
 
+        //EVENTO DEL BOTON CLIENTE EN EL PANEL PRINCIPAL
+        private void BtnCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel<FormularioCliente>();
+        }
+
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
         /*private void TimehorayFecha_Tick(object sender, EventArgs e)

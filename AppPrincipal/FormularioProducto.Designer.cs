@@ -72,7 +72,7 @@
             this.DGlistadeproductos.GridColor = System.Drawing.Color.SteelBlue;
             this.DGlistadeproductos.Location = new System.Drawing.Point(25, 89);
             this.DGlistadeproductos.Name = "DGlistadeproductos";
-            this.DGlistadeproductos.Size = new System.Drawing.Size(847, 383);
+            this.DGlistadeproductos.Size = new System.Drawing.Size(847, 418);
             this.DGlistadeproductos.TabIndex = 2;
             // 
             // BtnCrear
@@ -85,7 +85,7 @@
             this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrear.ForeColor = System.Drawing.Color.White;
             this.BtnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCrear.Location = new System.Drawing.Point(892, 89);
+            this.BtnCrear.Location = new System.Drawing.Point(900, 89);
             this.BtnCrear.Name = "BtnCrear";
             this.BtnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnCrear.Size = new System.Drawing.Size(104, 36);
@@ -98,7 +98,7 @@
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(893, 152);
+            this.btnEditar.Location = new System.Drawing.Point(901, 152);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(103, 36);
             this.btnEditar.TabIndex = 4;
@@ -110,7 +110,7 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(893, 215);
+            this.btnEliminar.Location = new System.Drawing.Point(901, 217);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
             this.btnEliminar.TabIndex = 5;
@@ -121,9 +121,9 @@
             // 
             this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(428, 501);
+            this.btnCerrar.Location = new System.Drawing.Point(900, 514);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(129, 36);
+            this.btnCerrar.Size = new System.Drawing.Size(104, 36);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
