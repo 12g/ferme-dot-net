@@ -69,10 +69,17 @@ namespace AppPrincipal
         }
 
 
+        //SE CREAN VARIABLES PARA MANTENER LA PSICION DEL FORMULARIO PRINCIPAL
+        int LX, LV;
         //SE CREA INSTANCIA DE BOTON MAXIMIZAR APLICACION
         private void IconoMaximizarApp_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            LX = this.Location.X;
+            LV = this.Location.Y;
+
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            //this.WindowState = FormWindowState.Maximized;
             IconoResetearApp.Visible = true;
             IconoMaximizarApp.Visible = false;
         }
@@ -81,7 +88,9 @@ namespace AppPrincipal
         //SE CREA INSTANCIA DE BOTON RESTAURAR APLICACION
         private void IconoResetearApp_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
+            this.Location = new Point(LX,LV);
+            this.Size = new Size(1284,612);
             IconoResetearApp.Visible = false;
             IconoMaximizarApp.Visible = true;
         }
@@ -92,21 +101,6 @@ namespace AppPrincipal
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        //METODO PARA ABRIR FORMULARIOS DENTROL DEL PANEL
-        /*private void AbrirFormInPanel(object FormHijo)
-         {
-             if (this.PanelContendorFormulario.Controls.Count >0)
-
-                 this.PanelContendorFormulario.Controls.RemoveAt(0);
-                 Form fh = FormHijo as Form;
-                 fh.TopLevel = false;
-                 fh.Dock = DockStyle.Fill;
-                 this.PanelContendorFormulario.Controls.Add(fh);
-                 this.PanelContendorFormulario.Tag = fh;
-                 fh.Show();
-
-         }*/
 
         private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
@@ -140,6 +134,14 @@ namespace AppPrincipal
          AbrirFormInPanel<FormularioProducto>();
         }
 
+
+        //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
+        /*private void TimehorayFecha_Tick(object sender, EventArgs e)
+        {
+            LblHora.Text = DateTime.Now.ToLongTimeString();
+            LblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+        */
         private void BtnProveedor_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioProveedor>();
