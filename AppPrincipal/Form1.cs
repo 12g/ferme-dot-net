@@ -140,6 +140,12 @@ namespace AppPrincipal
             AbrirFormInPanel<FormularioCliente>();
         }
 
+        //BOTON ORDEN DE COMPRA EL CUAL REDIRIGE A LA VISTA PRINCIPAL DEL FORMULARIO
+        private void BtnOrdenCompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel<FormularioOrdenCompra>();
+        }
+
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
         /*private void TimehorayFecha_Tick(object sender, EventArgs e)
@@ -148,6 +154,8 @@ namespace AppPrincipal
             LblFecha.Text = DateTime.Now.ToLongDateString();
         }
         */
+
+        //BOTON PROVEEDOR EL CUAL REDIRIGE A LA VISTA PRINCIPAL DEL FORMULARIO
         private void BtnProveedor_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioProveedor>();

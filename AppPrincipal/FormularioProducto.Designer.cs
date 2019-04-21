@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioProducto));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.LblBuscar = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGlistadeproductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -138,6 +138,7 @@
             this.LblBuscar.Size = new System.Drawing.Size(54, 13);
             this.LblBuscar.TabIndex = 7;
             this.LblBuscar.Text = "Buscar..";
+            
             // 
             // FormularioProducto
             // 

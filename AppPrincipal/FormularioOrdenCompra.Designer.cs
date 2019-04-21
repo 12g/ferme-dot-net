@@ -1,6 +1,6 @@
 ﻿namespace AppPrincipal
 {
-    partial class FormularioProveedor
+    partial class FormularioOrdenCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -30,87 +30,86 @@
         {
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DgMostrarListaProveedor = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DGlistadoOrdenCompra = new System.Windows.Forms.DataGridView();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgMostrarListaProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGlistadoOrdenCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTitulo
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(12, 19);
+            this.LblTitulo.Location = new System.Drawing.Point(12, 9);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(259, 29);
-            this.LblTitulo.TabIndex = 0;
-            this.LblTitulo.Text = "LISTADO DE PROVEEDOR";
+            this.LblTitulo.Size = new System.Drawing.Size(328, 29);
+            this.LblTitulo.TabIndex = 1;
+            this.LblTitulo.Text = "LISTADO DE ORDEN DE COMPRA";
             // 
             // LblBuscar
             // 
             this.LblBuscar.AutoSize = true;
             this.LblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBuscar.Location = new System.Drawing.Point(14, 59);
+            this.LblBuscar.Location = new System.Drawing.Point(13, 42);
             this.LblBuscar.Name = "LblBuscar";
-            this.LblBuscar.Size = new System.Drawing.Size(46, 13);
-            this.LblBuscar.TabIndex = 1;
-            this.LblBuscar.Text = "Buscar";
+            this.LblBuscar.Size = new System.Drawing.Size(54, 13);
+            this.LblBuscar.TabIndex = 2;
+            this.LblBuscar.Text = "Buscar..";
             // 
-            // TxtBuscar
+            // textBox1
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(60, 56);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(816, 20);
-            this.TxtBuscar.TabIndex = 2;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(74, 42);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(774, 20);
+            this.textBox1.TabIndex = 3;
             // 
-            // DgMostrarListaProveedor
+            // DGlistadoOrdenCompra
             // 
-            this.DgMostrarListaProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DGlistadoOrdenCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgMostrarListaProveedor.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgMostrarListaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgMostrarListaProveedor.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DgMostrarListaProveedor.Location = new System.Drawing.Point(17, 101);
-            this.DgMostrarListaProveedor.Name = "DgMostrarListaProveedor";
-            this.DgMostrarListaProveedor.Size = new System.Drawing.Size(859, 410);
-            this.DgMostrarListaProveedor.TabIndex = 3;
+            this.DGlistadoOrdenCompra.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DGlistadoOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGlistadoOrdenCompra.Location = new System.Drawing.Point(13, 73);
+            this.DGlistadoOrdenCompra.Name = "DGlistadoOrdenCompra";
+            this.DGlistadoOrdenCompra.Size = new System.Drawing.Size(835, 402);
+            this.DGlistadoOrdenCompra.TabIndex = 4;
             // 
             // BtnCrear
             // 
             this.BtnCrear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrear.Location = new System.Drawing.Point(903, 101);
+            this.BtnCrear.Location = new System.Drawing.Point(890, 73);
             this.BtnCrear.Name = "BtnCrear";
-            this.BtnCrear.Size = new System.Drawing.Size(102, 41);
-            this.BtnCrear.TabIndex = 4;
+            this.BtnCrear.Size = new System.Drawing.Size(116, 39);
+            this.BtnCrear.TabIndex = 5;
             this.BtnCrear.Text = "Nuevo";
             this.BtnCrear.UseVisualStyleBackColor = true;
-            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnEditar
             // 
             this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.Location = new System.Drawing.Point(903, 164);
+            this.BtnEditar.Location = new System.Drawing.Point(890, 129);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(102, 38);
-            this.BtnEditar.TabIndex = 5;
+            this.BtnEditar.Size = new System.Drawing.Size(116, 39);
+            this.BtnEditar.TabIndex = 6;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnEliminar
             // 
             this.BtnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(903, 225);
+            this.BtnEliminar.Location = new System.Drawing.Point(890, 191);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(102, 41);
-            this.BtnEliminar.TabIndex = 6;
+            this.BtnEliminar.Size = new System.Drawing.Size(116, 39);
+            this.BtnEliminar.TabIndex = 7;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
             // 
@@ -118,32 +117,31 @@
             // 
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrar.Location = new System.Drawing.Point(903, 515);
+            this.BtnCerrar.Location = new System.Drawing.Point(890, 473);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(102, 35);
-            this.BtnCerrar.TabIndex = 7;
+            this.BtnCerrar.Size = new System.Drawing.Size(116, 39);
+            this.BtnCerrar.TabIndex = 8;
             this.BtnCerrar.Text = "Cerrar";
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // FormularioProveedor
+            // FormularioOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.ClientSize = new System.Drawing.Size(1018, 524);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnCrear);
-            this.Controls.Add(this.DgMostrarListaProveedor);
-            this.Controls.Add(this.TxtBuscar);
+            this.Controls.Add(this.DGlistadoOrdenCompra);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.LblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormularioProveedor";
-            this.Text = "FormularioProveedor";
-            ((System.ComponentModel.ISupportInitialize)(this.DgMostrarListaProveedor)).EndInit();
+            this.Name = "FormularioOrdenCompra";
+            this.Text = "FormularioOrdenCompra";
+            ((System.ComponentModel.ISupportInitialize)(this.DGlistadoOrdenCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,8 +151,8 @@
 
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblBuscar;
-        private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DataGridView DgMostrarListaProveedor;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView DGlistadoOrdenCompra;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
