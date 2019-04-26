@@ -184,5 +184,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ferme.Servicios\Ferme.Servicios.csproj">
+      <Project>{c3dacf5c-c9a2-4a28-bfb6-2df61a834e49}</Project>
+      <Name>Ferme.Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
