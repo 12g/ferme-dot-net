@@ -15,14 +15,14 @@ namespace Biblioteca
         private int _Fono2;
         private int _Fono3;
 
-        public Cliente(int Id_Cliente, string Direccion, string Email, int Fono1, int Fono2, int Fono3)
+        public Cliente()
         {
-            _Id_Cliente = Id_Cliente;
-            _Direccion = Direccion;
-            _Email = Email;
-            _Fono1 = Fono1;
-            _Fono2 = Fono2;
-            _Fono3 = Fono3;
+            this._Id_Cliente = 0;
+            this._Direccion = string.Empty;
+            this._Email = string.Empty;
+            this._Fono1 = 0;
+            this._Fono2 = 0;
+            this._Fono3 = 0;
         }
 
         public int Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }

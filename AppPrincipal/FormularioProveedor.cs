@@ -57,5 +57,10 @@ namespace AppPrincipal
             }
         }
 
+        private void BtnRubro_Click(object sender, EventArgs e)
+        {
+            FormularioMantenedorRubro fmr = new FormularioMantenedorRubro();
+            fmr.ShowDialog();
+        }
     }
 }

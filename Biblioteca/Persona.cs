@@ -12,11 +12,11 @@ namespace Biblioteca
         private string _NombreCompleto;
         private string _Rut;
 
-        public Persona(int IdPersona, string NombreCompleto, string Rut)
+        public Persona()
         {
-            _IdPersona = IdPersona;
-            _NombreCompleto = NombreCompleto;
-            _Rut = Rut;
+            this._IdPersona = 0;
+            this._NombreCompleto = string.Empty;
+            this._Rut = string.Empty;
         }
 
         public int IdPersona { get => _IdPersona; set => _IdPersona = value; }

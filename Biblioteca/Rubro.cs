@@ -11,10 +11,10 @@ namespace Biblioteca
         private int _IdRubro;
         private string _Descripcion;
 
-        public Rubro(int IdRubro, string Descripcion)
+        public Rubro()
         {
-            _IdRubro = IdRubro;
-            _Descripcion = Descripcion;
+            this._IdRubro = 0;
+            this._Descripcion = string.Empty; ;
         }
 
         public int IdRubro { get => _IdRubro; set => _IdRubro = value; }

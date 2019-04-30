@@ -8,16 +8,16 @@ namespace Biblioteca
 {
     public class Cargo
     {
-        private int _Id_Cargo;
+        private int _IdCargo;
         private string _Descripcion;
 
-        public Cargo(int Id_Cargo, string Descripcion)
+        public Cargo()
         {
-            _Id_Cargo = Id_Cargo;
-            _Descripcion = Descripcion;
+            this._IdCargo = 0;
+            this._Descripcion = string.Empty;
         }
 
-        public int Id_Cargo { get => _Id_Cargo; set => _Id_Cargo = value; }
+        public int Id_Cargo { get => _IdCargo; set => _IdCargo = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
     }
 }

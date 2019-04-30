@@ -13,12 +13,12 @@ namespace Biblioteca
         private DateTime _Fecha_Solicitud;
         private DateTime _Fecha_Recepcion;
 
-        public Orden_Compra(int Id_Orden_Compra, char Estado, DateTime Fecha_Solicitud, DateTime Fecha_Recepcion)
+        public Orden_Compra()
         {
-            _Id_Orden_Compra = Id_Orden_Compra;
-            _Estado = Estado;
-            _Fecha_Solicitud = Fecha_Solicitud;
-            _Fecha_Recepcion = Fecha_Recepcion;
+            this._Id_Orden_Compra = 0;
+            this._Estado = 'S';
+            this._Fecha_Solicitud = DateTime.Now;
+            this._Fecha_Recepcion = DateTime.Now;
         }
 
         public int Id_Orden_Compra { get => _Id_Orden_Compra; set => _Id_Orden_Compra = value; }

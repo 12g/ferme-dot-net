@@ -12,11 +12,11 @@ namespace Biblioteca
         private int _Unidades;
         private int _Monto_Detalle;
 
-        public Detalle_Venta(int Id_Detalle_Venta, int Unidades, int Monto_Detalle)
+        public Detalle_Venta()
         {
-            _Id_Detalle_Venta = Id_Detalle_Venta;
-            _Unidades = Unidades;
-            _Monto_Detalle = Monto_Detalle;
+            this._Id_Detalle_Venta = 0;
+            this._Unidades = 0;
+            this._Monto_Detalle = 0;
         }
 
         public int Id_Detalle_Venta { get => _Id_Detalle_Venta; set => _Id_Detalle_Venta = value; }

@@ -11,10 +11,10 @@ namespace Biblioteca
         private int _IdTipoProducto;
         private string _NombreTipo;
 
-        public TipoProducto(int IdTipoProducto, string NombreTipo)
+        public TipoProducto()
         {
-            _IdTipoProducto = IdTipoProducto;
-            _NombreTipo = NombreTipo;
+            this._IdTipoProducto = 0;
+            this._NombreTipo = string.Empty;
         }
 
         public int IdTipoProducto { get => _IdTipoProducto; set => _IdTipoProducto = value; }

@@ -11,10 +11,10 @@ namespace Biblioteca
         private int _Id_detalle_Orden_Compra;
         private int _Cantidad;
 
-        public DetalleOrdenCompra(int Id_detalle_Orden_Compra, int Cantidad)
+        public DetalleOrdenCompra()
         {
-            _Id_detalle_Orden_Compra = Id_detalle_Orden_Compra;
-            _Cantidad = Cantidad;
+            this._Id_detalle_Orden_Compra = 0;
+            this._Cantidad = 0;
         }
 
         public int Id_detalle_Orden_Compra { get => _Id_detalle_Orden_Compra; set => _Id_detalle_Orden_Compra = value; }

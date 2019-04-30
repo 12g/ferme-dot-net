@@ -101,6 +101,12 @@
     <Compile Include="FormularioMantenedorProveedor.Designer.cs">
       <DependentUpon>FormularioMantenedorProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioMantenedorRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorRubro.Designer.cs">
+      <DependentUpon>FormularioMantenedorRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioMantenedorUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorProveedor.resx">
       <DependentUpon>FormularioMantenedorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorRubro.resx">
+      <DependentUpon>FormularioMantenedorRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorUsuario.resx">
       <DependentUpon>FormularioMantenedorUsuario.cs</DependentUpon>

@@ -13,12 +13,12 @@ namespace Biblioteca
         private string _Clave;
         private DateTime _FechaCreacion;
 
-        public Usuario(int IdUsuario, string Nombre, string Clave, DateTime FechaCreacion)
+        public Usuario()
         {
-            _IdUsuario = IdUsuario;
-            _Nombre = Nombre;
-            _Clave = Clave;
-            _FechaCreacion = FechaCreacion;
+            this._IdUsuario = 0;
+            this._Nombre = string.Empty;
+            this._Clave = string.Empty;
+            this._FechaCreacion = DateTime.Now;
         }
 
         public int IdUsuario { get => _IdUsuario; set => _IdUsuario = value; }

@@ -9,20 +9,20 @@ namespace Biblioteca
      public class Venta
     {
         private int _IdVenta;
-        private char Tipo_Venta;
+        private char _Tipo_Venta;
         private DateTime _Fecha;
         private int _SubTotal;
 
-        public Venta(int IdVenta, char tipo_Venta, DateTime Fecha, int SubTotal)
+        public Venta()
         {
-            _IdVenta = IdVenta;
-            Tipo_Venta = tipo_Venta;
-            _Fecha = Fecha;
-            _SubTotal = SubTotal;
+            this._IdVenta = 0;
+            this._Tipo_Venta = 'B';
+            this._Fecha = DateTime.Now;
+            this._SubTotal = 0;
         }
 
         public int IdVenta { get => _IdVenta; set => _IdVenta = value; }
-        public char Tipo_Venta1 { get => Tipo_Venta; set => Tipo_Venta = value; }
+        public char Tipo_Venta1 { get => _Tipo_Venta; set => _Tipo_Venta = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
         public int SubTotal { get => _SubTotal; set => _SubTotal = value; }
     }

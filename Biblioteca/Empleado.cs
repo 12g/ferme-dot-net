@@ -10,9 +10,9 @@ namespace Biblioteca
     {
         private int _Id_Empleado;
 
-        public Empleado(int Id_Empleado)
+        public Empleado()
         {
-            _Id_Empleado = Id_Empleado;
+            this._Id_Empleado = 0;
         }
 
         public int Id_Empleado { get => _Id_Empleado; set => _Id_Empleado = value; }

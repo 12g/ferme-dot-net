@@ -16,15 +16,15 @@ namespace Biblioteca
         private int _Precio;
         private string _Descripcion;
 
-        public Producto(int IdProducto, int Codigo, string Nombre, int StockActual, int StockCritico, int Precio, string Descripcion)
+        public Producto()
         {
-            _IdProducto = IdProducto;
-            _Codigo = Codigo;
-            _Nombre = Nombre;
-            _StockActual = StockActual;
-            _StockCritico = StockCritico;
-            _Precio = Precio;
-            _Descripcion = Descripcion;
+            this._IdProducto = 0;
+            this._Codigo = 0;
+            this._Nombre = string.Empty;
+            this._StockActual = 0;
+            this._StockCritico = 0;
+            this._Precio = 0;
+            this._Descripcion = string.Empty;
         }
 
         public int IdProducto { get => _IdProducto; set => _IdProducto = value; }
