@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web;
+using System.Net;
+using System.IO;
 
 namespace Ferme.Servicios
 {
@@ -12,36 +15,20 @@ namespace Ferme.Servicios
     [ServiceContract]
     public interface IService1
     {
-
         [OperationContract]
         string GetData(int value);
 
+
+
+        //SE VA A BUSCAR EL METODOS CREAR A LA CLASE RUBRO
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        bool CrearCargo(int Id_cargo, string Descripcion);
 
-        // TODO: agregue aquí sus operaciones de servicio
-    }
+        //SE VA A BUSCAR EL METODO EDITAR DE LA CLASE RUBRO
+        [OperationContract]
+        bool EditarCargo(int Id_Cargo, string Descripcion);
 
-
-    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        List<>
     }
 }

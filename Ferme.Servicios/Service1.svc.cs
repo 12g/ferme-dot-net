@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web;
+using System.Net;
+using System.IO;
 
 namespace Ferme.Servicios
 {
@@ -12,22 +15,19 @@ namespace Ferme.Servicios
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public bool CrearCargo(int Id_cargo, string Descripcion)
         {
-            return string.Format("You entered: {0}", value);
+            throw new NotImplementedException();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public bool EditarCargo(int Id_Cargo, string Descripcion)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            throw new NotImplementedException();
+        }
+
+        public string GetData(int value)
+        {
+            throw new NotImplementedException();
         }
     }
 }

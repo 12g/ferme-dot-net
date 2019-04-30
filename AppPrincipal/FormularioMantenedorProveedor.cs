@@ -38,5 +38,12 @@ namespace AppPrincipal
                 MessageBox.Show("Error al cerrar Aplicacion");
             }
         }
+
+        //PRUEBA
+        /*private void TxtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            Prueba sp = new Prueba();
+            sp.GetResource();
+        }*/
     }
 }
