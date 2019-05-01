@@ -8,6 +8,7 @@ namespace Biblioteca
 {
    public class Cliente
     {
+        //ATRIBUTOS
         private int _Id_Cliente;
         private string _Direccion;
         private string _Email;
@@ -15,7 +16,15 @@ namespace Biblioteca
         private int _Fono2;
         private int _Fono3;
 
+
+        //CONSTRUCTOR
         public Cliente()
+        {
+            this.Init();
+        }
+
+        
+        private void Init()
         {
             this._Id_Cliente = 0;
             this._Direccion = string.Empty;
@@ -25,6 +34,7 @@ namespace Biblioteca
             this._Fono3 = 0;
         }
 
+        //GET AND SET
         public int Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
         public string Direccion { get => _Direccion; set => _Direccion = value; }
         public string Email { get => _Email; set => _Email = value; }

@@ -8,6 +8,7 @@ namespace Biblioteca
 {
     public class Producto
     {
+        //ATRIBUTOS
         private int _IdProducto;
         private int _Codigo;
         private string _Nombre;
@@ -16,7 +17,14 @@ namespace Biblioteca
         private int _Precio;
         private string _Descripcion;
 
+        //CONSTRUCTOR
         public Producto()
+        {
+            this.Init();
+        }
+
+        
+        private void Init()
         {
             this._IdProducto = 0;
             this._Codigo = 0;
@@ -27,6 +35,7 @@ namespace Biblioteca
             this._Descripcion = string.Empty;
         }
 
+        //GET AND SET
         public int IdProducto { get => _IdProducto; set => _IdProducto = value; }
         public int Codigo { get => _Codigo; set => _Codigo = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }

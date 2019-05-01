@@ -8,15 +8,24 @@ namespace Biblioteca
 {
    public class Rubro
     {
+        //ATRIBUTOS
         private int _IdRubro;
         private string _Descripcion;
 
+        //CONSTRUCTOR
         public Rubro()
         {
-            this._IdRubro = 0;
-            this._Descripcion = string.Empty; ;
+            this.Init();
         }
 
+        
+        private void Init()
+        {
+            this._IdRubro = 0;
+            this._Descripcion = string.Empty;
+        }
+
+        //GET AND SET
         public int IdRubro { get => _IdRubro; set => _IdRubro = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
     }
