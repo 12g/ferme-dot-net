@@ -41,7 +41,6 @@ namespace AppPrincipal
                 {
                     fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[0].Value.ToString();
                     fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells[1].Value.ToString();
-                    fmc.TxtApellido.Text = DGMostrarListaCliente.CurrentRow.Cells[2].Value.ToString();
                     fmc.TxtDireccion.Text = DGMostrarListaCliente.CurrentRow.Cells[3].Value.ToString();
                     fmc.TxtEmail.Text = DGMostrarListaCliente.CurrentRow.Cells[4].Value.ToString();
                     fmc.TxtTelefeno1.Text = DGMostrarListaCliente.CurrentRow.Cells[5].Value.ToString();

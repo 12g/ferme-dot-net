@@ -39,6 +39,8 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ImagenTicketBueno = new System.Windows.Forms.PictureBox();
+            this.LblCodigoObligatorio = new System.Windows.Forms.Label();
+            this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +62,7 @@
             this.TxtRubro.Size = new System.Drawing.Size(177, 20);
             this.TxtRubro.TabIndex = 3;
             this.TxtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRubro_KeyPress);
+            this.TxtRubro.Leave += new System.EventHandler(this.TxtRubro_Leave);
             // 
             // LblCodigo
             // 
@@ -88,6 +91,7 @@
             this.TxtDescripcion.Size = new System.Drawing.Size(355, 20);
             this.TxtDescripcion.TabIndex = 6;
             this.TxtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescripcion_KeyPress);
+            this.TxtDescripcion.Leave += new System.EventHandler(this.TxtDescripcion_Leave);
             // 
             // BtnGuardar
             // 
@@ -126,12 +130,38 @@
             this.ImagenTicketBueno.TabStop = false;
             this.ImagenTicketBueno.Visible = false;
             // 
+            // LblCodigoObligatorio
+            // 
+            this.LblCodigoObligatorio.AutoSize = true;
+            this.LblCodigoObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodigoObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblCodigoObligatorio.Location = new System.Drawing.Point(271, 107);
+            this.LblCodigoObligatorio.Name = "LblCodigoObligatorio";
+            this.LblCodigoObligatorio.Size = new System.Drawing.Size(88, 15);
+            this.LblCodigoObligatorio.TabIndex = 10;
+            this.LblCodigoObligatorio.Text = "* Obligatorio";
+            this.LblCodigoObligatorio.Visible = false;
+            // 
+            // LblDescripcionObligatoria
+            // 
+            this.LblDescripcionObligatoria.AutoSize = true;
+            this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(449, 144);
+            this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
+            this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
+            this.LblDescripcionObligatoria.TabIndex = 11;
+            this.LblDescripcionObligatoria.Text = "*";
+            this.LblDescripcionObligatoria.Visible = false;
+            // 
             // FormularioMantenedorRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 314);
             this.ControlBox = false;
+            this.Controls.Add(this.LblDescripcionObligatoria);
+            this.Controls.Add(this.LblCodigoObligatorio);
             this.Controls.Add(this.ImagenTicketBueno);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
@@ -164,5 +194,7 @@
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox ImagenTicketBueno;
+        private System.Windows.Forms.Label LblCodigoObligatorio;
+        private System.Windows.Forms.Label LblDescripcionObligatoria;
     }
 }

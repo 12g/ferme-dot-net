@@ -33,8 +33,6 @@
             this.TxtRutCliente = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.LblApellido = new System.Windows.Forms.Label();
-            this.TxtApellido = new System.Windows.Forms.TextBox();
             this.LblDireccion = new System.Windows.Forms.Label();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
@@ -49,7 +47,6 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.LblRutObligatorio = new System.Windows.Forms.Label();
             this.lblMensajeNombre = new System.Windows.Forms.Label();
-            this.lblMensajeApellido = new System.Windows.Forms.Label();
             this.lblMensajeDireccion = new System.Windows.Forms.Label();
             this.lblMensajeEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,30 +96,14 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(307, 20);
             this.TxtNombre.TabIndex = 5;
-            this.TxtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
-            // 
-            // LblApellido
-            // 
-            this.LblApellido.AutoSize = true;
-            this.LblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblApellido.Location = new System.Drawing.Point(16, 195);
-            this.LblApellido.Name = "LblApellido";
-            this.LblApellido.Size = new System.Drawing.Size(58, 13);
-            this.LblApellido.TabIndex = 6;
-            this.LblApellido.Text = "Apellidos";
-            // 
-            // TxtApellido
-            // 
-            this.TxtApellido.Location = new System.Drawing.Point(13, 211);
-            this.TxtApellido.Name = "TxtApellido";
-            this.TxtApellido.Size = new System.Drawing.Size(307, 20);
-            this.TxtApellido.TabIndex = 7;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
+            this.TxtNombre.Leave += new System.EventHandler(this.TxtNombre_Leave);
             // 
             // LblDireccion
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDireccion.Location = new System.Drawing.Point(13, 251);
+            this.LblDireccion.Location = new System.Drawing.Point(13, 192);
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(61, 13);
             this.LblDireccion.TabIndex = 8;
@@ -130,16 +111,17 @@
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(13, 267);
+            this.TxtDireccion.Location = new System.Drawing.Point(12, 208);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(441, 20);
             this.TxtDireccion.TabIndex = 9;
+            this.TxtDireccion.Leave += new System.EventHandler(this.TxtDireccion_Leave);
             // 
             // LblEmail
             // 
             this.LblEmail.AutoSize = true;
             this.LblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEmail.Location = new System.Drawing.Point(16, 305);
+            this.LblEmail.Location = new System.Drawing.Point(13, 243);
             this.LblEmail.Name = "LblEmail";
             this.LblEmail.Size = new System.Drawing.Size(37, 13);
             this.LblEmail.TabIndex = 10;
@@ -147,14 +129,15 @@
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(13, 322);
+            this.TxtEmail.Location = new System.Drawing.Point(13, 259);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(307, 20);
             this.TxtEmail.TabIndex = 11;
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // TxtTelefeno1
             // 
-            this.TxtTelefeno1.Location = new System.Drawing.Point(13, 394);
+            this.TxtTelefeno1.Location = new System.Drawing.Point(10, 316);
             this.TxtTelefeno1.Name = "TxtTelefeno1";
             this.TxtTelefeno1.Size = new System.Drawing.Size(130, 20);
             this.TxtTelefeno1.TabIndex = 12;
@@ -163,7 +146,7 @@
             // 
             this.LblTelefono1.AutoSize = true;
             this.LblTelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTelefono1.Location = new System.Drawing.Point(13, 378);
+            this.LblTelefono1.Location = new System.Drawing.Point(10, 300);
             this.LblTelefono1.Name = "LblTelefono1";
             this.LblTelefono1.Size = new System.Drawing.Size(130, 13);
             this.LblTelefono1.TabIndex = 13;
@@ -173,7 +156,7 @@
             // 
             this.LblTelefono2.AutoSize = true;
             this.LblTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTelefono2.Location = new System.Drawing.Point(178, 378);
+            this.LblTelefono2.Location = new System.Drawing.Point(176, 300);
             this.LblTelefono2.Name = "LblTelefono2";
             this.LblTelefono2.Size = new System.Drawing.Size(130, 13);
             this.LblTelefono2.TabIndex = 14;
@@ -181,14 +164,14 @@
             // 
             // TxtTelefono2
             // 
-            this.TxtTelefono2.Location = new System.Drawing.Point(179, 392);
+            this.TxtTelefono2.Location = new System.Drawing.Point(177, 316);
             this.TxtTelefono2.Name = "TxtTelefono2";
             this.TxtTelefono2.Size = new System.Drawing.Size(129, 20);
             this.TxtTelefono2.TabIndex = 15;
             // 
             // TxtTelefono3
             // 
-            this.TxtTelefono3.Location = new System.Drawing.Point(335, 392);
+            this.TxtTelefono3.Location = new System.Drawing.Point(334, 316);
             this.TxtTelefono3.Name = "TxtTelefono3";
             this.TxtTelefono3.Size = new System.Drawing.Size(119, 20);
             this.TxtTelefono3.TabIndex = 16;
@@ -197,7 +180,7 @@
             // 
             this.LblTelefono3.AutoSize = true;
             this.LblTelefono3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTelefono3.Location = new System.Drawing.Point(333, 376);
+            this.LblTelefono3.Location = new System.Drawing.Point(323, 300);
             this.LblTelefono3.Name = "LblTelefono3";
             this.LblTelefono3.Size = new System.Drawing.Size(130, 13);
             this.LblTelefono3.TabIndex = 17;
@@ -206,7 +189,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(70, 443);
+            this.BtnGuardar.Location = new System.Drawing.Point(58, 382);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(123, 36);
             this.BtnGuardar.TabIndex = 18;
@@ -217,7 +200,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(272, 443);
+            this.BtnCancelar.Location = new System.Drawing.Point(253, 382);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(123, 36);
             this.BtnCancelar.TabIndex = 19;
@@ -249,24 +232,12 @@
             this.lblMensajeNombre.Text = "* ";
             this.lblMensajeNombre.Visible = false;
             // 
-            // lblMensajeApellido
-            // 
-            this.lblMensajeApellido.AutoSize = true;
-            this.lblMensajeApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeApellido.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeApellido.Location = new System.Drawing.Point(327, 211);
-            this.lblMensajeApellido.Name = "lblMensajeApellido";
-            this.lblMensajeApellido.Size = new System.Drawing.Size(15, 18);
-            this.lblMensajeApellido.TabIndex = 22;
-            this.lblMensajeApellido.Text = "*";
-            this.lblMensajeApellido.Visible = false;
-            // 
             // lblMensajeDireccion
             // 
             this.lblMensajeDireccion.AutoSize = true;
             this.lblMensajeDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeDireccion.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeDireccion.Location = new System.Drawing.Point(461, 267);
+            this.lblMensajeDireccion.Location = new System.Drawing.Point(459, 210);
             this.lblMensajeDireccion.Name = "lblMensajeDireccion";
             this.lblMensajeDireccion.Size = new System.Drawing.Size(15, 18);
             this.lblMensajeDireccion.TabIndex = 23;
@@ -278,7 +249,7 @@
             this.lblMensajeEmail.AutoSize = true;
             this.lblMensajeEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeEmail.Location = new System.Drawing.Point(327, 328);
+            this.lblMensajeEmail.Location = new System.Drawing.Point(326, 261);
             this.lblMensajeEmail.Name = "lblMensajeEmail";
             this.lblMensajeEmail.Size = new System.Drawing.Size(15, 18);
             this.lblMensajeEmail.TabIndex = 24;
@@ -297,12 +268,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 504);
+            this.ClientSize = new System.Drawing.Size(471, 446);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMensajeEmail);
             this.Controls.Add(this.lblMensajeDireccion);
-            this.Controls.Add(this.lblMensajeApellido);
             this.Controls.Add(this.lblMensajeNombre);
             this.Controls.Add(this.LblRutObligatorio);
             this.Controls.Add(this.BtnCancelar);
@@ -317,8 +287,6 @@
             this.Controls.Add(this.LblEmail);
             this.Controls.Add(this.TxtDireccion);
             this.Controls.Add(this.LblDireccion);
-            this.Controls.Add(this.TxtApellido);
-            this.Controls.Add(this.LblApellido);
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.TxtRutCliente);
@@ -339,7 +307,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label LblRutCliente;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.Label LblApellido;
         private System.Windows.Forms.Label LblDireccion;
         private System.Windows.Forms.Label LblEmail;
         private System.Windows.Forms.Label LblTelefono1;
@@ -349,7 +316,6 @@
         private System.Windows.Forms.Button BtnCancelar;
         public System.Windows.Forms.TextBox TxtRutCliente;
         public System.Windows.Forms.TextBox TxtNombre;
-        public System.Windows.Forms.TextBox TxtApellido;
         public System.Windows.Forms.TextBox TxtDireccion;
         public System.Windows.Forms.TextBox TxtEmail;
         public System.Windows.Forms.TextBox TxtTelefeno1;
@@ -357,7 +323,6 @@
         public System.Windows.Forms.TextBox TxtTelefono3;
         private System.Windows.Forms.Label LblRutObligatorio;
         private System.Windows.Forms.Label lblMensajeNombre;
-        private System.Windows.Forms.Label lblMensajeApellido;
         private System.Windows.Forms.Label lblMensajeDireccion;
         private System.Windows.Forms.Label lblMensajeEmail;
         private System.Windows.Forms.Label label1;

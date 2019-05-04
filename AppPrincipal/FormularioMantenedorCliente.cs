@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
@@ -58,18 +59,28 @@ namespace AppPrincipal
                 }
                 else if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
                 {
-                    MessageBox.Show("NOMBRE NO PUEDE ESTAR EN BLACO Y DEBE INGRESAR SOLO LETRAS");
+                    MessageBox.Show("NOMBRE NO PUEDE ESTAR EN BLANCO ");
                     lblMensajeNombre.Visible = true;
                 }
-                else if (TxtApellido.Text == "" || val.IsNumeric(TxtApellido.Text))
+                else if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
                 {
-                    lblMensajeApellido.Visible = true;
+                    MessageBox.Show("DIRECCION NO PUEDE ESTAR EN BLANCO");
+                    lblMensajeDireccion.Visible = true;
+                }
+                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
+                {
+                    MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
+                    lblMensajeEmail.Visible = true;
                 }
                 else
                 {
                     TxtRutCliente.Text = per.Rut;
-                    LblRutObligatorio.Visible = false;
-                    lblMensajeNombre.Visible = false;
+                    TxtNombre.Text = per.NombreCompleto;
+                    TxtDireccion.Text = cli.Direccion;
+                    TxtEmail.Text = cli.Email;
+                    TxtTelefeno1.Text = cli.Fono1.ToString();
+                    TxtTelefono2.Text = cli.Fono2.ToString();
+                    TxtTelefono3.Text = cli.Fono3.ToString();
                 }
             }
             catch (Exception)
@@ -103,7 +114,20 @@ namespace AppPrincipal
             }
         }
 
-        private void TxtNombre_TextChanged(object sender, EventArgs e)
+        //SE VA A BUSCAR EL METODO SOLOLETRAS EN TEXTBOX NOMBRE
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.SoloLetras(e);
+        }
+
+        private void TxtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.SoloLetras(e);
+        }
+
+
+        //APARECE EL SIGNO * SI EL NOMBRE ESTA EN BLANCO
+        private void TxtNombre_Leave(object sender, EventArgs e)
         {
             if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
             {
@@ -113,6 +137,41 @@ namespace AppPrincipal
             {
                 lblMensajeNombre.Visible = false;
             }
+        }
+
+
+        //APARECE EL SIGNO * SI LA DIRECCION ESTA EN BLANCO
+        private void TxtDireccion_Leave(object sender, EventArgs e)
+        {
+            if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
+            {
+                lblMensajeDireccion.Visible = true;
+            }
+            else
+            {
+                lblMensajeDireccion.Visible = false;
+            }
+        }
+
+
+        //SE USA EN EMAIL DE CLIENTE
+        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
+      
+        //EVENTO LEAVE PARA VALIDAR EL FORMATO DEL CORREO
+        private void TxtEmail_Leave(object sender, EventArgs e)
+        {
+            if (val.ValidarEmail(TxtEmail.Text))
+            {
+                lblMensajeEmail.Visible = false;
+            }
+            else
+            {
+                lblMensajeEmail.Visible = true;
+                MessageBox.Show("INGRESE UNA DIRECCION DE CORREO ELECTRONICO VALIDA");
+                TxtEmail.SelectAll();
+                TxtEmail.Focus();
+            }
+
         }
     }
 }

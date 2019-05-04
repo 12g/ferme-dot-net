@@ -47,18 +47,21 @@ namespace AppPrincipal
         {
             try
             {
-                
+
                 //SI LOS VALORES NO SON NUMERICOS ENVIO UN MENSAJE DE ERROR 
-                if (Convert.ToInt32(TxtRubro.Text) < 1 || !val.IsNumeric(TxtRubro.Text))
+                if (TxtRubro.Text == "" || Convert.ToInt32(TxtRubro.Text) < 1 || !val.IsNumeric(TxtRubro.Text))
                 {
-                   MessageBox.Show("DEBE INGRESAR UN NUMERO EN CAMPO CODIGO");
+                    MessageBox.Show("DEBE INGRESAR UN NUMERO EN CAMPO CODIGO");
                     ImagenTicketBueno.Visible = false;
+                    LblCodigoObligatorio.Visible = true;
                 }
+              
                 //VALIDA QUE SEA PURAS LETRAS
                 else if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
                 {
-                    MessageBox.Show("DESCRIPCION DEBE INGRESAR LETRAS");
+                    MessageBox.Show("DEBE INGRESAR UNA DESCRIPCION");
                     ImagenTicketBueno.Visible = false;
+                    LblDescripcionObligatoria.Visible = true;
                 }
                 //DESPUES CUMPLIR LAS CONDICIONES PUESTAS SE CREA EL RUBRO
                 else
@@ -76,82 +79,44 @@ namespace AppPrincipal
         }
 
 
-        //METODO PARA VALIDAR TEXTO
-        private void SoloLetras(KeyPressEventArgs e)
-        {
-            try
-            {
-                //SE VALIDA QUE SEA UNA LETRA
-                if (char.IsLetter(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-
-                //VALIDA SI ES UNA TECLA DE CONTROL
-                else if (char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                
-                //VALIDA SI ES UNA TECLA PARA DAR ESPACIO
-                else if (char.IsSeparator(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                
-                //SI NO ES UNA LETRA O UNA TECLA DE CONTROL NO ME DEJARA TECLEARLA
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        //METODO PARA VALIDAR NUMERO
-        private void SoloNumero(KeyPressEventArgs e)
-        {
-            try
-            {
-                //SE VALIDA QUE SEA UN NUMERO
-                if (char.IsNumber(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-
-                //VALIDA SI ES UNA TECLA DE CONTROL
-                else if (char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                //SI NO ES UNA LETRA O UNA TECLA DE CONTROL NO ME DEJARA TECLEARLA
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
 
         //CAJA TEXTBOX DESCRIPCION , EL CUAL SE CARGA EL METODO SOLOLETRAS
         private void TxtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloLetras(e);
+            val.SoloLetras(e);
         }
 
         //CAJA TEXTBOX IDRUBRO , EL CUAL SE CARGA EL METODO SOLONUMERO
         private void TxtRubro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumero(e);
+            val.SoloNumero(e);
+        }
+
+        private void TxtRubro_Leave(object sender, EventArgs e)
+        {
+
+            if (TxtRubro.Text== "" ||Convert.ToInt32(TxtRubro.Text) <= 0 || !val.IsNumeric(TxtRubro.Text))
+            {
+                ImagenTicketBueno.Visible = false;
+                LblCodigoObligatorio.Visible = true;
+            }
+            else
+            {
+                LblCodigoObligatorio.Visible = false;
+            }
+        }
+
+        private void TxtDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
+            {
+                ImagenTicketBueno.Visible = false;
+                LblDescripcionObligatoria.Visible = true;
+            }
+            else
+            {
+                LblDescripcionObligatoria.Visible = false;
+            }
         }
     }
 }
