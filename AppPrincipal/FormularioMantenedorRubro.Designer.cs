@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMantenedorRubro));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TxtRubro = new System.Windows.Forms.TextBox();
             this.LblCodigo = new System.Windows.Forms.Label();
@@ -35,6 +37,10 @@
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ImagenTicketBueno = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -53,6 +59,7 @@
             this.TxtRubro.Name = "TxtRubro";
             this.TxtRubro.Size = new System.Drawing.Size(177, 20);
             this.TxtRubro.TabIndex = 3;
+            this.TxtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRubro_KeyPress);
             // 
             // LblCodigo
             // 
@@ -80,6 +87,7 @@
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(355, 20);
             this.TxtDescripcion.TabIndex = 6;
+            this.TxtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescripcion_KeyPress);
             // 
             // BtnGuardar
             // 
@@ -103,12 +111,28 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // ImagenTicketBueno
+            // 
+            this.ImagenTicketBueno.Image = ((System.Drawing.Image)(resources.GetObject("ImagenTicketBueno.Image")));
+            this.ImagenTicketBueno.Location = new System.Drawing.Point(385, 36);
+            this.ImagenTicketBueno.Name = "ImagenTicketBueno";
+            this.ImagenTicketBueno.Size = new System.Drawing.Size(58, 50);
+            this.ImagenTicketBueno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImagenTicketBueno.TabIndex = 9;
+            this.ImagenTicketBueno.TabStop = false;
+            this.ImagenTicketBueno.Visible = false;
+            // 
             // FormularioMantenedorRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 314);
             this.ControlBox = false;
+            this.Controls.Add(this.ImagenTicketBueno);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtDescripcion);
@@ -116,11 +140,14 @@
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.TxtRubro);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioMantenedorRubro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Rubro";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +162,7 @@
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox ImagenTicketBueno;
     }
 }

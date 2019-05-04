@@ -47,6 +47,12 @@
             this.LblTelefono3 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.LblRutObligatorio = new System.Windows.Forms.Label();
+            this.lblMensajeNombre = new System.Windows.Forms.Label();
+            this.lblMensajeApellido = new System.Windows.Forms.Label();
+            this.lblMensajeDireccion = new System.Windows.Forms.Label();
+            this.lblMensajeEmail = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -75,6 +81,7 @@
             this.TxtRutCliente.Name = "TxtRutCliente";
             this.TxtRutCliente.Size = new System.Drawing.Size(197, 20);
             this.TxtRutCliente.TabIndex = 3;
+            this.TxtRutCliente.Leave += new System.EventHandler(this.TxtRutCliente_Leave);
             // 
             // LblNombre
             // 
@@ -92,6 +99,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(307, 20);
             this.TxtNombre.TabIndex = 5;
+            this.TxtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
             // 
             // LblApellido
             // 
@@ -204,6 +212,7 @@
             this.BtnGuardar.TabIndex = 18;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
@@ -216,12 +225,86 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // LblRutObligatorio
+            // 
+            this.LblRutObligatorio.AutoSize = true;
+            this.LblRutObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRutObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblRutObligatorio.Location = new System.Drawing.Point(217, 100);
+            this.LblRutObligatorio.Name = "LblRutObligatorio";
+            this.LblRutObligatorio.Size = new System.Drawing.Size(119, 16);
+            this.LblRutObligatorio.TabIndex = 20;
+            this.LblRutObligatorio.Text = "* OBLIGATORIO";
+            this.LblRutObligatorio.Visible = false;
+            // 
+            // lblMensajeNombre
+            // 
+            this.lblMensajeNombre.AutoSize = true;
+            this.lblMensajeNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeNombre.Location = new System.Drawing.Point(327, 153);
+            this.lblMensajeNombre.Name = "lblMensajeNombre";
+            this.lblMensajeNombre.Size = new System.Drawing.Size(20, 18);
+            this.lblMensajeNombre.TabIndex = 21;
+            this.lblMensajeNombre.Text = "* ";
+            this.lblMensajeNombre.Visible = false;
+            // 
+            // lblMensajeApellido
+            // 
+            this.lblMensajeApellido.AutoSize = true;
+            this.lblMensajeApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeApellido.Location = new System.Drawing.Point(327, 211);
+            this.lblMensajeApellido.Name = "lblMensajeApellido";
+            this.lblMensajeApellido.Size = new System.Drawing.Size(15, 18);
+            this.lblMensajeApellido.TabIndex = 22;
+            this.lblMensajeApellido.Text = "*";
+            this.lblMensajeApellido.Visible = false;
+            // 
+            // lblMensajeDireccion
+            // 
+            this.lblMensajeDireccion.AutoSize = true;
+            this.lblMensajeDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeDireccion.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeDireccion.Location = new System.Drawing.Point(461, 267);
+            this.lblMensajeDireccion.Name = "lblMensajeDireccion";
+            this.lblMensajeDireccion.Size = new System.Drawing.Size(15, 18);
+            this.lblMensajeDireccion.TabIndex = 23;
+            this.lblMensajeDireccion.Text = "*";
+            this.lblMensajeDireccion.Visible = false;
+            // 
+            // lblMensajeEmail
+            // 
+            this.lblMensajeEmail.AutoSize = true;
+            this.lblMensajeEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeEmail.Location = new System.Drawing.Point(327, 328);
+            this.lblMensajeEmail.Name = "lblMensajeEmail";
+            this.lblMensajeEmail.Size = new System.Drawing.Size(15, 18);
+            this.lblMensajeEmail.TabIndex = 24;
+            this.lblMensajeEmail.Text = "*";
+            this.lblMensajeEmail.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(335, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 25;
+            // 
             // FormularioMantenedorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 504);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMensajeEmail);
+            this.Controls.Add(this.lblMensajeDireccion);
+            this.Controls.Add(this.lblMensajeApellido);
+            this.Controls.Add(this.lblMensajeNombre);
+            this.Controls.Add(this.LblRutObligatorio);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblTelefono3);
@@ -272,5 +355,11 @@
         public System.Windows.Forms.TextBox TxtTelefeno1;
         public System.Windows.Forms.TextBox TxtTelefono2;
         public System.Windows.Forms.TextBox TxtTelefono3;
+        private System.Windows.Forms.Label LblRutObligatorio;
+        private System.Windows.Forms.Label lblMensajeNombre;
+        private System.Windows.Forms.Label lblMensajeApellido;
+        private System.Windows.Forms.Label lblMensajeDireccion;
+        private System.Windows.Forms.Label lblMensajeEmail;
+        private System.Windows.Forms.Label label1;
     }
 }
