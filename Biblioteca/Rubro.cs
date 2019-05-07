@@ -11,31 +11,19 @@ namespace Biblioteca
 {
     public class Rubro
     {
-        //ATRIBUTOS
+        //public int idRubro { get; set; }
+        //public string descripcionRubro { get; set; }
         private int _IdRubro;
         private string _Descripcion;
 
-        //CONSTRUCTOR
         public Rubro()
         {
-            this.Init();
+            _IdRubro = 0;
+            _Descripcion = string.Empty;
         }
 
-
-        private void Init()
-        {
-            this._IdRubro = 0;
-            this._Descripcion = string.Empty;
-        }
-
-        //GET AND SET
-        public int IdRubro { get => _IdRubro; set => _IdRubro = value; }
-
-        public string Descripcion
-        {
-            get => _Descripcion; set => _Descripcion = value;
-        }
-
+        public int idRubro { get => _IdRubro; set => _IdRubro = value; }
+        public string descripcionRubro { get => _Descripcion; set => _Descripcion = value; }
     }
 }
 

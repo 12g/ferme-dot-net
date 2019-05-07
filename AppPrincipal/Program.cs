@@ -12,6 +12,7 @@ namespace AppPrincipal
 {
     static class Program
     {
+       
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -20,11 +21,8 @@ namespace AppPrincipal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioPrincipal());
-
+            Application.Run(new FormularioPrincipal()); 
         }
-
-        
     }
 }
 

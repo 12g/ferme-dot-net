@@ -9,7 +9,7 @@ namespace AppPrincipal
 {
     public class Prueba
     {
-        
+        /*
         public void GetResource()
         {
             var httpClient = new HttpClient();
@@ -19,9 +19,9 @@ namespace AppPrincipal
             Console.WriteLine("id" + responseMessage.Content.ReadAsStringAsync().Result);
         }
 
+        *//*
         
-        
-         /*
+         
         //Crear e inicializar HttpClient
         //HttpClient está diseñado para ser instanciado una vez y 
         //reutilizado durante toda la vida de una aplicación.
@@ -87,7 +87,7 @@ namespace AppPrincipal
         {
             RunAsync().GetAwaiter().GetResult();
         }
-      
+
 
         static async Task RunAsync()
         {
@@ -96,7 +96,8 @@ namespace AppPrincipal
             HttpClient.DefaultRequestHeaders.Accept.Clear();
             HttpClient.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("gestion/rubros"));
-
+           
+            
 
             try
             {
@@ -114,13 +115,13 @@ namespace AppPrincipal
                 // Get the product
                 rub = await GetRubroAsync(url.PathAndQuery);
                 //ShowRubro(rub);
-            
-                
-                
+
+
+
                 // Update the product
                 Console.WriteLine("Updating price...");
-                        rub.Descripcion = "";
-                        await UpdateRubroAsync(rub);
+                rub.Descripcion = "";
+                await UpdateRubroAsync(rub);
 
                 // Get the updated product
                 rub = await GetRubroAsync(url.PathAndQuery);
@@ -129,7 +130,7 @@ namespace AppPrincipal
                 // Delete the product
                 var statusCode = await DeleteRubrotAsync(rub.IdRubro);
                 Console.WriteLine($"Deleted (HTTP Status = {(int)statusCode})");
-                
+
             }
             catch (Exception e)
             {
@@ -137,7 +138,6 @@ namespace AppPrincipal
             }
 
             Console.ReadLine();
-             
         }*/
         
     }

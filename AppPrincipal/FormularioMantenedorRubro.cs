@@ -18,6 +18,8 @@ namespace AppPrincipal
     public partial class FormularioMantenedorRubro : Form
     {
         Validaciones val = new Validaciones();
+        
+
         public FormularioMantenedorRubro()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace AppPrincipal
         {
             try
             {
-
+                ConexionHttpClient cli = new ConexionHttpClient();
                 //SI LOS VALORES NO SON NUMERICOS ENVIO UN MENSAJE DE ERROR 
                 if (TxtRubro.Text == "" || Convert.ToInt32(TxtRubro.Text) < 1 || !val.IsNumeric(TxtRubro.Text))
                 {
@@ -55,7 +57,7 @@ namespace AppPrincipal
                     ImagenTicketBueno.Visible = false;
                     LblCodigoObligatorio.Visible = true;
                 }
-              
+
                 //VALIDA QUE SEA PURAS LETRAS
                 else if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
                 {
@@ -66,15 +68,18 @@ namespace AppPrincipal
                 //DESPUES CUMPLIR LAS CONDICIONES PUESTAS SE CREA EL RUBRO
                 else
                 {
+
                     Rubro RU = new Rubro();
-                    TxtRubro.Text = RU.IdRubro.ToString();
-                    TxtDescripcion.Text = RU.Descripcion.ToUpper();
-                    ImagenTicketBueno.Visible = true;
+                    RU.idRubro = int.Parse(TxtRubro.Text);
+                    RU.descripcionRubro = TxtDescripcion.Text;
+
+                    cli.CrearRubro(RU);
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("ERROR AL GUARDAR EL RUBRO");
+                ImagenTicketBueno.Visible = false;
             }
         }
 
@@ -117,6 +122,15 @@ namespace AppPrincipal
             {
                 LblDescripcionObligatoria.Visible = false;
             }
+        }
+
+        private void BtnBuscarRubro_Click(object sender, EventArgs e)
+        {
+            FormularioBuscarRubro fbr = new FormularioBuscarRubro();
+            fbr.ShowDialog();
+            LblCodigoObligatorio.Visible = false;
+            LblDescripcionObligatoria.Visible = false;
+
         }
     }
 }

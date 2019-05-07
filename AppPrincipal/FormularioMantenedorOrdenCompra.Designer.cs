@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMantenedorOrdenCompra));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -47,6 +48,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblCantSolicitada = new System.Windows.Forms.Label();
+            this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.LblNumeroObligatorio = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblCantidadObligatoria = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -55,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(82, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(125, 5);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(299, 31);
             this.lblTitulo.TabIndex = 2;
@@ -71,6 +78,7 @@
             this.BtnGuardar.TabIndex = 3;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
@@ -99,6 +107,8 @@
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(155, 20);
             this.TxtNumero.TabIndex = 6;
+            this.TxtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
+            this.TxtNumero.Leave += new System.EventHandler(this.TxtNumero_Leave);
             // 
             // LblFecha
             // 
@@ -211,20 +221,73 @@
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(447, 239);
+            this.TxtCantidad.Location = new System.Drawing.Point(425, 240);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(109, 20);
+            this.TxtCantidad.Size = new System.Drawing.Size(80, 20);
             this.TxtCantidad.TabIndex = 19;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
             // LblCantSolicitada
             // 
             this.LblCantSolicitada.AutoSize = true;
             this.LblCantSolicitada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantSolicitada.Location = new System.Drawing.Point(447, 221);
+            this.LblCantSolicitada.Location = new System.Drawing.Point(448, 222);
             this.LblCantSolicitada.Name = "LblCantSolicitada";
             this.LblCantSolicitada.Size = new System.Drawing.Size(57, 13);
             this.LblCantSolicitada.TabIndex = 20;
             this.LblCantSolicitada.Text = "Cantidad";
+            // 
+            // DgListadoProductoOC
+            // 
+            this.DgListadoProductoOC.AllowUserToAddRows = false;
+            this.DgListadoProductoOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgListadoProductoOC.Location = new System.Drawing.Point(14, 279);
+            this.DgListadoProductoOC.Name = "DgListadoProductoOC";
+            this.DgListadoProductoOC.Size = new System.Drawing.Size(549, 263);
+            this.DgListadoProductoOC.TabIndex = 21;
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(511, 237);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(60, 23);
+            this.BtnAgregar.TabIndex = 22;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // LblNumeroObligatorio
+            // 
+            this.LblNumeroObligatorio.AutoSize = true;
+            this.LblNumeroObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNumeroObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblNumeroObligatorio.Location = new System.Drawing.Point(175, 81);
+            this.LblNumeroObligatorio.Name = "LblNumeroObligatorio";
+            this.LblNumeroObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblNumeroObligatorio.TabIndex = 23;
+            this.LblNumeroObligatorio.Text = "*";
+            this.LblNumeroObligatorio.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 24;
+            // 
+            // LblCantidadObligatoria
+            // 
+            this.LblCantidadObligatoria.AutoSize = true;
+            this.LblCantidadObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidadObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.LblCantidadObligatoria.Location = new System.Drawing.Point(413, 243);
+            this.LblCantidadObligatoria.Name = "LblCantidadObligatoria";
+            this.LblCantidadObligatoria.Size = new System.Drawing.Size(14, 16);
+            this.LblCantidadObligatoria.TabIndex = 25;
+            this.LblCantidadObligatoria.Text = "*";
+            this.LblCantidadObligatoria.Leave += new System.EventHandler(this.LblCantidadObligatoria_Leave);
             // 
             // FormularioMantenedorOrdenCompra
             // 
@@ -232,6 +295,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 610);
             this.ControlBox = false;
+            this.Controls.Add(this.LblCantidadObligatoria);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblNumeroObligatorio);
+            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.DgListadoProductoOC);
             this.Controls.Add(this.LblCantSolicitada);
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.button1);
@@ -252,11 +320,13 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioMantenedorOrdenCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Orden Compra";
+            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +353,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label LblCantSolicitada;
+        private System.Windows.Forms.DataGridView DgListadoProductoOC;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Label LblNumeroObligatorio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblCantidadObligatoria;
     }
 }
