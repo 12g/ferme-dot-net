@@ -37,10 +37,5 @@ namespace AppPrincipal
                 MessageBox.Show("Error al cerrar Aplicacion");
             }
         }
-
-        private void DGlistadoRubro_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

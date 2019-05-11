@@ -153,7 +153,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prueba.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +222,10 @@
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
       <Project>{5eac1265-a62f-4512-b8e5-20b6b5b72bc6}</Project>
       <Name>Biblioteca</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiciosConexionFerme\ServiciosConexionFerme.csproj">
+      <Project>{e2df3dc6-f56c-406e-ba67-d889fd13dd2c}</Project>
+      <Name>ServiciosConexionFerme</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

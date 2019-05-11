@@ -9,24 +9,10 @@ namespace Biblioteca
     public class DetalleOrdenCompra
     {
         //ATRIBUTOS
-        private int _Id_detalle_Orden_Compra;
-        private int _Cantidad;
+        public int idDetalleOrdenCompra { get; set; }
+        private int idOrdenCompra { get; set; }
+        public int idProducto { get; set; }
+        public int cantidadProducto { get; set; }
 
-        //CONSTRUCTOR
-        public DetalleOrdenCompra()
-        {
-            this.Init();
-        }
-
-        
-        private void Init()
-        {
-            this._Id_detalle_Orden_Compra = 0;
-            this._Cantidad = 0;
-        }
-
-        //GET AND SET
-        public int Id_detalle_Orden_Compra { get => _Id_detalle_Orden_Compra; set => _Id_detalle_Orden_Compra = value; }
-        public int Cantidad { get => _Cantidad; set => _Cantidad = value; }
     }
 }

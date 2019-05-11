@@ -9,21 +9,15 @@ namespace Biblioteca
    public class Empleado
     {
         //ATRIBUTOS
-        private int _Id_Empleado;
-
-        //CONSTRUCTOR
-        public Empleado()
-        {
-            this.Init();
-        }
-
-        
-        private void Init()
-        {
-            this._Id_Empleado = 0;
-        }
-
-        //GET AND SET
-        public int Id_Empleado { get => _Id_Empleado; set => _Id_Empleado = value; }
+        public int idEmpleado { get; set; }
+        public int idCargo { get; set; }
+        public int idPersona { get; set; }
+        public string nombreCompletoPersona { get; set; }
+        public string rutPersona { get; set; }
+        public string direccionPersona { get; set; }
+        public string emailPersona { get; set; }
+        public int fono1 { get; set; }
+        public int fono2 { get; set; }
+        public int fono3 { get; set; }
     }
 }

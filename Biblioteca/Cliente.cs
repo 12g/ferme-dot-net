@@ -9,22 +9,14 @@ namespace Biblioteca
    public class Cliente
     {
         //ATRIBUTOS
-        private int _Id_Cliente;
-
-
-        //CONSTRUCTOR
-        public Cliente()
-        {
-            this.Init();
-        }
-
-        
-        private void Init()
-        {
-            this._Id_Cliente = 0;
-        }
-
-        //GET AND SET
-        public int Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
+        private int idCliente { get; set; }
+        public int idPersona { get; set; }
+        public string nombreCompletoPersona { get; set; }
+        public string rutPersona { get; set; }
+        public string direccionPersona { get; set; }
+        public string emailPersona { get; set; }
+        public int fono1 { get; set; }
+        public int fono2 { get; set; }
+        public int fono3 { get; set; }
     }
 }

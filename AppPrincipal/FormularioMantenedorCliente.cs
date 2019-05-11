@@ -74,13 +74,7 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    TxtRutCliente.Text = per.Rut;
-                    TxtNombre.Text = per.NombreCompleto;
-                    TxtDireccion.Text = per.Direccion;
-                    TxtEmail.Text = per.Email;
-                    TxtTelefeno1.Text = per.Fono1.ToString();
-                    TxtTelefono2.Text = per.Fono2.ToString();
-                    TxtTelefono3.Text = per.Fono3.ToString();
+                    //DATOS
                 }
             }
             catch (Exception)

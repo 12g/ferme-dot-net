@@ -50,6 +50,13 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.TxtStockActual = new System.Windows.Forms.TextBox();
             this.TxtStockCritico = new System.Windows.Forms.TextBox();
+            this.LblCodigoObligatorio = new System.Windows.Forms.Label();
+            this.LblNombreProObligatorio = new System.Windows.Forms.Label();
+            this.LblFamiliaObligatoria = new System.Windows.Forms.Label();
+            this.LblProveedorObligatorio = new System.Windows.Forms.Label();
+            this.LblTipoProObligatorio = new System.Windows.Forms.Label();
+            this.LblPrecioObligatorio = new System.Windows.Forms.Label();
+            this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -249,12 +256,103 @@
             this.TxtStockCritico.Size = new System.Drawing.Size(153, 20);
             this.TxtStockCritico.TabIndex = 22;
             // 
+            // LblCodigoObligatorio
+            // 
+            this.LblCodigoObligatorio.AutoSize = true;
+            this.LblCodigoObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodigoObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblCodigoObligatorio.Location = new System.Drawing.Point(187, 84);
+            this.LblCodigoObligatorio.Name = "LblCodigoObligatorio";
+            this.LblCodigoObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblCodigoObligatorio.TabIndex = 23;
+            this.LblCodigoObligatorio.Text = "*";
+            this.LblCodigoObligatorio.Visible = false;
+            // 
+            // LblNombreProObligatorio
+            // 
+            this.LblNombreProObligatorio.AutoSize = true;
+            this.LblNombreProObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombreProObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblNombreProObligatorio.Location = new System.Drawing.Point(508, 84);
+            this.LblNombreProObligatorio.Name = "LblNombreProObligatorio";
+            this.LblNombreProObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblNombreProObligatorio.TabIndex = 24;
+            this.LblNombreProObligatorio.Text = "*";
+            this.LblNombreProObligatorio.Visible = false;
+            // 
+            // LblFamiliaObligatoria
+            // 
+            this.LblFamiliaObligatoria.AutoSize = true;
+            this.LblFamiliaObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFamiliaObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.LblFamiliaObligatoria.Location = new System.Drawing.Point(508, 138);
+            this.LblFamiliaObligatoria.Name = "LblFamiliaObligatoria";
+            this.LblFamiliaObligatoria.Size = new System.Drawing.Size(14, 16);
+            this.LblFamiliaObligatoria.TabIndex = 25;
+            this.LblFamiliaObligatoria.Text = "*";
+            this.LblFamiliaObligatoria.Visible = false;
+            // 
+            // LblProveedorObligatorio
+            // 
+            this.LblProveedorObligatorio.AutoSize = true;
+            this.LblProveedorObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblProveedorObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblProveedorObligatorio.Location = new System.Drawing.Point(510, 199);
+            this.LblProveedorObligatorio.Name = "LblProveedorObligatorio";
+            this.LblProveedorObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblProveedorObligatorio.TabIndex = 26;
+            this.LblProveedorObligatorio.Text = "*";
+            this.LblProveedorObligatorio.Visible = false;
+            // 
+            // LblTipoProObligatorio
+            // 
+            this.LblTipoProObligatorio.AutoSize = true;
+            this.LblTipoProObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTipoProObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblTipoProObligatorio.Location = new System.Drawing.Point(189, 138);
+            this.LblTipoProObligatorio.Name = "LblTipoProObligatorio";
+            this.LblTipoProObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblTipoProObligatorio.TabIndex = 27;
+            this.LblTipoProObligatorio.Text = "*";
+            this.LblTipoProObligatorio.Visible = false;
+            // 
+            // LblPrecioObligatorio
+            // 
+            this.LblPrecioObligatorio.AutoSize = true;
+            this.LblPrecioObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPrecioObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.LblPrecioObligatorio.Location = new System.Drawing.Point(187, 261);
+            this.LblPrecioObligatorio.Name = "LblPrecioObligatorio";
+            this.LblPrecioObligatorio.Size = new System.Drawing.Size(14, 16);
+            this.LblPrecioObligatorio.TabIndex = 28;
+            this.LblPrecioObligatorio.Text = "*";
+            this.LblPrecioObligatorio.Visible = false;
+            // 
+            // LblDescripcionObligatoria
+            // 
+            this.LblDescripcionObligatoria.AutoSize = true;
+            this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(508, 261);
+            this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
+            this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
+            this.LblDescripcionObligatoria.TabIndex = 29;
+            this.LblDescripcionObligatoria.Text = "*";
+            this.LblDescripcionObligatoria.Visible = false;
+            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 497);
             this.ControlBox = false;
+            this.Controls.Add(this.LblDescripcionObligatoria);
+            this.Controls.Add(this.LblPrecioObligatorio);
+            this.Controls.Add(this.LblTipoProObligatorio);
+            this.Controls.Add(this.LblProveedorObligatorio);
+            this.Controls.Add(this.LblFamiliaObligatoria);
+            this.Controls.Add(this.LblNombreProObligatorio);
+            this.Controls.Add(this.LblCodigoObligatorio);
             this.Controls.Add(this.TxtStockCritico);
             this.Controls.Add(this.TxtStockActual);
             this.Controls.Add(this.BtnCancelar);
@@ -310,5 +408,12 @@
         public System.Windows.Forms.TextBox TxtDescripcion;
         public System.Windows.Forms.TextBox TxtStockActual;
         public System.Windows.Forms.TextBox TxtStockCritico;
+        private System.Windows.Forms.Label LblCodigoObligatorio;
+        private System.Windows.Forms.Label LblNombreProObligatorio;
+        private System.Windows.Forms.Label LblFamiliaObligatoria;
+        private System.Windows.Forms.Label LblProveedorObligatorio;
+        private System.Windows.Forms.Label LblTipoProObligatorio;
+        private System.Windows.Forms.Label LblPrecioObligatorio;
+        private System.Windows.Forms.Label LblDescripcionObligatoria;
     }
 }

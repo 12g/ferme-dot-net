@@ -40,14 +40,6 @@ namespace AppPrincipal
                 MessageBox.Show("Error al cerrar Aplicacion");
             }
         }
-
-        //BOTON BUSCAR QUE REDIRIGE AL FORMULARIO BURCAR PRODUCTOS
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormularioBuscarProducto fbp = new FormularioBuscarProducto();
-            fbp.ShowDialog();
-        }
-
         
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -130,6 +122,12 @@ namespace AppPrincipal
             {
                 LblCantidadObligatoria.Visible = false;
             }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            FormularioBuscarProducto fbp = new FormularioBuscarProducto();
+            fbp.ShowDialog();
         }
     }
 }

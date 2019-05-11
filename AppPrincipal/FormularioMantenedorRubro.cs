@@ -11,13 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
+using ServiciosConexionFerme;
 
 
 namespace AppPrincipal
 {
     public partial class FormularioMantenedorRubro : Form
     {
-        Validaciones val = new Validaciones();
+        
         
 
         public FormularioMantenedorRubro()
@@ -49,7 +50,8 @@ namespace AppPrincipal
         {
             try
             {
-                ConexionHttpClient cli = new ConexionHttpClient();
+                Validaciones val = new Validaciones();
+                ServiciosRubro serRub = new ServiciosRubro();
                 //SI LOS VALORES NO SON NUMERICOS ENVIO UN MENSAJE DE ERROR 
                 if (TxtRubro.Text == "" || Convert.ToInt32(TxtRubro.Text) < 1 || !val.IsNumeric(TxtRubro.Text))
                 {
@@ -73,7 +75,8 @@ namespace AppPrincipal
                     RU.idRubro = int.Parse(TxtRubro.Text);
                     RU.descripcionRubro = TxtDescripcion.Text;
 
-                    cli.CrearRubro(RU);
+                    serRub.CrearRubro(RU);
+                    ImagenTicketBueno.Visible = true;
                 }
             }
             catch (Exception)
@@ -88,18 +91,20 @@ namespace AppPrincipal
         //CAJA TEXTBOX DESCRIPCION , EL CUAL SE CARGA EL METODO SOLOLETRAS
         private void TxtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Validaciones val = new Validaciones();
             val.SoloLetras(e);
         }
 
         //CAJA TEXTBOX IDRUBRO , EL CUAL SE CARGA EL METODO SOLONUMERO
         private void TxtRubro_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Validaciones val = new Validaciones();
             val.SoloNumero(e);
         }
 
         private void TxtRubro_Leave(object sender, EventArgs e)
         {
-
+            Validaciones val = new Validaciones();
             if (TxtRubro.Text== "" ||Convert.ToInt32(TxtRubro.Text) <= 0 || !val.IsNumeric(TxtRubro.Text))
             {
                 ImagenTicketBueno.Visible = false;
@@ -113,6 +118,7 @@ namespace AppPrincipal
 
         private void TxtDescripcion_Leave(object sender, EventArgs e)
         {
+            Validaciones val = new Validaciones();
             if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
             {
                 ImagenTicketBueno.Visible = false;

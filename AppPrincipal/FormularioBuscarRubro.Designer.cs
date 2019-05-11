@@ -44,7 +44,6 @@
             this.DGlistadoRubro.Name = "DGlistadoRubro";
             this.DGlistadoRubro.Size = new System.Drawing.Size(681, 368);
             this.DGlistadoRubro.TabIndex = 0;
-            this.DGlistadoRubro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistadoRubro_CellContentClick);
             // 
             // BtnBuscarRubro
             // 

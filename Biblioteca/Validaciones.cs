@@ -32,7 +32,7 @@ namespace Biblioteca
             return format;
         }
 
-        //SE ESTA OCUPANDO FOMRULARIO CLIENTE
+        //SE ESTA OCUPANDO FOMRULARIO CLIENTE, PROVEEDOR
         //VALIDACION DEL RUT
         public bool validarRut(string rut)
         {
