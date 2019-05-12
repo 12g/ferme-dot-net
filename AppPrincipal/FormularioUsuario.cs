@@ -29,5 +29,11 @@ namespace AppPrincipal
             FormularioMantenedorUsuario fmu = new FormularioMantenedorUsuario();
             fmu.ShowDialog();
         }
+
+        private void BtnCargo_Click(object sender, EventArgs e)
+        {
+            FormularioMantenedorCargo car = new FormularioMantenedorCargo();
+            car.ShowDialog();
+        }
     }
 }

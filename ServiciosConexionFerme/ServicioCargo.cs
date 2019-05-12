@@ -10,41 +10,51 @@ using Newtonsoft.Json;
 
 namespace ServiciosConexionFerme
 {
-   public class ServicioProveedores
+    public class ServicioCargo
     {
         //METODO DE CONEXION
         public void GetResource()
         {
             var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            var responseMessage = httpClient.GetAsync("gestion/proveedores").Result;
+            var responseMessage = httpClient.GetAsync("gestion/cargos").Result;
 
             string responseAsync = responseMessage.Content.ReadAsStringAsync().Result;
-            var jsonObj = JsonConvert.DeserializeObject<Proveedor[]>(responseAsync);
+            var jsonObj = JsonConvert.DeserializeObject<Cargo[]>(responseAsync);
 
             foreach (var item in jsonObj)
             {
-                Console.WriteLine(item.idProveedor);
+                Console.WriteLine(item.idCargo);
             }
 
             //Console.WriteLine(responseAsync);
         }
 
 
-        //SERIALIZA EL PROVEEDOR PARA CONVERTIR A JSON
-        public void CrearProveedor(Proveedor Pro)
+        //SERIALIZA EL CARGO PARA CONVERTIR A JSON
+        public void CrearCargo(Cargo car)
         {
 
-            var json = JsonConvert.SerializeObject(Pro);
+            var json = JsonConvert.SerializeObject(car);
             var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/proveedores/guardar", jsonp);
+            var responseMessage = httpClient.PostAsync("gestion/cargos/guardar", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
 
             Console.WriteLine(resp);
         }
 
+        public void EliminarCargo(Cargo car)
+        {
+            var json = JsonConvert.SerializeObject(car);
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var responseMessage = httpClient.PostAsync("gestion/cargos/borrar", jsonp);
+            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
+        }
     }
 }

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AppPrincipal
 {
@@ -42,8 +46,7 @@ namespace AppPrincipal
                     fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[0].Value.ToString();
                     fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtTelefono.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
-                    fmp.CbRubro.SelectedText = DgMostrarListaProveedor.CurrentRow.Cells[4].Value.ToString();
-
+                  
                     fmp.ShowDialog();
                 }
                 else

@@ -38,12 +38,9 @@
             this.TxtRazonSocial = new System.Windows.Forms.TextBox();
             this.LblTelefono = new System.Windows.Forms.Label();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.LblRubro = new System.Windows.Forms.Label();
-            this.CbRubro = new System.Windows.Forms.ComboBox();
             this.LblRutObligatorio = new System.Windows.Forms.Label();
             this.LblRazonSocialObligatorio = new System.Windows.Forms.Label();
             this.LblTelefonoObligatorio = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.LblDireccionObligatoria = new System.Windows.Forms.Label();
@@ -142,25 +139,6 @@
             this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             this.TxtTelefono.Leave += new System.EventHandler(this.TxtTelefono_Leave);
             // 
-            // LblRubro
-            // 
-            this.LblRubro.AutoSize = true;
-            this.LblRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRubro.Location = new System.Drawing.Point(275, 263);
-            this.LblRubro.Name = "LblRubro";
-            this.LblRubro.Size = new System.Drawing.Size(41, 13);
-            this.LblRubro.TabIndex = 10;
-            this.LblRubro.Text = "Rubro";
-            // 
-            // CbRubro
-            // 
-            this.CbRubro.FormattingEnabled = true;
-            this.CbRubro.Location = new System.Drawing.Point(278, 279);
-            this.CbRubro.Name = "CbRubro";
-            this.CbRubro.Size = new System.Drawing.Size(177, 21);
-            this.CbRubro.TabIndex = 11;
-            this.CbRubro.SelectedIndexChanged += new System.EventHandler(this.CbRubro_SelectedIndexChanged);
-            // 
             // LblRutObligatorio
             // 
             this.LblRutObligatorio.AutoSize = true;
@@ -197,18 +175,6 @@
             this.LblTelefonoObligatorio.TabIndex = 14;
             this.LblTelefonoObligatorio.Text = "*";
             this.LblTelefonoObligatorio.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(461, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "*";
-            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -281,12 +247,9 @@
             this.Controls.Add(this.LblDireccionObligatoria);
             this.Controls.Add(this.TxtDireccion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.LblTelefonoObligatorio);
             this.Controls.Add(this.LblRazonSocialObligatorio);
             this.Controls.Add(this.LblRutObligatorio);
-            this.Controls.Add(this.CbRubro);
-            this.Controls.Add(this.LblRubro);
             this.Controls.Add(this.TxtTelefono);
             this.Controls.Add(this.LblTelefono);
             this.Controls.Add(this.TxtRazonSocial);
@@ -315,15 +278,12 @@
         private System.Windows.Forms.Label LblRut;
         private System.Windows.Forms.Label LblRazonSocial;
         private System.Windows.Forms.Label LblTelefono;
-        private System.Windows.Forms.Label LblRubro;
         public System.Windows.Forms.TextBox TxtRut;
         public System.Windows.Forms.TextBox TxtRazonSocial;
         public System.Windows.Forms.TextBox TxtTelefono;
-        public System.Windows.Forms.ComboBox CbRubro;
         private System.Windows.Forms.Label LblRutObligatorio;
         private System.Windows.Forms.Label LblRazonSocialObligatorio;
         private System.Windows.Forms.Label LblTelefonoObligatorio;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.Label LblDireccionObligatoria;

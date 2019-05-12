@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -74,7 +75,21 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    //DATOS
+                    Cliente cli = new Cliente();
+                    ServicioCliente serv = new ServicioCliente();
+
+                    //cli.idCliente = 3;
+                    //cli.id_persona = 3;
+                    cli.rut = TxtRutCliente.Text;
+                    cli.nombre_completo = TxtNombre.Text;
+                    cli.direccion = TxtDireccion.Text;
+                    cli.email = TxtEmail.Text;
+                    cli.fono1 = int.Parse(TxtTelefeno1.Text);
+                    cli.fono2 = int.Parse(TxtTelefono2.Text);
+                    cli.fono3 = int.Parse(TxtTelefono3.Text);
+
+                    serv.CrearCliente(cli);
+
                 }
             }
             catch (Exception)

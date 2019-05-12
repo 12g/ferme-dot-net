@@ -36,6 +36,7 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnCrear = new System.Windows.Forms.Button();
+            this.BtnCargo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,11 +127,24 @@
             this.BtnCrear.UseVisualStyleBackColor = true;
             this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
+            // BtnCargo
+            // 
+            this.BtnCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCargo.Location = new System.Drawing.Point(890, 267);
+            this.BtnCargo.Name = "BtnCargo";
+            this.BtnCargo.Size = new System.Drawing.Size(116, 39);
+            this.BtnCargo.TabIndex = 13;
+            this.BtnCargo.Text = "Cargo";
+            this.BtnCargo.UseVisualStyleBackColor = true;
+            this.BtnCargo.Click += new System.EventHandler(this.BtnCargo_Click);
+            // 
             // FormularioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 524);
+            this.Controls.Add(this.BtnCargo);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnCrear);
@@ -157,5 +171,6 @@
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnCrear;
+        private System.Windows.Forms.Button BtnCargo;
     }
 }

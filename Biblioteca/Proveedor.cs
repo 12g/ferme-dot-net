@@ -8,17 +8,16 @@ namespace Biblioteca
 {
     public class Proveedor
     {
-        //ATRIBUTOS
-        public int idProveedor { get; set; }
-        public string razonSocial { get; set; }
-        public int idRubro { get; set; }
         public int idPersona { get; set; }
-        public string nombreCompleto { get; set; }
-        public string rut { get; set; }
-        public string direccion { get; set; }
-        public string email { get; set; }
-        public int fono1 { get; set; }
-        public int fono2 { get; set; }
-        public int fono3 { get; set; }
+        public string nombreCompletoPersona { get; set; }
+        public string rutPersona { get; set; }
+        public string direccionPersona { get; set; }
+        public string emailPersona { get; set; }
+        public int fonoPersona1 { get; set; }
+        public int fonoPersona2 { get; set; }
+        public int fonoPersona3 { get; set; }
+        public int idProveedor { get; set; }
+        public string razonSocialProveedor { get; set; }
+        public int idRubro { get; set; }
     }
 }

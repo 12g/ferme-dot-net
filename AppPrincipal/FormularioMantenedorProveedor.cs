@@ -81,21 +81,26 @@ namespace AppPrincipal
                 }
                 else
                 {
+                    
                     Proveedor pro = new Proveedor();
                     ServicioProveedores sp = new ServicioProveedores();
 
-                    pro.rut = TxtRut.Text;
-                    pro.razonSocial = TxtRazonSocial.Text;
-                    pro.fono1 = int.Parse(TxtTelefono.Text);
-                    pro.nombreCompleto = TxtRazonSocial.Text;
-                    pro.email = TxtEmail.Text;
-                    pro.direccion = TxtDireccion.Text;
-                    pro.idPersona = 5;
-                    pro.idRubro = 1;
-                    pro.idProveedor = 2;
+                     //pro.idPersona = 5;
+                     pro.idProveedor = 5;
+                     pro.idRubro = 1;
+                     //pro.rutPersona = TxtRut.Text;
+                     //pro.nombreCompletoPersona = TxtRazonSocial.Text;
+                     //pro.fonoPersona1 = int.Parse(TxtTelefono.Text);
+                     //pro.razonSocialProveedor = TxtRazonSocial.Text;
+                     //pro.fonoPersona2 = int.Parse(TxtTelefono.Text);
+                     //pro.fonoPersona3 = int.Parse(TxtTelefono.Text);
+                     pro.razonSocialProveedor = TxtRazonSocial.Text;
+                     //pro.emailPersona = TxtEmail.Text;
+                     //pro.direccionPersona = TxtDireccion.Text;
+
                     
 
-                    sp.CrearProveedor(pro);
+                     sp.CrearProveedor(pro);
                 }
 
             }
@@ -165,11 +170,6 @@ namespace AppPrincipal
             {
                 LblTelefonoObligatorio.Visible = false;
             }
-        }
-
-        private void CbRubro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

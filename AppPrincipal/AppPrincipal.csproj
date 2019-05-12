@@ -91,6 +91,12 @@
     <Compile Include="FormularioCliente.Designer.cs">
       <DependentUpon>FormularioCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioMantenedorCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorCargo.Designer.cs">
+      <DependentUpon>FormularioMantenedorCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioMantenedorCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCliente.resx">
       <DependentUpon>FormularioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorCargo.resx">
+      <DependentUpon>FormularioMantenedorCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorCliente.resx">
       <DependentUpon>FormularioMantenedorCliente.cs</DependentUpon>

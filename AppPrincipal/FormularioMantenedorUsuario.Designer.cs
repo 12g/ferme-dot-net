@@ -56,7 +56,7 @@
             // BtnAceptar
             // 
             this.BtnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(89, 227);
+            this.BtnAceptar.Location = new System.Drawing.Point(71, 432);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(117, 39);
             this.BtnAceptar.TabIndex = 2;
@@ -67,7 +67,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(327, 227);
+            this.BtnCancelar.Location = new System.Drawing.Point(327, 432);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(117, 39);
             this.BtnCancelar.TabIndex = 3;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 285);
+            this.ClientSize = new System.Drawing.Size(551, 526);
             this.ControlBox = false;
             this.Controls.Add(this.LblNombreObligatorio);
             this.Controls.Add(this.LblCargoObligatorio);

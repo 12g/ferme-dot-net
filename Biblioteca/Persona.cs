@@ -9,14 +9,13 @@ namespace Biblioteca
     public class Persona
     {
         //ATRIBUTOS
-        public int idPersona { get; set; }
-        public string nombreCompletoPersona { get; set; }
-        public string rutPersona { get; set; }
-        public string direccionPersona { get; set; }
-        public string emailPersona { get; set; }
+        public int id_persona { get; set; }
+        public string nombre_completo { get; set; }
+        public string rut { get; set; }
+        public string direccion { get; set; }
+        public string email { get; set; }
         public int fono1 { get; set; }
         public int fono2 { get; set; }
-        public int fono3 { get; set; }
-
+        public int fono3 { get; set; } 
     }
 }

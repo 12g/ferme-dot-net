@@ -9,7 +9,7 @@ namespace Biblioteca
     public class Cargo
     {
         //ATRIBUTOS
-        private int idCargo { get; set; }
-        private string descripcionCargo { get; set; }
+        public int idCargo { get; set; }
+        public string descripcionCargo { get; set; }
     }
 }
