@@ -44,17 +44,64 @@ namespace AppPrincipal
         {
             try
             {
+                Empleado empl = new Empleado();
+                ServicioEmpleado serEmp = new ServicioEmpleado();
+                Validaciones val = new Validaciones();
+
                 if (TxtRut.Text == "")
                 {
                     LblRutObligatorio.Visible = true;
                 }
-                else if (TxtNombre.Text == "")
+                else if (TxtRut.Text.Length <= 7 || TxtRut.Text.Length >= 13)
+                {
+                    MessageBox.Show("EL RUT DEBE TENER MINIMO UN LARGO DE 7 Y MAXIMO 10 DIGITOS");
+                    LblRutObligatorio.Visible = true;
+                }
+                else if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
                 {
                     LblNombreObligatorio.Visible = true;
                 }
+                else if (TxtNombre.Text.Length <= 3)
+                {
+                    MessageBox.Show("INGRESE UN NOMBRE VALIDO");
+                    LblNombreObligatorio.Visible = true;
+                }
+                else if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
+                {
+                    LblDireccionObligatoria.Visible = true;
+                }
+                else if (TxtDireccion.Text.Length <= 3)
+                {
+                    MessageBox.Show("INGRESE UNA DIRECCION VALIDA");
+                    LblDireccionObligatoria.Visible = true;
+                }
+                else if (TxtEmail.Text == "")
+                {
+                    LblEmailObligatorio.Visible = true;
+                }
+                else if (val.ValidarEmail(TxtEmail.Text))
+                {
+                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
+                    LblEmailObligatorio.Visible = true;
+                }
+                else if (TxtTelefono1.Text == "")
+                {
+                    LblTelefono1Obligatorio.Visible = true;
+                }
                 else
                 {
+                    empl.idEmpleado = 1;
+                    empl.idCargo = 1;
+                    empl.idPersona = 2;
+                    empl.rutPersona = TxtRut.Text;
+                    empl.nombreCompletoPersona = TxtNombre.Text;
+                    empl.direccionPersona = TxtDireccion.Text;
+                    empl.emailPersona = TxtEmail.Text;
+                    empl.fonoPersona1 = int.Parse(TxtTelefono1.Text);
+                    empl.fonoPersona2 = int.Parse(TxtTelefono2.Text);
+                    empl.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
+                    serEmp.CrearEmpleado(empl);
                 }
             }
             catch (Exception)
@@ -98,13 +145,41 @@ namespace AppPrincipal
         private void TxtNombre_Leave(object sender, EventArgs e)
         {
             Validaciones val = new Validaciones();
-            if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
+            if (TxtNombre.Text == "")
             {
                 LblNombreObligatorio.Visible = true;
             }
             else
             {
                 LblNombreObligatorio.Visible = false;
+            }
+        }
+
+        private void LblDireccionObligatoria_Leave(object sender, EventArgs e)
+        {
+            Validaciones val = new Validaciones();
+
+            if (TxtDireccion.Text == "")
+            {
+                LblDireccionObligatoria.Visible = true;
+            }
+            else
+            {
+                LblDireccionObligatoria.Visible = false;
+            }
+        }
+
+        private void LblEmailObligatorio_Leave(object sender, EventArgs e)
+        {
+            Validaciones val = new Validaciones();
+
+            if (TxtEmail.Text == "" )
+            {
+                LblEmailObligatorio.Visible = true;
+            }
+            else
+            {
+                LblEmailObligatorio.Visible = false;
             }
         }
     }

@@ -48,7 +48,7 @@ namespace AppPrincipal
                     car.idCargo = int.Parse(TxtCodigo.Text);
                     car.descripcionCargo = TxtDescripcion.Text;
 
-                    ser.EliminarCargo(car);
+                    ser.CrearCargo(car);
                     LimpiarPantalla();
                 }
             }
