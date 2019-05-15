@@ -14,6 +14,7 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorUsuario : Form
     {
+        Validaciones val = new Validaciones();
         public FormularioMantenedorUsuario()
         {
             InitializeComponent();
@@ -75,11 +76,7 @@ namespace AppPrincipal
                     MessageBox.Show("INGRESE UNA DIRECCION VALIDA");
                     LblDireccionObligatoria.Visible = true;
                 }
-                else if (TxtEmail.Text == "")
-                {
-                    LblEmailObligatorio.Visible = true;
-                }
-                else if (val.ValidarEmail(TxtEmail.Text))
+                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
                 {
                     MessageBox.Show("INGRESE UN EMAIL VALIDO");
                     LblEmailObligatorio.Visible = true;
@@ -90,9 +87,9 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    empl.idEmpleado = 1;
-                    empl.idCargo = 1;
-                    empl.idPersona = 2;
+                    //empl.idEmpleado = 1;
+                    //empl.idCargo = 1;
+                    //empl.idPersona = 2;
                     empl.rutPersona = TxtRut.Text;
                     empl.nombreCompletoPersona = TxtNombre.Text;
                     empl.direccionPersona = TxtDireccion.Text;
@@ -169,17 +166,18 @@ namespace AppPrincipal
             }
         }
 
-        private void LblEmailObligatorio_Leave(object sender, EventArgs e)
+        private void TxtEmail_Leave(object sender, EventArgs e)
         {
-            Validaciones val = new Validaciones();
-
-            if (TxtEmail.Text == "" )
+            if (val.ValidarEmail(TxtEmail.Text))
             {
                 LblEmailObligatorio.Visible = true;
             }
             else
             {
                 LblEmailObligatorio.Visible = false;
+                MessageBox.Show("INGRESE UNA DIRECCION DE CORREO ELECTRONICO VALIDA");
+                TxtEmail.SelectAll();
+                TxtEmail.Focus();
             }
         }
     }

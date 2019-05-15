@@ -225,6 +225,7 @@
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(431, 20);
             this.TxtEmail.TabIndex = 17;
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // LblEmailObligatorio
             // 
@@ -237,7 +238,6 @@
             this.LblEmailObligatorio.TabIndex = 18;
             this.LblEmailObligatorio.Text = "*";
             this.LblEmailObligatorio.Visible = false;
-            this.LblEmailObligatorio.Leave += new System.EventHandler(this.LblEmailObligatorio_Leave);
             // 
             // LblTelefono1
             // 

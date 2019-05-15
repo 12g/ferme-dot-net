@@ -78,15 +78,15 @@ namespace AppPrincipal
                     Cliente cli = new Cliente();
                     ServicioCliente serv = new ServicioCliente();
 
-                    //cli.idCliente = 3;
-                    //cli.id_persona = 3;
-                    cli.rut = TxtRutCliente.Text;
-                    cli.nombre_completo = TxtNombre.Text;
-                    cli.direccion = TxtDireccion.Text;
-                    cli.email = TxtEmail.Text;
-                    cli.fono1 = int.Parse(TxtTelefeno1.Text);
-                    cli.fono2 = int.Parse(TxtTelefono2.Text);
-                    cli.fono3 = int.Parse(TxtTelefono3.Text);
+                    //cli.idCliente = null;
+                    //cli.idPersona = null;
+                    cli.rutPersona = TxtRutCliente.Text;
+                    cli.nombreCompletoPersona = TxtNombre.Text;
+                    cli.direccionPersona = TxtDireccion.Text;
+                    cli.emailPersona = TxtEmail.Text;
+                    cli.fonoPersona1 = int.Parse(TxtTelefeno1.Text);
+                    cli.fonoPersona2 = int.Parse(TxtTelefono2.Text);
+                    cli.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     serv.CrearCliente(cli);
 
