@@ -141,6 +141,7 @@
             this.TxtTelefeno1.Name = "TxtTelefeno1";
             this.TxtTelefeno1.Size = new System.Drawing.Size(130, 20);
             this.TxtTelefeno1.TabIndex = 12;
+            this.TxtTelefeno1.Text = "0";
             // 
             // LblTelefono1
             // 
@@ -168,6 +169,7 @@
             this.TxtTelefono2.Name = "TxtTelefono2";
             this.TxtTelefono2.Size = new System.Drawing.Size(129, 20);
             this.TxtTelefono2.TabIndex = 15;
+            this.TxtTelefono2.Text = "0";
             // 
             // TxtTelefono3
             // 
@@ -175,6 +177,7 @@
             this.TxtTelefono3.Name = "TxtTelefono3";
             this.TxtTelefono3.Size = new System.Drawing.Size(119, 20);
             this.TxtTelefono3.TabIndex = 16;
+            this.TxtTelefono3.Text = "0";
             // 
             // LblTelefono3
             // 

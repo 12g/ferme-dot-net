@@ -22,6 +22,7 @@ namespace AppPrincipal
         public FormularioMantenedorCliente()
         {
             InitializeComponent();
+          
         }
 
         //BOTON CANCELAR 
@@ -44,6 +45,8 @@ namespace AppPrincipal
                 MessageBox.Show("Error al cerrar Aplicacion");
             }
         }
+
+
 
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -68,10 +71,14 @@ namespace AppPrincipal
                     MessageBox.Show("DIRECCION NO PUEDE ESTAR EN BLANCO");
                     lblMensajeDireccion.Visible = true;
                 }
-                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
+                else if (TxtEmail.Text =="" || val.IsNumeric(TxtEmail.Text))
                 {
                     MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
                     lblMensajeEmail.Visible = true;
+                }
+                else if ( !val.IsNumeric(TxtTelefeno1.Text) )
+                {
+                    MessageBox.Show("ERROR EN CAMPO TELEFONO 1");
                 }
                 else
                 {
