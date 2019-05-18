@@ -22,7 +22,6 @@ namespace AppPrincipal
         public FormularioMantenedorCliente()
         {
             InitializeComponent();
-          
         }
 
         //BOTON CANCELAR 
@@ -51,6 +50,7 @@ namespace AppPrincipal
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (TxtRutCliente.Text == "")
@@ -71,22 +71,28 @@ namespace AppPrincipal
                     MessageBox.Show("DIRECCION NO PUEDE ESTAR EN BLANCO");
                     lblMensajeDireccion.Visible = true;
                 }
-                else if (TxtEmail.Text =="" || val.IsNumeric(TxtEmail.Text))
+                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
                 {
                     MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
                     lblMensajeEmail.Visible = true;
                 }
-                else if ( !val.IsNumeric(TxtTelefeno1.Text) )
+                else if (!val.IsNumeric(TxtTelefeno1.Text))
                 {
-                    MessageBox.Show("ERROR EN CAMPO TELEFONO 1");
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 1");
+                }
+                else if (!val.IsNumeric(TxtTelefono2.Text))
+                {
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 2");
+                }
+                else if (!val.IsNumeric(TxtTelefono3.Text))
+                {
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
                 }
                 else
                 {
                     Cliente cli = new Cliente();
                     ServicioCliente serv = new ServicioCliente();
 
-                    //cli.idCliente = null;
-                    //cli.idPersona = null;
                     cli.rutPersona = TxtRutCliente.Text;
                     cli.nombreCompletoPersona = TxtNombre.Text;
                     cli.direccionPersona = TxtDireccion.Text;
@@ -183,11 +189,39 @@ namespace AppPrincipal
             else
             {
                 lblMensajeEmail.Visible = true;
-                MessageBox.Show("INGRESE UNA DIRECCION DE CORREO ELECTRONICO VALIDA");
                 TxtEmail.SelectAll();
-                TxtEmail.Focus();
+
             }
 
+
+
+        }
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 1 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefeno1_Leave(object sender, EventArgs e)
+        {
+             if ( !val.IsNumeric(TxtTelefeno1.Text) )
+                {
+                    TxtTelefeno1.Text = "0";
+                }
+        }
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 2 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefono2_Leave(object sender, EventArgs e)
+        {
+            if (!val.IsNumeric(TxtTelefono2.Text))
+            {
+                TxtTelefono2.Text = "0";
+            }
+        }
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 3 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefono3_Leave(object sender, EventArgs e)
+        {
+            if (!val.IsNumeric(TxtTelefono3.Text))
+            {
+                TxtTelefono3.Text = "0";
+            }
         }
     }
 }
