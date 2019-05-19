@@ -99,6 +99,7 @@
             // 
             // LblGrupoN1
             // 
+            this.LblGrupoN1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LblGrupoN1.AutoSize = true;
             this.LblGrupoN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblGrupoN1.ForeColor = System.Drawing.Color.White;

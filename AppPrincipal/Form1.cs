@@ -21,13 +21,15 @@ namespace AppPrincipal
 
         //METODO PARA ARRASTRAR EL FORMULARIO
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void SendMessage(System.IntPtr hwnd,int wmsg,int wparam,int lparam);
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
         //SE LLAMAN LAS FUNCIONES QUE SE CREARON EN LAS LIBRERIA
         private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
-            
+            ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
@@ -36,7 +38,7 @@ namespace AppPrincipal
         {
             if (PanelMenuVertical.Width == 250)
             {
-                PanelMenuVertical.Width = 76;
+                PanelMenuVertical.Width = 74;
             }
             else
             {

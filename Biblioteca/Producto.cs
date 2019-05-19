@@ -8,15 +8,16 @@ namespace Biblioteca
 {
     public class Producto
     {
+        public int idTipoProducto { get; set; }
         public int idProducto { get; set; }
+
         public string codigoProducto { get; set; }
         public string nombreProducto { get; set; }
         public string descripcionProducto { get; set; }
-        public int precioProducto { get; set; }
         public int stockActualProducto { get; set; }
         public int stockCriticoProducto { get; set; }
-        public int idTipoProducto { get; set; }
         public string nombreTipoProducto { get; set; }
+        public int precio { get; set; }
 
     }
 }

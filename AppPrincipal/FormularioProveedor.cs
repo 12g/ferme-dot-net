@@ -45,7 +45,7 @@ namespace AppPrincipal
                 {
                     fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[0].Value.ToString();
                     fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
-                    fmp.TxtTelefono.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
+                    fmp.TxtTelefono1.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
                   
                     fmp.ShowDialog();
                 }

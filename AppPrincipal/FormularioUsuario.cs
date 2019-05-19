@@ -35,5 +35,11 @@ namespace AppPrincipal
             FormularioMantenedorCargo car = new FormularioMantenedorCargo();
             car.ShowDialog();
         }
+
+        private void BtnCrearEmpleado_Click(object sender, EventArgs e)
+        {
+            FormularioMantenedorEmpleado fme = new FormularioMantenedorEmpleado();
+            fme.ShowDialog();
+        }
     }
 }

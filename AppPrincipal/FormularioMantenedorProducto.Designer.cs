@@ -36,10 +36,6 @@
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.LblTipoProducto = new System.Windows.Forms.Label();
             this.CbTipoproducto = new System.Windows.Forms.ComboBox();
-            this.LblFamilia = new System.Windows.Forms.Label();
-            this.TxtFamilia = new System.Windows.Forms.TextBox();
-            this.LblProveedor = new System.Windows.Forms.Label();
-            this.CbProveedor = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.LblStockActual = new System.Windows.Forms.Label();
@@ -52,11 +48,10 @@
             this.TxtStockCritico = new System.Windows.Forms.TextBox();
             this.LblCodigoObligatorio = new System.Windows.Forms.Label();
             this.LblNombreProObligatorio = new System.Windows.Forms.Label();
-            this.LblFamiliaObligatoria = new System.Windows.Forms.Label();
-            this.LblProveedorObligatorio = new System.Windows.Forms.Label();
             this.LblTipoProObligatorio = new System.Windows.Forms.Label();
             this.LblPrecioObligatorio = new System.Windows.Forms.Label();
             this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -121,47 +116,11 @@
             this.CbTipoproducto.Size = new System.Drawing.Size(156, 21);
             this.CbTipoproducto.TabIndex = 6;
             // 
-            // LblFamilia
-            // 
-            this.LblFamilia.AutoSize = true;
-            this.LblFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFamilia.Location = new System.Drawing.Point(240, 120);
-            this.LblFamilia.Name = "LblFamilia";
-            this.LblFamilia.Size = new System.Drawing.Size(46, 13);
-            this.LblFamilia.TabIndex = 7;
-            this.LblFamilia.Text = "Familia";
-            // 
-            // TxtFamilia
-            // 
-            this.TxtFamilia.Location = new System.Drawing.Point(243, 137);
-            this.TxtFamilia.Name = "TxtFamilia";
-            this.TxtFamilia.Size = new System.Drawing.Size(261, 20);
-            this.TxtFamilia.TabIndex = 8;
-            // 
-            // LblProveedor
-            // 
-            this.LblProveedor.AutoSize = true;
-            this.LblProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblProveedor.Location = new System.Drawing.Point(24, 177);
-            this.LblProveedor.Name = "LblProveedor";
-            this.LblProveedor.Size = new System.Drawing.Size(65, 13);
-            this.LblProveedor.TabIndex = 9;
-            this.LblProveedor.Text = "Proveedor";
-            // 
-            // CbProveedor
-            // 
-            this.CbProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CbProveedor.FormattingEnabled = true;
-            this.CbProveedor.Location = new System.Drawing.Point(27, 194);
-            this.CbProveedor.Name = "CbProveedor";
-            this.CbProveedor.Size = new System.Drawing.Size(477, 21);
-            this.CbProveedor.TabIndex = 10;
-            // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(27, 240);
+            this.lblPrecio.Location = new System.Drawing.Point(27, 183);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(43, 13);
             this.lblPrecio.TabIndex = 11;
@@ -171,16 +130,17 @@
             // 
             this.TxtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPrecio.Location = new System.Drawing.Point(27, 260);
+            this.TxtPrecio.Location = new System.Drawing.Point(45, 196);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(156, 20);
+            this.TxtPrecio.Size = new System.Drawing.Size(138, 20);
             this.TxtPrecio.TabIndex = 12;
+            this.TxtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio_KeyPress);
             // 
             // LblStockActual
             // 
             this.LblStockActual.AutoSize = true;
             this.LblStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblStockActual.Location = new System.Drawing.Point(27, 304);
+            this.LblStockActual.Location = new System.Drawing.Point(27, 244);
             this.LblStockActual.Name = "LblStockActual";
             this.LblStockActual.Size = new System.Drawing.Size(80, 13);
             this.LblStockActual.TabIndex = 13;
@@ -190,7 +150,7 @@
             // 
             this.LblStockCritico.AutoSize = true;
             this.LblStockCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblStockCritico.Location = new System.Drawing.Point(27, 359);
+            this.LblStockCritico.Location = new System.Drawing.Point(27, 298);
             this.LblStockCritico.Name = "LblStockCritico";
             this.LblStockCritico.Size = new System.Drawing.Size(80, 13);
             this.LblStockCritico.TabIndex = 15;
@@ -199,17 +159,17 @@
             // TxtDescripcion
             // 
             this.TxtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(243, 260);
+            this.TxtDescripcion.Location = new System.Drawing.Point(243, 138);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(261, 136);
+            this.TxtDescripcion.Size = new System.Drawing.Size(261, 197);
             this.TxtDescripcion.TabIndex = 17;
             // 
             // LblDescripcion
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcion.Location = new System.Drawing.Point(243, 239);
+            this.LblDescripcion.Location = new System.Drawing.Point(240, 121);
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(74, 13);
             this.LblDescripcion.TabIndex = 18;
@@ -219,18 +179,19 @@
             // 
             this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(96, 427);
+            this.BtnGuardar.Location = new System.Drawing.Point(96, 366);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(135, 41);
             this.BtnGuardar.TabIndex = 19;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(302, 427);
+            this.BtnCancelar.Location = new System.Drawing.Point(302, 366);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(121, 41);
             this.BtnCancelar.TabIndex = 20;
@@ -242,19 +203,21 @@
             // 
             this.TxtStockActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtStockActual.Location = new System.Drawing.Point(27, 321);
+            this.TxtStockActual.Location = new System.Drawing.Point(27, 260);
             this.TxtStockActual.Name = "TxtStockActual";
             this.TxtStockActual.Size = new System.Drawing.Size(156, 20);
             this.TxtStockActual.TabIndex = 21;
+            this.TxtStockActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtStockActual_KeyPress);
             // 
             // TxtStockCritico
             // 
             this.TxtStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtStockCritico.Location = new System.Drawing.Point(30, 375);
+            this.TxtStockCritico.Location = new System.Drawing.Point(30, 314);
             this.TxtStockCritico.Name = "TxtStockCritico";
             this.TxtStockCritico.Size = new System.Drawing.Size(153, 20);
             this.TxtStockCritico.TabIndex = 22;
+            this.TxtStockCritico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtStockCritico_KeyPress);
             // 
             // LblCodigoObligatorio
             // 
@@ -279,30 +242,6 @@
             this.LblNombreProObligatorio.TabIndex = 24;
             this.LblNombreProObligatorio.Text = "*";
             this.LblNombreProObligatorio.Visible = false;
-            // 
-            // LblFamiliaObligatoria
-            // 
-            this.LblFamiliaObligatoria.AutoSize = true;
-            this.LblFamiliaObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFamiliaObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblFamiliaObligatoria.Location = new System.Drawing.Point(508, 138);
-            this.LblFamiliaObligatoria.Name = "LblFamiliaObligatoria";
-            this.LblFamiliaObligatoria.Size = new System.Drawing.Size(14, 16);
-            this.LblFamiliaObligatoria.TabIndex = 25;
-            this.LblFamiliaObligatoria.Text = "*";
-            this.LblFamiliaObligatoria.Visible = false;
-            // 
-            // LblProveedorObligatorio
-            // 
-            this.LblProveedorObligatorio.AutoSize = true;
-            this.LblProveedorObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblProveedorObligatorio.ForeColor = System.Drawing.Color.Red;
-            this.LblProveedorObligatorio.Location = new System.Drawing.Point(510, 199);
-            this.LblProveedorObligatorio.Name = "LblProveedorObligatorio";
-            this.LblProveedorObligatorio.Size = new System.Drawing.Size(14, 16);
-            this.LblProveedorObligatorio.TabIndex = 26;
-            this.LblProveedorObligatorio.Text = "*";
-            this.LblProveedorObligatorio.Visible = false;
             // 
             // LblTipoProObligatorio
             // 
@@ -333,24 +272,33 @@
             this.LblDescripcionObligatoria.AutoSize = true;
             this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(508, 261);
+            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(510, 137);
             this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
             this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
             this.LblDescripcionObligatoria.TabIndex = 29;
             this.LblDescripcionObligatoria.Text = "*";
             this.LblDescripcionObligatoria.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 199);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "$";
+            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 497);
+            this.ClientSize = new System.Drawing.Size(542, 436);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LblDescripcionObligatoria);
             this.Controls.Add(this.LblPrecioObligatorio);
             this.Controls.Add(this.LblTipoProObligatorio);
-            this.Controls.Add(this.LblProveedorObligatorio);
-            this.Controls.Add(this.LblFamiliaObligatoria);
             this.Controls.Add(this.LblNombreProObligatorio);
             this.Controls.Add(this.LblCodigoObligatorio);
             this.Controls.Add(this.TxtStockCritico);
@@ -363,10 +311,6 @@
             this.Controls.Add(this.LblStockActual);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.CbProveedor);
-            this.Controls.Add(this.LblProveedor);
-            this.Controls.Add(this.TxtFamilia);
-            this.Controls.Add(this.LblFamilia);
             this.Controls.Add(this.CbTipoproducto);
             this.Controls.Add(this.LblTipoProducto);
             this.Controls.Add(this.TxtNombreProducto);
@@ -391,8 +335,6 @@
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label LblNombreProducto;
         private System.Windows.Forms.Label LblTipoProducto;
-        private System.Windows.Forms.Label LblFamilia;
-        private System.Windows.Forms.Label LblProveedor;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label LblStockActual;
         private System.Windows.Forms.Label LblStockCritico;
@@ -402,18 +344,15 @@
         public System.Windows.Forms.TextBox TxtCodigo;
         public System.Windows.Forms.TextBox TxtNombreProducto;
         public System.Windows.Forms.ComboBox CbTipoproducto;
-        public System.Windows.Forms.TextBox TxtFamilia;
-        public System.Windows.Forms.ComboBox CbProveedor;
         public System.Windows.Forms.TextBox TxtPrecio;
         public System.Windows.Forms.TextBox TxtDescripcion;
         public System.Windows.Forms.TextBox TxtStockActual;
         public System.Windows.Forms.TextBox TxtStockCritico;
         private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblNombreProObligatorio;
-        private System.Windows.Forms.Label LblFamiliaObligatoria;
-        private System.Windows.Forms.Label LblProveedorObligatorio;
         private System.Windows.Forms.Label LblTipoProObligatorio;
         private System.Windows.Forms.Label LblPrecioObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
+        private System.Windows.Forms.Label label1;
     }
 }

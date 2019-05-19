@@ -78,6 +78,7 @@
             this.TxtRutCliente.Name = "TxtRutCliente";
             this.TxtRutCliente.Size = new System.Drawing.Size(197, 20);
             this.TxtRutCliente.TabIndex = 3;
+            this.TxtRutCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRutCliente_KeyPress);
             this.TxtRutCliente.Leave += new System.EventHandler(this.TxtRutCliente_Leave);
             // 
             // LblNombre

@@ -41,6 +41,18 @@ namespace AppPrincipal
             }
         }
 
+        //LIMPIAR
+        private void Limpiar()
+        {
+            TxtRut.Text = "";
+            TxtRazonSocial.Text = "";
+            TxtDireccion.Text = "";
+            TxtEmail.Text = "";
+            TxtTelefono1.Text = "0";
+            TxtTelefono2.Text = "0";
+            TxtTelefono3.Text = "0";
+        }
+
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -62,45 +74,51 @@ namespace AppPrincipal
                 {
                     LblRazonSocialObligatorio.Visible = true;
                     MessageBox.Show("CAMPO RAZON SOCIAL NO PUEDE ESTAR VACIO");
-                    LblTelefonoObligatorio.Visible = true;
                 }
                 else if (TxtRazonSocial.Text.Length <= 4)
                 {
                     MessageBox.Show("RAZON SOCIAL DEBE TENER MINIMO 4 LETRAS");
-                    LblTelefonoObligatorio.Visible = true;
+                    LblRazonSocialObligatorio.Visible = true;
                 }
-                else if (TxtTelefono.Text == "")
+                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
                 {
-                    MessageBox.Show("CAMPO TELEFONO NO PUEDE ESTAR VACIO");
-                    LblTelefonoObligatorio.Visible = true;
+                    MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
+                    LblEmailObligatorio.Visible = true;
                 }
-                else if (TxtTelefono.Text.Length <=7 ||  TxtTelefono.Text.Length >=10)
+                else if (val.ValidarEmail(TxtEmail.Text) == false)
                 {
-                    MessageBox.Show("EL TELEFONO DEBE TENER MINIMO UN LARGO DE 7 Y MAXIMO 10 DIGITOS");
-                    LblTelefonoObligatorio.Visible = true;
+                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
+                }
+                else if (!val.IsNumeric(TxtTelefono1.Text) || TxtTelefono1.TextLength >= 10)
+                {
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 1");
+                }
+                else if (!val.IsNumeric(TxtTelefono2.Text) || TxtTelefono2.TextLength >= 10)
+                {
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 2");
+                }
+                else if (!val.IsNumeric(TxtTelefono3.Text) || TxtTelefono3.TextLength >= 10)
+                {
+                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
                 }
                 else
                 {
-                    
+
                     Proveedor pro = new Proveedor();
                     ServicioProveedores sp = new ServicioProveedores();
 
-                     //pro.idPersona = 5;
-                     pro.idProveedor = 5;
-                     pro.idRubro = 1;
-                     //pro.rutPersona = TxtRut.Text;
-                     //pro.nombreCompletoPersona = TxtRazonSocial.Text;
-                     //pro.fonoPersona1 = int.Parse(TxtTelefono.Text);
-                     //pro.razonSocialProveedor = TxtRazonSocial.Text;
-                     //pro.fonoPersona2 = int.Parse(TxtTelefono.Text);
-                     //pro.fonoPersona3 = int.Parse(TxtTelefono.Text);
-                     pro.razonSocialProveedor = TxtRazonSocial.Text;
-                     //pro.emailPersona = TxtEmail.Text;
-                     //pro.direccionPersona = TxtDireccion.Text;
+                    pro.idRubro = CbxRubro.SelectedIndex;
+                    pro.rutPersona = TxtRut.Text;
+                    pro.razonSocialProveedor = TxtRazonSocial.Text;
+                    pro.nombreCompletoPersona = TxtRazonSocial.Text;
+                    pro.direccionPersona = TxtDireccion.Text;
+                    pro.emailPersona = TxtEmail.Text;
+                    pro.fonoPersona1 = int.Parse(TxtTelefono1.Text);
+                    pro.fonoPersona2 = int.Parse(TxtTelefono2.Text);
+                    pro.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
-                    
-
-                     sp.CrearProveedor(pro);
+                    sp.CrearProveedor(pro);
+                    Limpiar();
                 }
 
             }
@@ -114,28 +132,39 @@ namespace AppPrincipal
         //BUSCA EL METODO QUE VALIDA EL RUT Y LE DA UN FORMATO
         private void TxtRut_Leave(object sender, EventArgs e)
         {
-            Validaciones val = new Validaciones();
-            bool respuesta = false;
-            string rut = TxtRut.Text;
-            TxtRut.Text = val.formatoRut(rut);
-            rut = TxtRut.Text;
-            respuesta = val.validarRut(rut);
+            try
+            {
+                Validaciones val = new Validaciones();
+                bool respuesta = false;
+                string rut = TxtRut.Text;
+                TxtRut.Text = val.formatoRut(rut);
+                rut = TxtRut.Text;
+                respuesta = val.validarRut(rut);
 
-            if (respuesta == false)
-            {
-                TxtRut.Focus();
-                TxtRut.BackColor = Color.Red;
-                MessageBox.Show("Rut Malo");
+                if (respuesta == false)
+                {
+                    TxtRut.Focus();
+                    TxtRut.BackColor = Color.Red;
+                    MessageBox.Show("Rut Malo");
+                }
+                else
+                {
+                    TxtRut.ForeColor = Color.Black;
+                    TxtRut.BackColor = Color.White;
+                    LblRutObligatorio.Visible = false;
+                    // MessageBox.Show("Rut OK");
+                }
             }
-            else
+            catch (Exception)
             {
-                TxtRut.ForeColor = Color.Black;
-                TxtRut.BackColor = Color.White;
-                LblRutObligatorio.Visible = false;
-                // MessageBox.Show("Rut OK");
+
+                MessageBox.Show("INGRESE UN RUT VALIDO");
             }
+           
         }
 
+
+        //APARECE EL SIGNO * SI LA RAZON SOCIAL ESTA EN BLANCO
         private void LblRazonSocialObligatorio_Leave(object sender, EventArgs e)
         {
              if (TxtRazonSocial.Text == "" || TxtRazonSocial.Text.Length <= 4)
@@ -154,22 +183,83 @@ namespace AppPrincipal
             val.SoloNumero(e);
         }
 
+
+        //SE VA A BUSCAR EL METODO SOLONUMERO EN TEXTBOX TELEFONO
         private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validaciones val = new Validaciones();
             val.SoloNumero(e);
         }
 
-        private void TxtTelefono_Leave(object sender, EventArgs e)
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 1 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefono1_Leave(object sender, EventArgs e)
         {
-            if (TxtTelefono.Text == "" || TxtTelefono.Text.Length <= 7 || TxtTelefono.Text.Length >= 10)
+            Validaciones val = new Validaciones();
+
+            if (!val.IsNumeric(TxtTelefono1.Text))
             {
-                LblTelefonoObligatorio.Visible = true;
+                TxtTelefono1.Text = "0";
             }
-            else 
+        }
+
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 2 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefono2_Leave(object sender, EventArgs e)
+        {
+            Validaciones val = new Validaciones();
+
+            if (!val.IsNumeric(TxtTelefono2.Text))
             {
-                LblTelefonoObligatorio.Visible = false;
+                TxtTelefono2.Text = "0";
             }
+        }
+
+
+
+        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 3 NUNCA ESTE VACIO HE INICIE CON UN CERO
+        private void TxtTelefono3_Leave(object sender, EventArgs e)
+        {
+            Validaciones val = new Validaciones();
+
+            if (!val.IsNumeric(TxtTelefono3.Text))
+            {
+                TxtTelefono3.Text = "0";
+            }
+        }
+
+
+        
+        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
+        //EVENTO LEAVE PARA VALIDAR EL FORMATO DEL CORREO
+        private void TxtEmail_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Validaciones val = new Validaciones();
+
+                if (val.ValidarEmail(TxtEmail.Text) )
+                {
+                    LblEmailObligatorio.Visible = false;
+                }
+                else
+                {
+                    LblEmailObligatorio.Visible = true;
+                    TxtEmail.SelectAll();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("INGRESE UN EMAIL VALIDO");
+            }
+        }
+
+        //SE VA A BUSCAR EL METODO SOLONUMERO EN TEXTBOX TELEFONO
+        private void TxtTelefono2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones val = new Validaciones();
+            val.SoloNumero(e);
         }
     }
 }

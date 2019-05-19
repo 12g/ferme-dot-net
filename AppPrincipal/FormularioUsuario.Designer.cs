@@ -35,8 +35,9 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
-            this.BtnCrear = new System.Windows.Forms.Button();
+            this.BtnCrearUsuario = new System.Windows.Forms.Button();
             this.BtnCargo = new System.Windows.Forms.Button();
+            this.BtnCrearEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,17 +116,17 @@
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
             // 
-            // BtnCrear
+            // BtnCrearUsuario
             // 
-            this.BtnCrear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrear.Location = new System.Drawing.Point(890, 82);
-            this.BtnCrear.Name = "BtnCrear";
-            this.BtnCrear.Size = new System.Drawing.Size(116, 39);
-            this.BtnCrear.TabIndex = 10;
-            this.BtnCrear.Text = "Nuevo";
-            this.BtnCrear.UseVisualStyleBackColor = true;
-            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
+            this.BtnCrearUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCrearUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrearUsuario.Location = new System.Drawing.Point(890, 82);
+            this.BtnCrearUsuario.Name = "BtnCrearUsuario";
+            this.BtnCrearUsuario.Size = new System.Drawing.Size(116, 39);
+            this.BtnCrearUsuario.TabIndex = 10;
+            this.BtnCrearUsuario.Text = "Usuario";
+            this.BtnCrearUsuario.UseVisualStyleBackColor = true;
+            this.BtnCrearUsuario.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnCargo
             // 
@@ -139,15 +140,28 @@
             this.BtnCargo.UseVisualStyleBackColor = true;
             this.BtnCargo.Click += new System.EventHandler(this.BtnCargo_Click);
             // 
+            // BtnCrearEmpleado
+            // 
+            this.BtnCrearEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCrearEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrearEmpleado.Location = new System.Drawing.Point(890, 328);
+            this.BtnCrearEmpleado.Name = "BtnCrearEmpleado";
+            this.BtnCrearEmpleado.Size = new System.Drawing.Size(116, 39);
+            this.BtnCrearEmpleado.TabIndex = 14;
+            this.BtnCrearEmpleado.Text = "Empleados";
+            this.BtnCrearEmpleado.UseVisualStyleBackColor = true;
+            this.BtnCrearEmpleado.Click += new System.EventHandler(this.BtnCrearEmpleado_Click);
+            // 
             // FormularioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 524);
+            this.Controls.Add(this.BtnCrearEmpleado);
             this.Controls.Add(this.BtnCargo);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
-            this.Controls.Add(this.BtnCrear);
+            this.Controls.Add(this.BtnCrearUsuario);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.DGlistadoUsuario);
             this.Controls.Add(this.TxtBuscar);
@@ -170,7 +184,8 @@
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnEditar;
-        private System.Windows.Forms.Button BtnCrear;
+        private System.Windows.Forms.Button BtnCrearUsuario;
         private System.Windows.Forms.Button BtnCargo;
+        private System.Windows.Forms.Button BtnCrearEmpleado;
     }
 }

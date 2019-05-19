@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
 using ServiciosConexionFerme;
+using System.Text.RegularExpressions;
 
 namespace AppPrincipal
 {
@@ -45,7 +46,16 @@ namespace AppPrincipal
             }
         }
 
-
+        private void Limpiar()
+        {
+            TxtRutCliente.Text = "";
+            TxtNombre.Text = "";
+            TxtDireccion.Text = "";
+            TxtEmail.Text = "";
+            TxtTelefeno1.Text = "0";
+            TxtTelefono2.Text = "0";
+            TxtTelefono3.Text = "0";
+        }
 
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -56,10 +66,12 @@ namespace AppPrincipal
                 if (TxtRutCliente.Text == "")
                 {
                     LblRutObligatorio.Visible = true;
+                    MessageBox.Show("CAMPO RUT NO PUEDE ESTAR VACIO");
                 }
                 else if (TxtRutCliente.Text.Length <= 7 || TxtRutCliente.Text.Length >= 13)
                 {
-                    MessageBox.Show("EL RUT DEBE TENER MINIMO UN LARGO DE 7 DIGITOS");
+                    MessageBox.Show("INGRESE UN RUT VALIDO");
+                    LblRutObligatorio.Visible = true;
                 }
                 else if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
                 {
@@ -76,15 +88,19 @@ namespace AppPrincipal
                     MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
                     lblMensajeEmail.Visible = true;
                 }
-                else if (!val.IsNumeric(TxtTelefeno1.Text))
+                else if (val.ValidarEmail(TxtEmail.Text) == false)
+                {
+                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
+                }
+                else if (!val.IsNumeric(TxtTelefeno1.Text) || TxtTelefeno1.TextLength >= 10)
                 {
                     MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 1");
                 }
-                else if (!val.IsNumeric(TxtTelefono2.Text))
+                else if (!val.IsNumeric(TxtTelefono2.Text) || TxtTelefono2.TextLength >= 10)
                 {
                     MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 2");
                 }
-                else if (!val.IsNumeric(TxtTelefono3.Text))
+                else if (!val.IsNumeric(TxtTelefono3.Text) || TxtTelefono3.TextLength >= 10)
                 {
                     MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
                 }
@@ -102,7 +118,7 @@ namespace AppPrincipal
                     cli.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     serv.CrearCliente(cli);
-
+                    Limpiar();
                 }
             }
             catch (Exception)
@@ -115,25 +131,34 @@ namespace AppPrincipal
         //CASILLA TEXTBOX RUT CLIENTE
         private void TxtRutCliente_Leave(object sender, EventArgs e)
         {
-            bool respuesta = false;
-            string rut = TxtRutCliente.Text;
-            TxtRutCliente.Text = val.formatoRut(rut);
-            rut = TxtRutCliente.Text;
-            respuesta = val.validarRut(rut);
+            try
+            {
+                Validaciones val = new Validaciones();
+                bool respuesta = false;
+                string rut = TxtRutCliente.Text;
+                TxtRutCliente.Text = val.formatoRut(rut);
+                rut = TxtRutCliente.Text;
+                respuesta = val.validarRut(rut);
 
-            if (respuesta == false)
-            {
-                TxtRutCliente.Focus();
-                TxtRutCliente.BackColor = Color.Red;
-                MessageBox.Show("Rut Malo");
+                if (respuesta == false)
+                {
+                    TxtRutCliente.Focus();
+                    TxtRutCliente.BackColor = Color.Red;
+                    MessageBox.Show("Rut Malo");
+                }
+                else
+                {
+                    TxtRutCliente.ForeColor = Color.Black;
+                    TxtRutCliente.BackColor = Color.White;
+                    LblRutObligatorio.Visible = false;
+                    // MessageBox.Show("Rut OK");
+                }
             }
-            else
+            catch (Exception)
             {
-                TxtRutCliente.ForeColor = Color.Black;
-                TxtRutCliente.BackColor = Color.White; 
-                LblRutObligatorio.Visible = false;
-                // MessageBox.Show("Rut OK");
+                MessageBox.Show("INGRESE UN RUT VALIDO");
             }
+           
         }
 
         //SE VA A BUSCAR EL METODO SOLOLETRAS EN TEXTBOX NOMBRE
@@ -154,10 +179,12 @@ namespace AppPrincipal
             if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
             {
                 lblMensajeNombre.Visible = true;
+                TxtNombre.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
             }
             else
             {
                 lblMensajeNombre.Visible = false;
+                TxtNombre.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
             }
         }
 
@@ -168,10 +195,12 @@ namespace AppPrincipal
             if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
             {
                 lblMensajeDireccion.Visible = true;
+                TxtDireccion.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
             }
             else
             {
                 lblMensajeDireccion.Visible = false;
+                TxtDireccion.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
             }
         }
 
@@ -182,19 +211,23 @@ namespace AppPrincipal
         //EVENTO LEAVE PARA VALIDAR EL FORMATO DEL CORREO
         private void TxtEmail_Leave(object sender, EventArgs e)
         {
-            if (val.ValidarEmail(TxtEmail.Text))
+            try
             {
-                lblMensajeEmail.Visible = false;
+                if (val.ValidarEmail(TxtEmail.Text))
+                {
+                    lblMensajeEmail.Visible = false;
+                }
+                else
+                {
+                    lblMensajeEmail.Visible = true;
+                    TxtEmail.SelectAll();
+                }
             }
-            else
+            catch (Exception)
             {
-                lblMensajeEmail.Visible = true;
-                TxtEmail.SelectAll();
-
+                MessageBox.Show("INGRESE UN EMAIL VALIDO");
             }
-
-
-
+            
         }
 
         //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 1 NUNCA ESTE VACIO HE INICIE CON UN CERO
@@ -222,6 +255,12 @@ namespace AppPrincipal
             {
                 TxtTelefono3.Text = "0";
             }
+        }
+
+        private void TxtRutCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones val = new Validaciones();
+            val.SoloNumero(e);
         }
     }
 }

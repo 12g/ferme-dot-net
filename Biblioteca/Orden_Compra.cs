@@ -13,6 +13,6 @@ namespace Biblioteca
        public string estadoOrdenCompra { get; set; }
        public string fechaSolicitudOrdenCompra { get; set; }
        public string fechaRecepcionOrdenCompra { get; set; }
-        public List<DetalleOrdenCompra> detallesOrdenCompra { get; set; }
+        public int detallesOrdenCompra { get; set; }
     }
 }

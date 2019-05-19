@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+
 namespace Biblioteca
 {
    public class Validaciones
@@ -136,15 +137,15 @@ namespace Biblioteca
             }
         }
 
-        //SE USA EN EMAIL DE CLIENTE
-        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
-        public  bool ValidarEmail(string Email)
-        {
-            string Expression = "\\w+([-+,']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
 
-            if (Regex.IsMatch(Email,Expression))
+        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
+        public bool ValidarEmail(string email)
+        {
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
             {
-                if (Regex.Replace(Email, Expression, string.Empty).Length == 0)
+                if (Regex.Replace(email, expresion, string.Empty).Length == 0)
                 {
                     return true;
                 }
