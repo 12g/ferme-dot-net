@@ -17,6 +17,8 @@ namespace AppPrincipal
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
+            ServicioProducto serpr = new ServicioProducto();
+           
         }
 
 
@@ -104,7 +106,7 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("INGRESE UN STOCK CRITICO ");
                 }
-                else if (TxtStockCritico.Text.Length <= 1)
+                else if (TxtStockCritico.Text.Length <= 0)
                 {
                     MessageBox.Show("INGRESE UN STOCK CRITICO MAYOR A CERO O");
                 }
@@ -132,7 +134,7 @@ namespace AppPrincipal
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
                     pro.nombreTipoProducto = CbTipoproducto.SelectedText;
-                    pro.precio = int.Parse(TxtPrecio.Text);
+                    pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
                     pro.stockCriticoProducto = int.Parse(TxtStockCritico.Text);

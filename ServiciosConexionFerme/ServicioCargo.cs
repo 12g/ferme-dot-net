@@ -22,12 +22,12 @@ namespace ServiciosConexionFerme
             string responseAsync = responseMessage.Content.ReadAsStringAsync().Result;
             var jsonObj = JsonConvert.DeserializeObject<Cargo[]>(responseAsync);
 
-            foreach (var item in jsonObj)
-            {
-                Console.WriteLine(item.idCargo);
-            }
+            //foreach (var item in jsonObj)
+            //{
+            //     Console.WriteLine(item.idCargo);
+            //}
 
-            //Console.WriteLine(responseAsync);
+            Console.WriteLine(responseAsync);
         }
 
 
@@ -46,6 +46,8 @@ namespace ServiciosConexionFerme
             Console.WriteLine(resp);
         }
 
+
+        //ELIMINAR
         public void EliminarCargo(Cargo car)
         {
             var json = JsonConvert.SerializeObject(car);

@@ -64,15 +64,17 @@
             // 
             // DGlistadeproductos
             // 
+            this.DGlistadeproductos.AllowUserToAddRows = false;
+            this.DGlistadeproductos.AllowUserToDeleteRows = false;
             this.DGlistadeproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGlistadeproductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DGlistadeproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistadeproductos.GridColor = System.Drawing.Color.SteelBlue;
-            this.DGlistadeproductos.Location = new System.Drawing.Point(25, 89);
+            this.DGlistadeproductos.Location = new System.Drawing.Point(21, 89);
             this.DGlistadeproductos.Name = "DGlistadeproductos";
-            this.DGlistadeproductos.Size = new System.Drawing.Size(847, 418);
+            this.DGlistadeproductos.Size = new System.Drawing.Size(851, 418);
             this.DGlistadeproductos.TabIndex = 2;
             // 
             // BtnCrear

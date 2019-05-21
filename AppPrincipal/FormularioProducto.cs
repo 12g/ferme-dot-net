@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Biblioteca;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -15,6 +21,8 @@ namespace AppPrincipal
         public FormularioProducto()
         {
             InitializeComponent();
+            ServicioProducto ser = new ServicioProducto();
+            DGlistadeproductos.DataSource = ser.GetRESTData();
         }
 
         //BOTON QUE CIERRA EL FORMULARIO PRINCIPAL DE PRODUCTOS
@@ -38,13 +46,14 @@ namespace AppPrincipal
                 FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
                 if (DGlistadeproductos.SelectedRows.Count > 0)
                 {
-                    fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[0].Value.ToString();
-                    fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
-                    fmp.CbTipoproducto.SelectedText = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
-                    fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
-                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[6].Value.ToString();
-                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
-                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
+                    fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
+                    fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
+                    fmp.CbTipoproducto.SelectedText = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
+                  
+                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
+                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[6].Value.ToString();
+                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
+                    fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
 
                     fmp.ShowDialog();
                 }
@@ -59,7 +68,5 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL EDITAR LA FILA");
             }
         }
-
-      
     }
 }
