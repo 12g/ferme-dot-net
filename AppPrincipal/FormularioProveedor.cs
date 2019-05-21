@@ -21,6 +21,8 @@ namespace AppPrincipal
         public FormularioProveedor()
         {
             InitializeComponent();
+            ServicioProveedores serp = new ServicioProveedores();
+            DgMostrarListaProveedor.DataSource = serp.GetRESTData();
         }
 
         //BOTON PARA CERRAR EL FORMULARIO PRINCIAL DE PROVEEDORES

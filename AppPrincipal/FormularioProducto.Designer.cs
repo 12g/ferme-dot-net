@@ -74,6 +74,7 @@
             this.DGlistadeproductos.GridColor = System.Drawing.Color.SteelBlue;
             this.DGlistadeproductos.Location = new System.Drawing.Point(21, 89);
             this.DGlistadeproductos.Name = "DGlistadeproductos";
+            this.DGlistadeproductos.ReadOnly = true;
             this.DGlistadeproductos.Size = new System.Drawing.Size(851, 418);
             this.DGlistadeproductos.TabIndex = 2;
             // 

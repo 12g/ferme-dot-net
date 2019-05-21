@@ -69,6 +69,8 @@
             // 
             // DgMostrarListaProveedor
             // 
+            this.DgMostrarListaProveedor.AllowUserToAddRows = false;
+            this.DgMostrarListaProveedor.AllowUserToDeleteRows = false;
             this.DgMostrarListaProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -77,6 +79,7 @@
             this.DgMostrarListaProveedor.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.DgMostrarListaProveedor.Location = new System.Drawing.Point(17, 101);
             this.DgMostrarListaProveedor.Name = "DgMostrarListaProveedor";
+            this.DgMostrarListaProveedor.ReadOnly = true;
             this.DgMostrarListaProveedor.Size = new System.Drawing.Size(859, 410);
             this.DgMostrarListaProveedor.TabIndex = 3;
             // 

@@ -69,6 +69,7 @@ namespace ServiciosConexionFerme
         }
         */
 
+        //LISTAR PRODUCTO
         public JArray GetRESTData()
         {
             string uri = "http://localhost:8082/api/gestion/productos";
