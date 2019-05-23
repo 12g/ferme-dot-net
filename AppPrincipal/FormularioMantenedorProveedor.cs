@@ -17,6 +17,10 @@ namespace AppPrincipal
         public FormularioMantenedorProveedor()
         {
             InitializeComponent();
+            ServiciosRubro serR = new ServiciosRubro();
+            CbxRubro.DataSource = serR.ListarRubro();
+            CbxRubro.DisplayMember = "descripcionRubro";
+            CbxRubro.ValueMember = "idRubro";
         }
 
 

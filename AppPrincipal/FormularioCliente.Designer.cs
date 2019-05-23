@@ -62,6 +62,8 @@
             // 
             // DGMostrarListaCliente
             // 
+            this.DGMostrarListaCliente.AllowUserToAddRows = false;
+            this.DGMostrarListaCliente.AllowUserToDeleteRows = false;
             this.DGMostrarListaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -69,6 +71,7 @@
             this.DGMostrarListaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGMostrarListaCliente.Location = new System.Drawing.Point(17, 93);
             this.DGMostrarListaCliente.Name = "DGMostrarListaCliente";
+            this.DGMostrarListaCliente.ReadOnly = true;
             this.DGMostrarListaCliente.Size = new System.Drawing.Size(847, 374);
             this.DGMostrarListaCliente.TabIndex = 10;
             // 

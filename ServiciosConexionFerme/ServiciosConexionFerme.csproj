@@ -51,9 +51,11 @@
     <Compile Include="ServicioCargo.cs" />
     <Compile Include="ServicioCliente.cs" />
     <Compile Include="ServicioEmpleado.cs" />
+    <Compile Include="ServicioOrdenCompra.cs" />
     <Compile Include="ServicioProducto.cs" />
     <Compile Include="ServicioProveedores.cs" />
     <Compile Include="ServiciosRubro.cs" />
+    <Compile Include="ServicioTipoProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">

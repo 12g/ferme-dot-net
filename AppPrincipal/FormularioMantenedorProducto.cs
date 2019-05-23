@@ -18,7 +18,12 @@ namespace AppPrincipal
         {
             InitializeComponent();
             ServicioProducto serpr = new ServicioProducto();
-           
+            ServicioTipoProducto sertp = new ServicioTipoProducto();
+            TipoProducto tp = new TipoProducto();
+            CbTipoproducto.DataSource = sertp.ListaTipoProducto();
+            CbTipoproducto.DisplayMember = "nombreTipoProducto";
+            CbTipoproducto.ValueMember = "idTipoProducto";
+
         }
 
 
@@ -66,7 +71,7 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("INGRESE UN CODIGO PARA EL PRODUCTO");
                 }
-                else if (TxtCodigo.Text.Length <= 1 || TxtCodigo.Text.Length >= 15)
+                else if (TxtCodigo.Text.Length <= 1 || TxtCodigo.Text.Length >= 1000000000)
                 {
                     MessageBox.Show("INGRESE UN CODIGO VALIDO PARA EL PRODUCTO");
                 }
@@ -94,7 +99,7 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("INGRESE UN STOCK ");
                 }
-                else if (TxtStockActual.Text.Length <= 1)
+                else if (TxtStockActual.Text.Length <= 0)
                 {
                     MessageBox.Show("INGRESE UN STOCK MAYOR A CERO 0");
                 }
@@ -133,7 +138,7 @@ namespace AppPrincipal
 
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
-                    pro.nombreTipoProducto = CbTipoproducto.SelectedText;
+                    pro.idTipoProducto = Convert.ToInt32(CbTipoproducto.SelectedValue);
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);

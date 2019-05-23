@@ -70,6 +70,8 @@
             // 
             // DGlistadoOrdenCompra
             // 
+            this.DGlistadoOrdenCompra.AllowUserToAddRows = false;
+            this.DGlistadoOrdenCompra.AllowUserToDeleteRows = false;
             this.DGlistadoOrdenCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -77,6 +79,7 @@
             this.DGlistadoOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistadoOrdenCompra.Location = new System.Drawing.Point(13, 73);
             this.DGlistadoOrdenCompra.Name = "DGlistadoOrdenCompra";
+            this.DGlistadoOrdenCompra.ReadOnly = true;
             this.DGlistadoOrdenCompra.Size = new System.Drawing.Size(835, 402);
             this.DGlistadoOrdenCompra.TabIndex = 4;
             // 

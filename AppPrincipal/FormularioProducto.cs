@@ -22,7 +22,15 @@ namespace AppPrincipal
         {
             InitializeComponent();
             ServicioProducto ser = new ServicioProducto();
-            DGlistadeproductos.DataSource = ser.GetRESTData();
+            try
+            {
+                DGlistadeproductos.DataSource = ser.GetRESTData();
+                DGlistadeproductos.Refresh();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+            }
         }
 
         //BOTON QUE CIERRA EL FORMULARIO PRINCIPAL DE PRODUCTOS
@@ -48,8 +56,8 @@ namespace AppPrincipal
                 {
                     fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
-                    fmp.CbTipoproducto.SelectedText = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
-                  
+                    fmp.CbTipoproducto.SelectedItem = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
+                    
                     fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
                     fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[6].Value.ToString();
                     fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();

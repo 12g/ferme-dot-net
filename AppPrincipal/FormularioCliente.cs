@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -15,6 +17,16 @@ namespace AppPrincipal
         public FormularioCliente()
         {
             InitializeComponent();
+            ServicioCliente sercl = new ServicioCliente();
+            try
+            {
+                DGMostrarListaCliente.DataSource = sercl.ListarClientes();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE CLIENTES");
+            }
+            
         }
 
         //boton cancelar el cual cierra el formulario de cliente 

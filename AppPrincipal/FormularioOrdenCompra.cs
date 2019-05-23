@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -15,6 +17,8 @@ namespace AppPrincipal
         public FormularioOrdenCompra()
         {
             InitializeComponent();
+            ServicioOrdenCompra seroc = new ServicioOrdenCompra();
+            DGlistadoOrdenCompra.DataSource = seroc.ListarOrdenCompra();
         }
 
         //BOTON CERRAR EL FORMULARIO DE ORDEN DE COMPRA

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -15,6 +17,15 @@ namespace AppPrincipal
         public FormularioUsuario()
         {
             InitializeComponent();
+            ServicioEmpleado sere = new ServicioEmpleado();
+            try
+            {
+                DGlistadoUsuario.DataSource = sere.ListaEmpleados();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LOS DATOS EN MODULO DE USUARIO");
+            }
         }
 
         //BOTON QUE CIERRA EL FORMULARIO DE USUARIO

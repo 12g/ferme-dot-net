@@ -198,10 +198,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox TxtRubro;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label LblDescripcion;
-        private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -209,5 +207,7 @@
         private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
         private System.Windows.Forms.Button BtnBuscarRubro;
+        public System.Windows.Forms.TextBox TxtRubro;
+        public System.Windows.Forms.TextBox TxtDescripcion;
     }
 }

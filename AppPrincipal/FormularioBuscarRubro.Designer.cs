@@ -39,11 +39,14 @@
             // DGlistadoRubro
             // 
             this.DGlistadoRubro.AllowUserToAddRows = false;
+            this.DGlistadoRubro.AllowUserToDeleteRows = false;
             this.DGlistadoRubro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistadoRubro.Location = new System.Drawing.Point(12, 70);
             this.DGlistadoRubro.Name = "DGlistadoRubro";
+            this.DGlistadoRubro.ReadOnly = true;
             this.DGlistadoRubro.Size = new System.Drawing.Size(681, 368);
             this.DGlistadoRubro.TabIndex = 0;
+            this.DGlistadoRubro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistadoRubro_CellContentClick);
             // 
             // BtnBuscarRubro
             // 

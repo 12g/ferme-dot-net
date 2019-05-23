@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -16,6 +17,16 @@ namespace AppPrincipal
         public FormularioBuscarRubro()
         {
             InitializeComponent();
+
+            ServiciosRubro serR = new ServiciosRubro();
+            try
+            {
+                DGlistadoRubro.DataSource = serR.ListarRubro();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE RUBRO");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +46,30 @@ namespace AppPrincipal
             catch
             {
                 MessageBox.Show("Error al cerrar Aplicacion");
+            }
+        }
+
+        private void DGlistadoRubro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormularioMantenedorRubro fmp = new FormularioMantenedorRubro();
+                if (DGlistadoRubro.SelectedRows.Count > 0)
+                {
+                    fmp.TxtRubro.Text = DGlistadoRubro.CurrentRow.Cells[1].Value.ToString();
+                    fmp.TxtDescripcion.Text = DGlistadoRubro.CurrentRow.Cells[2].Value.ToString();
+                   
+                    fmp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fila");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL EDITAR LA FILA");
             }
         }
     }

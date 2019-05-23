@@ -22,7 +22,14 @@ namespace AppPrincipal
         {
             InitializeComponent();
             ServicioProveedores serp = new ServicioProveedores();
-            DgMostrarListaProveedor.DataSource = serp.GetRESTData();
+            try
+            {
+                DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PROVEEDOR");
+            }
         }
 
         //BOTON PARA CERRAR EL FORMULARIO PRINCIAL DE PROVEEDORES
@@ -46,10 +53,14 @@ namespace AppPrincipal
                 FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
                 if (DgMostrarListaProveedor.SelectedRows.Count > 0)
                 {
-                    fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[0].Value.ToString();
                     fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
-                    fmp.TxtTelefono1.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
-                  
+                    fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[2].Value.ToString();
+                    fmp.TxtDireccion.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
+                    fmp.TxtEmail.Text = DgMostrarListaProveedor.CurrentRow.Cells[4].Value.ToString();
+                    fmp.TxtTelefono1.Text = DgMostrarListaProveedor.CurrentRow.Cells[5].Value.ToString();
+                    fmp.TxtTelefono2.Text = DgMostrarListaProveedor.CurrentRow.Cells[6].Value.ToString();
+                    fmp.TxtTelefono3.Text = DgMostrarListaProveedor.CurrentRow.Cells[7].Value.ToString();
+
                     fmp.ShowDialog();
                 }
                 else

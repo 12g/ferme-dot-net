@@ -341,10 +341,8 @@
         private System.Windows.Forms.Label LblRutObligatorio;
         private System.Windows.Forms.Label LblRazonSocialObligatorio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.Label LblDireccionObligatoria;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label LblEmailObligatorio;
         private System.Windows.Forms.Label LblRubro;
         private System.Windows.Forms.ComboBox CbxRubro;
@@ -352,5 +350,7 @@
         private System.Windows.Forms.Label LblTelefono2;
         public System.Windows.Forms.TextBox TxtTelefono3;
         private System.Windows.Forms.Label LblTelefono3;
+        public System.Windows.Forms.TextBox TxtDireccion;
+        public System.Windows.Forms.TextBox TxtEmail;
     }
 }

@@ -72,6 +72,8 @@
             // 
             // DGlistadoUsuario
             // 
+            this.DGlistadoUsuario.AllowUserToAddRows = false;
+            this.DGlistadoUsuario.AllowUserToDeleteRows = false;
             this.DGlistadoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -79,6 +81,7 @@
             this.DGlistadoUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistadoUsuario.Location = new System.Drawing.Point(15, 82);
             this.DGlistadoUsuario.Name = "DGlistadoUsuario";
+            this.DGlistadoUsuario.ReadOnly = true;
             this.DGlistadoUsuario.Size = new System.Drawing.Size(835, 394);
             this.DGlistadoUsuario.TabIndex = 5;
             // 

@@ -45,6 +45,14 @@ namespace AppPrincipal
                 MessageBox.Show("Error al cerrar Aplicacion");
             }
         }
+
+        //LIMPIAR
+        private void Limpiar()
+        {
+            TxtRubro.Text = "";
+            TxtDescripcion.Text = "";
+        }
+
         //BOTON GUARDAR
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -77,6 +85,7 @@ namespace AppPrincipal
 
                     serRub.CrearRubro(RU);
                     ImagenTicketBueno.Visible = true;
+                    Limpiar();
                 }
             }
             catch (Exception)
