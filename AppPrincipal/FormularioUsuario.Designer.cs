@@ -47,9 +47,9 @@
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitulo.Location = new System.Drawing.Point(12, 9);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(224, 29);
+            this.LblTitulo.Size = new System.Drawing.Size(258, 29);
             this.LblTitulo.TabIndex = 2;
-            this.LblTitulo.Text = "LISTADO DE USUARIO";
+            this.LblTitulo.Text = "LISTADO DE EMPLEADOS";
             // 
             // LblBuscar
             // 
@@ -101,7 +101,7 @@
             // 
             this.BtnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(890, 200);
+            this.BtnEliminar.Location = new System.Drawing.Point(890, 183);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(116, 39);
             this.BtnEliminar.TabIndex = 12;
@@ -118,12 +118,13 @@
             this.BtnEditar.TabIndex = 11;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnCrearUsuario
             // 
             this.BtnCrearUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCrearUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrearUsuario.Location = new System.Drawing.Point(890, 82);
+            this.BtnCrearUsuario.Location = new System.Drawing.Point(890, 312);
             this.BtnCrearUsuario.Name = "BtnCrearUsuario";
             this.BtnCrearUsuario.Size = new System.Drawing.Size(116, 39);
             this.BtnCrearUsuario.TabIndex = 10;
@@ -147,7 +148,7 @@
             // 
             this.BtnCrearEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCrearEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrearEmpleado.Location = new System.Drawing.Point(890, 328);
+            this.BtnCrearEmpleado.Location = new System.Drawing.Point(890, 93);
             this.BtnCrearEmpleado.Name = "BtnCrearEmpleado";
             this.BtnCrearEmpleado.Size = new System.Drawing.Size(116, 39);
             this.BtnCrearEmpleado.TabIndex = 14;
@@ -172,6 +173,7 @@
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioUsuario";
             this.Text = "FormularioUsuario";
+            //this.Load += new System.EventHandler(this.FormularioUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

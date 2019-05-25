@@ -160,6 +160,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioProducto";
             this.Text = "FormularioProducto";
+            this.Load += new System.EventHandler(this.FormularioProducto_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadeproductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

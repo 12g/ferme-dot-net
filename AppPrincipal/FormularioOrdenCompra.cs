@@ -17,8 +17,17 @@ namespace AppPrincipal
         public FormularioOrdenCompra()
         {
             InitializeComponent();
-            ServicioOrdenCompra seroc = new ServicioOrdenCompra();
-            DGlistadoOrdenCompra.DataSource = seroc.ListarOrdenCompra();
+            try
+            {
+                ServicioOrdenCompra seroc = new ServicioOrdenCompra();
+                DGlistadoOrdenCompra.DataSource = seroc.ListarOrdenCompra();
+                this.DGlistadoOrdenCompra.Columns[0].Visible = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PROVEEDORES");
+            }
+           
         }
 
         //BOTON CERRAR EL FORMULARIO DE ORDEN DE COMPRA
@@ -33,6 +42,24 @@ namespace AppPrincipal
         {
             FormularioMantenedorOrdenCompra fmoc = new FormularioMantenedorOrdenCompra();
             fmoc.ShowDialog();
+        }
+
+        private void FormularioOrdenCompra_Load(object sender, EventArgs e)
+        {
+            Timer actualizar_automatico = new Timer();
+            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Tick += actualizar_automatico_Tick;
+            actualizar_automatico.Enabled = true;
+        }
+        private void recargar()
+        {
+            ServicioOrdenCompra ser = new ServicioOrdenCompra();
+            DGlistadoOrdenCompra.DataSource = ser.ListarOrdenCompra();
+        }
+
+        private void actualizar_automatico_Tick(object sender, EventArgs e)
+        {
+            recargar();
         }
     }
 }

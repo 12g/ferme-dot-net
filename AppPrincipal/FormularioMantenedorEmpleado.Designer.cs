@@ -315,6 +315,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioMantenedorEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Empleado";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,6 +346,6 @@
         private System.Windows.Forms.Label LblTelefono3;
         public System.Windows.Forms.TextBox TxtTelefono3;
         private System.Windows.Forms.Label LblCargo;
-        private System.Windows.Forms.ComboBox CbxCargo;
+        public System.Windows.Forms.ComboBox CbxCargo;
     }
 }

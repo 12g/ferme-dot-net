@@ -73,5 +73,23 @@ namespace AppPrincipal
             }
            
         }
+
+        private void FormularioCliente_Load(object sender, EventArgs e)
+        {
+            Timer actualizar_automatico = new Timer();
+            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Tick += actualizar_automatico_Tick;
+            actualizar_automatico.Enabled = true;
+        }
+        private void recargar()
+        {
+            ServicioCliente ser = new ServicioCliente();
+            DGMostrarListaCliente.DataSource = ser.ListarClientes();
+        }
+
+        private void actualizar_automatico_Tick(object sender, EventArgs e)
+        {
+            recargar();
+        }
     }
 }

@@ -17,6 +17,10 @@ namespace AppPrincipal
         public FormularioMantenedorEmpleado()
         {
             InitializeComponent();
+            ServicioCargo ser = new ServicioCargo();
+            CbxCargo.DataSource = ser.ListarCargo();
+            CbxCargo.DisplayMember = "descripcionCargo";
+            CbxCargo.ValueMember = "idCargo";
         }
 
         //BOTON CANCELAR
@@ -246,7 +250,7 @@ namespace AppPrincipal
                     Empleado emp = new Empleado();
                     ServicioEmpleado serv = new ServicioEmpleado();
 
-                    emp.idCargo = 1;
+                    emp.idCargo = CbxCargo.SelectedIndex;
                     emp.rutPersona = TxtRutCliente.Text;
                     emp.nombreCompletoPersona = TxtNombre.Text;
                     emp.direccionPersona = TxtDireccion.Text;

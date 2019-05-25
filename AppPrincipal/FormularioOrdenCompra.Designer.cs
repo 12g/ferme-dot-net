@@ -145,6 +145,7 @@
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioOrdenCompra";
             this.Text = "FormularioOrdenCompra";
+            this.Load += new System.EventHandler(this.FormularioOrdenCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoOrdenCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

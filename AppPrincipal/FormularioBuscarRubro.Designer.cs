@@ -92,6 +92,7 @@
             this.Name = "FormularioBuscarRubro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioBuscarRubro";
+            this.Load += new System.EventHandler(this.FormularioBuscarRubro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoRubro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

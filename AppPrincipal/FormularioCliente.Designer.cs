@@ -147,6 +147,7 @@
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioCliente";
             this.Text = "FormularioCliente";
+            this.Load += new System.EventHandler(this.FormularioCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGMostrarListaCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,10 +17,13 @@ namespace AppPrincipal
         public FormularioUsuario()
         {
             InitializeComponent();
-            ServicioEmpleado sere = new ServicioEmpleado();
+            
             try
             {
+                ServicioEmpleado sere = new ServicioEmpleado();
                 DGlistadoUsuario.DataSource = sere.ListaEmpleados();
+                this.DGlistadoUsuario.Columns[0].Visible = false;
+                this.DGlistadoUsuario.Columns[8].Visible = false;
             }
             catch (Exception)
             {
@@ -41,16 +44,70 @@ namespace AppPrincipal
             fmu.ShowDialog();
         }
 
+        //CREAR CARGO
         private void BtnCargo_Click(object sender, EventArgs e)
         {
             FormularioMantenedorCargo car = new FormularioMantenedorCargo();
             car.ShowDialog();
         }
 
+        //CREAR EMPLEADO
         private void BtnCrearEmpleado_Click(object sender, EventArgs e)
         {
             FormularioMantenedorEmpleado fme = new FormularioMantenedorEmpleado();
             fme.ShowDialog();
+        }
+
+        //ACTUALIZA EL DATAGRIDVIEW
+        /*private void FormularioUsuario_Load(object sender, EventArgs e)
+        {
+           Timer actualizar_automatico = new Timer();
+           actualizar_automatico.Interval = 30000;
+           actualizar_automatico.Tick += actualizar_automatico_Tick;
+           actualizar_automatico.Enabled = true;
+        }
+
+        private void recargar()
+        {
+           ServicioEmpleado ser = new ServicioEmpleado();
+           DGlistadoUsuario.DataSource = ser.ListaEmpleados();
+        }
+
+        private void actualizar_automatico_Tick(object sender, EventArgs e)
+        {
+          recargar();
+        }
+        */
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ServicioEmpleado ser = new ServicioEmpleado();
+                FormularioMantenedorEmpleado fmp = new FormularioMantenedorEmpleado();
+                if (DGlistadoUsuario.SelectedRows.Count > 0)
+                {
+                    fmp.TxtRutCliente.Text = DGlistadoUsuario.CurrentRow.Cells[2].Value.ToString();
+                    fmp.CbxCargo.Text = DGlistadoUsuario.CurrentRow.Cells[9].Value.ToString();
+                    fmp.TxtNombre.Text = DGlistadoUsuario.CurrentRow.Cells[1].Value.ToString();
+
+                    fmp.TxtDireccion.Text = DGlistadoUsuario.CurrentRow.Cells[3].Value.ToString();
+                    fmp.TxtEmail.Text = DGlistadoUsuario.CurrentRow.Cells[4].Value.ToString();
+                    fmp.TxtTelefeno1.Text = DGlistadoUsuario.CurrentRow.Cells[5].Value.ToString();
+                    fmp.TxtTelefono2.Text = DGlistadoUsuario.CurrentRow.Cells[6].Value.ToString();
+                    fmp.TxtTelefono3.Text = DGlistadoUsuario.CurrentRow.Cells[7].Value.ToString();
+
+                    fmp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fila");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL EDITAR LA FILA");
+            }
         }
     }
 }

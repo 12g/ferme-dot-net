@@ -160,6 +160,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioProveedor";
             this.Text = "FormularioProveedor";
+            this.Load += new System.EventHandler(this.FormularioProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarListaProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

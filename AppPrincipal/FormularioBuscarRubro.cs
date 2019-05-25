@@ -72,5 +72,24 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL EDITAR LA FILA");
             }
         }
+
+        private void FormularioBuscarRubro_Load(object sender, EventArgs e)
+        {
+            Timer actualizar_automatico = new Timer();
+            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Tick += actualizar_automatico_Tick;
+            actualizar_automatico.Enabled = true;
+
+        }
+        private void recargar()
+        {
+            ServicioProducto ser = new ServicioProducto();
+            DGlistadoRubro.DataSource = ser.GetRESTData();
+        }
+
+        private void actualizar_automatico_Tick(object sender, EventArgs e)
+        {
+            recargar();
+        }
     }
 }

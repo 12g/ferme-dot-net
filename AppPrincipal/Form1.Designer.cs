@@ -171,7 +171,7 @@
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Size = new System.Drawing.Size(244, 35);
             this.BtnUsuario.TabIndex = 6;
-            this.BtnUsuario.Text = "Usuario";
+            this.BtnUsuario.Text = "Empleado";
             this.BtnUsuario.UseVisualStyleBackColor = true;
             this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
             // 

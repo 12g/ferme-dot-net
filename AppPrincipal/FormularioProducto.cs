@@ -25,7 +25,19 @@ namespace AppPrincipal
             try
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
-                DGlistadeproductos.Refresh();
+
+                //OCULTA LAS COLUMNAS
+                this.DGlistadeproductos.Columns[0].Visible = false;
+                this.DGlistadeproductos.Columns[6].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
+                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
+                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
+                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
+                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
             }
             catch (Exception)
             {
@@ -64,6 +76,7 @@ namespace AppPrincipal
                     fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
 
                     fmp.ShowDialog();
+                   
                 }
                 else
                 {
@@ -76,5 +89,26 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL EDITAR LA FILA");
             }
         }
+
+        private void recargar()
+        {
+            ServicioProducto ser = new ServicioProducto();
+            DGlistadeproductos.DataSource = ser.GetRESTData();
+        }
+
+        private void actualizar_automatico_Tick(object sender, EventArgs e)
+        {
+            recargar();
+        }
+
+        private void FormularioProducto_Load_1(object sender, EventArgs e)
+        {
+            Timer actualizar_automatico = new Timer();
+            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Tick += actualizar_automatico_Tick;
+            actualizar_automatico.Enabled = true;
+        }
+
+        
     }
 }
