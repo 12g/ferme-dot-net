@@ -324,6 +324,7 @@
             this.Name = "FormularioMantenedorProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor de Producto";
+            this.Load += new System.EventHandler(this.FormularioMantenedorProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

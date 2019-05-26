@@ -55,6 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LblCantidadObligatoria = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
+            this.BtnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(125, 5);
+            this.lblTitulo.Location = new System.Drawing.Point(220, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(299, 31);
             this.lblTitulo.TabIndex = 2;
@@ -204,9 +206,9 @@
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(563, 236);
+            this.TxtCantidad.Location = new System.Drawing.Point(627, 236);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(80, 20);
+            this.TxtCantidad.Size = new System.Drawing.Size(82, 20);
             this.TxtCantidad.TabIndex = 19;
             this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
@@ -214,7 +216,7 @@
             // 
             this.LblCantSolicitada.AutoSize = true;
             this.LblCantSolicitada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantSolicitada.Location = new System.Drawing.Point(560, 220);
+            this.LblCantSolicitada.Location = new System.Drawing.Point(564, 240);
             this.LblCantSolicitada.Name = "LblCantSolicitada";
             this.LblCantSolicitada.Size = new System.Drawing.Size(57, 13);
             this.LblCantSolicitada.TabIndex = 20;
@@ -232,8 +234,9 @@
             this.DgListadoProductoOC.Location = new System.Drawing.Point(14, 279);
             this.DgListadoProductoOC.Name = "DgListadoProductoOC";
             this.DgListadoProductoOC.ReadOnly = true;
-            this.DgListadoProductoOC.Size = new System.Drawing.Size(695, 263);
+            this.DgListadoProductoOC.Size = new System.Drawing.Size(629, 263);
             this.DgListadoProductoOC.TabIndex = 21;
+            this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);
             // 
             // Codigo
             // 
@@ -258,13 +261,14 @@
             // 
             // BtnAgregar
             // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.Lime;
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(649, 236);
+            this.BtnAgregar.Location = new System.Drawing.Point(649, 279);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(60, 23);
+            this.BtnAgregar.Size = new System.Drawing.Size(76, 45);
             this.BtnAgregar.TabIndex = 22;
             this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // LblNumeroObligatorio
@@ -292,7 +296,7 @@
             this.LblCantidadObligatoria.AutoSize = true;
             this.LblCantidadObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCantidadObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblCantidadObligatoria.Location = new System.Drawing.Point(543, 240);
+            this.LblCantidadObligatoria.Location = new System.Drawing.Point(711, 240);
             this.LblCantidadObligatoria.Name = "LblCantidadObligatoria";
             this.LblCantidadObligatoria.Size = new System.Drawing.Size(14, 16);
             this.LblCantidadObligatoria.TabIndex = 25;
@@ -310,12 +314,38 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // BtnEditar
+            // 
+            this.BtnEditar.BackColor = System.Drawing.Color.Gold;
+            this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.Location = new System.Drawing.Point(649, 349);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(76, 45);
+            this.BtnEditar.TabIndex = 27;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // BtnBorrar
+            // 
+            this.BtnBorrar.BackColor = System.Drawing.Color.Red;
+            this.BtnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBorrar.Location = new System.Drawing.Point(649, 419);
+            this.BtnBorrar.Name = "BtnBorrar";
+            this.BtnBorrar.Size = new System.Drawing.Size(76, 45);
+            this.BtnBorrar.TabIndex = 28;
+            this.BtnBorrar.Text = "Borrar";
+            this.BtnBorrar.UseVisualStyleBackColor = false;
+            this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
+            // 
             // FormularioMantenedorOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 610);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnBorrar);
+            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.LblCantidadObligatoria);
             this.Controls.Add(this.label2);
@@ -346,6 +376,7 @@
             this.Name = "FormularioMantenedorOrdenCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Orden Compra";
+            this.Load += new System.EventHandler(this.FormularioMantenedorOrdenCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -380,5 +411,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button BtnBorrar;
     }
 }

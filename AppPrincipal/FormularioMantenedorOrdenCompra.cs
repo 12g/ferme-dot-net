@@ -20,10 +20,7 @@ namespace AppPrincipal
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
-            ServicioEmpleado sere = new ServicioEmpleado();
-            CbEmpleado.DataSource = sere.ListaEmpleados();
-            CbEmpleado.DisplayMember = "nombreCompletoPersona";
-            CbEmpleado.ValueMember = "idEmpleado";
+            Limpiar();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -46,7 +43,7 @@ namespace AppPrincipal
             }
         }
         
-        //BOTON GUARDAR
+        //BOTON GUARDAR ORDEN COMPRA
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -97,6 +94,8 @@ namespace AppPrincipal
         //LIMPIAR
         private void Limpiar()
         {
+            BtnEditar.Enabled = false;
+            BtnBorrar.Enabled = false;
             TxtCodProducto.Text = "";
             TxtNombreProducto.Text = "";
             TxtCantidad.Text = "";
@@ -104,30 +103,38 @@ namespace AppPrincipal
         //BOTON AGREGAR
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
+            try
             {
-                LblCantidadObligatoria.Visible = true;
-                MessageBox.Show("INGRESE UNA CANTIDAD EN PRODUCTO");
-            }
-            else if (TxtCodProducto.Text == "" || TxtNombreProducto.Text =="")
-            {
-                MessageBox.Show("INGRESE UN PRODUCTO");
-            }
-            else
-            {
-                try
+                if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
                 {
-                    DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
-                    Limpiar();
-                    LblCantidadObligatoria.Visible = false;
+                    LblCantidadObligatoria.Visible = true;
+                    MessageBox.Show("INGRESE UNA CANTIDAD EN PRODUCTO");
                 }
-                catch (Exception)
+                else if (TxtCodProducto.Text == "" || TxtNombreProducto.Text == "")
                 {
-
-                    MessageBox.Show("NO SE PUEDE AGREGAR PRODUCTOS A LA LISTA");
+                    MessageBox.Show("INGRESE UN PRODUCTO");
                 }
+                else
+                {
+                    try
+                    {
+                        DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
+                        Limpiar();
+                    }
+                    catch (Exception)
+                    {
 
+                        MessageBox.Show("NO SE PUEDE AGREGAR PRODUCTOS A LA LISTA");
+                    }
+
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL AGREGAR PRODUCTO");
+            }
+           
         }
 
         //TXTNUMERO EVENTO LEAVE EL CUAL SE EJECUTA UN LEAVE EN CASO DE NO CUMPLIR CON LA CONDICION DADA
@@ -174,6 +181,114 @@ namespace AppPrincipal
         {
             FormularioBuscarProducto fbp = new FormularioBuscarProducto(this);
             fbp.ShowDialog();
+        }
+
+       /* private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                if (DgListadoProductoOC.SelectedRows.Count > 0)
+                {
+
+                    TxtCodProducto.Text = DgListadoProductoOC.CurrentRow.Cells[0].Value.ToString();
+                    TxtNombreProducto.Text = DgListadoProductoOC.CurrentRow.Cells[1].Value.ToString();
+                    TxtCantidad.Text = DgListadoProductoOC.CurrentRow.Cells[2].Value.ToString();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fila");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL EDITAR LA FILA");
+            }
+        }
+        */
+        private void FormularioMantenedorOrdenCompra_Load(object sender, EventArgs e)
+        {
+            ServicioEmpleado sere = new ServicioEmpleado();
+            CbEmpleado.DataSource = sere.ListaEmpleados();
+            CbEmpleado.DisplayMember = "nombreCompletoPersona";
+            CbEmpleado.ValueMember = "idEmpleado";
+        }
+
+
+        //SELECCIONA UNA FILA Y LA ENVIA DIRECTO AL TEXTBOX PARA SER EDITADA
+        private void DgListadoProductoOC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int poc = DgListadoProductoOC.CurrentRow.Index;
+            TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
+            TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
+            TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
+
+            BtnAgregar.Enabled = false;
+            BtnEditar.Enabled = true;
+            BtnBorrar.Enabled = true;
+        }
+
+
+        //BOTON EDITAR
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) <= 1 || !val.IsNumeric(TxtCantidad.Text))
+                {
+                    LblCantidadObligatoria.Visible = true;
+                    MessageBox.Show("INGRESE UNA CANTIDAD EN PRODUCTO");
+                }
+                else if (TxtCodProducto.Text == "" || TxtNombreProducto.Text == "")
+                {
+                    MessageBox.Show("INGRESE UN PRODUCTO");
+                }
+                else
+                {
+                    try
+                    {
+                        int poc = DgListadoProductoOC.CurrentRow.Index;
+                        DgListadoProductoOC[0, poc].Value = TxtCodProducto.Text;
+                        DgListadoProductoOC[1, poc].Value = TxtNombreProducto.Text;
+                        DgListadoProductoOC[2, poc].Value = TxtCantidad.Text;
+
+                        Limpiar();
+                        BtnAgregar.Enabled = true;
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("NO SE PUEDE AGREGAR PRODUCTOS A LA LISTA");
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL AGREGAR PRODUCTO");
+            }
+        }
+
+        //BOTON ELIMINAR
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int poc = DgListadoProductoOC.CurrentRow.Index;
+                DgListadoProductoOC.Rows.RemoveAt(poc);
+                Limpiar();
+                BtnAgregar.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL ELIMINAR PRODUCTO");
+            }
+           
         }
     }
 }

@@ -17,13 +17,6 @@ namespace AppPrincipal
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
-            ServicioProducto serpr = new ServicioProducto();
-            ServicioTipoProducto sertp = new ServicioTipoProducto();
-            TipoProducto tp = new TipoProducto();
-            CbTipoproducto.DataSource = sertp.ListaTipoProducto();
-            CbTipoproducto.DisplayMember = "nombreTipoProducto";
-            CbTipoproducto.ValueMember = "idTipoProducto";
-
         }
 
 
@@ -131,19 +124,26 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("DESCRIPCION SUPERA LOS 100 CARACTERES ");
                 }
+                else if (CbTipoproducto.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("SELECCIONE UN TIPO PRODUCTO");
+                }
                 else
                 {
                     ServicioProducto serp = new ServicioProducto();
                     Producto pro = new Producto();
 
+
+
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
-                    pro.idTipoProducto = Convert.ToInt32(CbTipoproducto.SelectedValue);
+                    pro.idTipoProducto = CbTipoproducto.SelectedIndex;
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
                     pro.stockCriticoProducto = int.Parse(TxtStockCritico.Text);
 
+                    CargarComBobox();
                     serp.CrearProducto(pro);
 
                     Limpiar();
@@ -173,6 +173,22 @@ namespace AppPrincipal
         {
             Validaciones val = new Validaciones();
             val.SoloNumero(e);
+        }
+
+        private void FormularioMantenedorProducto_Load(object sender, EventArgs e)
+        {
+            ServicioProducto serpr = new ServicioProducto();
+            TipoProducto tp = new TipoProducto();
+            CargarComBobox();
+        }
+
+        private void CargarComBobox()
+        {
+            ServicioTipoProducto sertp = new ServicioTipoProducto();
+            CbTipoproducto.DataSource = sertp.ListaTipoProducto();
+            CbTipoproducto.DisplayMember = "nombreTipoProducto";
+            CbTipoproducto.ValueMember = "idTipoProducto";
+
         }
     }
 }
