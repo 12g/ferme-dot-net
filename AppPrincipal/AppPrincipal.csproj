@@ -109,6 +109,12 @@
     <Compile Include="FormularioMantenedorEmpleado.Designer.cs">
       <DependentUpon>FormularioMantenedorEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioMantenedorFamiliaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMantenedorFamiliaProducto.Designer.cs">
+      <DependentUpon>FormularioMantenedorFamiliaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioMantenedorOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorEmpleado.resx">
       <DependentUpon>FormularioMantenedorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMantenedorFamiliaProducto.resx">
+      <DependentUpon>FormularioMantenedorFamiliaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioMantenedorOrdenCompra.resx">
       <DependentUpon>FormularioMantenedorOrdenCompra.cs</DependentUpon>

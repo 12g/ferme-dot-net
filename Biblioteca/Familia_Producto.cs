@@ -8,9 +8,10 @@ namespace Biblioteca
 {
     public class Familia_Producto
     {
-        public int idFamiliaProducto { get; set; }
+        public int? idFamiliaProducto { get; set; }
         public string descripcionFamiliaProducto { get; set; }
-        public int idRubro;
+        public int idRubro { get; set; }
         public string descripcionRubro { get; set; }
+        public int idProveedor { get; set; }
     }
 }

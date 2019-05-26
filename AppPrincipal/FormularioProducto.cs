@@ -47,7 +47,7 @@ namespace AppPrincipal
                  
                     fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
-                    fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells[7].ToString();
+                    fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
                     fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[4].Value.ToString();
                     fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
                     fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
@@ -143,6 +143,14 @@ namespace AppPrincipal
                 ServicioProducto ser = new ServicioProducto();
                 DGlistadeproductos.DataSource = ser.GetRESTData();
             }
+        }
+
+
+        //MANTENEDOR FAMILIA PRODUCTO
+        private void BtnFamiliaProducto_Click(object sender, EventArgs e)
+        {
+            FormularioMantenedorFamiliaProducto fmfp = new FormularioMantenedorFamiliaProducto();
+            fmfp.ShowDialog();
         }
     }
 }

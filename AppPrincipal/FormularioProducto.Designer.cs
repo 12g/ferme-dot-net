@@ -37,6 +37,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.LblBuscar = new System.Windows.Forms.Label();
+            this.BtnFamiliaProducto = new System.Windows.Forms.Button();
+            this.BtnTipoProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadeproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +145,37 @@
             this.LblBuscar.TabIndex = 7;
             this.LblBuscar.Text = "Buscar..";
             // 
+            // BtnFamiliaProducto
+            // 
+            this.BtnFamiliaProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnFamiliaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFamiliaProducto.Location = new System.Drawing.Point(901, 310);
+            this.BtnFamiliaProducto.Name = "BtnFamiliaProducto";
+            this.BtnFamiliaProducto.Size = new System.Drawing.Size(103, 47);
+            this.BtnFamiliaProducto.TabIndex = 8;
+            this.BtnFamiliaProducto.Text = "Familia Producto";
+            this.BtnFamiliaProducto.UseVisualStyleBackColor = true;
+            this.BtnFamiliaProducto.Click += new System.EventHandler(this.BtnFamiliaProducto_Click);
+            // 
+            // BtnTipoProducto
+            // 
+            this.BtnTipoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTipoProducto.Location = new System.Drawing.Point(901, 373);
+            this.BtnTipoProducto.Name = "BtnTipoProducto";
+            this.BtnTipoProducto.Size = new System.Drawing.Size(103, 47);
+            this.BtnTipoProducto.TabIndex = 9;
+            this.BtnTipoProducto.Text = "Tipo Producto";
+            this.BtnTipoProducto.UseVisualStyleBackColor = true;
+            // 
             // FormularioProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.Controls.Add(this.BtnTipoProducto);
+            this.Controls.Add(this.BtnFamiliaProducto);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
@@ -178,5 +205,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label LblBuscar;
+        private System.Windows.Forms.Button BtnFamiliaProducto;
+        private System.Windows.Forms.Button BtnTipoProducto;
     }
 }

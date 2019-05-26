@@ -14,6 +14,7 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorProducto : Form
     {
+     
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
@@ -132,12 +133,13 @@ namespace AppPrincipal
                 {
                     ServicioProducto serp = new ServicioProducto();
                     Producto pro = new Producto();
-
+                
 
 
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
-                    pro.idTipoProducto = CbTipoproducto.SelectedIndex;
+                    pro.idTipoProducto = int.Parse(CbTipoproducto.SelectedValue.ToString());
+                    pro.nombreTipoProducto = CbTipoproducto.SelectedText.ToString();
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
@@ -145,6 +147,7 @@ namespace AppPrincipal
 
                     CargarComBobox();
                     serp.CrearProducto(pro);
+                    
 
                     Limpiar();
                 }
@@ -189,6 +192,11 @@ namespace AppPrincipal
             CbTipoproducto.DisplayMember = "nombreTipoProducto";
             CbTipoproducto.ValueMember = "idTipoProducto";
 
+            if (CbTipoproducto.Items.Count > 1)
+            {
+                CbTipoproducto.SelectedIndex = -1;
+                CbTipoproducto.Text = "Seleccione";
+            }
         }
     }
 }

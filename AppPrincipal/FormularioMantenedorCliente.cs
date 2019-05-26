@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
 using ServiciosConexionFerme;
-using System.Text.RegularExpressions;
 
 namespace AppPrincipal
 {
