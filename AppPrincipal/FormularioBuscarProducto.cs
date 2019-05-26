@@ -100,5 +100,36 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL CARGAR PRODUCTO");
             }
         }
+
+
+        //BUSCAR
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBuscar.Text != "")
+            {
+                DgMostrarProductos.CurrentCell = null;
+                foreach (DataGridViewRow r in DgMostrarProductos.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in DgMostrarProductos.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(TxtBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                ServicioProducto ser = new ServicioProducto();
+                DgMostrarProductos.DataSource = ser.GetRESTData();
+            }
+        }
     }
 }

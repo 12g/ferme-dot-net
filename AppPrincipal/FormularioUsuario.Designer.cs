@@ -69,6 +69,7 @@
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(774, 20);
             this.TxtBuscar.TabIndex = 4;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // DGlistadoUsuario
             // 
@@ -173,7 +174,6 @@
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioUsuario";
             this.Text = "FormularioUsuario";
-            //this.Load += new System.EventHandler(this.FormularioUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -122,5 +122,36 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL EDITAR LA FILA");
             }
         }
+
+
+        //BUSCAR
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBuscar.Text != "")
+            {
+                DGlistadoUsuario.CurrentCell = null;
+                foreach (DataGridViewRow r in DGlistadoUsuario.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in DGlistadoUsuario.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(TxtBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                ServicioEmpleado ser = new ServicioEmpleado();
+                DGlistadoUsuario.DataSource = ser.ListaEmpleados();
+            }
+        }
     }
 }

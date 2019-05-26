@@ -68,5 +68,36 @@ namespace AppPrincipal
         {
             recargar();
         }
+
+
+        //BUSCAR
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBuscar.Text != "")
+            {
+                DGlistadoOrdenCompra.CurrentCell = null;
+                foreach (DataGridViewRow r in DGlistadoOrdenCompra.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in DGlistadoOrdenCompra.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(TxtBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                ServicioOrdenCompra ser = new ServicioOrdenCompra();
+                DGlistadoOrdenCompra.DataSource = ser.ListarOrdenCompra();
+            }
+        }
     }
 }

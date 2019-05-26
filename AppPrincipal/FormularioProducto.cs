@@ -140,7 +140,7 @@ namespace AppPrincipal
             else
             {
                 ServicioProducto ser = new ServicioProducto();
-                ser.GetRESTData();
+                DGlistadeproductos.DataSource = ser.GetRESTData();
             }
         }
     }

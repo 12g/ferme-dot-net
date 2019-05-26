@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioBuscarProducto));
             this.DgMostrarProductos = new System.Windows.Forms.DataGridView();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.LblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,29 +44,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgMostrarProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgMostrarProductos.Location = new System.Drawing.Point(13, 44);
+            this.DgMostrarProductos.Location = new System.Drawing.Point(13, 74);
             this.DgMostrarProductos.Name = "DgMostrarProductos";
             this.DgMostrarProductos.ReadOnly = true;
-            this.DgMostrarProductos.Size = new System.Drawing.Size(712, 387);
+            this.DgMostrarProductos.Size = new System.Drawing.Size(712, 357);
             this.DgMostrarProductos.TabIndex = 0;
             this.DgMostrarProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarProductos_CellDoubleClick);
             // 
             // TxtBuscar
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(13, 13);
+            this.TxtBuscar.Location = new System.Drawing.Point(13, 34);
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(227, 20);
             this.TxtBuscar.TabIndex = 1;
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(247, 9);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(92, 23);
-            this.BtnBuscar.TabIndex = 2;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // BtnCancelar
             // 
@@ -81,14 +72,24 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // LblBuscar
+            // 
+            this.LblBuscar.AutoSize = true;
+            this.LblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuscar.Location = new System.Drawing.Point(13, 13);
+            this.LblBuscar.Name = "LblBuscar";
+            this.LblBuscar.Size = new System.Drawing.Size(46, 13);
+            this.LblBuscar.TabIndex = 5;
+            this.LblBuscar.Text = "Buscar";
+            // 
             // FormularioBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 506);
             this.ControlBox = false;
+            this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.DgMostrarProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -106,7 +107,7 @@
 
         private System.Windows.Forms.DataGridView DgMostrarProductos;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Label LblBuscar;
     }
 }
