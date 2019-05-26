@@ -18,10 +18,7 @@ namespace AppPrincipal
 {
     public partial class FormularioProducto : Form
     {
-        public string ejemplo  = "";
-
         public FormularioProducto()
-
         {
             InitializeComponent();
         }
@@ -117,9 +114,34 @@ namespace AppPrincipal
             actualizar_automatico.Enabled = true;
         }
 
+        //BUSCAR
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            if (txtBuscar.Text != "")
+            {
+                DGlistadeproductos.CurrentCell = null;
+                foreach(DataGridViewRow r in DGlistadeproductos.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach(DataGridViewRow r in DGlistadeproductos.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(txtBuscar.Text.ToUpper()) ==0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
 
+                }
+            }
+            else
+            {
+                ServicioProducto ser = new ServicioProducto();
+                ser.GetRESTData();
+            }
         }
     }
 }
