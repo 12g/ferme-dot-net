@@ -23,6 +23,19 @@ namespace AppPrincipal
             {
                 ServicioProducto serp = new ServicioProducto();
                 DgMostrarProductos.DataSource = serp.GetRESTData();
+                
+                //OCULTAR COLUMNA
+                this.DgMostrarProductos.Columns[0].Visible = false;
+                this.DgMostrarProductos.Columns[6].Visible = false;
+                this.DgMostrarProductos.Columns[8].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
+                this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
+                this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
+                this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
+                this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
             }
             catch (Exception)
             {

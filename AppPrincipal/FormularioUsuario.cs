@@ -22,8 +22,21 @@ namespace AppPrincipal
             {
                 ServicioEmpleado sere = new ServicioEmpleado();
                 DGlistadoUsuario.DataSource = sere.ListaEmpleados();
+
+                //OCULTAR COLUMNAS
                 this.DGlistadoUsuario.Columns[0].Visible = false;
                 this.DGlistadoUsuario.Columns[8].Visible = false;
+
+                
+                //DA NOMBRE A LAS COLUMNAS
+                this.DGlistadoUsuario.Columns[1].HeaderText = "NOMBRE";
+                this.DGlistadoUsuario.Columns[2].HeaderText = "RUT";
+                this.DGlistadoUsuario.Columns[3].HeaderText = "DIRECCION";
+                this.DGlistadoUsuario.Columns[4].HeaderText = "EMAIL";
+                this.DGlistadoUsuario.Columns[5].HeaderText = "TELEFONO 1";
+                this.DGlistadoUsuario.Columns[6].HeaderText = "TELEFONO 2";
+                this.DGlistadoUsuario.Columns[7].HeaderText = "TELEFONO 3";
+                this.DGlistadoUsuario.Columns[9].HeaderText = "CARGO";
             }
             catch (Exception)
             {

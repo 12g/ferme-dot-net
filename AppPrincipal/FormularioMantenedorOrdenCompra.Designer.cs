@@ -41,21 +41,20 @@
             this.CbEmpleado = new System.Windows.Forms.ComboBox();
             this.LblEmpleado = new System.Windows.Forms.Label();
             this.LblEstado = new System.Windows.Forms.Label();
-            this.CbEstado = new System.Windows.Forms.ComboBox();
             this.LblProducto = new System.Windows.Forms.Label();
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblCantSolicitada = new System.Windows.Forms.Label();
             this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.LblNumeroObligatorio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblCantidadObligatoria = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,14 +176,6 @@
             this.LblEstado.TabIndex = 13;
             this.LblEstado.Text = "Estado";
             // 
-            // CbEstado
-            // 
-            this.CbEstado.FormattingEnabled = true;
-            this.CbEstado.Location = new System.Drawing.Point(415, 74);
-            this.CbEstado.Name = "CbEstado";
-            this.CbEstado.Size = new System.Drawing.Size(116, 21);
-            this.CbEstado.TabIndex = 14;
-            // 
             // LblProducto
             // 
             this.LblProducto.AutoSize = true;
@@ -244,6 +235,27 @@
             this.DgListadoProductoOC.Size = new System.Drawing.Size(695, 263);
             this.DgListadoProductoOC.TabIndex = 21;
             // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
             // BtnAgregar
             // 
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,27 +310,6 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Producto
-            // 
-            this.Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
             // FormularioMantenedorOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,7 +327,6 @@
             this.Controls.Add(this.TxtNombreProducto);
             this.Controls.Add(this.TxtCodProducto);
             this.Controls.Add(this.LblProducto);
-            this.Controls.Add(this.CbEstado);
             this.Controls.Add(this.LblEstado);
             this.Controls.Add(this.LblEmpleado);
             this.Controls.Add(this.CbEmpleado);
@@ -376,7 +366,6 @@
         private System.Windows.Forms.ComboBox CbEmpleado;
         private System.Windows.Forms.Label LblEmpleado;
         private System.Windows.Forms.Label LblEstado;
-        private System.Windows.Forms.ComboBox CbEstado;
         private System.Windows.Forms.Label LblProducto;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label LblCantSolicitada;

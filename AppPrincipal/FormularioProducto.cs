@@ -18,31 +18,12 @@ namespace AppPrincipal
 {
     public partial class FormularioProducto : Form
     {
+        public string ejemplo  = "";
+
         public FormularioProducto()
+
         {
             InitializeComponent();
-            ServicioProducto ser = new ServicioProducto();
-            try
-            {
-                DGlistadeproductos.DataSource = ser.GetRESTData();
-
-                //OCULTA LAS COLUMNAS
-                this.DGlistadeproductos.Columns[0].Visible = false;
-                this.DGlistadeproductos.Columns[6].Visible = false;
-
-                //DA NOMBRE A LAS COLUMNAS
-                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
-                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
-                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
-                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
-                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
-            }
         }
 
         //BOTON QUE CIERRA EL FORMULARIO PRINCIPAL DE PRODUCTOS
@@ -68,11 +49,10 @@ namespace AppPrincipal
                 {
                     fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
-                    fmp.CbTipoproducto.SelectedItem = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
-                    
-                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
-                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[6].Value.ToString();
-                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
+                    fmp.CbTipoproducto.SelectedText = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
+                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[4].Value.ToString();
+                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
+                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
                     fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
 
                     fmp.ShowDialog();
@@ -103,12 +83,43 @@ namespace AppPrincipal
 
         private void FormularioProducto_Load_1(object sender, EventArgs e)
         {
+
+            ServicioProducto ser = new ServicioProducto();
+            try
+            {
+                DGlistadeproductos.DataSource = ser.GetRESTData();
+
+                //OCULTA LAS COLUMNAS
+                this.DGlistadeproductos.Columns[0].Visible = false;
+                this.DGlistadeproductos.Columns[6].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
+                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
+                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
+                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
+                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+            }
+
+
+
+            //ACTUALIZA EL DATAGRIDVIEW
             Timer actualizar_automatico = new Timer();
             actualizar_automatico.Interval = 30000;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
             actualizar_automatico.Enabled = true;
         }
 
-        
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -93,6 +93,7 @@
             this.Controls.Add(this.DgMostrarProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioBuscarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Producto";
             this.Load += new System.EventHandler(this.FormularioBuscarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarProductos)).EndInit();
