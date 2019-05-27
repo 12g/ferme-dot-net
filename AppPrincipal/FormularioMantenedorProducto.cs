@@ -133,13 +133,13 @@ namespace AppPrincipal
                 {
                     ServicioProducto serp = new ServicioProducto();
                     Producto pro = new Producto();
-                
 
 
+                    //pro.idProducto = int.Parse(TxtCodigo.Text);
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
                     pro.idTipoProducto = int.Parse(CbTipoproducto.SelectedValue.ToString());
-                    pro.nombreTipoProducto = CbTipoproducto.SelectedText.ToString();
+                    pro.nombreTipoProducto = CbTipoproducto.SelectedValue.ToString();
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);

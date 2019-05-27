@@ -41,7 +41,6 @@
             this.ImagenTicketBueno = new System.Windows.Forms.PictureBox();
             this.LblCodigoObligatorio = new System.Windows.Forms.Label();
             this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
-            this.BtnBuscarRubro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +135,7 @@
             this.LblCodigoObligatorio.AutoSize = true;
             this.LblCodigoObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCodigoObligatorio.ForeColor = System.Drawing.Color.Red;
-            this.LblCodigoObligatorio.Location = new System.Drawing.Point(271, 107);
+            this.LblCodigoObligatorio.Location = new System.Drawing.Point(256, 105);
             this.LblCodigoObligatorio.Name = "LblCodigoObligatorio";
             this.LblCodigoObligatorio.Size = new System.Drawing.Size(88, 15);
             this.LblCodigoObligatorio.TabIndex = 10;
@@ -155,23 +154,12 @@
             this.LblDescripcionObligatoria.Text = "*";
             this.LblDescripcionObligatoria.Visible = false;
             // 
-            // BtnBuscarRubro
-            // 
-            this.BtnBuscarRubro.Location = new System.Drawing.Point(250, 102);
-            this.BtnBuscarRubro.Name = "BtnBuscarRubro";
-            this.BtnBuscarRubro.Size = new System.Drawing.Size(22, 24);
-            this.BtnBuscarRubro.TabIndex = 12;
-            this.BtnBuscarRubro.Text = "B";
-            this.BtnBuscarRubro.UseVisualStyleBackColor = true;
-            this.BtnBuscarRubro.Click += new System.EventHandler(this.BtnBuscarRubro_Click);
-            // 
             // FormularioMantenedorRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 314);
             this.ControlBox = false;
-            this.Controls.Add(this.BtnBuscarRubro);
             this.Controls.Add(this.LblDescripcionObligatoria);
             this.Controls.Add(this.LblCodigoObligatorio);
             this.Controls.Add(this.ImagenTicketBueno);
@@ -206,7 +194,6 @@
         private System.Windows.Forms.PictureBox ImagenTicketBueno;
         private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
-        private System.Windows.Forms.Button BtnBuscarRubro;
         public System.Windows.Forms.TextBox TxtRubro;
         public System.Windows.Forms.TextBox TxtDescripcion;
     }

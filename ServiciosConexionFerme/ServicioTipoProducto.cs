@@ -32,6 +32,25 @@ namespace ServiciosConexionFerme
             //Console.WriteLine(responseAsync);
         }
 
+
+
+        //SERIALIZA TIPO PRODUCTO PARA CONVERTIR A JSON
+        public void CrearTipoProducto(TipoProducto rub)
+        {
+
+            var json = JsonConvert.SerializeObject(rub);
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var responseMessage = httpClient.PostAsync("gestion/tipos_producto/guardar", jsonp);
+            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
+
+            Console.WriteLine(resp);
+        }
+
+
+
         //LISTAR TIPOPRODUCTO
         public JArray ListaTipoProducto()
         {

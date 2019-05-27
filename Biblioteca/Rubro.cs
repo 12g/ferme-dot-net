@@ -12,7 +12,7 @@ namespace Biblioteca
     public class Rubro
     {
         //ATRIBUTOS
-        public int idRubro { get; set; }
+        public int? idRubro { get; set; }
         public string descripcionRubro { get; set; }
     }
 }

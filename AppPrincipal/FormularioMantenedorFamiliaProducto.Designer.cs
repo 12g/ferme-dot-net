@@ -34,7 +34,6 @@
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.CbRubro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
@@ -93,16 +92,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(233, 31);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Familia Producto";
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(220, 85);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscar.TabIndex = 5;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
             // 
             // CbRubro
             // 
@@ -170,7 +159,6 @@
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CbRubro);
-            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.TxtCodigo);
@@ -195,7 +183,6 @@
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.ComboBox CbRubro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtDescripcion;

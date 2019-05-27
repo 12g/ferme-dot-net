@@ -78,19 +78,23 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("SELECCIONE UN RUBRO");
                 }
-                else if (CbProveedor.SelectedIndex.Equals(0))
+                else if (CbProveedor.SelectedIndex.Equals(-1))
                 {
                     MessageBox.Show("SELECCIONE UN PROVEEDOR");
+                }
+                else if (TxtDescripcion.Text =="")
+                {
+                    MessageBox.Show("INGRESE UNA DESCRIPCION EN FAMILIA PRODUCTO");
                 }
                 else
                 {
                     ServicioFamiliaProducto ser = new ServicioFamiliaProducto();
                     Familia_Producto fp = new Familia_Producto();
 
-                    fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
+                    //fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
                     fp.descripcionFamiliaProducto = TxtDescripcion.Text;
                     fp.idRubro = int.Parse(CbRubro.SelectedValue.ToString());
-                    fp.descripcionRubro = CbRubro.SelectedValue.ToString();
+                    fp.descripcionRubro = CbRubro.SelectionStart.ToString();
                     fp.idProveedor = int.Parse(CbProveedor.SelectedValue.ToString());
 
                     ser.CrearFamiliaProducto(fp);

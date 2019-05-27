@@ -138,14 +138,5 @@ namespace AppPrincipal
                 LblDescripcionObligatoria.Visible = false;
             }
         }
-
-        private void BtnBuscarRubro_Click(object sender, EventArgs e)
-        {
-            FormularioBuscarRubro fbr = new FormularioBuscarRubro();
-            fbr.ShowDialog();
-            LblCodigoObligatorio.Visible = false;
-            LblDescripcionObligatoria.Visible = false;
-
-        }
     }
 }

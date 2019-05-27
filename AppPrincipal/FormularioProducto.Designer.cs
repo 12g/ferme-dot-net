@@ -167,6 +167,7 @@
             this.BtnTipoProducto.TabIndex = 9;
             this.BtnTipoProducto.Text = "Tipo Producto";
             this.BtnTipoProducto.UseVisualStyleBackColor = true;
+            this.BtnTipoProducto.Click += new System.EventHandler(this.BtnTipoProducto_Click);
             // 
             // FormularioProducto
             // 

@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FomularioTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FomularioTipoProducto.Designer.cs">
+      <DependentUpon>FomularioTipoProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +84,6 @@
     </Compile>
     <Compile Include="FormularioBuscarProducto.Designer.cs">
       <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioBuscarRubro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioBuscarRubro.Designer.cs">
-      <DependentUpon>FormularioBuscarRubro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioCliente.cs">
       <SubType>Form</SubType>
@@ -171,14 +171,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FomularioTipoProducto.resx">
+      <DependentUpon>FomularioTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBuscarProducto.resx">
       <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioBuscarRubro.resx">
-      <DependentUpon>FormularioBuscarRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCliente.resx">
       <DependentUpon>FormularioCliente.cs</DependentUpon>

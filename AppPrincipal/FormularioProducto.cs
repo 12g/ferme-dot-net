@@ -152,5 +152,12 @@ namespace AppPrincipal
             FormularioMantenedorFamiliaProducto fmfp = new FormularioMantenedorFamiliaProducto();
             fmfp.ShowDialog();
         }
+
+        //MANTENEDOR TIPO PRODUCTO
+        private void BtnTipoProducto_Click(object sender, EventArgs e)
+        {
+            FomularioTipoProducto frtp = new FomularioTipoProducto();
+            frtp.ShowDialog();
+        }
     }
 }

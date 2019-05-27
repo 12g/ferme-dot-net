@@ -8,7 +8,7 @@ namespace Biblioteca
 {
      public class TipoProducto
     {
-        public int idTipoProducto { get; set; }
+        public int? idTipoProducto { get; set; }
         public string nombreTipoProducto { get; set; }
         public int idFamiliaProducto { get; set; }
         public string nombreFamiliaProducto { get; set; }
