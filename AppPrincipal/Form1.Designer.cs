@@ -210,6 +210,7 @@
             // 
             // btnProducto
             // 
+            this.btnProducto.BackColor = System.Drawing.Color.Maroon;
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,7 +223,7 @@
             this.btnProducto.Size = new System.Drawing.Size(244, 35);
             this.btnProducto.TabIndex = 3;
             this.btnProducto.Text = "Producto";
-            this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnProducto.UseVisualStyleBackColor = false;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // lblTituloMenu2

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace AppPrincipal
 {
     public partial class FormularioPrincipal : Form
@@ -131,24 +132,58 @@ namespace AppPrincipal
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
-         AbrirFormInPanel<FormularioProducto>();
+            AbrirFormInPanel<FormularioProducto>();
+            btnProducto.BackColor = Color.FromArgb(178,34,34);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+
         }
 
         //EVENTO DEL BOTON CLIENTE EN EL PANEL PRINCIPAL
         private void BtnCliente_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioCliente>();
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(178, 34, 34);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
         }
 
         //BOTON ORDEN DE COMPRA EL CUAL REDIRIGE A LA VISTA PRINCIPAL DEL FORMULARIO
         private void BtnOrdenCompra_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioOrdenCompra>();
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(178, 34, 34);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
         }
 
+        //BOTON USUARIO
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioUsuario>();
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(178, 34, 34);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
         }
 
 
@@ -164,6 +199,14 @@ namespace AppPrincipal
         private void BtnProveedor_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioProveedor>();
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(178, 34, 34);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
         }
     }
 }
