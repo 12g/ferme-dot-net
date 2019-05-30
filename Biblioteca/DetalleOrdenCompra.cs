@@ -9,8 +9,8 @@ namespace Biblioteca
     public class DetalleOrdenCompra
     {
         //ATRIBUTOS
-        public int idDetalleOrdenCompra { get; set; }
-        private int idOrdenCompra { get; set; }
+        public int? idDetalleOrdenCompra { get; set; }
+        public int idOrdenCompra { get; set; }
         public int idProducto { get; set; }
         public int cantidadProducto { get; set; }
 

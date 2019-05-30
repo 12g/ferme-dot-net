@@ -72,10 +72,10 @@ namespace AppPrincipal
         }
 
         //ACTUALIZA EL DATAGRIDVIEW
-        /*private void FormularioUsuario_Load(object sender, EventArgs e)
+        private void FormularioUsuario_Load(object sender, EventArgs e)
         {
            Timer actualizar_automatico = new Timer();
-           actualizar_automatico.Interval = 30000;
+           actualizar_automatico.Interval = 3500;
            actualizar_automatico.Tick += actualizar_automatico_Tick;
            actualizar_automatico.Enabled = true;
         }
@@ -90,7 +90,7 @@ namespace AppPrincipal
         {
           recargar();
         }
-        */
+        
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             try

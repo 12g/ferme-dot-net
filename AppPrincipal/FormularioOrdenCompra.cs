@@ -21,6 +21,8 @@ namespace AppPrincipal
             {
                 ServicioOrdenCompra seroc = new ServicioOrdenCompra();
                 DGlistadoOrdenCompra.DataSource = seroc.ListarOrdenCompra();
+                this.DGlistadoOrdenCompra.Columns[5].Visible = false;
+
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadoOrdenCompra.Columns[0].HeaderText = "N° ORDEN COMPRA";
@@ -28,11 +30,11 @@ namespace AppPrincipal
                 this.DGlistadoOrdenCompra.Columns[2].HeaderText = "ESTADO";
                 this.DGlistadoOrdenCompra.Columns[3].HeaderText = "FECHA CREACION";
                 this.DGlistadoOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION";
-                this.DGlistadoOrdenCompra.Columns[5].HeaderText = "DETALLE";
+                //this.DGlistadoOrdenCompra.Columns[5].HeaderText = "DETALLE";
             }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PROVEEDORES");
+                MessageBox.Show("NO HAY DATOS EN ORDEN DE COMPRA");
             }
            
         }
@@ -51,10 +53,12 @@ namespace AppPrincipal
             fmoc.ShowDialog();
         }
 
+
+        //TIEMPO DE ACTUALIZACION DE LA LISTA DE ORDEN DE COMPRA
         private void FormularioOrdenCompra_Load(object sender, EventArgs e)
         {
             Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Interval = 3500;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
             actualizar_automatico.Enabled = true;
         }

@@ -74,10 +74,12 @@ namespace AppPrincipal
            
         }
 
+
+        //TIEMPO DE ACTUALIZAR LISTADO
         private void FormularioCliente_Load(object sender, EventArgs e)
         {
             Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Interval = 3500;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
             actualizar_automatico.Enabled = true;
         }

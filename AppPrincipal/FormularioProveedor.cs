@@ -26,12 +26,13 @@ namespace AppPrincipal
             {
                 DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
 
-                //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
+             //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
                 this.DgMostrarListaProveedor.Columns[0].Visible = false;
                 this.DgMostrarListaProveedor.Columns[1].Visible = false;
                 this.DgMostrarListaProveedor.Columns[8].Visible = false;
 
-                //DA NOMBRE A LAS COLUMNAS
+                
+              //DA NOMBRE A LAS COLUMNAS
                 this.DgMostrarListaProveedor.Columns[2].HeaderText = "RUT";
                 this.DgMostrarListaProveedor.Columns[3].HeaderText = "DIRECCION";
                 this.DgMostrarListaProveedor.Columns[4].HeaderText = "EMAIL";
@@ -39,9 +40,8 @@ namespace AppPrincipal
                 this.DgMostrarListaProveedor.Columns[6].HeaderText = "TELEFONO 2";
                 this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
                 this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL";
-                this.DgMostrarListaProveedor.Columns[10].HeaderText = "RUBRO";
 
-
+                 
             }
             catch (Exception)
             {
@@ -98,10 +98,11 @@ namespace AppPrincipal
             fmr.ShowDialog();
         }
 
+        //TIEMPO DE ACTUALIZACION DE LISTADO DE PROVEEDORES
         private void FormularioProveedor_Load(object sender, EventArgs e)
         {
             Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Interval = 3500;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
             actualizar_automatico.Enabled = true;
         }

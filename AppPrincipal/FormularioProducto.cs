@@ -108,9 +108,9 @@ namespace AppPrincipal
 
 
 
-            //ACTUALIZA EL DATAGRIDVIEW
+            //TIEMPO ACTUALIZA EL DATAGRIDVIEW
             Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 30000;
+            actualizar_automatico.Interval = 3500;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
             actualizar_automatico.Enabled = true;
         }

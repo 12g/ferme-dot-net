@@ -49,6 +49,7 @@
             this.IconoCerrarApp = new System.Windows.Forms.PictureBox();
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -57,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).BeginInit();
+            this.PanelContendorFormulario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuVertical
@@ -260,6 +263,7 @@
             // 
             // PanelBarraTitulo
             // 
+            this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
             this.PanelBarraTitulo.Controls.Add(this.IconoResetearApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMinimizarApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMaximizarApp);
@@ -335,12 +339,26 @@
             // 
             // PanelContendorFormulario
             // 
-            this.PanelContendorFormulario.BackColor = System.Drawing.Color.White;
+            this.PanelContendorFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.PanelContendorFormulario.Controls.Add(this.pictureBox2);
             this.PanelContendorFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContendorFormulario.Location = new System.Drawing.Point(250, 50);
             this.PanelContendorFormulario.Name = "PanelContendorFormulario";
             this.PanelContendorFormulario.Size = new System.Drawing.Size(1034, 562);
             this.PanelContendorFormulario.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(186, 148);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(543, 204);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // FormularioPrincipal
             // 
@@ -364,13 +382,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoCerrarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnDeslizarMenu)).EndInit();
+            this.PanelContendorFormulario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelMenuVertical;
         private System.Windows.Forms.Panel PanelBarraTitulo;
         private System.Windows.Forms.Label lblTituloMenu2;
         private System.Windows.Forms.Label lblTitulomenu;
@@ -384,12 +402,14 @@
         private System.Windows.Forms.Button BtnUsuario;
         private System.Windows.Forms.Button BtnVentas;
         private System.Windows.Forms.Button BtnProveedor;
-        private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Panel PanelContendorFormulario;
         private System.Windows.Forms.Button BtnRecepcion;
         private System.Windows.Forms.Label LblGrupoN1;
         private System.Windows.Forms.Button BtnOrdenCompra;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel PanelMenuVertical;
+        private System.Windows.Forms.Button btnProducto;
     }
 }
 

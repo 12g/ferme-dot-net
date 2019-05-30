@@ -199,6 +199,7 @@ namespace AppPrincipal
         private void BtnProveedor_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioProveedor>();
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(178, 34, 34);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);

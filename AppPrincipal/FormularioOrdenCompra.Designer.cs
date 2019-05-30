@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DGlistadoOrdenCompra = new System.Windows.Forms.DataGridView();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
+            this.DGlistadoOrdenCompra = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoOrdenCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,24 +68,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtBuscar.Location = new System.Drawing.Point(74, 42);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(774, 20);
+            this.TxtBuscar.Size = new System.Drawing.Size(785, 20);
             this.TxtBuscar.TabIndex = 3;
             this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
-            // 
-            // DGlistadoOrdenCompra
-            // 
-            this.DGlistadoOrdenCompra.AllowUserToAddRows = false;
-            this.DGlistadoOrdenCompra.AllowUserToDeleteRows = false;
-            this.DGlistadoOrdenCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGlistadoOrdenCompra.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DGlistadoOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGlistadoOrdenCompra.Location = new System.Drawing.Point(13, 73);
-            this.DGlistadoOrdenCompra.Name = "DGlistadoOrdenCompra";
-            this.DGlistadoOrdenCompra.ReadOnly = true;
-            this.DGlistadoOrdenCompra.Size = new System.Drawing.Size(835, 402);
-            this.DGlistadoOrdenCompra.TabIndex = 4;
             // 
             // BtnCrear
             // 
@@ -130,17 +118,62 @@
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // DGlistadoOrdenCompra
+            // 
+            this.DGlistadoOrdenCompra.AllowUserToAddRows = false;
+            this.DGlistadoOrdenCompra.AllowUserToDeleteRows = false;
+            this.DGlistadoOrdenCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGlistadoOrdenCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.DGlistadoOrdenCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGlistadoOrdenCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(97)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGlistadoOrdenCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGlistadoOrdenCompra.ColumnHeadersHeight = 40;
+            this.DGlistadoOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(186)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGlistadoOrdenCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGlistadoOrdenCompra.EnableHeadersVisualStyles = false;
+            this.DGlistadoOrdenCompra.GridColor = System.Drawing.Color.SteelBlue;
+            this.DGlistadoOrdenCompra.Location = new System.Drawing.Point(16, 73);
+            this.DGlistadoOrdenCompra.Name = "DGlistadoOrdenCompra";
+            this.DGlistadoOrdenCompra.ReadOnly = true;
+            this.DGlistadoOrdenCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(97)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGlistadoOrdenCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DGlistadoOrdenCompra.RowHeadersVisible = false;
+            this.DGlistadoOrdenCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGlistadoOrdenCompra.Size = new System.Drawing.Size(843, 418);
+            this.DGlistadoOrdenCompra.TabIndex = 17;
+            // 
             // FormularioOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1018, 524);
+            this.Controls.Add(this.DGlistadoOrdenCompra);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnCrear);
-            this.Controls.Add(this.DGlistadoOrdenCompra);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.LblTitulo);
@@ -158,10 +191,10 @@
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblBuscar;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DataGridView DGlistadoOrdenCompra;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnCerrar;
+        private System.Windows.Forms.DataGridView DGlistadoOrdenCompra;
     }
 }

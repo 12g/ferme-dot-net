@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DgMostrarListaProveedor = new System.Windows.Forms.DataGridView();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnRubro = new System.Windows.Forms.Button();
+            this.DgMostrarListaProveedor = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarListaProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,22 +70,6 @@
             this.TxtBuscar.Size = new System.Drawing.Size(816, 20);
             this.TxtBuscar.TabIndex = 2;
             this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
-            // 
-            // DgMostrarListaProveedor
-            // 
-            this.DgMostrarListaProveedor.AllowUserToAddRows = false;
-            this.DgMostrarListaProveedor.AllowUserToDeleteRows = false;
-            this.DgMostrarListaProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgMostrarListaProveedor.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgMostrarListaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgMostrarListaProveedor.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DgMostrarListaProveedor.Location = new System.Drawing.Point(17, 101);
-            this.DgMostrarListaProveedor.Name = "DgMostrarListaProveedor";
-            this.DgMostrarListaProveedor.ReadOnly = true;
-            this.DgMostrarListaProveedor.Size = new System.Drawing.Size(859, 410);
-            this.DgMostrarListaProveedor.TabIndex = 3;
             // 
             // BtnCrear
             // 
@@ -143,18 +130,63 @@
             this.BtnRubro.UseVisualStyleBackColor = true;
             this.BtnRubro.Click += new System.EventHandler(this.BtnRubro_Click);
             // 
+            // DgMostrarListaProveedor
+            // 
+            this.DgMostrarListaProveedor.AllowUserToAddRows = false;
+            this.DgMostrarListaProveedor.AllowUserToDeleteRows = false;
+            this.DgMostrarListaProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgMostrarListaProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.DgMostrarListaProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgMostrarListaProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(97)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgMostrarListaProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgMostrarListaProveedor.ColumnHeadersHeight = 40;
+            this.DgMostrarListaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(186)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgMostrarListaProveedor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgMostrarListaProveedor.EnableHeadersVisualStyles = false;
+            this.DgMostrarListaProveedor.GridColor = System.Drawing.Color.SteelBlue;
+            this.DgMostrarListaProveedor.Location = new System.Drawing.Point(17, 101);
+            this.DgMostrarListaProveedor.Name = "DgMostrarListaProveedor";
+            this.DgMostrarListaProveedor.ReadOnly = true;
+            this.DgMostrarListaProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(97)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgMostrarListaProveedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgMostrarListaProveedor.RowHeadersVisible = false;
+            this.DgMostrarListaProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgMostrarListaProveedor.Size = new System.Drawing.Size(859, 418);
+            this.DgMostrarListaProveedor.TabIndex = 16;
+            // 
             // FormularioProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.Controls.Add(this.DgMostrarListaProveedor);
             this.Controls.Add(this.BtnRubro);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnCrear);
-            this.Controls.Add(this.DgMostrarListaProveedor);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.LblTitulo);
@@ -173,11 +205,11 @@
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblBuscar;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DataGridView DgMostrarListaProveedor;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnRubro;
+        private System.Windows.Forms.DataGridView DgMostrarListaProveedor;
     }
 }
