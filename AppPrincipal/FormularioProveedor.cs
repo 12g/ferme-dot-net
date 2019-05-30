@@ -33,13 +33,13 @@ namespace AppPrincipal
 
                 
               //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarListaProveedor.Columns[2].HeaderText = "RUT";
-                this.DgMostrarListaProveedor.Columns[3].HeaderText = "DIRECCION";
-                this.DgMostrarListaProveedor.Columns[4].HeaderText = "EMAIL";
+                this.DgMostrarListaProveedor.Columns[2].HeaderText = "RUT   ";
+                this.DgMostrarListaProveedor.Columns[3].HeaderText = "DIRECCION          ";
+                this.DgMostrarListaProveedor.Columns[4].HeaderText = "EMAIL                            ";
                 this.DgMostrarListaProveedor.Columns[5].HeaderText = "TELEFONO 1";
                 this.DgMostrarListaProveedor.Columns[6].HeaderText = "TELEFONO 2";
                 this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
-                this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL";
+                this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL                           ";
 
                  
             }

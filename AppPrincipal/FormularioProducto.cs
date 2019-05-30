@@ -87,19 +87,19 @@ namespace AppPrincipal
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
 
-                //OCULTA LAS COLUMNAS
-                this.DGlistadeproductos.Columns[0].Visible = false;
-                this.DGlistadeproductos.Columns[6].Visible = false;
+                 //OCULTA LAS COLUMNAS
+                 this.DGlistadeproductos.Columns[0].Visible = false;
+                 this.DGlistadeproductos.Columns[6].Visible = false;
 
-                //DA NOMBRE A LAS COLUMNAS
-                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
-                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
-                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
-                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
-                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
-
+                 //DA NOMBRE A LAS COLUMNAS
+                 this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
+                 this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
+                 this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
+                 this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                 this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
+                 this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                 this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
+                 DGlistadeproductos.Show();
             }
             catch (Exception)
             {
@@ -107,12 +107,12 @@ namespace AppPrincipal
             }
 
 
-
+            /*
             //TIEMPO ACTUALIZA EL DATAGRIDVIEW
             Timer actualizar_automatico = new Timer();
             actualizar_automatico.Interval = 3500;
             actualizar_automatico.Tick += actualizar_automatico_Tick;
-            actualizar_automatico.Enabled = true;
+            actualizar_automatico.Enabled = true;*/
         }
 
         //BUSCAR

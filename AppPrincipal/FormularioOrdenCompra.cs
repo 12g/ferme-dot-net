@@ -25,11 +25,11 @@ namespace AppPrincipal
 
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DGlistadoOrdenCompra.Columns[0].HeaderText = "N° ORDEN COMPRA";
-                this.DGlistadoOrdenCompra.Columns[1].HeaderText = "EMPLEADO";
+                this.DGlistadoOrdenCompra.Columns[0].HeaderText = "N° ORDEN COMPRA               ";
+                this.DGlistadoOrdenCompra.Columns[1].HeaderText = "EMPLEADO                                    ";
                 this.DGlistadoOrdenCompra.Columns[2].HeaderText = "ESTADO";
-                this.DGlistadoOrdenCompra.Columns[3].HeaderText = "FECHA CREACION";
-                this.DGlistadoOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION";
+                this.DGlistadoOrdenCompra.Columns[3].HeaderText = "FECHA CREACION                ";
+                this.DGlistadoOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION               ";
                 //this.DGlistadoOrdenCompra.Columns[5].HeaderText = "DETALLE";
             }
             catch (Exception)

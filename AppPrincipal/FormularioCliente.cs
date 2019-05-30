@@ -21,6 +21,22 @@ namespace AppPrincipal
             try
             {
                 DGMostrarListaCliente.DataSource = sercl.ListarClientes();
+
+                //OCULTA LAS FILAS
+                this.DGMostrarListaCliente.Columns[0].Visible = false;
+                this.DGMostrarListaCliente.Columns[8].Visible = false;
+
+
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DGMostrarListaCliente.Columns[1].HeaderText = "NOMBRE                  ";
+                this.DGMostrarListaCliente.Columns[2].HeaderText = "RUT               ";
+                this.DGMostrarListaCliente.Columns[3].HeaderText = "DIRECCION                ";
+                this.DGMostrarListaCliente.Columns[4].HeaderText = "EMAIL               ";
+                this.DGMostrarListaCliente.Columns[5].HeaderText = "TELEFONO 1      ";
+                this.DGMostrarListaCliente.Columns[6].HeaderText = "TELEFONO 2      ";
+                this.DGMostrarListaCliente.Columns[7].HeaderText = "TELEFONO 3      ";
+
             }
             catch (Exception)
             {
