@@ -260,6 +260,8 @@ namespace AppPrincipal
                     emp.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     serv.CrearEmpleado(emp);
+                    FormularioUsuario usr = new FormularioUsuario();
+                    usr.Listaempleado();
                     Limpiar();
                 }
             }

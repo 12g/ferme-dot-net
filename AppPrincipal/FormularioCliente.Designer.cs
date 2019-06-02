@@ -71,6 +71,7 @@
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(791, 20);
             this.TxtBuscar.TabIndex = 11;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // button1
             // 
@@ -183,7 +184,6 @@
             this.Controls.Add(this.LblTitulo);
             this.Name = "FormularioCliente";
             this.Text = "FormularioCliente";
-            this.Load += new System.EventHandler(this.FormularioCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGMostrarListaCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,6 +199,6 @@
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.DataGridView DGMostrarListaCliente;
+        public System.Windows.Forms.DataGridView DGMostrarListaCliente;
     }
 }

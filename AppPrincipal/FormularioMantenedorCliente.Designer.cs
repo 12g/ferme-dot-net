@@ -50,6 +50,8 @@
             this.lblMensajeDireccion = new System.Windows.Forms.Label();
             this.lblMensajeEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LblIdCliente = new System.Windows.Forms.Label();
+            this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -271,12 +273,33 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 25;
             // 
+            // LblIdCliente
+            // 
+            this.LblIdCliente.AutoSize = true;
+            this.LblIdCliente.Location = new System.Drawing.Point(13, 24);
+            this.LblIdCliente.Name = "LblIdCliente";
+            this.LblIdCliente.Size = new System.Drawing.Size(48, 13);
+            this.LblIdCliente.TabIndex = 26;
+            this.LblIdCliente.Text = "IdCliente";
+            this.LblIdCliente.Visible = false;
+            // 
+            // TxtIdCliente
+            // 
+            this.TxtIdCliente.Location = new System.Drawing.Point(16, 43);
+            this.TxtIdCliente.Name = "TxtIdCliente";
+            this.TxtIdCliente.ReadOnly = true;
+            this.TxtIdCliente.Size = new System.Drawing.Size(144, 20);
+            this.TxtIdCliente.TabIndex = 27;
+            this.TxtIdCliente.Visible = false;
+            // 
             // FormularioMantenedorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 446);
             this.ControlBox = false;
+            this.Controls.Add(this.TxtIdCliente);
+            this.Controls.Add(this.LblIdCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMensajeEmail);
             this.Controls.Add(this.lblMensajeDireccion);
@@ -333,5 +356,7 @@
         private System.Windows.Forms.Label lblMensajeDireccion;
         private System.Windows.Forms.Label lblMensajeEmail;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblIdCliente;
+        public System.Windows.Forms.TextBox TxtIdCliente;
     }
 }

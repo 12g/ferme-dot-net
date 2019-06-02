@@ -79,7 +79,12 @@ namespace AppPrincipal
                         cantidad = DgListadoProductoOC[2, row.Index].Value.ToString();
 
                     }
-                        ser.CrearOrdenCompra(oc);
+
+                    ser.CrearOrdenCompra(oc);
+                    FormularioOrdenCompra orc = new FormularioOrdenCompra();
+                    orc.ListarOrdenCompra();
+
+                    Limpiar();
                 }
             }
             catch (Exception)

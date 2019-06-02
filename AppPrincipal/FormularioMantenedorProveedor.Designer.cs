@@ -52,6 +52,8 @@
             this.LblTelefono2 = new System.Windows.Forms.Label();
             this.TxtTelefono3 = new System.Windows.Forms.TextBox();
             this.LblTelefono3 = new System.Windows.Forms.Label();
+            this.IdProveedor = new System.Windows.Forms.Label();
+            this.TxtIdProveedor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -287,12 +289,33 @@
             this.LblTelefono3.TabIndex = 27;
             this.LblTelefono3.Text = "Telefono 3 (Opcional)";
             // 
+            // IdProveedor
+            // 
+            this.IdProveedor.AutoSize = true;
+            this.IdProveedor.Location = new System.Drawing.Point(10, 20);
+            this.IdProveedor.Name = "IdProveedor";
+            this.IdProveedor.Size = new System.Drawing.Size(65, 13);
+            this.IdProveedor.TabIndex = 28;
+            this.IdProveedor.Text = "IdProveedor";
+            this.IdProveedor.Visible = false;
+            // 
+            // TxtIdProveedor
+            // 
+            this.TxtIdProveedor.Location = new System.Drawing.Point(12, 37);
+            this.TxtIdProveedor.Name = "TxtIdProveedor";
+            this.TxtIdProveedor.ReadOnly = true;
+            this.TxtIdProveedor.Size = new System.Drawing.Size(127, 20);
+            this.TxtIdProveedor.TabIndex = 29;
+            this.TxtIdProveedor.Visible = false;
+            // 
             // FormularioMantenedorProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.TxtIdProveedor);
+            this.Controls.Add(this.IdProveedor);
             this.Controls.Add(this.LblTelefono3);
             this.Controls.Add(this.TxtTelefono3);
             this.Controls.Add(this.LblTelefono2);
@@ -353,5 +376,7 @@
         private System.Windows.Forms.Label LblTelefono3;
         public System.Windows.Forms.TextBox TxtDireccion;
         public System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.Label IdProveedor;
+        public System.Windows.Forms.TextBox TxtIdProveedor;
     }
 }

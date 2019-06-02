@@ -21,18 +21,24 @@ namespace AppPrincipal
         public FormularioProveedor()
         {
             InitializeComponent();
+            ListarProveedor();
+        }
+
+        //MUESTRA LISTA DE PROVEEDORES EN DATAGRIDVIEW
+        public void ListarProveedor()
+        {
             ServicioProveedores serp = new ServicioProveedores();
             try
             {
                 DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
 
-             //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
+                //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
                 this.DgMostrarListaProveedor.Columns[0].Visible = false;
                 this.DgMostrarListaProveedor.Columns[1].Visible = false;
                 this.DgMostrarListaProveedor.Columns[8].Visible = false;
 
-                
-              //DA NOMBRE A LAS COLUMNAS
+
+                //DA NOMBRE A LAS COLUMNAS
                 this.DgMostrarListaProveedor.Columns[2].HeaderText = "RUT   ";
                 this.DgMostrarListaProveedor.Columns[3].HeaderText = "DIRECCION          ";
                 this.DgMostrarListaProveedor.Columns[4].HeaderText = "EMAIL                            ";
@@ -41,7 +47,7 @@ namespace AppPrincipal
                 this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
                 this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL                           ";
 
-                 
+
             }
             catch (Exception)
             {
@@ -70,6 +76,7 @@ namespace AppPrincipal
                 FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
                 if (DgMostrarListaProveedor.SelectedRows.Count > 0)
                 {
+                    fmp.TxtIdProveedor.Text = DgMostrarListaProveedor.CurrentRow.Cells[8].Value.ToString();
                     fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[2].Value.ToString();
                     fmp.TxtDireccion.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
@@ -79,6 +86,9 @@ namespace AppPrincipal
                     fmp.TxtTelefono3.Text = DgMostrarListaProveedor.CurrentRow.Cells[7].Value.ToString();
 
                     fmp.ShowDialog();
+                    ServicioProveedores serp = new ServicioProveedores();
+                    DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
+                    DgMostrarListaProveedor.Refresh();
                 }
                 else
                 {
@@ -97,26 +107,6 @@ namespace AppPrincipal
             FormularioMantenedorRubro fmr = new FormularioMantenedorRubro();
             fmr.ShowDialog();
         }
-
-        //TIEMPO DE ACTUALIZACION DE LISTADO DE PROVEEDORES
-        private void FormularioProveedor_Load(object sender, EventArgs e)
-        {
-            Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 3500;
-            actualizar_automatico.Tick += actualizar_automatico_Tick;
-            actualizar_automatico.Enabled = true;
-        }
-        private void recargar()
-        {
-            ServicioProveedores ser = new ServicioProveedores();
-            DgMostrarListaProveedor.DataSource = ser.ListadoProveedor();
-        }
-
-        private void actualizar_automatico_Tick(object sender, EventArgs e)
-        {
-            recargar();
-        }
-
 
         //BUSCAR
         private void TxtBuscar_TextChanged(object sender, EventArgs e)

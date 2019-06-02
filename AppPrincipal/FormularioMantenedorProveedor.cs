@@ -17,6 +17,7 @@ namespace AppPrincipal
         public FormularioMantenedorProveedor()
         {
             InitializeComponent();
+            TxtIdProveedor.Text = "0";
         }
 
 
@@ -51,6 +52,7 @@ namespace AppPrincipal
             TxtTelefono1.Text = "0";
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
+            TxtIdProveedor.Text = "";
         }
 
         //BOTON GUARDAR
@@ -107,6 +109,7 @@ namespace AppPrincipal
                     Proveedor pro = new Proveedor();
                     ServicioProveedores sp = new ServicioProveedores();
 
+                    pro.idProveedor = int.Parse(TxtIdProveedor.Text);
                     pro.idRubro = CbxRubro.SelectedIndex;
                     pro.rutPersona = TxtRut.Text;
                     pro.razonSocialProveedor = TxtRazonSocial.Text;
@@ -118,6 +121,12 @@ namespace AppPrincipal
                     pro.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     sp.CrearProveedor(pro);
+
+                    FormularioProveedor fp = new FormularioProveedor();
+                    ServicioProveedores serp = new ServicioProveedores();
+                    fp.DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
+                    fp.DgMostrarListaProveedor.Refresh();
+
                     Limpiar();
                 }
 
@@ -268,6 +277,12 @@ namespace AppPrincipal
             CbxRubro.DataSource = serR.ListarRubro();
             CbxRubro.DisplayMember = "descripcionRubro";
             CbxRubro.ValueMember = "idRubro";
+
+            if (CbxRubro.Items.Count > 1)
+            {
+                CbxRubro.SelectedIndex = -1;
+                CbxRubro.Text = "Seleccione";
+            }
         }
     }
 }

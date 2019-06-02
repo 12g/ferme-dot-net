@@ -17,7 +17,14 @@ namespace AppPrincipal
         public FormularioUsuario()
         {
             InitializeComponent();
-            
+            Listaempleado();
+        }
+
+
+        //CARGA LISTA EMPLEADO
+        public void Listaempleado()
+        {
+
             try
             {
                 ServicioEmpleado sere = new ServicioEmpleado();
@@ -27,7 +34,7 @@ namespace AppPrincipal
                 this.DGlistadoUsuario.Columns[0].Visible = false;
                 this.DGlistadoUsuario.Columns[8].Visible = false;
 
-                
+
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadoUsuario.Columns[1].HeaderText = "NOMBRE            ";
                 this.DGlistadoUsuario.Columns[2].HeaderText = "RUT            ";
@@ -70,27 +77,6 @@ namespace AppPrincipal
             FormularioMantenedorEmpleado fme = new FormularioMantenedorEmpleado();
             fme.ShowDialog();
         }
-
-        //ACTUALIZA EL DATAGRIDVIEW
-        private void FormularioUsuario_Load(object sender, EventArgs e)
-        {
-           Timer actualizar_automatico = new Timer();
-           actualizar_automatico.Interval = 3500;
-           actualizar_automatico.Tick += actualizar_automatico_Tick;
-           actualizar_automatico.Enabled = true;
-        }
-
-        private void recargar()
-        {
-           ServicioEmpleado ser = new ServicioEmpleado();
-           DGlistadoUsuario.DataSource = ser.ListaEmpleados();
-        }
-
-        private void actualizar_automatico_Tick(object sender, EventArgs e)
-        {
-          recargar();
-        }
-        
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             try

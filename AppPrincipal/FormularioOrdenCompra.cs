@@ -17,6 +17,13 @@ namespace AppPrincipal
         public FormularioOrdenCompra()
         {
             InitializeComponent();
+            ListarOrdenCompra();
+        }
+
+
+        //carga lista orden de compra en datagridview
+        public void ListarOrdenCompra()
+        {
             try
             {
                 ServicioOrdenCompra seroc = new ServicioOrdenCompra();
@@ -36,7 +43,6 @@ namespace AppPrincipal
             {
                 MessageBox.Show("NO HAY DATOS EN ORDEN DE COMPRA");
             }
-           
         }
 
         //BOTON CERRAR EL FORMULARIO DE ORDEN DE COMPRA

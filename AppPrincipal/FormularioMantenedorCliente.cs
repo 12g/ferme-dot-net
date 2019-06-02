@@ -22,6 +22,7 @@ namespace AppPrincipal
         public FormularioMantenedorCliente()
         {
             InitializeComponent();
+            TxtIdCliente.Text = "0";
         }
 
         //BOTON CANCELAR 
@@ -108,6 +109,7 @@ namespace AppPrincipal
                     Cliente cli = new Cliente();
                     ServicioCliente serv = new ServicioCliente();
 
+                    cli.idCliente = int.Parse(TxtIdCliente.Text);
                     cli.rutPersona = TxtRutCliente.Text;
                     cli.nombreCompletoPersona = TxtNombre.Text;
                     cli.direccionPersona = TxtDireccion.Text;
@@ -117,6 +119,12 @@ namespace AppPrincipal
                     cli.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     serv.CrearCliente(cli);
+
+                    FormularioCliente clicli = new FormularioCliente();
+                    ServicioCliente serp = new ServicioCliente();
+                    clicli.DGMostrarListaCliente.DataSource = serp.ListarClientes();
+                    clicli.DGMostrarListaCliente.Refresh();
+
                     Limpiar();
                 }
             }

@@ -18,6 +18,7 @@ namespace AppPrincipal
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
+            TxtIdProducto.Text = "0";
         }
 
 
@@ -51,6 +52,7 @@ namespace AppPrincipal
             TxtPrecio.Text = "";
             TxtStockActual.Text = "";
             TxtStockCritico.Text = "";
+            TxtIdProducto.Text = "";
         }
 
 
@@ -61,7 +63,7 @@ namespace AppPrincipal
             {
                Validaciones  val = new Validaciones();
 
-                if (TxtCodigo.Text == "")
+                 if (TxtCodigo.Text == "")
                 {
                     MessageBox.Show("INGRESE UN CODIGO PARA EL PRODUCTO");
                 }
@@ -131,11 +133,12 @@ namespace AppPrincipal
                 }
                 else
                 {
+                    FormularioProducto prod = new FormularioProducto();
                     ServicioProducto serp = new ServicioProducto();
                     Producto pro = new Producto();
 
 
-                    //pro.idProducto = int.Parse(TxtCodigo.Text);
+                    pro.idProducto = int.Parse(TxtIdProducto.Text);
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
                     pro.idTipoProducto = int.Parse(CbTipoproducto.SelectedValue.ToString());
@@ -147,7 +150,12 @@ namespace AppPrincipal
 
                     CargarComBobox();
                     serp.CrearProducto(pro);
-                    
+
+                    ServicioProducto servp = new ServicioProducto();
+                    FormularioProducto p = new FormularioProducto();
+
+                    p.DGlistadeproductos.DataSource = servp.GetRESTData();
+                    p.DGlistadeproductos.Refresh();
 
                     Limpiar();
                 }
@@ -197,6 +205,12 @@ namespace AppPrincipal
                 CbTipoproducto.SelectedIndex = -1;
                 CbTipoproducto.Text = "Seleccione";
             }
+        }
+
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones val = new Validaciones();
+            val.SoloNumero(e);
         }
     }
 }

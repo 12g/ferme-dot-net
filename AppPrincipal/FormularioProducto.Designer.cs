@@ -235,7 +235,6 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView DGlistadeproductos;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
@@ -243,5 +242,6 @@
         private System.Windows.Forms.Button BtnFamiliaProducto;
         private System.Windows.Forms.Button BtnTipoProducto;
         private System.Windows.Forms.Button btnCerrar;
+        public System.Windows.Forms.DataGridView DGlistadeproductos;
     }
 }

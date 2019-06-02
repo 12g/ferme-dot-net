@@ -44,7 +44,7 @@ namespace AppPrincipal
                 FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
                 if (DGlistadeproductos.SelectedRows.Count > 0)
                 {
-                 
+                    fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells[0].Value.ToString();
                     fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
                     fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
@@ -52,9 +52,11 @@ namespace AppPrincipal
                     fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
                     fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
                     fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
-
                     fmp.ShowDialog();
-                   
+
+                    ServicioProducto servp = new ServicioProducto();
+                    DGlistadeproductos.DataSource = servp.GetRESTData();
+                    DGlistadeproductos.Refresh();
                 }
                 else
                 {
@@ -68,51 +70,38 @@ namespace AppPrincipal
             }
         }
 
-        private void recargar()
-        {
-            ServicioProducto ser = new ServicioProducto();
-            DGlistadeproductos.DataSource = ser.GetRESTData();
-        }
-
-        private void actualizar_automatico_Tick(object sender, EventArgs e)
-        {
-            recargar();
-        }
-
         private void FormularioProducto_Load_1(object sender, EventArgs e)
         {
+            ListaProducto();
+        }
 
+
+        //CARGA LISTA DE PRODUCTO EN DATAGRIDVIEW
+        public void ListaProducto()
+        {
             ServicioProducto ser = new ServicioProducto();
             try
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
 
-                 //OCULTA LAS COLUMNAS
-                 this.DGlistadeproductos.Columns[0].Visible = false;
-                 this.DGlistadeproductos.Columns[6].Visible = false;
+                //OCULTA LAS COLUMNAS
+                this.DGlistadeproductos.Columns[0].Visible = false;
+                this.DGlistadeproductos.Columns[6].Visible = false;
 
-                 //DA NOMBRE A LAS COLUMNAS
-                 this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
-                 this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
-                 this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
-                 this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                 this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
-                 this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                 this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
-                 DGlistadeproductos.Show();
+                //DA NOMBRE A LAS COLUMNAS
+                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
+                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
+                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
+                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
+                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
+                DGlistadeproductos.Show();
             }
             catch (Exception)
             {
                 MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
             }
-
-
-            /*
-            //TIEMPO ACTUALIZA EL DATAGRIDVIEW
-            Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 3500;
-            actualizar_automatico.Tick += actualizar_automatico_Tick;
-            actualizar_automatico.Enabled = true;*/
         }
 
         //BUSCAR

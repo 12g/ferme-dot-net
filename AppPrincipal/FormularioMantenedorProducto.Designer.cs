@@ -52,6 +52,8 @@
             this.LblPrecioObligatorio = new System.Windows.Forms.Label();
             this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.IdProducto = new System.Windows.Forms.Label();
+            this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -90,6 +92,7 @@
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(156, 20);
             this.TxtCodigo.TabIndex = 3;
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
             // 
             // TxtNombreProducto
             // 
@@ -289,12 +292,33 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "$";
             // 
+            // IdProducto
+            // 
+            this.IdProducto.AutoSize = true;
+            this.IdProducto.Location = new System.Drawing.Point(26, 24);
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Size = new System.Drawing.Size(59, 13);
+            this.IdProducto.TabIndex = 31;
+            this.IdProducto.Text = "IdProducto";
+            this.IdProducto.Visible = false;
+            // 
+            // TxtIdProducto
+            // 
+            this.TxtIdProducto.Location = new System.Drawing.Point(27, 40);
+            this.TxtIdProducto.Name = "TxtIdProducto";
+            this.TxtIdProducto.ReadOnly = true;
+            this.TxtIdProducto.Size = new System.Drawing.Size(153, 20);
+            this.TxtIdProducto.TabIndex = 32;
+            this.TxtIdProducto.Visible = false;
+            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 436);
             this.ControlBox = false;
+            this.Controls.Add(this.TxtIdProducto);
+            this.Controls.Add(this.IdProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblDescripcionObligatoria);
             this.Controls.Add(this.LblPrecioObligatorio);
@@ -355,5 +379,7 @@
         private System.Windows.Forms.Label LblPrecioObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label IdProducto;
+        public System.Windows.Forms.TextBox TxtIdProducto;
     }
 }

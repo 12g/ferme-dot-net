@@ -17,9 +17,14 @@ namespace AppPrincipal
         public FormularioCliente()
         {
             InitializeComponent();
-            ServicioCliente sercl = new ServicioCliente();
+            ListarCliente();
+        }
+
+        public void ListarCliente()
+        {
             try
             {
+                ServicioCliente sercl = new ServicioCliente();
                 DGMostrarListaCliente.DataSource = sercl.ListarClientes();
 
                 //OCULTA LAS FILAS
@@ -42,7 +47,6 @@ namespace AppPrincipal
             {
                 MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE CLIENTES");
             }
-            
         }
 
         //boton cancelar el cual cierra el formulario de cliente 
@@ -67,6 +71,7 @@ namespace AppPrincipal
 
                 if (DGMostrarListaCliente.SelectedRows.Count >0)
                 {
+                    fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[8].Value.ToString();
                     fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[0].Value.ToString();
                     fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells[1].Value.ToString();
                     fmc.TxtDireccion.Text = DGMostrarListaCliente.CurrentRow.Cells[3].Value.ToString();
@@ -76,6 +81,10 @@ namespace AppPrincipal
                     fmc.TxtTelefono3.Text = DGMostrarListaCliente.CurrentRow.Cells[7].Value.ToString();
 
                     fmc.ShowDialog();
+
+                    ServicioCliente servp = new ServicioCliente();
+                    DGMostrarListaCliente.DataSource = servp.ListarClientes();
+                    DGMostrarListaCliente.Refresh();
                 }
                 else
                 {
@@ -90,24 +99,33 @@ namespace AppPrincipal
            
         }
 
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBuscar.Text != "")
+            {
+                DGMostrarListaCliente.CurrentCell = null;
+                foreach (DataGridViewRow r in DGMostrarListaCliente.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in DGMostrarListaCliente.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(TxtBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
 
-        //TIEMPO DE ACTUALIZAR LISTADO
-        private void FormularioCliente_Load(object sender, EventArgs e)
-        {
-            Timer actualizar_automatico = new Timer();
-            actualizar_automatico.Interval = 3500;
-            actualizar_automatico.Tick += actualizar_automatico_Tick;
-            actualizar_automatico.Enabled = true;
-        }
-        private void recargar()
-        {
-            ServicioCliente ser = new ServicioCliente();
-            DGMostrarListaCliente.DataSource = ser.ListarClientes();
-        }
-
-        private void actualizar_automatico_Tick(object sender, EventArgs e)
-        {
-            recargar();
+                }
+            }
+            else
+            {
+                ServicioCliente cli = new ServicioCliente();
+                DGMostrarListaCliente.DataSource = cli.ListarClientes();
+            }
         }
     }
 }
