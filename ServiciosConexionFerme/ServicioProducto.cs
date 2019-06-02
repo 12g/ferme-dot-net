@@ -23,11 +23,11 @@ namespace ServiciosConexionFerme
             var responseMessage = httpClient.GetAsync("gestion/productos").Result;
 
             string responseAsync = responseMessage.Content.ReadAsStringAsync().Result;
-            var jsonObj = JsonConvert.DeserializeObject<Empleado[]>(responseAsync);
+            var jsonObj = JsonConvert.DeserializeObject<Producto[]>(responseAsync);
 
             foreach (var item in jsonObj)
             {
-                Console.WriteLine(item.idEmpleado);
+                Console.WriteLine(item.idProducto);
             }
 
             //Console.WriteLine(responseAsync);

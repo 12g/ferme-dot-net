@@ -142,6 +142,7 @@ namespace AppPrincipal
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
 
+
         }
 
         //EVENTO DEL BOTON CLIENTE EN EL PANEL PRINCIPAL
@@ -156,6 +157,7 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+
         }
 
         //BOTON ORDEN DE COMPRA EL CUAL REDIRIGE A LA VISTA PRINCIPAL DEL FORMULARIO
@@ -170,6 +172,7 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+
         }
 
         //BOTON USUARIO
@@ -184,8 +187,22 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(178, 34, 34);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+           
         }
 
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+
+            AbrirFormInPanel<FromularioVentas>();
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(178, 34, 34);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+        }
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
         /*private void TimehorayFecha_Tick(object sender, EventArgs e)
@@ -208,6 +225,7 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+ 
         }
     }
 }

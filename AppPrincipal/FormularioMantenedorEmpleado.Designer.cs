@@ -52,6 +52,8 @@
             this.TxtTelefono3 = new System.Windows.Forms.TextBox();
             this.LblCargo = new System.Windows.Forms.Label();
             this.CbxCargo = new System.Windows.Forms.ComboBox();
+            this.LblIdEmpleado = new System.Windows.Forms.Label();
+            this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BtnGuardar
@@ -282,12 +284,33 @@
             this.CbxCargo.Size = new System.Drawing.Size(188, 21);
             this.CbxCargo.TabIndex = 38;
             // 
+            // LblIdEmpleado
+            // 
+            this.LblIdEmpleado.AutoSize = true;
+            this.LblIdEmpleado.Location = new System.Drawing.Point(12, 26);
+            this.LblIdEmpleado.Name = "LblIdEmpleado";
+            this.LblIdEmpleado.Size = new System.Drawing.Size(63, 13);
+            this.LblIdEmpleado.TabIndex = 39;
+            this.LblIdEmpleado.Text = "IdEmpleado";
+            this.LblIdEmpleado.Visible = false;
+            // 
+            // TxtIdEmpleado
+            // 
+            this.TxtIdEmpleado.Location = new System.Drawing.Point(15, 43);
+            this.TxtIdEmpleado.Name = "TxtIdEmpleado";
+            this.TxtIdEmpleado.ReadOnly = true;
+            this.TxtIdEmpleado.Size = new System.Drawing.Size(148, 20);
+            this.TxtIdEmpleado.TabIndex = 40;
+            this.TxtIdEmpleado.Visible = false;
+            // 
             // FormularioMantenedorEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 408);
             this.ControlBox = false;
+            this.Controls.Add(this.TxtIdEmpleado);
+            this.Controls.Add(this.LblIdEmpleado);
             this.Controls.Add(this.CbxCargo);
             this.Controls.Add(this.LblCargo);
             this.Controls.Add(this.TxtTelefono3);
@@ -317,6 +340,7 @@
             this.Name = "FormularioMantenedorEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Empleado";
+            this.Load += new System.EventHandler(this.FormularioMantenedorEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +371,7 @@
         public System.Windows.Forms.TextBox TxtTelefono3;
         private System.Windows.Forms.Label LblCargo;
         public System.Windows.Forms.ComboBox CbxCargo;
+        private System.Windows.Forms.Label LblIdEmpleado;
+        public System.Windows.Forms.TextBox TxtIdEmpleado;
     }
 }

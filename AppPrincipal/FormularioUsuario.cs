@@ -85,6 +85,7 @@ namespace AppPrincipal
                 FormularioMantenedorEmpleado fmp = new FormularioMantenedorEmpleado();
                 if (DGlistadoUsuario.SelectedRows.Count > 0)
                 {
+                    fmp.TxtIdEmpleado.Text = DGlistadoUsuario.CurrentRow.Cells[8].Value.ToString();
                     fmp.TxtRutCliente.Text = DGlistadoUsuario.CurrentRow.Cells[2].Value.ToString();
                     fmp.CbxCargo.Text = DGlistadoUsuario.CurrentRow.Cells[9].Value.ToString();
                     fmp.TxtNombre.Text = DGlistadoUsuario.CurrentRow.Cells[1].Value.ToString();
@@ -96,6 +97,9 @@ namespace AppPrincipal
                     fmp.TxtTelefono3.Text = DGlistadoUsuario.CurrentRow.Cells[7].Value.ToString();
 
                     fmp.ShowDialog();
+
+                    DGlistadoUsuario.DataSource = ser.ListaEmpleados();
+                    DGlistadoUsuario.Refresh();
                 }
                 else
                 {

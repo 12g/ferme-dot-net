@@ -88,7 +88,7 @@
             this.BtnOrdenCompra.FlatAppearance.BorderSize = 0;
             this.BtnOrdenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnOrdenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOrdenCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOrdenCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnOrdenCompra.ForeColor = System.Drawing.Color.White;
             this.BtnOrdenCompra.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrdenCompra.Image")));
             this.BtnOrdenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,7 +96,8 @@
             this.BtnOrdenCompra.Name = "BtnOrdenCompra";
             this.BtnOrdenCompra.Size = new System.Drawing.Size(250, 35);
             this.BtnOrdenCompra.TabIndex = 9;
-            this.BtnOrdenCompra.Text = "Orden Compra";
+            this.BtnOrdenCompra.Text = "          Orden Compra";
+            this.BtnOrdenCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnOrdenCompra.UseVisualStyleBackColor = true;
             this.BtnOrdenCompra.Click += new System.EventHandler(this.BtnOrdenCompra_Click);
             // 
@@ -117,15 +118,16 @@
             this.BtnRecepcion.FlatAppearance.BorderSize = 0;
             this.BtnRecepcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnRecepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRecepcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRecepcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRecepcion.ForeColor = System.Drawing.Color.White;
             this.BtnRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("BtnRecepcion.Image")));
             this.BtnRecepcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRecepcion.Location = new System.Drawing.Point(0, 358);
+            this.BtnRecepcion.Location = new System.Drawing.Point(0, 353);
             this.BtnRecepcion.Name = "BtnRecepcion";
             this.BtnRecepcion.Size = new System.Drawing.Size(244, 35);
             this.BtnRecepcion.TabIndex = 9;
-            this.BtnRecepcion.Text = "Recepcion";
+            this.BtnRecepcion.Text = "          Recepcion";
+            this.BtnRecepcion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnRecepcion.UseVisualStyleBackColor = true;
             // 
             // BtnCliente
@@ -133,7 +135,7 @@
             this.BtnCliente.FlatAppearance.BorderSize = 0;
             this.BtnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCliente.ForeColor = System.Drawing.Color.White;
             this.BtnCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCliente.Image")));
             this.BtnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,7 +143,8 @@
             this.BtnCliente.Name = "BtnCliente";
             this.BtnCliente.Size = new System.Drawing.Size(244, 35);
             this.BtnCliente.TabIndex = 8;
-            this.BtnCliente.Text = "Cliente";
+            this.BtnCliente.Text = "          Cliente";
+            this.BtnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCliente.UseVisualStyleBackColor = true;
             this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
             // 
@@ -150,15 +153,16 @@
             this.BtnInformes.FlatAppearance.BorderSize = 0;
             this.BtnInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInformes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInformes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInformes.ForeColor = System.Drawing.Color.White;
             this.BtnInformes.Image = ((System.Drawing.Image)(resources.GetObject("BtnInformes.Image")));
             this.BtnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInformes.Location = new System.Drawing.Point(0, 455);
+            this.BtnInformes.Location = new System.Drawing.Point(3, 399);
             this.BtnInformes.Name = "BtnInformes";
             this.BtnInformes.Size = new System.Drawing.Size(244, 35);
             this.BtnInformes.TabIndex = 7;
-            this.BtnInformes.Text = "Informes";
+            this.BtnInformes.Text = "          Informes";
+            this.BtnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnInformes.UseVisualStyleBackColor = true;
             // 
             // BtnUsuario
@@ -166,15 +170,16 @@
             this.BtnUsuario.FlatAppearance.BorderSize = 0;
             this.BtnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuario.ForeColor = System.Drawing.Color.White;
             this.BtnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuario.Image")));
             this.BtnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnUsuario.Location = new System.Drawing.Point(0, 405);
+            this.BtnUsuario.Location = new System.Drawing.Point(3, 309);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Size = new System.Drawing.Size(244, 35);
             this.BtnUsuario.TabIndex = 6;
-            this.BtnUsuario.Text = "Empleado";
+            this.BtnUsuario.Text = "          Empleado";
+            this.BtnUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnUsuario.UseVisualStyleBackColor = true;
             this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
             // 
@@ -183,23 +188,25 @@
             this.BtnVentas.FlatAppearance.BorderSize = 0;
             this.BtnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVentas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVentas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVentas.ForeColor = System.Drawing.Color.White;
             this.BtnVentas.Image = ((System.Drawing.Image)(resources.GetObject("BtnVentas.Image")));
             this.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVentas.Location = new System.Drawing.Point(0, 311);
+            this.BtnVentas.Location = new System.Drawing.Point(3, 445);
             this.BtnVentas.Name = "BtnVentas";
             this.BtnVentas.Size = new System.Drawing.Size(244, 35);
             this.BtnVentas.TabIndex = 5;
-            this.BtnVentas.Text = "Venta";
+            this.BtnVentas.Text = "          Venta";
+            this.BtnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnVentas.UseVisualStyleBackColor = true;
+            this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // BtnProveedor
             // 
             this.BtnProveedor.FlatAppearance.BorderSize = 0;
             this.BtnProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.BtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProveedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedor.ForeColor = System.Drawing.Color.White;
             this.BtnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedor.Image")));
             this.BtnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,7 +214,8 @@
             this.BtnProveedor.Name = "BtnProveedor";
             this.BtnProveedor.Size = new System.Drawing.Size(244, 35);
             this.BtnProveedor.TabIndex = 4;
-            this.BtnProveedor.Text = "Proveedor";
+            this.BtnProveedor.Text = "          Proveedor";
+            this.BtnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnProveedor.UseVisualStyleBackColor = true;
             this.BtnProveedor.Click += new System.EventHandler(this.BtnProveedor_Click);
             // 
@@ -217,15 +225,16 @@
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnProducto.Image")));
             this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducto.Location = new System.Drawing.Point(3, 114);
+            this.btnProducto.Location = new System.Drawing.Point(3, 120);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(244, 35);
             this.btnProducto.TabIndex = 3;
-            this.btnProducto.Text = "Producto";
+            this.btnProducto.Text = "          Producto";
+            this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProducto.UseVisualStyleBackColor = false;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 

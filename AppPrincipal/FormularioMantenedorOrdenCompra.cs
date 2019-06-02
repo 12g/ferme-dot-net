@@ -188,31 +188,7 @@ namespace AppPrincipal
             fbp.ShowDialog();
         }
 
-       /* private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-               
-                if (DgListadoProductoOC.SelectedRows.Count > 0)
-                {
-
-                    TxtCodProducto.Text = DgListadoProductoOC.CurrentRow.Cells[0].Value.ToString();
-                    TxtNombreProducto.Text = DgListadoProductoOC.CurrentRow.Cells[1].Value.ToString();
-                    TxtCantidad.Text = DgListadoProductoOC.CurrentRow.Cells[2].Value.ToString();
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar una fila");
-                }
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("ERROR AL EDITAR LA FILA");
-            }
-        }
-        */
+      
         private void FormularioMantenedorOrdenCompra_Load(object sender, EventArgs e)
         {
             ServicioEmpleado sere = new ServicioEmpleado();

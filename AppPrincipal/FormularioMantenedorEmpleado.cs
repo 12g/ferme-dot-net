@@ -17,10 +17,7 @@ namespace AppPrincipal
         public FormularioMantenedorEmpleado()
         {
             InitializeComponent();
-            ServicioCargo ser = new ServicioCargo();
-            CbxCargo.DataSource = ser.ListarCargo();
-            CbxCargo.DisplayMember = "descripcionCargo";
-            CbxCargo.ValueMember = "idCargo";
+            TxtIdEmpleado.Text = "0";
         }
 
         //BOTON CANCELAR
@@ -197,6 +194,7 @@ namespace AppPrincipal
             TxtTelefeno1.Text = "0";
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
+            TxtIdEmpleado.Text = "";
         }
 
         //BOTON GUARDAR
@@ -245,12 +243,18 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
                 }
+                else if (CbxCargo.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("SELECCIONE UN TIPO CARGO");
+                }
                 else
                 {
+                    FormularioUsuario frm = new FormularioUsuario();
                     Empleado emp = new Empleado();
                     ServicioEmpleado serv = new ServicioEmpleado();
 
-                    emp.idCargo = CbxCargo.SelectedIndex;
+                    emp.idEmpleado = int.Parse(TxtIdEmpleado.Text);
+                    emp.idCargo = int.Parse(CbxCargo.SelectedValue.ToString());
                     emp.rutPersona = TxtRutCliente.Text;
                     emp.nombreCompletoPersona = TxtNombre.Text;
                     emp.direccionPersona = TxtDireccion.Text;
@@ -259,10 +263,13 @@ namespace AppPrincipal
                     emp.fonoPersona2 = int.Parse(TxtTelefono2.Text);
                     emp.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
+                    CargarComobox();
                     serv.CrearEmpleado(emp);
-                    FormularioUsuario usr = new FormularioUsuario();
-                    usr.Listaempleado();
                     Limpiar();
+
+                    frm.DGlistadoUsuario.DataSource = serv.ListaEmpleados();
+                    frm.DGlistadoUsuario.Refresh();
+                 
                 }
             }
             catch (Exception)
@@ -270,6 +277,25 @@ namespace AppPrincipal
 
                 MessageBox.Show("NO SE PUEDE GUARDAR EMPLEADO");
             }
+        }
+
+        private void CargarComobox()
+        {
+            ServicioCargo ser = new ServicioCargo();
+            CbxCargo.DataSource = ser.ListarCargo();
+            CbxCargo.DisplayMember = "descripcionCargo";
+            CbxCargo.ValueMember = "idCargo";
+
+            if (CbxCargo.Items.Count > 1)
+            {
+                CbxCargo.SelectedIndex = -1;
+                CbxCargo.Text = "Seleccione";
+            }
+        }
+
+        private void FormularioMantenedorEmpleado_Load(object sender, EventArgs e)
+        {
+            CargarComobox();
         }
     }
 }

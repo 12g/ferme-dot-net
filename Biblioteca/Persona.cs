@@ -9,7 +9,7 @@ namespace Biblioteca
     public class Persona
     {
         //ATRIBUTOS
-        public int id_persona { get; set; }
+        public int? id_persona { get; set; }
         public string nombre_completo { get; set; }
         public string rut { get; set; }
         public string direccion { get; set; }

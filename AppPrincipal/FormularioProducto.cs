@@ -73,6 +73,8 @@ namespace AppPrincipal
         private void FormularioProducto_Load_1(object sender, EventArgs e)
         {
             ListaProducto();
+
+            ServicioProducto ser = new ServicioProducto();
         }
 
 

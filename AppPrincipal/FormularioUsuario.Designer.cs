@@ -228,6 +228,6 @@
         private System.Windows.Forms.Button BtnCrearUsuario;
         private System.Windows.Forms.Button BtnCargo;
         private System.Windows.Forms.Button BtnCrearEmpleado;
-        private System.Windows.Forms.DataGridView DGlistadoUsuario;
+        public System.Windows.Forms.DataGridView DGlistadoUsuario;
     }
 }

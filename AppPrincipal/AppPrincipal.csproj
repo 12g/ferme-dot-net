@@ -169,6 +169,12 @@
     <Compile Include="FormularioUsuario.Designer.cs">
       <DependentUpon>FormularioUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FromularioVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromularioVentas.Designer.cs">
+      <DependentUpon>FromularioVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FomularioTipoProducto.resx">
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioUsuario.resx">
       <DependentUpon>FormularioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromularioVentas.resx">
+      <DependentUpon>FromularioVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

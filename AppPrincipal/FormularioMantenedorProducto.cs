@@ -151,11 +151,8 @@ namespace AppPrincipal
                     CargarComBobox();
                     serp.CrearProducto(pro);
 
-                    ServicioProducto servp = new ServicioProducto();
-                    FormularioProducto p = new FormularioProducto();
-
-                    p.DGlistadeproductos.DataSource = servp.GetRESTData();
-                    p.DGlistadeproductos.Refresh();
+                    prod.DGlistadeproductos.DataSource = serp.GetRESTData();
+                    prod.DGlistadeproductos.Refresh();
 
                     Limpiar();
                 }
