@@ -67,27 +67,23 @@ namespace AppPrincipal
 
 
         private FormularioMantenedorOrdenCompra FrmOrdenCompra;
+        private FromularioVentas FrmVentas;
 
         private void DgMostrarProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-               
-
-                if (FrmVentas)
-                {
-                    FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                    FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                    this.Close();
-                }
-
-               // FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                //FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
+                FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
+                FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
                 this.Close();
+
+               
             }
             catch (Exception)
             {
-                MessageBox.Show("ERROR AL CARGAR PRODUCTO");
+                FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
+                FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
+                this.Close();
             }
         }
 
@@ -122,7 +118,7 @@ namespace AppPrincipal
             }
         }
 
-            private FromularioVentas FrmVentas;
+            
             public FormularioBuscarProducto(FromularioVentas parametro)
             { 
             InitializeComponent();
