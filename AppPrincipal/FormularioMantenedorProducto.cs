@@ -151,6 +151,10 @@ namespace AppPrincipal
                     CargarComBobox();
                     serp.CrearProducto(pro);
 
+
+                    ServicioOrdenCompra or = new ServicioOrdenCompra();
+                   
+
                     prod.DGlistadeproductos.DataSource = serp.GetRESTData();
                     prod.DGlistadeproductos.Refresh();
 

@@ -20,27 +20,46 @@ namespace AppPrincipal
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
-            Limpiar();
+            ListaOrdenC();
+        }
+
+        private void ListaOrdenC()
+        {
+            List<DetalleOrdenCompra> lista;
+            DgListadoProductoOC.DataSource = new List<DetalleOrdenCompra>();
+
+            this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
+            this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
+            this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
+
+            this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
+            this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
+            this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
+
+
+            //DA NOMBRE A LAS COLUMNAS
+            this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
+            this.DgListadoProductoOC.Columns["cantidadProducto"].HeaderText = "CANTIDAD";
+            this.DgListadoProductoOC.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
+            TxtNumero.Text = "";
+            DPfechaInicio.Value = DateTime.Now;
+            DPfechaTermino.Value = DateTime.Now;
+            TxtIdProducto.Text = "";
+            TxtCodProducto.Text = "";
+            TxtNombreProducto.Text = "";
+            TxtCantidad.Text = "";
+            TxtEstado.Text = "";
 
-                MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
-                DialogResult dr = MessageBox.Show("¿Está seguro que desea salir?", "", botones, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-
-            }
-            catch
+            if (CbEmpleado.Items.Count > 1)
             {
-                MessageBox.Show("Error al cerrar Aplicacion");
+                CbEmpleado.SelectedIndex = -1;
+                CbEmpleado.Text = "Seleccione";
             }
+
         }
         
         //BOTON GUARDAR ORDEN COMPRA
@@ -50,7 +69,7 @@ namespace AppPrincipal
             {
                 if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
                 {
-                    LblNumeroObligatorio.Visible = true;
+
                     MessageBox.Show("INGRESE UN NUMERO DE ORDEN DE COMPRA");
                 }
                 //Comparar fechas
@@ -58,31 +77,41 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("La fecha TERMINO no puede ser menor a la fecha INICIO");
                 }
+                else if (CbEmpleado.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("SELECCIONE UN EMPLEADO");
+                }
                 else
                 {
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
+                    DetalleOrdenCompra det = new DetalleOrdenCompra();
                     Orden_Compra oc = new Orden_Compra();
 
                     oc.idEmpleado = CbEmpleado.SelectedIndex;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.ToString();
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.ToString();
 
-                    foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
-                    {
 
-                        string codigo;
-                        string descripcion;
-                        string cantidad;
 
-                        codigo = DgListadoProductoOC[0, row.Index].Value.ToString();
-                        descripcion = DgListadoProductoOC[1, row.Index].Value.ToString();
-                        cantidad = DgListadoProductoOC[2, row.Index].Value.ToString();
+                    /* foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
+                     {
 
-                    }
 
+                         det.idProducto = int.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
+                         //descripcion = DgListadoProductoOC[1, row.Index].Value.ToString();
+                         det.cantidadProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
+
+                     }
+
+                    List<DetalleOrdenCompra> lista;
+
+                    lista = (List<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
+                    oc.detallesOrdenCompra = lista;
+                    //ser.subdetalleOrdenCompra(oc);
                     ser.CrearOrdenCompra(oc);
-                    FormularioOrdenCompra orc = new FormularioOrdenCompra();
-                    orc.ListarOrdenCompra();
+                    //ser.CrearOrdenCompra(det);*/
+
+
 
                     Limpiar();
                 }
@@ -91,7 +120,7 @@ namespace AppPrincipal
             {
 
                 MessageBox.Show("ERROR AL GUARDAR ORDEN DE COMPRA");
-                LblNumeroObligatorio.Visible = false;
+              
             }
           
         }
@@ -104,11 +133,13 @@ namespace AppPrincipal
             TxtCodProducto.Text = "";
             TxtNombreProducto.Text = "";
             TxtCantidad.Text = "";
+            TxtEstado.Text = "";
         }
         //BOTON AGREGAR
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            try
+          
+           try
             {
                 if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
                 {
@@ -121,15 +152,28 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    try
+                   try
                     {
-                        DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
-                        Limpiar();
+                        List<DetalleOrdenCompra> detalle;
+                        detalle = (List<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
+                        //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
+                        //Limpiar();
+                        DetalleOrdenCompra det = new DetalleOrdenCompra();
+                        det.idProducto = int.Parse(TxtIdProducto.Text);
+                        det.codigoProducto = long.Parse(TxtCodProducto.Text);
+                        det.nombreProducto = TxtNombreProducto.Text;
+                        det.cantidadProducto = int.Parse(TxtCantidad.Text);
+
+                        DgListadoProductoOC.DataSource = det.idProducto;
+
+
+
+
                     }
                     catch (Exception)
                     {
 
-                        MessageBox.Show("NO SE PUEDE AGREGAR PRODUCTOS A LA LISTA");
+                        MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
                     }
 
                 }
@@ -139,7 +183,7 @@ namespace AppPrincipal
 
                 MessageBox.Show("ERROR AL AGREGAR PRODUCTO");
             }
-           
+          
         }
 
         //TXTNUMERO EVENTO LEAVE EL CUAL SE EJECUTA UN LEAVE EN CASO DE NO CUMPLIR CON LA CONDICION DADA
@@ -147,14 +191,10 @@ namespace AppPrincipal
         {
             if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
             {
-                LblNumeroObligatorio.Visible = true;
+               
                 MessageBox.Show("INGRESE UN NUMERO EN CAMPO NUMERO");
             }
            
-            else
-            {
-                LblNumeroObligatorio.Visible = false;
-            }
         }
 
         //SE LLAMA AL EVENTO QUE VALIDA QUE INGRESEN SOLAMENTE NUMEROS
@@ -195,20 +235,35 @@ namespace AppPrincipal
             CbEmpleado.DataSource = sere.ListaEmpleados();
             CbEmpleado.DisplayMember = "nombreCompletoPersona";
             CbEmpleado.ValueMember = "idEmpleado";
+
+            if (CbEmpleado.Items.Count > 1)
+            {
+                CbEmpleado.SelectedIndex = -1;
+                CbEmpleado.Text = "Seleccione";
+            }
         }
 
 
         //SELECCIONA UNA FILA Y LA ENVIA DIRECTO AL TEXTBOX PARA SER EDITADA
         private void DgListadoProductoOC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int poc = DgListadoProductoOC.CurrentRow.Index;
-            TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
-            TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
-            TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
+            try
+            {
+                int poc = DgListadoProductoOC.CurrentRow.Index;
+                TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
+                TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
+                TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
 
-            BtnAgregar.Enabled = false;
-            BtnEditar.Enabled = true;
-            BtnBorrar.Enabled = true;
+                BtnAgregar.Enabled = false;
+                BtnEditar.Enabled = true;
+                BtnBorrar.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("SELECCION INVALIDA");
+            }
+            
         }
 
 
@@ -270,6 +325,17 @@ namespace AppPrincipal
                 MessageBox.Show("ERROR AL ELIMINAR PRODUCTO");
             }
            
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnBuscarOrdenCompra_Click(object sender, EventArgs e)
+        {
+            FormularioBuscarOrdenCompra frm = new FormularioBuscarOrdenCompra(this);
+            frm.ShowDialog();
         }
     }
 }

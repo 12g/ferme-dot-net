@@ -36,6 +36,7 @@ namespace AppPrincipal
                 this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
                 this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
                 this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                //this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
             }
             catch (Exception)
             {
@@ -73,18 +74,29 @@ namespace AppPrincipal
         {
             try
             {
-                FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                this.Close();
+                try
+                {
+                    FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
+                    FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
+                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[8].Value.ToString();
+                    this.Close();
 
-               
+
+                }
+                catch (Exception)
+                {
+                    FrmOrdenCompra.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
+                    FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
+                    FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
+                    this.Close();
+                }
             }
             catch (Exception)
             {
-                FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                this.Close();
+
+                MessageBox.Show("ERROR AL AGREGAR PRODUCTO");
             }
+           
         }
 
 
@@ -118,7 +130,7 @@ namespace AppPrincipal
             }
         }
 
-            
+            //CARGA ESTE LISTADO EN FORMULARIO VENTAS
             public FormularioBuscarProducto(FromularioVentas parametro)
             { 
             InitializeComponent();
@@ -132,7 +144,7 @@ namespace AppPrincipal
                 //OCULTAR COLUMNA
                 this.DgMostrarProductos.Columns[0].Visible = false;
                 this.DgMostrarProductos.Columns[6].Visible = false;
-                this.DgMostrarProductos.Columns[8].Visible = false;
+                //this.DgMostrarProductos.Columns[8].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
@@ -141,6 +153,7 @@ namespace AppPrincipal
                 this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
                 this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
                 this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
             }
             catch (Exception)
             {

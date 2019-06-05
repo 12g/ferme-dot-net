@@ -49,6 +49,25 @@ namespace ServiciosConexionFerme
             Console.WriteLine(json);
         }
 
+        //OBTENER SUBDETALLE ORDEN DE COMPRA
+        public List<DetalleOrdenCompra> subdetalleOrdenCompra(Orden_Compra OrC)
+        {
+
+            var json = JsonConvert.SerializeObject(OrC);
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var responseMessage = httpClient.PostAsync("gestion/ordenes_compra/guardar", jsonp);
+            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
+            List<DetalleOrdenCompra> ListaDetalle = JsonConvert.DeserializeObject<List<DetalleOrdenCompra>>(resp);
+            
+            Console.WriteLine(resp);
+            //Console.WriteLine(json);
+
+            return ListaDetalle;
+        }
+
         //LISTAR ORDEN COMPRA
         public JArray ListarOrdenCompra()
         {

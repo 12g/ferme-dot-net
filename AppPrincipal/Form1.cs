@@ -163,7 +163,7 @@ namespace AppPrincipal
         //BOTON ORDEN DE COMPRA EL CUAL REDIRIGE A LA VISTA PRINCIPAL DEL FORMULARIO
         private void BtnOrdenCompra_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel<FormularioOrdenCompra>();
+            AbrirFormInPanel<FormularioMantenedorOrdenCompra>();
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(178, 34, 34);

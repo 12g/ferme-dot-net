@@ -14,5 +14,8 @@ namespace Biblioteca
         public int idProducto { get; set; }
         public int cantidadProducto { get; set; }
 
+        public string nombreProducto { get; set; }
+        public long codigoProducto { get; set; }
+
     }
 }
