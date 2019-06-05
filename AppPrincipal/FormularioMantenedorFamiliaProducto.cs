@@ -98,6 +98,9 @@ namespace AppPrincipal
                     fp.idProveedor = int.Parse(CbProveedor.SelectedValue.ToString());
 
                     ser.CrearFamiliaProducto(fp);
+
+                    MessageBox.Show("GUARDADO");
+
                     Limpiar();
 
                 }

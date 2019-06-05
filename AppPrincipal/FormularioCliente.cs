@@ -72,7 +72,7 @@ namespace AppPrincipal
                 if (DGMostrarListaCliente.SelectedRows.Count >0)
                 {
                     fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[8].Value.ToString();
-                    fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[0].Value.ToString();
+                    fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[2].Value.ToString();
                     fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells[1].Value.ToString();
                     fmc.TxtDireccion.Text = DGMostrarListaCliente.CurrentRow.Cells[3].Value.ToString();
                     fmc.TxtEmail.Text = DGMostrarListaCliente.CurrentRow.Cells[4].Value.ToString();

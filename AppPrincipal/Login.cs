@@ -29,7 +29,7 @@ namespace AppPrincipal
             if (TxtUsuario.Text =="USUARIO")
             {
                 TxtUsuario.Text = "";
-                TxtUsuario.ForeColor = Color.LightGray;
+                TxtUsuario.ForeColor = Color.Black;
             }
         }
 
@@ -47,7 +47,7 @@ namespace AppPrincipal
             if (TxtContraseña.Text =="CONTRASEÑA")
             {
                 TxtContraseña.Text = "";
-                TxtContraseña.ForeColor = Color.LightGray;
+                TxtContraseña.ForeColor = Color.Black;
                 TxtContraseña.UseSystemPasswordChar = true;
             }
         }

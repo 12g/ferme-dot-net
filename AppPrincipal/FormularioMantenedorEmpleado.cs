@@ -55,9 +55,8 @@ namespace AppPrincipal
 
                 if (respuesta == false)
                 {
-                    TxtRutCliente.Focus();
-                    TxtRutCliente.BackColor = Color.Red;
-                    MessageBox.Show("Rut Malo");
+                   
+                    MessageBox.Show("RUT INVALIDO");
                 }
                 else
                 {
@@ -265,11 +264,15 @@ namespace AppPrincipal
 
                     CargarComobox();
                     serv.CrearEmpleado(emp);
-                    Limpiar();
+                    
 
                     frm.DGlistadoUsuario.DataSource = serv.ListaEmpleados();
                     frm.DGlistadoUsuario.Refresh();
-                 
+
+                    MessageBox.Show("EMPLEADO GUARDADO");
+
+                    Limpiar();
+
                 }
             }
             catch (Exception)

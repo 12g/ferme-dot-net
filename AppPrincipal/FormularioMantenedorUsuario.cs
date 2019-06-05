@@ -180,5 +180,10 @@ namespace AppPrincipal
                 TxtEmail.Focus();
             }
         }
+
+        private void FormularioMantenedorUsuario_Load(object sender, EventArgs e)
+        {
+            TxtFecha.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }

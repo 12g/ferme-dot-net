@@ -127,6 +127,8 @@ namespace AppPrincipal
                     fp.DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
                     fp.DgMostrarListaProveedor.Refresh();
 
+                    MessageBox.Show("PROVEEDOR GUARDARDO");
+
                     Limpiar();
                 }
 
@@ -152,9 +154,7 @@ namespace AppPrincipal
 
                 if (respuesta == false)
                 {
-                    TxtRut.Focus();
-                    TxtRut.BackColor = Color.Red;
-                    MessageBox.Show("Rut Malo");
+                    MessageBox.Show("RUT INVALIDO");
                 }
                 else
                 {

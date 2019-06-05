@@ -55,6 +55,7 @@ namespace AppPrincipal
             TxtTelefeno1.Text = "0";
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
+            TxtIdCliente.Text = "";
         }
 
         //BOTON GUARDAR
@@ -125,6 +126,8 @@ namespace AppPrincipal
                     clicli.DGMostrarListaCliente.DataSource = serp.ListarClientes();
                     clicli.DGMostrarListaCliente.Refresh();
 
+                    MessageBox.Show("CLIENTE GUARDADO");
+
                     Limpiar();
                 }
             }
@@ -149,9 +152,8 @@ namespace AppPrincipal
 
                 if (respuesta == false)
                 {
-                    TxtRutCliente.Focus();
-                    TxtRutCliente.BackColor = Color.Red;
-                    MessageBox.Show("Rut Malo");
+                    
+                    MessageBox.Show("RUT INVALIDO");
                 }
                 else
                 {

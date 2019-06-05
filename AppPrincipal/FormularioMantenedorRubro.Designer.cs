@@ -38,11 +38,9 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ImagenTicketBueno = new System.Windows.Forms.PictureBox();
             this.LblCodigoObligatorio = new System.Windows.Forms.Label();
             this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -119,17 +117,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ImagenTicketBueno
-            // 
-            this.ImagenTicketBueno.Image = ((System.Drawing.Image)(resources.GetObject("ImagenTicketBueno.Image")));
-            this.ImagenTicketBueno.Location = new System.Drawing.Point(385, 36);
-            this.ImagenTicketBueno.Name = "ImagenTicketBueno";
-            this.ImagenTicketBueno.Size = new System.Drawing.Size(58, 50);
-            this.ImagenTicketBueno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ImagenTicketBueno.TabIndex = 9;
-            this.ImagenTicketBueno.TabStop = false;
-            this.ImagenTicketBueno.Visible = false;
-            // 
             // LblCodigoObligatorio
             // 
             this.LblCodigoObligatorio.AutoSize = true;
@@ -162,7 +149,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.LblDescripcionObligatoria);
             this.Controls.Add(this.LblCodigoObligatorio);
-            this.Controls.Add(this.ImagenTicketBueno);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtDescripcion);
@@ -177,7 +163,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Rubro";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagenTicketBueno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +176,6 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.PictureBox ImagenTicketBueno;
         private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
         public System.Windows.Forms.TextBox TxtRubro;

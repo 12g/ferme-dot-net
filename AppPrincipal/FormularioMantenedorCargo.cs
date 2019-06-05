@@ -49,6 +49,7 @@ namespace AppPrincipal
                     car.descripcionCargo = TxtDescripcion.Text;
 
                     ser.CrearCargo(car);
+                    MessageBox.Show("CARGO GUARDADO");
                     LimpiarPantalla();
                 }
             }

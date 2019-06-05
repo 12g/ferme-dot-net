@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTituloMenu2 = new System.Windows.Forms.Label();
+            this.lblTitulomenu = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.TxtContraseña = new System.Windows.Forms.TextBox();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.BtnAcceder = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lblTitulomenu = new System.Windows.Forms.Label();
-            this.lblTituloMenu2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +61,38 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // lblTituloMenu2
+            // 
+            this.lblTituloMenu2.AutoSize = true;
+            this.lblTituloMenu2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloMenu2.ForeColor = System.Drawing.Color.White;
+            this.lblTituloMenu2.Location = new System.Drawing.Point(53, 62);
+            this.lblTituloMenu2.Name = "lblTituloMenu2";
+            this.lblTituloMenu2.Size = new System.Drawing.Size(126, 45);
+            this.lblTituloMenu2.TabIndex = 3;
+            this.lblTituloMenu2.Text = "FERME";
+            // 
+            // lblTitulomenu
+            // 
+            this.lblTitulomenu.AutoSize = true;
+            this.lblTitulomenu.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulomenu.ForeColor = System.Drawing.Color.White;
+            this.lblTitulomenu.Location = new System.Drawing.Point(29, 26);
+            this.lblTitulomenu.Name = "lblTitulomenu";
+            this.lblTitulomenu.Size = new System.Drawing.Size(172, 45);
+            this.lblTitulomenu.TabIndex = 2;
+            this.lblTitulomenu.Text = "Ferreteria";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(30, 128);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(171, 133);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -72,6 +104,15 @@
             this.shapeContainer1.Size = new System.Drawing.Size(780, 330);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Enabled = false;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 324;
+            this.lineShape2.X2 = 712;
+            this.lineShape2.Y1 = 168;
+            this.lineShape2.Y2 = 168;
             // 
             // lineShape1
             // 
@@ -87,6 +128,7 @@
             this.TxtUsuario.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.TxtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUsuario.ForeColor = System.Drawing.Color.Black;
             this.TxtUsuario.Location = new System.Drawing.Point(323, 80);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(389, 20);
@@ -100,6 +142,7 @@
             this.TxtContraseña.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.TxtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtContraseña.ForeColor = System.Drawing.Color.Black;
             this.TxtContraseña.Location = new System.Drawing.Point(324, 148);
             this.TxtContraseña.Name = "TxtContraseña";
             this.TxtContraseña.Size = new System.Drawing.Size(389, 20);
@@ -107,15 +150,6 @@
             this.TxtContraseña.Text = "CONTRASEÑA";
             this.TxtContraseña.Enter += new System.EventHandler(this.TxtContraseña_Enter);
             this.TxtContraseña.Leave += new System.EventHandler(this.TxtContraseña_Leave);
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 324;
-            this.lineShape2.X2 = 712;
-            this.lineShape2.Y1 = 168;
-            this.lineShape2.Y2 = 168;
             // 
             // LblTitulo
             // 
@@ -130,6 +164,7 @@
             // BtnAcceder
             // 
             this.BtnAcceder.BackColor = System.Drawing.Color.DarkGray;
+            this.BtnAcceder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnAcceder.FlatAppearance.BorderSize = 0;
             this.BtnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.BtnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -163,38 +198,6 @@
             this.BtnMinimizar.TabStop = false;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(30, 128);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(171, 133);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lblTitulomenu
-            // 
-            this.lblTitulomenu.AutoSize = true;
-            this.lblTitulomenu.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulomenu.ForeColor = System.Drawing.Color.White;
-            this.lblTitulomenu.Location = new System.Drawing.Point(29, 26);
-            this.lblTitulomenu.Name = "lblTitulomenu";
-            this.lblTitulomenu.Size = new System.Drawing.Size(172, 45);
-            this.lblTitulomenu.TabIndex = 2;
-            this.lblTitulomenu.Text = "Ferreteria";
-            // 
-            // lblTituloMenu2
-            // 
-            this.lblTituloMenu2.AutoSize = true;
-            this.lblTituloMenu2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloMenu2.ForeColor = System.Drawing.Color.White;
-            this.lblTituloMenu2.Location = new System.Drawing.Point(53, 62);
-            this.lblTituloMenu2.Name = "lblTituloMenu2";
-            this.lblTituloMenu2.Size = new System.Drawing.Size(126, 45);
-            this.lblTituloMenu2.TabIndex = 3;
-            this.lblTituloMenu2.Text = "FERME";
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,14 +215,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -64,7 +64,6 @@ namespace AppPrincipal
                 if (TxtRubro.Text == "" || Convert.ToInt32(TxtRubro.Text) < 1 || !val.IsNumeric(TxtRubro.Text))
                 {
                     MessageBox.Show("DEBE INGRESAR UN NUMERO EN CAMPO CODIGO");
-                    ImagenTicketBueno.Visible = false;
                     LblCodigoObligatorio.Visible = true;
                 }
 
@@ -72,7 +71,6 @@ namespace AppPrincipal
                 else if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
                 {
                     MessageBox.Show("DEBE INGRESAR UNA DESCRIPCION");
-                    ImagenTicketBueno.Visible = false;
                     LblDescripcionObligatoria.Visible = true;
                 }
                 //DESPUES CUMPLIR LAS CONDICIONES PUESTAS SE CREA EL RUBRO
@@ -84,14 +82,16 @@ namespace AppPrincipal
                     RU.descripcionRubro = TxtDescripcion.Text;
 
                     serRub.CrearRubro(RU);
-                    ImagenTicketBueno.Visible = true;
+
+                    MessageBox.Show("GUARDADO");
+        
                     Limpiar();
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("ERROR AL GUARDAR EL RUBRO");
-                ImagenTicketBueno.Visible = false;
+    
             }
         }
 
@@ -116,7 +116,7 @@ namespace AppPrincipal
             Validaciones val = new Validaciones();
             if (TxtRubro.Text== "" ||Convert.ToInt32(TxtRubro.Text) <= 0 || !val.IsNumeric(TxtRubro.Text))
             {
-                ImagenTicketBueno.Visible = false;
+               
                 LblCodigoObligatorio.Visible = true;
             }
             else
@@ -130,7 +130,7 @@ namespace AppPrincipal
             Validaciones val = new Validaciones();
             if (TxtDescripcion.Text == "" || val.IsNumeric(TxtDescripcion.Text))
             {
-                ImagenTicketBueno.Visible = false;
+        
                 LblDescripcionObligatoria.Visible = true;
             }
             else

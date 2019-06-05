@@ -158,6 +158,8 @@ namespace AppPrincipal
                     prod.DGlistadeproductos.DataSource = serp.GetRESTData();
                     prod.DGlistadeproductos.Refresh();
 
+                    MessageBox.Show("PRODUCTO GUARDADO");
+
                     Limpiar();
                 }
             }
