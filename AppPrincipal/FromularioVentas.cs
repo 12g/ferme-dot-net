@@ -18,6 +18,10 @@ namespace AppPrincipal
         {
             InitializeComponent();
             CargarCbEmpleado();
+            TxtSubtotal.Text = "0";
+            TxtIva.Text = "0";
+            TxtTotal.Text = "0";
+         
         }
 
         private void FromularioVentas_Load(object sender, EventArgs e)
@@ -179,7 +183,7 @@ namespace AppPrincipal
 
 
 
-            //SUMA LA  COLUMNA SUBTOTAL Y LA MUESTRA EN EL TXTOTAL
+            //SUMA LA  COLUMNA SUBTOTAL Y LA MUESTRA EN EL TXTSUBTOTAL
             int suma = 0;
 
             foreach (DataGridViewRow row in DgVentaProducto.Rows)
@@ -193,27 +197,37 @@ namespace AppPrincipal
                 suma += Convert.ToInt32(valorcell);
             }
 
-            TxtTotal.Text = Convert.ToString(suma);
+            TxtSubtotal.Text = Convert.ToString(suma);
+            TxtIva.Text = Convert.ToString(suma * 19 / 100);
+            TxtTotal.Text = Convert.ToString(suma * 19 / 100 + suma);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            FormularioBuscarVenta fbv = new FormularioBuscarVenta();
+            FormularioBuscarVenta fbv = new FormularioBuscarVenta(this);
             fbv.ShowDialog();
         }
 
         private void CargarCbEmpleado()
         {
-            ServicioEmpleado see = new ServicioEmpleado();
-            CbEmpleado.DataSource = see.ListaEmpleados();
-            CbEmpleado.DisplayMember = "nombreCompletoPersona";
-            CbEmpleado.ValueMember = "idEmpleado";
-
-            if (CbEmpleado.Items.Count > 1)
+            try
             {
-                CbEmpleado.SelectedIndex = -1;
-                CbEmpleado.Text = "Seleccione";
+                ServicioEmpleado see = new ServicioEmpleado();
+                CbEmpleado.DataSource = see.ListaEmpleados();
+                CbEmpleado.DisplayMember = "nombreCompletoPersona";
+                CbEmpleado.ValueMember = "idEmpleado";
+
+                if (CbEmpleado.Items.Count > 1)
+                {
+                    CbEmpleado.SelectedIndex = -1;
+                    CbEmpleado.Text = "Seleccione";
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("NO HAY DATOS DE EMPLEADOS");
+            }
+           
         }
     }
     

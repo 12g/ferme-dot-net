@@ -105,26 +105,35 @@ namespace AppPrincipal
 
         private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
-            Form Formulario;
-            Formulario = PanelContendorFormulario.Controls.OfType<MIForm>().FirstOrDefault();//busca en la coleccion el formulario
-            //si el formulario / instancia no exite
+            try
+            {
+                Form Formulario;
+                Formulario = PanelContendorFormulario.Controls.OfType<MIForm>().FirstOrDefault();//busca en la coleccion el formulario
+                                                                                                 //si el formulario / instancia no exite
 
-            if (Formulario == null)
-            {
-                Formulario = new MIForm();
-                Formulario.TopLevel = false;
-                Formulario.FormBorderStyle = FormBorderStyle.None;
-                Formulario.Dock = DockStyle.Fill;
-                PanelContendorFormulario.Controls.Add(Formulario);
-                PanelContendorFormulario.Tag = Formulario;
-                Formulario.Show();
-                Formulario.BringToFront();
+                if (Formulario == null)
+                {
+                    Formulario = new MIForm();
+                    Formulario.TopLevel = false;
+                    Formulario.FormBorderStyle = FormBorderStyle.None;
+                    Formulario.Dock = DockStyle.Fill;
+                    PanelContendorFormulario.Controls.Add(Formulario);
+                    PanelContendorFormulario.Tag = Formulario;
+                    Formulario.Show();
+                    Formulario.BringToFront();
+                }
+                //SI EL FORMULARIO /INSTANCIA EXISTE
+                else
+                {
+                    Formulario.BringToFront();
+                }
             }
-            //SI EL FORMULARIO /INSTANCIA EXISTE
-            else
+            catch (Exception)
             {
-                Formulario.BringToFront();
+
+                MessageBox.Show("NO HAY DATOS");
             }
+           
         }
 
 

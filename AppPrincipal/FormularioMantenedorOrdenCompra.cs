@@ -25,22 +25,31 @@ namespace AppPrincipal
 
         private void ListaOrdenC()
         {
-            List<DetalleOrdenCompra> lista;
-            DgListadoProductoOC.DataSource = new List<DetalleOrdenCompra>();
 
-            this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
-            this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
-            this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
+            try
+            {
+                List<DetalleOrdenCompra> lista;
+                DgListadoProductoOC.DataSource = new List<DetalleOrdenCompra>();
 
-            this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
-            this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
-            this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
+                this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
+                this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
+                this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
+
+                this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
+                this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
+                this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
 
 
-            //DA NOMBRE A LAS COLUMNAS
-            this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
-            this.DgListadoProductoOC.Columns["cantidadProducto"].HeaderText = "CANTIDAD";
-            this.DgListadoProductoOC.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
+                this.DgListadoProductoOC.Columns["cantidadProducto"].HeaderText = "CANTIDAD";
+                this.DgListadoProductoOC.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTA");
+            }
+           
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -231,16 +240,24 @@ namespace AppPrincipal
       
         private void FormularioMantenedorOrdenCompra_Load(object sender, EventArgs e)
         {
-            ServicioEmpleado sere = new ServicioEmpleado();
-            CbEmpleado.DataSource = sere.ListaEmpleados();
-            CbEmpleado.DisplayMember = "nombreCompletoPersona";
-            CbEmpleado.ValueMember = "idEmpleado";
-
-            if (CbEmpleado.Items.Count > 1)
+            try
             {
-                CbEmpleado.SelectedIndex = -1;
-                CbEmpleado.Text = "Seleccione";
+                ServicioEmpleado sere = new ServicioEmpleado();
+                CbEmpleado.DataSource = sere.ListaEmpleados();
+                CbEmpleado.DisplayMember = "nombreCompletoPersona";
+                CbEmpleado.ValueMember = "idEmpleado";
+
+                if (CbEmpleado.Items.Count > 1)
+                {
+                    CbEmpleado.SelectedIndex = -1;
+                    CbEmpleado.Text = "Seleccione";
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR EMPLEADOS");
+            }
+            
         }
 
 

@@ -14,13 +14,36 @@ namespace AppPrincipal
 {
     public partial class FormularioBuscarVenta : Form
     {
-        public FormularioBuscarVenta()
+        private FromularioVentas frmventas;
+        public FormularioBuscarVenta(FromularioVentas parametro)
         {
             InitializeComponent();
 
-            ServicioVentas ser = new ServicioVentas();
-            DgMostrarVentasRealizadas.DataSource = ser.ListarVentas();
-            
+
+            frmventas = parametro;
+            try
+            {
+                ServicioVentas ser = new ServicioVentas();
+                DgMostrarVentasRealizadas.DataSource = ser.ListarVentas();
+
+               // this.DgMostrarVentasRealizadas.Columns[4].Visible = false;
+               // this.DgMostrarVentasRealizadas.Columns[5].Visible = false;
+               // this.DgMostrarVentasRealizadas.Columns[6].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarVentasRealizadas.Columns[0].HeaderText = "N° VENTA";
+                this.DgMostrarVentasRealizadas.Columns[1].HeaderText = "ESTADO";
+                this.DgMostrarVentasRealizadas.Columns[2].HeaderText = "FECHA CREACION";
+                this.DgMostrarVentasRealizadas.Columns[3].HeaderText = "SUBTOTAL";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL CARGAR VENTA");
+            }
+
+
+           
+
         }
 
 
@@ -71,6 +94,27 @@ namespace AppPrincipal
             {
                  ServicioVentas ser = new ServicioVentas();
                  DgMostrarVentasRealizadas.DataSource = ser.ListarVentas();
+            }
+        }
+
+
+        //SELECCIONAR UNA FILA Y LA ENVIA AL FORMULARIO VENTAS PARA VISUALIZARLA
+        private void DgMostrarVentasRealizadas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                frmventas.TxtNumeroDocumento.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[0].Value.ToString();
+                frmventas.TxtEstado.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[1].Value.ToString();
+                frmventas.TxtFecha.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[2].Value.ToString();
+                frmventas.TxtTotal.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[3].Value.ToString();
+                frmventas.TxtRut.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[6].Value.ToString();
+
+
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("");
             }
         }
     }

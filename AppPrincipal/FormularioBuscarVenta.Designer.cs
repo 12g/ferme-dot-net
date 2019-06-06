@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioBuscarVenta));
             this.DgMostrarVentasRealizadas = new System.Windows.Forms.DataGridView();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.LblTitulo = new System.Windows.Forms.Label();
@@ -38,11 +40,21 @@
             // 
             // DgMostrarVentasRealizadas
             // 
+            this.DgMostrarVentasRealizadas.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgMostrarVentasRealizadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgMostrarVentasRealizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMostrarVentasRealizadas.Location = new System.Drawing.Point(16, 99);
             this.DgMostrarVentasRealizadas.Name = "DgMostrarVentasRealizadas";
+            this.DgMostrarVentasRealizadas.ReadOnly = true;
             this.DgMostrarVentasRealizadas.Size = new System.Drawing.Size(806, 309);
             this.DgMostrarVentasRealizadas.TabIndex = 0;
+            this.DgMostrarVentasRealizadas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarVentasRealizadas_CellDoubleClick);
             // 
             // BtnCancelar
             // 
@@ -88,11 +100,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 491);
+            this.ControlBox = false;
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.LblBuscarVenta);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.DgMostrarVentasRealizadas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormularioBuscarVenta";
             this.Text = "FormularioBuscarVenta";
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarVentasRealizadas)).EndInit();
