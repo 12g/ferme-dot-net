@@ -21,7 +21,24 @@ namespace AppPrincipal
             TxtSubtotal.Text = "0";
             TxtIva.Text = "0";
             TxtTotal.Text = "0";
-         
+            ListaOrdenC();
+        }
+
+        //CARGAR LISTADO 
+        private void ListaOrdenC()
+        {
+
+            try
+            {
+                BindingList<Detalle_Venta> lista;
+
+                DgVentaProducto.DataSource = new BindingList<Detalle_Venta>();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTA");
+            }
+
         }
 
         private void FromularioVentas_Load(object sender, EventArgs e)
@@ -68,9 +85,21 @@ namespace AppPrincipal
                 {
                     try
                     {
-                        DgVentaProducto.Rows.Add(TxtCodigo.Text, TxtNombreProducto.Text, TxtCantidad.Text,TxtPrecio.Text);
+                        BindingList<Detalle_Venta> detalle;
+                        detalle = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
+                        //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
+                        //Limpiar();
+                        Detalle_Venta det = new Detalle_Venta();
+                        det.idProducto = int.Parse(TxtIdProducto.Text);
+                        det.codigoProducto = int.Parse(TxtCodigo.Text);
+                        det.nombreProducto = TxtNombreProducto.Text;
+                        det.unidadesProducto = int.Parse(TxtCantidad.Text);
 
-                        cantidadprecio();
+                        detalle.Add(det);
+                        Console.WriteLine(detalle.ToString());
+                        DgVentaProducto.DataSource = null;
+                        DgVentaProducto.DataSource = detalle;
+                        DgVentaProducto.Refresh();
 
                         Limpiar();
                     }

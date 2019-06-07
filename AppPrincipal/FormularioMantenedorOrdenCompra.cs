@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using Biblioteca;
 using System.IO;
 using ServiciosConexionFerme;
+using System.Reflection;
 
 namespace AppPrincipal
 {
     public partial class FormularioMantenedorOrdenCompra : Form
     {
         Validaciones val = new Validaciones();
+        
 
         public FormularioMantenedorOrdenCompra()
         {
@@ -31,24 +33,7 @@ namespace AppPrincipal
                 BindingList<DetalleOrdenCompra> lista;
 
                 DgListadoProductoOC.DataSource = new BindingList<DetalleOrdenCompra>();
-
-                this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
-                this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
-                this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
-
-               // this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
-                //this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
-                //this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
-
-                //DA NOMBRE A LAS COLUMNAS
-
-                this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
-                this.DgListadoProductoOC.Columns["cantidadProducto"].HeaderText = "CANTIDAD";
-                this.DgListadoProductoOC.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
-
-
-
-             }
+            }
             catch (Exception)
             {
                 MessageBox.Show("NO SE PUEDE CARGAR LISTA");
@@ -56,8 +41,7 @@ namespace AppPrincipal
            
         }
 
-
-
+        
         private void BtnCancelar_Click(object sender, EventArgs e)
            {
 
@@ -118,7 +102,6 @@ namespace AppPrincipal
                     oc.idEmpleado = CbEmpleado.SelectedIndex;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.ToString();
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.ToString();
-
 
 
                     /* foreach (DataGridViewRow row in DgListadoProductoOC.Rows)

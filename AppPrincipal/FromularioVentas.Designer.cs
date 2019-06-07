@@ -77,6 +77,8 @@
             this.LblSubtotal = new System.Windows.Forms.Label();
             this.lblTituloMenu2 = new System.Windows.Forms.Label();
             this.lblTitulomenu = new System.Windows.Forms.Label();
+            this.LblIdProducto = new System.Windows.Forms.Label();
+            this.TxtIdProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgVentaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -580,11 +582,32 @@
             this.lblTitulomenu.TabIndex = 50;
             this.lblTitulomenu.Text = "Ferreteria";
             // 
+            // LblIdProducto
+            // 
+            this.LblIdProducto.AutoSize = true;
+            this.LblIdProducto.Location = new System.Drawing.Point(12, 9);
+            this.LblIdProducto.Name = "LblIdProducto";
+            this.LblIdProducto.Size = new System.Drawing.Size(59, 13);
+            this.LblIdProducto.TabIndex = 51;
+            this.LblIdProducto.Text = "IdProducto";
+            this.LblIdProducto.Visible = false;
+            // 
+            // TxtIdProducto
+            // 
+            this.TxtIdProducto.Location = new System.Drawing.Point(77, 2);
+            this.TxtIdProducto.Name = "TxtIdProducto";
+            this.TxtIdProducto.ReadOnly = true;
+            this.TxtIdProducto.Size = new System.Drawing.Size(144, 20);
+            this.TxtIdProducto.TabIndex = 52;
+            this.TxtIdProducto.Visible = false;
+            // 
             // FromularioVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.TxtIdProducto);
+            this.Controls.Add(this.LblIdProducto);
             this.Controls.Add(this.lblTitulomenu);
             this.Controls.Add(this.lblTituloMenu2);
             this.Controls.Add(this.LblSubtotal);
@@ -689,5 +712,7 @@
         private System.Windows.Forms.Label LblSubtotal;
         private System.Windows.Forms.Label lblTituloMenu2;
         private System.Windows.Forms.Label lblTitulomenu;
+        private System.Windows.Forms.Label LblIdProducto;
+        public System.Windows.Forms.TextBox TxtIdProducto;
     }
 }
