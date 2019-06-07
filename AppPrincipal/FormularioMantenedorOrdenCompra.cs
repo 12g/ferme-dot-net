@@ -29,21 +29,26 @@ namespace AppPrincipal
             try
             {
                 BindingList<DetalleOrdenCompra> lista;
+
                 DgListadoProductoOC.DataSource = new BindingList<DetalleOrdenCompra>();
 
                 this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
                 this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
                 this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
 
-                //this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
+               // this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
                 //this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
                 //this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
 
                 //DA NOMBRE A LAS COLUMNAS
+
                 this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
                 this.DgListadoProductoOC.Columns["cantidadProducto"].HeaderText = "CANTIDAD";
                 this.DgListadoProductoOC.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
-            }
+
+
+
+             }
             catch (Exception)
             {
                 MessageBox.Show("NO SE PUEDE CARGAR LISTA");
@@ -52,22 +57,36 @@ namespace AppPrincipal
         }
 
 
+
         private void BtnCancelar_Click(object sender, EventArgs e)
            {
-            TxtNumero.Text = "";
-            DPfechaInicio.Value = DateTime.Now;
-            DPfechaTermino.Value = DateTime.Now;
-            TxtIdProducto.Text = "";
-            TxtCodProducto.Text = "";
-            TxtNombreProducto.Text = "";
-            TxtCantidad.Text = "";
-            TxtEstado.Text = "";
 
-            if (CbEmpleado.Items.Count > 1)
+            try
             {
-                CbEmpleado.SelectedIndex = -1;
-                CbEmpleado.Text = "Seleccione";
+                TxtNumero.Text = "";
+                DPfechaInicio.Value = DateTime.Now;
+                DPfechaTermino.Value = DateTime.Now;
+                TxtIdProducto.Text = "";
+                TxtCodProducto.Text = "";
+                TxtNombreProducto.Text = "";
+                TxtCantidad.Text = "";
+                TxtEstado.Text = "";
+
+                DgListadoProductoOC.Rows.Clear();
+                DgListadoProductoOC.Refresh();
+
+                if (CbEmpleado.Items.Count > 1)
+                {
+                    CbEmpleado.SelectedIndex = -1;
+                    CbEmpleado.Text = "Seleccione";
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL GENERAR UNA ORDEN DE COMPRA");
+            }
+          
 
         }
         
@@ -105,18 +124,17 @@ namespace AppPrincipal
                     /* foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
                      {
 
-
                          det.idProducto = int.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
                          //descripcion = DgListadoProductoOC[1, row.Index].Value.ToString();
                          det.cantidadProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
 
-                     }
+                     }*/
 
-                    BindingList<DetalleOrdenCompra> lista;
+                   /* BindingList<DetalleOrdenCompra> lista;
 
                     lista = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
-                    oc.detallesOrdenCompra = lista;
-                    //ser.subdetalleOrdenCompra(oc);
+                    //oc.detallesOrdenCompra = lista;
+                    ser.subdetalleOrdenCompra(oc);
                     ser.CrearOrdenCompra(oc);
                     //ser.CrearOrdenCompra(det);*/
 
@@ -150,7 +168,7 @@ namespace AppPrincipal
           
            try
             {
-                if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
+                if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 0 || !val.IsNumeric(TxtCantidad.Text))
                 {
                     LblCantidadObligatoria.Visible = true;
                     MessageBox.Show("INGRESE UNA CANTIDAD EN PRODUCTO");
@@ -178,7 +196,7 @@ namespace AppPrincipal
                         DgListadoProductoOC.DataSource = null;
                         DgListadoProductoOC.DataSource = detalle;
                         DgListadoProductoOC.Refresh();
-
+                        
                         Limpiar();
                     }
                     catch (Exception ex)
@@ -258,7 +276,6 @@ namespace AppPrincipal
             {
                 MessageBox.Show("NO SE PUEDE CARGAR EMPLEADOS");
             }
-            
         }
 
         //BOTON EDITAR
@@ -349,6 +366,19 @@ namespace AppPrincipal
             {
 
                 MessageBox.Show("SELECCION INVALIDA");
+            }
+        }
+
+        //ENUMERA LAS FILAS EN EL DATAGRIDVIEW AL INGRESAR PRODUCTOS
+        private void DgListadoProductoOC_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView gridView = sender as DataGridView;
+            if (null != gridView)
+            {
+                foreach (DataGridViewRow r in gridView.Rows)
+                {
+                    gridView.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
             }
         }
     }

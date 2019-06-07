@@ -301,6 +301,7 @@
             this.DgVentaProducto.Size = new System.Drawing.Size(853, 181);
             this.DgVentaProducto.TabIndex = 26;
             this.DgVentaProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVentaProducto_CellClick);
+            this.DgVentaProducto.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgVentaProducto_DataBindingComplete);
             // 
             // Codigo
             // 

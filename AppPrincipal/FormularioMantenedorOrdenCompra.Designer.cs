@@ -390,6 +390,7 @@
             this.DgListadoProductoOC.Size = new System.Drawing.Size(852, 199);
             this.DgListadoProductoOC.TabIndex = 37;
             this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);
+            this.DgListadoProductoOC.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgListadoProductoOC_DataBindingComplete);
             // 
             // FormularioMantenedorOrdenCompra
             // 
