@@ -70,12 +70,14 @@ namespace AppPrincipal
         private FormularioMantenedorOrdenCompra FrmOrdenCompra;
         private FromularioVentas FrmVentas;
 
+
+        //SELECCIONAMOS UNA FILA Y LOS DATOS SE CARGAN EN EL FORMULARIO CORRESPONDIENTE
         private void DgMostrarProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 try
-                {
+                {    //LOS DATOS SE CARGAN EN EL FORMULARIO DE VENTAS 
                     FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
                     FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
                     FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[8].Value.ToString();
@@ -85,6 +87,7 @@ namespace AppPrincipal
                 }
                 catch (Exception)
                 {
+                    //LOS DATOS SE CARGAN EN EL FORMULARIO ORDEN DE COMPRA
                     FrmOrdenCompra.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
                     FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
                     FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
@@ -100,7 +103,7 @@ namespace AppPrincipal
         }
 
 
-        //BUSCAR
+        //BUSCAR 
         private void TxtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (TxtBuscar.Text != "")
@@ -132,33 +135,34 @@ namespace AppPrincipal
 
             //CARGA ESTE LISTADO EN FORMULARIO VENTAS
             public FormularioBuscarProducto(FromularioVentas parametro)
-            { 
-            InitializeComponent();
-
-            FrmVentas = parametro;
-            try
             {
-                ServicioProducto serp = new ServicioProducto();
-                DgMostrarProductos.DataSource = serp.GetRESTData();
 
-                //OCULTAR COLUMNA
-                this.DgMostrarProductos.Columns[0].Visible = false;
-                this.DgMostrarProductos.Columns[6].Visible = false;
-                //this.DgMostrarProductos.Columns[8].Visible = false;
+                InitializeComponent();
 
-                //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
-                this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
-                this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
-                this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
-                this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+                FrmVentas = parametro;
+                try
+                {
+                    ServicioProducto serp = new ServicioProducto();
+                    DgMostrarProductos.DataSource = serp.GetRESTData();
+
+                    //OCULTAR COLUMNA
+                    this.DgMostrarProductos.Columns[0].Visible = false;
+                    this.DgMostrarProductos.Columns[6].Visible = false;
+                    //this.DgMostrarProductos.Columns[8].Visible = false;
+
+                    //DA NOMBRE A LAS COLUMNAS
+                    this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
+                    this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
+                    this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
+                    this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                    this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
+                    this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
+                    this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
-            }
-        }
     }
 }

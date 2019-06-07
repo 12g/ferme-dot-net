@@ -192,6 +192,7 @@
             this.DGlistadoUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGlistadoUsuario.Size = new System.Drawing.Size(834, 418);
             this.DGlistadoUsuario.TabIndex = 15;
+            this.DGlistadoUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistadoUsuario_CellContentClick);
             // 
             // FormularioUsuario
             // 

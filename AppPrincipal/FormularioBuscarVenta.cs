@@ -40,10 +40,6 @@ namespace AppPrincipal
             {
                 MessageBox.Show("ERROR AL CARGAR VENTA");
             }
-
-
-           
-
         }
 
 
@@ -114,7 +110,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("");
+                MessageBox.Show("ERROR AL SELECCIONAR VENTA");
             }
         }
     }

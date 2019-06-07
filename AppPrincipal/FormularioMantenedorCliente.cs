@@ -122,8 +122,7 @@ namespace AppPrincipal
                     serv.CrearCliente(cli);
 
                     FormularioCliente clicli = new FormularioCliente();
-                    ServicioCliente serp = new ServicioCliente();
-                    clicli.DGMostrarListaCliente.DataSource = serp.ListarClientes();
+                    clicli.DGMostrarListaCliente.DataSource = serv.ListarClientes();
                     clicli.DGMostrarListaCliente.Refresh();
 
                     MessageBox.Show("CLIENTE GUARDADO");

@@ -143,5 +143,11 @@ namespace AppPrincipal
                 DGlistadoUsuario.DataSource = ser.ListaEmpleados();
             }
         }
+
+        private void DGlistadoUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Listaempleado();
+            ServicioEmpleado serv = new ServicioEmpleado();
+        }
     }
 }

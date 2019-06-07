@@ -46,7 +46,6 @@
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblCantSolicitada = new System.Windows.Forms.Label();
-            this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.LblCantidadObligatoria = new System.Windows.Forms.Label();
@@ -61,8 +60,9 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnBuscarOrdenCompra = new System.Windows.Forms.Button();
             this.TxtEstado = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
+            this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -227,18 +227,6 @@
             this.LblCantSolicitada.TabIndex = 20;
             this.LblCantSolicitada.Text = "Cantidad";
             // 
-            // DgListadoProductoOC
-            // 
-            this.DgListadoProductoOC.AllowUserToAddRows = false;
-            this.DgListadoProductoOC.AllowUserToDeleteRows = false;
-            this.DgListadoProductoOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgListadoProductoOC.Location = new System.Drawing.Point(16, 264);
-            this.DgListadoProductoOC.Name = "DgListadoProductoOC";
-            this.DgListadoProductoOC.ReadOnly = true;
-            this.DgListadoProductoOC.Size = new System.Drawing.Size(865, 203);
-            this.DgListadoProductoOC.TabIndex = 21;
-            this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);
-            // 
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.Control;
@@ -391,12 +379,25 @@
             this.TxtEstado.Size = new System.Drawing.Size(100, 20);
             this.TxtEstado.TabIndex = 36;
             // 
+            // DgListadoProductoOC
+            // 
+            this.DgListadoProductoOC.AllowUserToAddRows = false;
+            this.DgListadoProductoOC.AllowUserToDeleteRows = false;
+            this.DgListadoProductoOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgListadoProductoOC.Location = new System.Drawing.Point(16, 264);
+            this.DgListadoProductoOC.Name = "DgListadoProductoOC";
+            this.DgListadoProductoOC.ReadOnly = true;
+            this.DgListadoProductoOC.Size = new System.Drawing.Size(852, 199);
+            this.DgListadoProductoOC.TabIndex = 37;
+            this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);
+            // 
             // FormularioMantenedorOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 528);
             this.ControlBox = false;
+            this.Controls.Add(this.DgListadoProductoOC);
             this.Controls.Add(this.TxtEstado);
             this.Controls.Add(this.BtnBuscarOrdenCompra);
             this.Controls.Add(this.BtnCerrar);
@@ -411,7 +412,6 @@
             this.Controls.Add(this.LblCantidadObligatoria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.DgListadoProductoOC);
             this.Controls.Add(this.LblCantSolicitada);
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.TxtNombreProducto);
@@ -437,8 +437,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Orden Compra";
             this.Load += new System.EventHandler(this.FormularioMantenedorOrdenCompra_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

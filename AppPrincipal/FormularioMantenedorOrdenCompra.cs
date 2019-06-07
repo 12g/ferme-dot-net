@@ -28,17 +28,16 @@ namespace AppPrincipal
 
             try
             {
-                List<DetalleOrdenCompra> lista;
-                DgListadoProductoOC.DataSource = new List<DetalleOrdenCompra>();
+                BindingList<DetalleOrdenCompra> lista;
+                DgListadoProductoOC.DataSource = new BindingList<DetalleOrdenCompra>();
 
                 this.DgListadoProductoOC.Columns["idDetalleOrdenCompra"].Visible = false;
                 this.DgListadoProductoOC.Columns["idOrdenCompra"].Visible = false;
                 this.DgListadoProductoOC.Columns["idProducto"].Visible = false;
 
-                this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
-                this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
-                this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
-
+                //this.DgListadoProductoOC.Columns["codigoProducto"].DisplayIndex = 0;
+                //this.DgListadoProductoOC.Columns["nombreProducto"].DisplayIndex = 1;
+                //this.DgListadoProductoOC.Columns["cantidadProducto"].DisplayIndex = 2;
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DgListadoProductoOC.Columns["codigoProducto"].HeaderText = "CODIGO";
@@ -52,8 +51,9 @@ namespace AppPrincipal
            
         }
 
+
         private void BtnCancelar_Click(object sender, EventArgs e)
-        {
+           {
             TxtNumero.Text = "";
             DPfechaInicio.Value = DateTime.Now;
             DPfechaTermino.Value = DateTime.Now;
@@ -112,9 +112,9 @@ namespace AppPrincipal
 
                      }
 
-                    List<DetalleOrdenCompra> lista;
+                    BindingList<DetalleOrdenCompra> lista;
 
-                    lista = (List<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
+                    lista = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
                     oc.detallesOrdenCompra = lista;
                     //ser.subdetalleOrdenCompra(oc);
                     ser.CrearOrdenCompra(oc);
@@ -163,8 +163,8 @@ namespace AppPrincipal
                 {
                    try
                     {
-                        List<DetalleOrdenCompra> detalle;
-                        detalle = (List<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
+                        BindingList<DetalleOrdenCompra> detalle;
+                        detalle = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
                         //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
                         //Limpiar();
                         DetalleOrdenCompra det = new DetalleOrdenCompra();
@@ -173,15 +173,16 @@ namespace AppPrincipal
                         det.nombreProducto = TxtNombreProducto.Text;
                         det.cantidadProducto = int.Parse(TxtCantidad.Text);
 
-                        DgListadoProductoOC.DataSource = det.idProducto;
+                        detalle.Add(det);
+                        Console.WriteLine(detalle.ToString());
+                        DgListadoProductoOC.DataSource = null;
+                        DgListadoProductoOC.DataSource = detalle;
+                        DgListadoProductoOC.Refresh();
 
-
-
-
+                        Limpiar();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
                     }
 
@@ -260,30 +261,6 @@ namespace AppPrincipal
             
         }
 
-
-        //SELECCIONA UNA FILA Y LA ENVIA DIRECTO AL TEXTBOX PARA SER EDITADA
-        private void DgListadoProductoOC_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int poc = DgListadoProductoOC.CurrentRow.Index;
-                TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
-                TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
-                TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
-
-                BtnAgregar.Enabled = false;
-                BtnEditar.Enabled = true;
-                BtnBorrar.Enabled = true;
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("SELECCION INVALIDA");
-            }
-            
-        }
-
-
         //BOTON EDITAR
         private void BtnEditar_Click(object sender, EventArgs e)
         {
@@ -304,9 +281,9 @@ namespace AppPrincipal
                     try
                     {
                         int poc = DgListadoProductoOC.CurrentRow.Index;
-                        DgListadoProductoOC[0, poc].Value = TxtCodProducto.Text;
-                        DgListadoProductoOC[1, poc].Value = TxtNombreProducto.Text;
-                        DgListadoProductoOC[2, poc].Value = TxtCantidad.Text;
+                        DgListadoProductoOC[5, poc].Value = TxtCodProducto.Text;
+                        DgListadoProductoOC[4, poc].Value = TxtNombreProducto.Text;
+                        DgListadoProductoOC[3, poc].Value = TxtCantidad.Text;
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
@@ -353,6 +330,26 @@ namespace AppPrincipal
         {
             FormularioBuscarOrdenCompra frm = new FormularioBuscarOrdenCompra(this);
             frm.ShowDialog();
+        }
+
+        private void DgListadoProductoOC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int poc = DgListadoProductoOC.CurrentRow.Index;
+                TxtCodProducto.Text = DgListadoProductoOC[5, poc].Value.ToString();
+                TxtNombreProducto.Text = DgListadoProductoOC[4, poc].Value.ToString();
+                TxtCantidad.Text = DgListadoProductoOC[3, poc].Value.ToString();
+
+                BtnAgregar.Enabled = false;
+                BtnEditar.Enabled = true;
+                BtnBorrar.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("SELECCION INVALIDA");
+            }
         }
     }
 }
