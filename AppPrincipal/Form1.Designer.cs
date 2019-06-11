@@ -129,6 +129,7 @@
             this.BtnRecepcion.Text = "          Recepcion";
             this.BtnRecepcion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnRecepcion.UseVisualStyleBackColor = true;
+            this.BtnRecepcion.Click += new System.EventHandler(this.BtnRecepcion_Click);
             // 
             // BtnCliente
             // 
@@ -157,13 +158,14 @@
             this.BtnInformes.ForeColor = System.Drawing.Color.White;
             this.BtnInformes.Image = ((System.Drawing.Image)(resources.GetObject("BtnInformes.Image")));
             this.BtnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInformes.Location = new System.Drawing.Point(3, 399);
+            this.BtnInformes.Location = new System.Drawing.Point(0, 439);
             this.BtnInformes.Name = "BtnInformes";
             this.BtnInformes.Size = new System.Drawing.Size(244, 35);
             this.BtnInformes.TabIndex = 7;
             this.BtnInformes.Text = "          Informes";
             this.BtnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnInformes.UseVisualStyleBackColor = true;
+            this.BtnInformes.Click += new System.EventHandler(this.BtnInformes_Click);
             // 
             // BtnUsuario
             // 
@@ -192,7 +194,7 @@
             this.BtnVentas.ForeColor = System.Drawing.Color.White;
             this.BtnVentas.Image = ((System.Drawing.Image)(resources.GetObject("BtnVentas.Image")));
             this.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVentas.Location = new System.Drawing.Point(3, 445);
+            this.BtnVentas.Location = new System.Drawing.Point(0, 397);
             this.BtnVentas.Name = "BtnVentas";
             this.BtnVentas.Size = new System.Drawing.Size(244, 35);
             this.BtnVentas.TabIndex = 5;
@@ -407,18 +409,18 @@
         private System.Windows.Forms.PictureBox IconoMinimizarApp;
         private System.Windows.Forms.PictureBox IconoResetearApp;
         private System.Windows.Forms.PictureBox IconoMaximizarApp;
-        private System.Windows.Forms.Button BtnInformes;
-        private System.Windows.Forms.Button BtnUsuario;
-        private System.Windows.Forms.Button BtnVentas;
-        private System.Windows.Forms.Button BtnProveedor;
-        private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Panel PanelContendorFormulario;
-        private System.Windows.Forms.Button BtnRecepcion;
         private System.Windows.Forms.Label LblGrupoN1;
-        private System.Windows.Forms.Button BtnOrdenCompra;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel PanelMenuVertical;
+        private System.Windows.Forms.Button BtnInformes;
+        private System.Windows.Forms.Button BtnUsuario;
+        private System.Windows.Forms.Button BtnProveedor;
+        private System.Windows.Forms.Button BtnCliente;
+        private System.Windows.Forms.Button BtnRecepcion;
+        private System.Windows.Forms.Button BtnOrdenCompra;
         private System.Windows.Forms.Button btnProducto;
+        public System.Windows.Forms.Button BtnVentas;
     }
 }
 

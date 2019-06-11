@@ -150,5 +150,10 @@ namespace AppPrincipal
             FomularioTipoProducto frtp = new FomularioTipoProducto();
             frtp.ShowDialog();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }

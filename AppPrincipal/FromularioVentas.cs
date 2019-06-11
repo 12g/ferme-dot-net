@@ -21,6 +21,7 @@ namespace AppPrincipal
             TxtSubtotal.Text = "0";
             TxtIva.Text = "0";
             TxtTotal.Text = "0";
+            TxtEstado.Text = "S";
             ListaOrdenC();
         }
 
@@ -48,6 +49,11 @@ namespace AppPrincipal
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            FormularioPrincipal fm = new FormularioPrincipal();
+            fm.BtnVentas = sender as Button;
+
+            fm.BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+
             this.Close();
         }
 
@@ -87,19 +93,24 @@ namespace AppPrincipal
                     {
                         BindingList<Detalle_Venta> detalle;
                         detalle = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
-                        //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
-                        //Limpiar();
+
                         Detalle_Venta det = new Detalle_Venta();
                         det.idProducto = int.Parse(TxtIdProducto.Text);
-                        det.codigoProducto = int.Parse(TxtCodigo.Text);
+                        det.codigoProducto = long.Parse(TxtCodigo.Text);
                         det.nombreProducto = TxtNombreProducto.Text;
                         det.unidadesProducto = int.Parse(TxtCantidad.Text);
+                        det.montoDetalleVenta = int.Parse(TxtPrecio.Text);
 
                         detalle.Add(det);
                         Console.WriteLine(detalle.ToString());
                         DgVentaProducto.DataSource = null;
                         DgVentaProducto.DataSource = detalle;
                         DgVentaProducto.Refresh();
+
+                        cantidadprecio();
+
+                        BtnBorrar.Enabled = false;
+                        BtnEditar.Enabled = false;
 
                         Limpiar();
                     }
@@ -115,7 +126,7 @@ namespace AppPrincipal
             }
           
         }
-
+        //BOTON EDITAR PRODUCTO
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             try
@@ -139,11 +150,14 @@ namespace AppPrincipal
                         DgVentaProducto[0, poc].Value = TxtCodigo.Text;
                         DgVentaProducto[1, poc].Value = TxtNombreProducto.Text;
                         DgVentaProducto[2, poc].Value = TxtCantidad.Text;
+                        DgVentaProducto[3,poc].Value = TxtPrecio.Text;
 
                         cantidadprecio();
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
+                        BtnBorrar.Enabled = false;
+                        BtnEditar.Enabled = false;
                     }
                     catch (Exception)
                     {
@@ -181,14 +195,24 @@ namespace AppPrincipal
 
         private void DgVentaProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int poc = DgVentaProducto.CurrentRow.Index;
-            TxtCodigo.Text = DgVentaProducto[0, poc].Value.ToString();
-            TxtNombreProducto.Text = DgVentaProducto[1, poc].Value.ToString();
-            TxtCantidad.Text = DgVentaProducto[2, poc].Value.ToString();
+            try
+            {
+                int poc = DgVentaProducto.CurrentRow.Index;
 
-            BtnAgregar.Enabled = false;
-            BtnEditar.Enabled = true;
-            BtnBorrar.Enabled = true;
+                TxtCodigo.Text = DgVentaProducto[0, poc].Value.ToString();
+                TxtNombreProducto.Text = DgVentaProducto[1, poc].Value.ToString();
+                TxtCantidad.Text = DgVentaProducto[2, poc].Value.ToString();
+                TxtPrecio.Text = DgVentaProducto[3, poc].Value.ToString();
+
+                BtnAgregar.Enabled = false;
+                BtnEditar.Enabled = true;
+                BtnBorrar.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL SELECCIONAR FILA");
+            }
+           
         }
 
         private void BtnCliente_Click(object sender, EventArgs e)
@@ -202,33 +226,41 @@ namespace AppPrincipal
         //CALCULA EL SUBTOTAL Y EL TOTAL AL AGREGAR UN PRODUCTO 
         private void cantidadprecio()
         {
-            //MULTIPLICA LA CANTIDAD * PRECIO
-            for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
+            try
             {
-                int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[2].Value));
-                int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[3].Value));
-                DgVentaProducto.Rows[i].Cells[4].Value = num1 * num2;
+                //MULTIPLICA LA CANTIDAD * PRECIO
+                for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
+                {
+                    int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[2].Value));
+                    int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[3].Value));
+                    DgVentaProducto.Rows[i].Cells[4].Value = num1 * num2;
+                }
+
+
+
+                //SUMA LA  COLUMNA SUBTOTAL Y LA MUESTRA EN EL TXTSUBTOTAL
+                int suma = 0;
+
+                foreach (DataGridViewRow row in DgVentaProducto.Rows)
+                {
+                    if (row.Cells[4].Value == DBNull.Value)
+                        continue;
+
+                    int valorcell = 0;
+                    int.TryParse(Convert.ToString(row.Cells[4].Value), out valorcell);
+
+                    suma += Convert.ToInt32(valorcell);
+                }
+
+                TxtSubtotal.Text = Convert.ToString(suma);
+                TxtIva.Text = Convert.ToString(suma * 19 / 100);
+                TxtTotal.Text = Convert.ToString(suma * 19 / 100 + suma);
             }
-
-
-
-            //SUMA LA  COLUMNA SUBTOTAL Y LA MUESTRA EN EL TXTSUBTOTAL
-            int suma = 0;
-
-            foreach (DataGridViewRow row in DgVentaProducto.Rows)
+            catch (Exception)
             {
-                if (row.Cells[4].Value == DBNull.Value)
-                    continue;
-
-                int valorcell = 0;
-                int.TryParse(Convert.ToString(row.Cells[4].Value), out valorcell);
-
-                suma += Convert.ToInt32(valorcell);
+                MessageBox.Show("ERROR AL CALCULAR EL NETO,IVA Y TOTAL");
             }
-
-            TxtSubtotal.Text = Convert.ToString(suma);
-            TxtIva.Text = Convert.ToString(suma * 19 / 100);
-            TxtTotal.Text = Convert.ToString(suma * 19 / 100 + suma);
+           
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -237,6 +269,7 @@ namespace AppPrincipal
             fbv.ShowDialog();
         }
 
+        //CARGA EL COMBOBOX EMPLEADO
         private void CargarCbEmpleado()
         {
             try
@@ -271,6 +304,73 @@ namespace AppPrincipal
                 }
             }
         }
+
+        //BOTON NUEVA VENTA
+        private void BtnNuevVenta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TxtIdProducto.Text = "";
+                TxtCantidad.Text = "";
+                TxtCodigo.Text = "";
+                TxtEstado.Text = "";
+                TxtFecha.Text = DateTime.Now.ToShortDateString();
+                TxtIva.Text = "";
+                TxtNombreProducto.Text = "";
+                TxtNombreRazonSocial.Text = "";
+                TxtNumeroDocumento.Text = "";
+                TxtPrecio.Text = "";
+                TxtRut.Text = "";
+                TxtSubtotal.Text = "";
+                TxtTotal.Text = "";
+
+                if (CbEmpleado.Items.Count > 1)
+                {
+                    CbEmpleado.SelectedIndex = -1;
+                    CbEmpleado.Text = "Seleccione";
+                }
+
+                DgVentaProducto.Rows.Clear();
+                DgVentaProducto.Refresh();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL GENERAR UN NUEVO DOCUMENTO");
+            }
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //VALIDA QUE SEA SELECCIONADO UN CHECKBOX BOLETA O FACTURA
+                if (RbBoleta.Checked == true || !RbFactura.Checked == false)
+                {
+
+                }
+                else if (RbFactura.Checked == true || !RbBoleta.Checked == false)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("SELECIONE UN TIPO DE DOCUMENTO *BOLETA O FACTURA *");
+
+                    if (TxtNumeroDocumento.Text == "")
+                    {
+                        MessageBox.Show("");
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR");
+            }
+          
+        }
     }
-    
 }

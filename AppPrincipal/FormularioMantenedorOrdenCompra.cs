@@ -23,6 +23,13 @@ namespace AppPrincipal
         {
             InitializeComponent();
             ListaOrdenC();
+
+            BtnAgregar.Enabled = true;
+            BtnBorrar.Enabled = false;
+            BtnEditar.Enabled = false;
+            TxtEstado.Text = "S";
+            fechaInicio();
+            FechaTermino();
         }
 
         private void ListaOrdenC()
@@ -56,6 +63,10 @@ namespace AppPrincipal
                 TxtCantidad.Text = "";
                 TxtEstado.Text = "";
 
+                BtnAgregar.Enabled = true;
+                BtnBorrar.Enabled = false;
+                BtnEditar.Enabled = false;
+
                 DgListadoProductoOC.Rows.Clear();
                 DgListadoProductoOC.Refresh();
 
@@ -73,12 +84,26 @@ namespace AppPrincipal
           
 
         }
-        
+
+        private void fechaInicio()
+        {
+            DPfechaInicio.Format = DateTimePickerFormat.Custom;
+            // Display the date as "Mon 26 Feb 2001".
+            DPfechaInicio.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void FechaTermino()
+        {
+            DPfechaTermino.Format = DateTimePickerFormat.Custom;
+            // Display the date as "Mon 26 Feb 2001".
+            DPfechaTermino.CustomFormat = "dd/MM/yyyy";
+        }
+
         //BOTON GUARDAR ORDEN COMPRA
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
+          /*  try
+            {*/
                 if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
                 {
 
@@ -99,39 +124,43 @@ namespace AppPrincipal
                     DetalleOrdenCompra det = new DetalleOrdenCompra();
                     Orden_Compra oc = new Orden_Compra();
 
-                    oc.idEmpleado = CbEmpleado.SelectedIndex;
-                    oc.fechaSolicitudOrdenCompra = DPfechaInicio.ToString();
-                    oc.fechaRecepcionOrdenCompra = DPfechaTermino.ToString();
+                    oc.idOrdenCompra = int.Parse(TxtNumero.Text);
+                    oc.estadoOrdenCompra = TxtEstado.Text;
+                    oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue) ;
+                    oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
+                    oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
 
-
-                    /* foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
+                foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
                      {
 
-                         det.idProducto = int.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
-                         //descripcion = DgListadoProductoOC[1, row.Index].Value.ToString();
+                         //det.idDetalleOrdenCompra = int.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
+                         //det.idOrdenCompra = int.Parse(DgListadoProductoOC[1, row.Index].Value.ToString());
+                         //det.idProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
+                         det.codigoProducto = long.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
+                         det.nombreProducto = DgListadoProductoOC[1, row.Index].Value.ToString();
                          det.cantidadProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
 
-                     }*/
+                     }
 
-                   /* BindingList<DetalleOrdenCompra> lista;
+                    BindingList<DetalleOrdenCompra> lista;
 
                     lista = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
-                    //oc.detallesOrdenCompra = lista;
-                    ser.subdetalleOrdenCompra(oc);
+                    oc.detallesOrdenCompra = lista;
+                   
                     ser.CrearOrdenCompra(oc);
-                    //ser.CrearOrdenCompra(det);*/
+                    ser.CrearDetOrdenCompra(det);
 
 
 
-                    Limpiar();
+                Limpiar();
                 }
-            }
+           /* }
             catch (Exception)
             {
 
                 MessageBox.Show("ERROR AL GUARDAR ORDEN DE COMPRA");
               
-            }
+            }*/
           
         }
 
@@ -169,6 +198,8 @@ namespace AppPrincipal
                         //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
                         //Limpiar();
                         DetalleOrdenCompra det = new DetalleOrdenCompra();
+                        det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
+                        det.idOrdenCompra = int.Parse(TxtNumero.Text);
                         det.idProducto = int.Parse(TxtIdProducto.Text);
                         det.codigoProducto = long.Parse(TxtCodProducto.Text);
                         det.nombreProducto = TxtNombreProducto.Text;
@@ -281,9 +312,9 @@ namespace AppPrincipal
                     try
                     {
                         int poc = DgListadoProductoOC.CurrentRow.Index;
-                        DgListadoProductoOC[5, poc].Value = TxtCodProducto.Text;
-                        DgListadoProductoOC[4, poc].Value = TxtNombreProducto.Text;
-                        DgListadoProductoOC[3, poc].Value = TxtCantidad.Text;
+                        DgListadoProductoOC[0, poc].Value = TxtCodProducto.Text;
+                        DgListadoProductoOC[1, poc].Value = TxtNombreProducto.Text;
+                        DgListadoProductoOC[2, poc].Value = TxtCantidad.Text;
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
@@ -336,10 +367,11 @@ namespace AppPrincipal
         {
             try
             {
+
                 int poc = DgListadoProductoOC.CurrentRow.Index;
-                TxtCodProducto.Text = DgListadoProductoOC[5, poc].Value.ToString();
-                TxtNombreProducto.Text = DgListadoProductoOC[4, poc].Value.ToString();
-                TxtCantidad.Text = DgListadoProductoOC[3, poc].Value.ToString();
+                TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
+                TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
+                TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
 
                 BtnAgregar.Enabled = false;
                 BtnEditar.Enabled = true;
@@ -347,9 +379,9 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-
-                MessageBox.Show("SELECCION INVALIDA");
+                MessageBox.Show("ERROR AL SELECCIONAR FILA");
             }
+
         }
 
         //ENUMERA LAS FILAS EN EL DATAGRIDVIEW AL INGRESAR PRODUCTOS

@@ -15,6 +15,7 @@ namespace AppPrincipal
     public partial class FormularioBuscarOrdenCompra : Form
     {
         private FormularioMantenedorOrdenCompra FrmOrdenCompra;
+        //inicia en formulario mantenedor de recepcion
         public FormularioBuscarOrdenCompra(FormularioMantenedorOrdenCompra parametro)
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace AppPrincipal
             {
                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
-
                 //OCULTAR COLUMNA
                 //this.DgMostrarOrdenCompra.Columns[0].Visible = false;
                 //this.DgMostrarOrdenCompra.Columns[6].Visible = false;
@@ -39,6 +39,26 @@ namespace AppPrincipal
                 //this.DgMostrarOrdenCompra.Columns[5].HeaderText = "STOCK CRITICO";
                 //this.DgMostrarOrdenCompra.Columns[7].HeaderText = "TIPO PRODUCTO";
                 //this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+            }
+        }
+
+        //inicia en formulario recepcion
+        private FormularioRecepcion FrmRecepcion;
+        public FormularioBuscarOrdenCompra(FormularioRecepcion parametro)
+        {
+            InitializeComponent();
+
+
+            FrmRecepcion = parametro;
+            try
+            {
+                ServicioOrdenCompra serp = new ServicioOrdenCompra();
+                DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
+
             }
             catch (Exception)
             {
@@ -98,24 +118,40 @@ namespace AppPrincipal
         private void DgMostrarOrdenCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //detallar campos*******************************************
+            try
+            {
                 try
                 {
-
+                   
                     FrmOrdenCompra.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
-                    FrmOrdenCompra.CbEmpleado.SelectedText = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
+                    FrmOrdenCompra.CbEmpleado.Text= DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
                     FrmOrdenCompra.TxtEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
                     FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
                     FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells[4].Value.ToString();
                     FrmOrdenCompra.DgListadoProductoOC.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
 
-                this.Close();
+                    this.Close();
 
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("ERROR AL AGREGAR ORDEN COMPRA");
+                  
+                    FrmRecepcion.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
+                    FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
+                    FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
+                    FrmRecepcion.TxtFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
+                    FrmRecepcion.DpFechaRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[4].Value.ToString();
+                    FrmRecepcion.DgListadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
+
+                    this.Close();
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL AGREGAR ORDEN COMPRA");
+            }
+           
         }
     }
 }

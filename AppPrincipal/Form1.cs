@@ -27,7 +27,7 @@ namespace AppPrincipal
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
-        //SE LLAMAN LAS FUNCIONES QUE SE CREARON EN LAS LIBRERIA
+        
         private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -201,8 +201,9 @@ namespace AppPrincipal
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-
+          
             AbrirFormInPanel<FromularioVentas>();
+ 
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
@@ -211,6 +212,34 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+        }
+
+        private void BtnRecepcion_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel<FormularioRecepcion>();
+            
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(178, 34, 34);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
+        }
+
+        private void BtnInformes_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel<FormularioInformes>();
+
+            btnProducto.BackColor = Color.FromArgb(128, 0, 0);
+            BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
+            BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
+            BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
+            BtnVentas.BackColor = Color.FromArgb(128, 0, 0);
+            BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
+            BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
+            BtnInformes.BackColor = Color.FromArgb(178, 34, 34);
         }
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA

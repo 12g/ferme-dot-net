@@ -13,8 +13,9 @@ namespace Biblioteca
         //DISPLAYNAME LE DA NOMBRE AL ATRIBUTO AL MOMENTO DE CARGAR EL DATAGRIDVIEW EN FORMULARIO ORDEN COMPRA
         //[System.ComponentModel.Browsable(false)] OCULTA LA FILA EN EL DATAGRIDVIEW
 
+
         [System.ComponentModel.Browsable(false)]
-        public int? idDetalleOrdenCompra { get; set; }
+        public int idDetalleOrdenCompra { get; set; }
 
         [System.ComponentModel.Browsable(false)]
         public int idOrdenCompra { get; set; }
