@@ -22,14 +22,6 @@ namespace AppPrincipal
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
-            ListaOrdenC();
-
-            BtnAgregar.Enabled = true;
-            BtnBorrar.Enabled = false;
-            BtnEditar.Enabled = false;
-            TxtEstado.Text = "S";
-            fechaInicio();
-            FechaTermino();
         }
 
         private void ListaOrdenC()
@@ -48,10 +40,8 @@ namespace AppPrincipal
            
         }
 
-        
-        private void BtnCancelar_Click(object sender, EventArgs e)
-           {
-
+        private void LimpiarPantalla()
+        {
             try
             {
                 TxtNumero.Text = "";
@@ -61,7 +51,7 @@ namespace AppPrincipal
                 TxtCodProducto.Text = "";
                 TxtNombreProducto.Text = "";
                 TxtCantidad.Text = "";
-                TxtEstado.Text = "";
+                TxtEstado.Text = "S";
 
                 BtnAgregar.Enabled = true;
                 BtnBorrar.Enabled = false;
@@ -78,11 +68,23 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
+                MessageBox.Show("ERROR AL LIMPIAR PANTALLA");
+            }
+        }
+
+        
+        private void BtnCancelar_Click(object sender, EventArgs e)
+           {
+
+            try
+            {
+                LimpiarPantalla();
+            }
+            catch (Exception)
+            {
 
                 MessageBox.Show("ERROR AL GENERAR UNA ORDEN DE COMPRA");
             }
-          
-
         }
 
         private void fechaInicio()
@@ -102,8 +104,8 @@ namespace AppPrincipal
         //BOTON GUARDAR ORDEN COMPRA
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-          /*  try
-            {*/
+           try
+            {
                 if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
                 {
 
@@ -133,34 +135,30 @@ namespace AppPrincipal
                 foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
                      {
 
-                         //det.idDetalleOrdenCompra = int.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
-                         //det.idOrdenCompra = int.Parse(DgListadoProductoOC[1, row.Index].Value.ToString());
-                         //det.idProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
-                         det.codigoProducto = long.Parse(DgListadoProductoOC[0, row.Index].Value.ToString());
-                         det.nombreProducto = DgListadoProductoOC[1, row.Index].Value.ToString();
-                         det.cantidadProducto = int.Parse(DgListadoProductoOC[2, row.Index].Value.ToString());
+                         det.idDetalleOrdenCompra = Convert.ToInt32(DgListadoProductoOC[0, row.Index].Value.ToString());
+                         det.idOrdenCompra = Convert.ToInt32(DgListadoProductoOC[1, row.Index].Value.ToString());
+                         det.idProducto = Convert.ToInt32(DgListadoProductoOC[2, row.Index].Value.ToString());
+                         det.codigoProducto = long.Parse(DgListadoProductoOC[3, row.Index].Value.ToString());
+                         det.nombreProducto = DgListadoProductoOC[4, row.Index].Value.ToString();
+                         det.cantidadProducto = Convert.ToInt32(DgListadoProductoOC[5, row.Index].Value.ToString());
 
                      }
 
                     BindingList<DetalleOrdenCompra> lista;
 
                     lista = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
-                    oc.detallesOrdenCompra = lista;
+                    oc.detallesOrdenCompra = lista.ToList();
                    
                     ser.CrearOrdenCompra(oc);
-                    ser.CrearDetOrdenCompra(det);
-
-
-
-                Limpiar();
+                LimpiarPantalla();
                 }
-           /* }
+            }
             catch (Exception)
             {
 
                 MessageBox.Show("ERROR AL GUARDAR ORDEN DE COMPRA");
               
-            }*/
+            }
           
         }
 
@@ -172,7 +170,6 @@ namespace AppPrincipal
             TxtCodProducto.Text = "";
             TxtNombreProducto.Text = "";
             TxtCantidad.Text = "";
-            TxtEstado.Text = "";
         }
         //BOTON AGREGAR
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -285,6 +282,14 @@ namespace AppPrincipal
                     CbEmpleado.SelectedIndex = -1;
                     CbEmpleado.Text = "Seleccione";
                 }
+
+                BtnAgregar.Enabled = true;
+                BtnBorrar.Enabled = false;
+                BtnEditar.Enabled = false;
+                TxtEstado.Text = "S";
+                fechaInicio();
+                FechaTermino();
+                ListaOrdenC();
             }
             catch (Exception)
             {

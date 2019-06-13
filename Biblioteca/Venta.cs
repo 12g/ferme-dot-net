@@ -14,5 +14,6 @@ namespace Biblioteca
         public int subtotalVenta { get; set; }
         public int idEmpleado { get; set; }
         public int idCliente { get; set; }
+        public List<Detalle_Venta> detallesVenta { get; set; }
     }
 }

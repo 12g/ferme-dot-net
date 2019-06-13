@@ -103,6 +103,7 @@ namespace AppPrincipal
         {
             try
             {
+                frmventas.TxtIdCliente.Text = DgMostrarCliente.CurrentRow.Cells[8].Value.ToString();
                 frmventas.TxtRut.Text = DgMostrarCliente.CurrentRow.Cells[2].Value.ToString();
                 frmventas.TxtNombreRazonSocial.Text = DgMostrarCliente.CurrentRow.Cells[1].Value.ToString();
                 this.Close();

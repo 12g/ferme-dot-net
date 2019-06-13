@@ -24,7 +24,7 @@ namespace AppPrincipal
             try
             {
                 ServicioVentas ser = new ServicioVentas();
-                DgMostrarVentasRealizadas.DataSource = ser.ListarVentas();
+                DgMostrarVentasRealizadas.DataSource = ser.ListarVenta();
 
                // this.DgMostrarVentasRealizadas.Columns[4].Visible = false;
                // this.DgMostrarVentasRealizadas.Columns[5].Visible = false;
@@ -89,7 +89,7 @@ namespace AppPrincipal
             else
             {
                  ServicioVentas ser = new ServicioVentas();
-                 DgMostrarVentasRealizadas.DataSource = ser.ListarVentas();
+                 DgMostrarVentasRealizadas.DataSource = ser.ListarVenta();
             }
         }
 
@@ -100,8 +100,8 @@ namespace AppPrincipal
             try
             {
                 frmventas.TxtNumeroDocumento.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[0].Value.ToString();
-                frmventas.TxtEstado.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[1].Value.ToString();
-                frmventas.TxtFecha.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[2].Value.ToString();
+                frmventas.CbTipoDocto.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[1].Value.ToString();
+                frmventas.DpFecha.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[2].Value.ToString();
                 frmventas.TxtTotal.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[3].Value.ToString();
                 frmventas.TxtRut.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[6].Value.ToString();
 

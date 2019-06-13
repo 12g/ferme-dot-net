@@ -11,28 +11,28 @@ namespace Biblioteca
     {
 
         //ATRIBUTOS
-        [System.ComponentModel.Browsable(false)]
+        //[System.ComponentModel.Browsable(false)]
         public int idDetalleVenta { get; set; }
 
-        [System.ComponentModel.Browsable(false)]
+        //[System.ComponentModel.Browsable(false)]
         public int idProducto { get; set; }
 
-        [System.ComponentModel.Browsable(false)]
+        //[System.ComponentModel.Browsable(false)]
         public int idVenta { get; set; }
 
-        [DisplayName("CODIGO DEL PRODUCTO")]
+        //[DisplayName("CODIGO DEL PRODUCTO")]
         public long codigoProducto { get; set; }
 
-        [DisplayName("NOMBRE PRODUCTO")]
+        //[DisplayName("NOMBRE PRODUCTO")]
         public string nombreProducto { get; set; }
 
-        [DisplayName("UNIDADES")]
+        //[DisplayName("UNIDADES")]
         public int unidadesProducto { get; set; }
 
-        [DisplayName("MONTO")]
+        //[DisplayName("MONTO")]
         public int montoDetalleVenta { get; set; }
 
-        [DisplayName("SUBTOTAL")]
+        //[DisplayName("SUBTOTAL")]
         public int Subtotal { get; set; }
 
     }

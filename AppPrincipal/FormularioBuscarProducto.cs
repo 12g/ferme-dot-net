@@ -81,7 +81,7 @@ namespace AppPrincipal
                     FrmVentas.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
                     FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
                     FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[8].Value.ToString();
+                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[10].Value.ToString();
                     this.Close();
 
 
@@ -147,8 +147,8 @@ namespace AppPrincipal
                     DgMostrarProductos.DataSource = serp.GetRESTData();
 
                     //OCULTAR COLUMNA
-                    this.DgMostrarProductos.Columns[0].Visible = false;
-                    this.DgMostrarProductos.Columns[6].Visible = false;
+                    //this.DgMostrarProductos.Columns[0].Visible = false;
+                    //this.DgMostrarProductos.Columns[6].Visible = false;
                     //this.DgMostrarProductos.Columns[8].Visible = false;
 
                     //DA NOMBRE A LAS COLUMNAS
@@ -158,7 +158,7 @@ namespace AppPrincipal
                     this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
                     this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
                     this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                    this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+                    this.DgMostrarProductos.Columns[10].HeaderText = "PRECIO";
                 }
                 catch (Exception)
                 {

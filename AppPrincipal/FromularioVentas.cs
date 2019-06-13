@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +18,48 @@ namespace AppPrincipal
         public FromularioVentas()
         {
             InitializeComponent();
-            CargarCbEmpleado();
-            TxtSubtotal.Text = "0";
-            TxtIva.Text = "0";
-            TxtTotal.Text = "0";
-            TxtEstado.Text = "S";
-            ListaOrdenC();
+        }
+
+        public class CargarCombobox
+        {
+            public string Nombre;
+            public string Value;
+
+            public  CargarCombobox(string nombre, string value)
+            {
+                Nombre = nombre;
+                Value = value;
+            }
+            public override string ToString()
+            {
+                return Nombre;
+            }
+        }
+
+       
+
+        //CARGA DATOS EN COMBOBOX TIPO DOCTO
+        private void CargarComboBoxTipoDocto()
+        {
+            try
+            {
+                CbTipoDocto.Items.Add(new CargarCombobox("Boleta","B"));
+                CbTipoDocto.Items.Add(new CargarCombobox("Factura","F"));
+
+                if (CbTipoDocto.Items.Count > 0)
+                {
+                    CbTipoDocto.SelectedIndex = 0;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL CARGAR TIPO DOCUMENTO");
+            }
         }
 
         //CARGAR LISTADO 
         private void ListaOrdenC()
         {
-
             try
             {
                 BindingList<Detalle_Venta> lista;
@@ -42,9 +73,23 @@ namespace AppPrincipal
 
         }
 
+        private void fechaInicio()
+        {
+            DpFecha.Format = DateTimePickerFormat.Custom;
+            // Display the date as "Mon 26 Feb 2001".
+            DpFecha.CustomFormat = "dd/MM/yyyy";
+        }
+
         private void FromularioVentas_Load(object sender, EventArgs e)
         {
-            TxtFecha.Text = DateTime.Now.ToShortDateString();
+            fechaInicio();
+
+            CargarCbEmpleado();
+            TxtSubtotal.Text = "0";
+            TxtIva.Text = "0";
+            TxtTotal.Text = "0";
+            ListaOrdenC();
+            CargarComboBoxTipoDocto();
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -75,7 +120,7 @@ namespace AppPrincipal
         //AGREGAR PRODUCTO AL DATAGRIDVIEW
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Validaciones val = new Validaciones();
+           /* Validaciones val = new Validaciones();
             try
             {
                 if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
@@ -90,29 +135,35 @@ namespace AppPrincipal
                 else
                 {
                     try
-                    {
+                    {*/
                         BindingList<Detalle_Venta> detalle;
                         detalle = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
 
-                        Detalle_Venta det = new Detalle_Venta();
-                        det.idProducto = int.Parse(TxtIdProducto.Text);
-                        det.codigoProducto = long.Parse(TxtCodigo.Text);
-                        det.nombreProducto = TxtNombreProducto.Text;
-                        det.unidadesProducto = int.Parse(TxtCantidad.Text);
-                        det.montoDetalleVenta = int.Parse(TxtPrecio.Text);
+                        Detalle_Venta vent = new Detalle_Venta();
+                        vent.idDetalleVenta = int.Parse(TxtNumeroDocumento.Text);
+                        vent.idProducto = int.Parse(TxtIdProducto.Text);
+                        vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
+                        vent.codigoProducto = long.Parse(TxtCodigo.Text);
+                        vent.nombreProducto = TxtNombreProducto.Text;
+                        vent.unidadesProducto = int.Parse(TxtCantidad.Text);
+                        vent.montoDetalleVenta = int.Parse(TxtPrecio.Text);
+                        vent.Subtotal = int.Parse(TxtPrecio.Text);
 
-                        detalle.Add(det);
+                        detalle.Add(vent);
                         Console.WriteLine(detalle.ToString());
                         DgVentaProducto.DataSource = null;
                         DgVentaProducto.DataSource = detalle;
                         DgVentaProducto.Refresh();
 
+
                         cantidadprecio();
 
+                        Limpiar();
+                        BtnAgregar.Enabled = true;
                         BtnBorrar.Enabled = false;
                         BtnEditar.Enabled = false;
 
-                        Limpiar();
+                        Limpiar();/*
                     }
                     catch (Exception)
                     {
@@ -123,7 +174,7 @@ namespace AppPrincipal
             catch (Exception)
             {
                 MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
-            }
+            }*/
           
         }
         //BOTON EDITAR PRODUCTO
@@ -231,9 +282,9 @@ namespace AppPrincipal
                 //MULTIPLICA LA CANTIDAD * PRECIO
                 for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
                 {
-                    int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[2].Value));
-                    int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[3].Value));
-                    DgVentaProducto.Rows[i].Cells[4].Value = num1 * num2;
+                    int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[5].Value));
+                    int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[6].Value));
+                    DgVentaProducto.Rows[i].Cells[7].Value = num1 * num2;
                 }
 
 
@@ -243,11 +294,11 @@ namespace AppPrincipal
 
                 foreach (DataGridViewRow row in DgVentaProducto.Rows)
                 {
-                    if (row.Cells[4].Value == DBNull.Value)
+                    if (row.Cells[7].Value == DBNull.Value)
                         continue;
 
                     int valorcell = 0;
-                    int.TryParse(Convert.ToString(row.Cells[4].Value), out valorcell);
+                    int.TryParse(Convert.ToString(row.Cells[7].Value), out valorcell);
 
                     suma += Convert.ToInt32(valorcell);
                 }
@@ -305,16 +356,14 @@ namespace AppPrincipal
             }
         }
 
-        //BOTON NUEVA VENTA
-        private void BtnNuevVenta_Click(object sender, EventArgs e)
+        private void LimpiarPantall()
         {
             try
             {
                 TxtIdProducto.Text = "";
                 TxtCantidad.Text = "";
                 TxtCodigo.Text = "";
-                TxtEstado.Text = "";
-                TxtFecha.Text = DateTime.Now.ToShortDateString();
+                DpFecha.Text = DateTime.Now.ToShortDateString();
                 TxtIva.Text = "";
                 TxtNombreProducto.Text = "";
                 TxtNombreRazonSocial.Text = "";
@@ -330,47 +379,141 @@ namespace AppPrincipal
                     CbEmpleado.Text = "Seleccione";
                 }
 
+
+                CbTipoDocto.Items.Add(new CargarCombobox("Boleta", "B"));
+                CbTipoDocto.Items.Add(new CargarCombobox("Factura", "F"));
+
+                if (CbTipoDocto.Items.Count > 0)
+                {
+                    CbTipoDocto.SelectedIndex = 0;
+                }
+
                 DgVentaProducto.Rows.Clear();
                 DgVentaProducto.Refresh();
             }
             catch (Exception)
             {
 
-                MessageBox.Show("ERROR AL GENERAR UN NUEVO DOCUMENTO");
+                MessageBox.Show("ERROR");
             }
         }
 
+        //BOTON NUEVA VENTA
+        private void BtnNuevVenta_Click(object sender, EventArgs e)
+        {
+            LimpiarPantall();
+        }
+
+
+        //BOTON IMPRIMIR
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
-                //VALIDA QUE SEA SELECCIONADO UN CHECKBOX BOLETA O FACTURA
-                if (RbBoleta.Checked == true || !RbFactura.Checked == false)
+                if (TxtNumeroDocumento.Text == "")
                 {
-
+                    MessageBox.Show("INGRESE UN NUMERO DE DOCUMENTO");
                 }
-                else if (RbFactura.Checked == true || !RbBoleta.Checked == false)
+                else if (TxtNumeroDocumento.Text.Length < 0)
                 {
-
+                    MessageBox.Show("NUMERO DEBE SER MAYOR A CERO 0");
+                }
+                else if (TxtRut.Text == "" || TxtNombreRazonSocial.Text == "")
+                {
+                    MessageBox.Show("SELECCIONE UN CLIENTE");
+                }
+                else if (CbEmpleado.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("SELECCIONE UN EMPLEADO");
                 }
                 else
-                {
-                    MessageBox.Show("SELECIONE UN TIPO DE DOCUMENTO *BOLETA O FACTURA *");
+                {*/
 
-                    if (TxtNumeroDocumento.Text == "")
+                    ServicioVentas serVent = new ServicioVentas();
+                    Detalle_Venta det = new Detalle_Venta();
+                    Venta vent = new Venta();
+
+                    vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
+                    vent.tipoVenta = CbTipoDocto.SelectedText;
+                    vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
+                    vent.idCliente = int.Parse(TxtIdCliente.Text); ;
+                    vent.fechaVenta = DpFecha.Text;
+                    vent.subtotalVenta = int.Parse(TxtTotal.Text);
+
+                    foreach (DataGridViewRow row in DgVentaProducto.Rows)
                     {
-                        MessageBox.Show("");
+
+                        det.idDetalleVenta = Convert.ToInt32(DgVentaProducto[0, row.Index].Value.ToString());
+                        det.idProducto = Convert.ToInt32(DgVentaProducto[1, row.Index].Value.ToString());
+                        det.idVenta = Convert.ToInt32(DgVentaProducto[2, row.Index].Value.ToString());
+                        det.codigoProducto = long.Parse(DgVentaProducto[3, row.Index].Value.ToString());
+                        det.nombreProducto = DgVentaProducto[4, row.Index].Value.ToString();
+                        det.unidadesProducto = Convert.ToInt32(DgVentaProducto[5, row.Index].Value.ToString());
+                        det.montoDetalleVenta = Convert.ToInt32(DgVentaProducto[6, row.Index].Value.ToString());
+
                     }
 
-                }
+                    BindingList<Detalle_Venta> lista;
 
+                    lista = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
+                    vent.detallesVenta = lista.ToList();
+
+                    serVent.CrearVenta(vent);
+                    LimpiarPantall();
+               /* }
             }
             catch (Exception)
             {
 
                 MessageBox.Show("ERROR");
-            }
+            }*/
           
+        }
+
+
+        private void ListaVentaDet()
+        {
+
+            try
+            {
+                BindingList<Detalle_Venta> lista;
+
+                DgVentaProducto.DataSource = new BindingList<Detalle_Venta>();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NO SE PUEDE CARGAR LISTA");
+            }
+
+        }
+
+
+        //LLAMA AL METODO EL CUAL VALIDA QUE SE INGRESE SOLO NUMEROS
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones val = new Validaciones();
+            val.SoloNumero(e);
+        }
+
+        //LLAMA AL METODO EL CUAL VALIDA QUE SE INGRESE SOLO NUMEROS
+        private void TxtNumeroDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones val = new Validaciones();
+            val.SoloNumero(e);
+        }
+
+        private void TxtCantidad_Leave(object sender, EventArgs e)
+        {
+            Validaciones val = new Validaciones();
+
+            if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 0 || !val.IsNumeric(TxtCantidad.Text))
+            {
+                LblCantidadObligatoria.Visible = true;
+            }
+            else
+            {
+                LblCantidadObligatoria.Visible = false;
+            }
         }
     }
 }
