@@ -20,19 +20,24 @@ namespace Biblioteca
         //[System.ComponentModel.Browsable(false)]
         public int idVenta { get; set; }
 
+       
         //[DisplayName("CODIGO DEL PRODUCTO")]
         public long codigoProducto { get; set; }
 
+        //[System.ComponentModel.Browsable(false)]
         //[DisplayName("NOMBRE PRODUCTO")]
         public string nombreProducto { get; set; }
 
+        //[System.ComponentModel.Browsable(false)]
         //[DisplayName("UNIDADES")]
         public int unidadesProducto { get; set; }
 
-        //[DisplayName("MONTO")]
+        //[System.ComponentModel.Browsable(false)]
+        [DisplayName("MONTO")]
         public int montoDetalleVenta { get; set; }
 
-        //[DisplayName("SUBTOTAL")]
+       // [System.ComponentModel.Browsable(false)]
+       // [DisplayName("SUBTOTAL")]
         public int Subtotal { get; set; }
 
     }

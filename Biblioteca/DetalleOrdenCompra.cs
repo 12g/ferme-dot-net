@@ -14,21 +14,26 @@ namespace Biblioteca
         //[System.ComponentModel.Browsable(false)] OCULTA LA FILA EN EL DATAGRIDVIEW
 
         //[System.ComponentModel.Browsable(false)]
-        public int? idDetalleOrdenCompra { get; set; }
-
-        //[System.ComponentModel.Browsable(false)]
+        [DisplayName("COD COMPRA")]
         public int idOrdenCompra { get; set; }
 
         //[System.ComponentModel.Browsable(false)]
-        [DisplayName("IDCodigo")]
+        [DisplayName("COD DETALLE")]
+        public int? idDetalleOrdenCompra { get; set; }
+
+        //[System.ComponentModel.Browsable(false)]
+        [DisplayName("CODIGO")]
         public int idProducto { get; set; }
 
         //[DisplayName("CODIGO")]
+        [DisplayName("COD PRODUCTO")]
         public long codigoProducto { get; set; }
 
+        [DisplayName("DESCRIPCION")]
         //[DisplayName("NOMBRE PRODUCTO")]
         public string nombreProducto { get; set; }
 
+        [DisplayName("CANTIDAD")]
         //[DisplayName("CANTIDAD")]
         public int cantidadProducto { get; set; }
 

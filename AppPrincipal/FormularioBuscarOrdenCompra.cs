@@ -26,19 +26,23 @@ namespace AppPrincipal
             {
                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
+                ServicioEmpleado sertp = new ServicioEmpleado();
+                FrmOrdenCompra.CbEmpleado.DataSource = sertp.ListaEmpleados();
+                FrmOrdenCompra.CbEmpleado.DisplayMember = "nombreCompletoPersona";
+                FrmOrdenCompra.CbEmpleado.ValueMember = "idEmpleado";
                 //OCULTAR COLUMNA
-                //this.DgMostrarOrdenCompra.Columns[0].Visible = false;
-                //this.DgMostrarOrdenCompra.Columns[6].Visible = false;
-                //this.DgMostrarOrdenCompra.Columns[8].Visible = false;
+                // this.DgMostrarOrdenCompra.Columns[0].Visible = false;
+                this.DgMostrarOrdenCompra.Columns[6].Visible = false;
+                this.DgMostrarOrdenCompra.Columns[5].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
-                //this.DgMostrarOrdenCompra.Columns[1].HeaderText = "CODIGO";
-                //this.DgMostrarOrdenCompra.Columns[2].HeaderText = "PRODUCTO";
-                //this.DgMostrarOrdenCompra.Columns[3].HeaderText = "DESCRIPCION";
-                //this.DgMostrarOrdenCompra.Columns[4].HeaderText = "STOCK ACTUAL";
-                //this.DgMostrarOrdenCompra.Columns[5].HeaderText = "STOCK CRITICO";
+                this.DgMostrarOrdenCompra.Columns[0].HeaderText = "CODIGO";
+                this.DgMostrarOrdenCompra.Columns[1].HeaderText = "COD VENDEDOR       ";
+                this.DgMostrarOrdenCompra.Columns[2].HeaderText = "ESTADO";
+                this.DgMostrarOrdenCompra.Columns[3].HeaderText = "FECHA CREACION     ";
+                this.DgMostrarOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION    ";
                 //this.DgMostrarOrdenCompra.Columns[7].HeaderText = "TIPO PRODUCTO";
-                //this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+               // this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
             }
             catch (Exception)
             {
@@ -123,9 +127,10 @@ namespace AppPrincipal
                 try
                 {
                    
+
                     FrmOrdenCompra.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
-                    FrmOrdenCompra.CbEmpleado.Text= DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
-                    FrmOrdenCompra.TxtEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
+                    FrmOrdenCompra.CbEmpleado.SelectedText = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
+                    FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
                     FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
                     FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells[4].Value.ToString();
                     FrmOrdenCompra.DgListadoProductoOC.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
@@ -136,11 +141,11 @@ namespace AppPrincipal
                 }
                 catch (Exception)
                 {
-                  
+
                     FrmRecepcion.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
                     FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
                     FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
-                    FrmRecepcion.TxtFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
+                    FrmRecepcion.DpFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
                     FrmRecepcion.DpFechaRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[4].Value.ToString();
                     FrmRecepcion.DgListadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
 

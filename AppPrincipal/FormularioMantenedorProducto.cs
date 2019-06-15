@@ -19,8 +19,13 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdProducto.Text = "0";
+            NumCorrelativo();
         }
-
+        private void NumCorrelativo()
+        {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
+        }
 
 
         //EVENTO CANELAR Y SALIR DEL MENU CREAR PRODUCTO
@@ -35,6 +40,7 @@ namespace AppPrincipal
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
+                    FormularioProducto.f1.Text = "xx";
                 }
 
             }
@@ -53,6 +59,12 @@ namespace AppPrincipal
             TxtStockActual.Text = "";
             TxtStockCritico.Text = "";
             TxtIdProducto.Text = "";
+
+            FormularioProducto prod = new FormularioProducto();
+            ServicioProducto serp = new ServicioProducto();
+            FormularioProducto.f1.Text = "xx";
+            prod.DGlistadeproductos.DataSource = serp.GetRESTData();
+            prod.DGlistadeproductos.Refresh();
         }
 
 
@@ -153,14 +165,15 @@ namespace AppPrincipal
 
 
                     ServicioOrdenCompra or = new ServicioOrdenCompra();
+
                    
-
-                    prod.DGlistadeproductos.DataSource = serp.GetRESTData();
-                    prod.DGlistadeproductos.Refresh();
-
                     MessageBox.Show("PRODUCTO GUARDADO");
 
                     Limpiar();
+                    FormularioProducto.f1.Text = "xx";
+                    prod.DGlistadeproductos.DataSource = serp.GetRESTData();
+                    prod.DGlistadeproductos.Refresh();
+
                 }
             }
             catch (Exception)

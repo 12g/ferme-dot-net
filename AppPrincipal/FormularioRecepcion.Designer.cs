@@ -36,7 +36,6 @@
             this.TxtNumero = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtFechaCreacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DpFechaRecepcion = new System.Windows.Forms.DateTimePicker();
             this.LblEstadoRecepcion = new System.Windows.Forms.Label();
@@ -50,6 +49,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulomenu = new System.Windows.Forms.Label();
             this.lblTituloMenu2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DpFechaCreacion = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoRecepcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -103,14 +105,6 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Fecha Creacion";
             // 
-            // TxtFechaCreacion
-            // 
-            this.TxtFechaCreacion.Location = new System.Drawing.Point(25, 147);
-            this.TxtFechaCreacion.Name = "TxtFechaCreacion";
-            this.TxtFechaCreacion.ReadOnly = true;
-            this.TxtFechaCreacion.Size = new System.Drawing.Size(247, 20);
-            this.TxtFechaCreacion.TabIndex = 40;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -144,7 +138,7 @@
             this.CbxEstadoRecepcion.FormattingEnabled = true;
             this.CbxEstadoRecepcion.Location = new System.Drawing.Point(437, 93);
             this.CbxEstadoRecepcion.Name = "CbxEstadoRecepcion";
-            this.CbxEstadoRecepcion.Size = new System.Drawing.Size(247, 21);
+            this.CbxEstadoRecepcion.Size = new System.Drawing.Size(103, 21);
             this.CbxEstadoRecepcion.TabIndex = 44;
             // 
             // TxtEmpleado
@@ -206,6 +200,7 @@
             this.BtnGuardar.TabIndex = 48;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
@@ -267,11 +262,43 @@
             this.lblTituloMenu2.TabIndex = 51;
             this.lblTituloMenu2.Text = "FERME";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(546, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 13);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "R : recepcionado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(546, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "RR : rechazado";
+            // 
+            // DpFechaCreacion
+            // 
+            this.DpFechaCreacion.Enabled = false;
+            this.DpFechaCreacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DpFechaCreacion.Location = new System.Drawing.Point(26, 147);
+            this.DpFechaCreacion.Name = "DpFechaCreacion";
+            this.DpFechaCreacion.Size = new System.Drawing.Size(246, 20);
+            this.DpFechaCreacion.TabIndex = 56;
+            // 
             // FormularioRecepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.DpFechaCreacion);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitulomenu);
             this.Controls.Add(this.lblTituloMenu2);
@@ -285,7 +312,6 @@
             this.Controls.Add(this.LblEstadoRecepcion);
             this.Controls.Add(this.DpFechaRecepcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtFechaCreacion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnBuscarOrdenCompra);
             this.Controls.Add(this.TxtNumero);
@@ -319,8 +345,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitulomenu;
         private System.Windows.Forms.Label lblTituloMenu2;
-        public System.Windows.Forms.TextBox TxtFechaCreacion;
         public System.Windows.Forms.ComboBox CbxEstadoRecepcion;
         public System.Windows.Forms.TextBox TxtEmpleado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.DateTimePicker DpFechaCreacion;
     }
 }

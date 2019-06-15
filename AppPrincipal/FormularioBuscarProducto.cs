@@ -36,7 +36,8 @@ namespace AppPrincipal
                 this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
                 this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
                 this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                //this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
+                this.DgMostrarProductos.Columns[9].HeaderText = "DESCRIPCION";
+                this.DgMostrarProductos.Columns[10].HeaderText = "PRECIO";
             }
             catch (Exception)
             {

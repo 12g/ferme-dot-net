@@ -18,43 +18,13 @@ namespace AppPrincipal
         public FromularioVentas()
         {
             InitializeComponent();
+            NumCorrelativo();
         }
 
-        public class CargarCombobox
+        private void NumCorrelativo()
         {
-            public string Nombre;
-            public string Value;
-
-            public  CargarCombobox(string nombre, string value)
-            {
-                Nombre = nombre;
-                Value = value;
-            }
-            public override string ToString()
-            {
-                return Nombre;
-            }
-        }
-
-       
-
-        //CARGA DATOS EN COMBOBOX TIPO DOCTO
-        private void CargarComboBoxTipoDocto()
-        {
-            try
-            {
-                CbTipoDocto.Items.Add(new CargarCombobox("Boleta","B"));
-                CbTipoDocto.Items.Add(new CargarCombobox("Factura","F"));
-
-                if (CbTipoDocto.Items.Count > 0)
-                {
-                    CbTipoDocto.SelectedIndex = 0;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("ERROR AL CARGAR TIPO DOCUMENTO");
-            }
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            TxtNumeroDocumento.Text = Convert.ToString(rnd.Next(0, 10000));
         }
 
         //CARGAR LISTADO 
@@ -65,6 +35,7 @@ namespace AppPrincipal
                 BindingList<Detalle_Venta> lista;
 
                 DgVentaProducto.DataSource = new BindingList<Detalle_Venta>();
+
             }
             catch (Exception)
             {
@@ -120,8 +91,8 @@ namespace AppPrincipal
         //AGREGAR PRODUCTO AL DATAGRIDVIEW
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-           /* Validaciones val = new Validaciones();
-            try
+            Validaciones val = new Validaciones();
+            
             {
                 if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
                 {
@@ -135,10 +106,10 @@ namespace AppPrincipal
                 else
                 {
                     try
-                    {*/
+                    {
+                        
                         BindingList<Detalle_Venta> detalle;
                         detalle = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
-
                         Detalle_Venta vent = new Detalle_Venta();
                         vent.idDetalleVenta = int.Parse(TxtNumeroDocumento.Text);
                         vent.idProducto = int.Parse(TxtIdProducto.Text);
@@ -147,7 +118,6 @@ namespace AppPrincipal
                         vent.nombreProducto = TxtNombreProducto.Text;
                         vent.unidadesProducto = int.Parse(TxtCantidad.Text);
                         vent.montoDetalleVenta = int.Parse(TxtPrecio.Text);
-                        vent.Subtotal = int.Parse(TxtPrecio.Text);
 
                         detalle.Add(vent);
                         Console.WriteLine(detalle.ToString());
@@ -163,19 +133,15 @@ namespace AppPrincipal
                         BtnBorrar.Enabled = false;
                         BtnEditar.Enabled = false;
 
-                        Limpiar();/*
+                        Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
-                    }
+                    }  
                 }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
-            }*/
-          
+           
         }
         //BOTON EDITAR PRODUCTO
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -201,7 +167,7 @@ namespace AppPrincipal
                         DgVentaProducto[0, poc].Value = TxtCodigo.Text;
                         DgVentaProducto[1, poc].Value = TxtNombreProducto.Text;
                         DgVentaProducto[2, poc].Value = TxtCantidad.Text;
-                        DgVentaProducto[3,poc].Value = TxtPrecio.Text;
+                        DgVentaProducto[3, poc].Value = TxtPrecio.Text;
 
                         cantidadprecio();
 
@@ -263,7 +229,7 @@ namespace AppPrincipal
             {
                 MessageBox.Show("ERROR AL SELECCIONAR FILA");
             }
-           
+
         }
 
         private void BtnCliente_Click(object sender, EventArgs e)
@@ -279,17 +245,18 @@ namespace AppPrincipal
         {
             try
             {
-                //MULTIPLICA LA CANTIDAD * PRECIO
-                for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
-                {
-                    int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[5].Value));
-                    int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[6].Value));
-                    DgVentaProducto.Rows[i].Cells[7].Value = num1 * num2;
-                }
+                 //MULTIPLICA LA CANTIDAD * PRECIO
+                 for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
+                 {
+                     int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[5].Value));
+                     int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[6].Value));
+                     //this.DgVentaProducto.Columns[7].Visible = false;
+                     DgVentaProducto.Rows[i].Cells[7].Value = num1 * num2;
+                 }
+                 
 
 
-
-                //SUMA LA  COLUMNA SUBTOTAL Y LA MUESTRA EN EL TXTSUBTOTAL
+                //SUMA LA  COLUMNA CANTIDAD PRODUCTO
                 int suma = 0;
 
                 foreach (DataGridViewRow row in DgVentaProducto.Rows)
@@ -297,7 +264,8 @@ namespace AppPrincipal
                     if (row.Cells[7].Value == DBNull.Value)
                         continue;
 
-                    int valorcell = 0;
+                    this.DgVentaProducto.Columns[7].Visible = false;
+                    int valorcell = 7;
                     int.TryParse(Convert.ToString(row.Cells[7].Value), out valorcell);
 
                     suma += Convert.ToInt32(valorcell);
@@ -306,12 +274,34 @@ namespace AppPrincipal
                 TxtSubtotal.Text = Convert.ToString(suma);
                 TxtIva.Text = Convert.ToString(suma * 19 / 100);
                 TxtTotal.Text = Convert.ToString(suma * 19 / 100 + suma);
+
+                /*
+                //SUMA LA  COLUMNA MONTO (PRECIO DEL PRODUCTO)
+                int SumValor = 0;
+
+                foreach (DataGridViewRow row in DgVentaProducto.Rows)
+                {
+                    if (row.Cells[6].Value == DBNull.Value)
+                        continue;
+
+                    this.DgVentaProducto.Columns[6].Visible = false;
+                    int valorcell = 6;
+                    int.TryParse(Convert.ToString(row.Cells[6].Value), out valorcell);
+
+                    SumValor += Convert.ToInt32(valorcell);
+                }
+
+                txtSumValor.Text = Convert.ToString(SumValor);
+                TxtSubtotal.Text = Convert.ToString(SumValor * sumaCant);
+                TxtIva.Text = Convert.ToString(sumaCant * SumValor * 19 / 100);
+                TxtTotal.Text = Convert.ToString(sumaCant * SumValor * 19 / 100 + SumValor * sumaCant);
+                */
             }
             catch (Exception)
             {
                 MessageBox.Show("ERROR AL CALCULAR EL NETO,IVA Y TOTAL");
             }
-           
+
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -378,10 +368,8 @@ namespace AppPrincipal
                     CbEmpleado.SelectedIndex = -1;
                     CbEmpleado.Text = "Seleccione";
                 }
-
-
-                CbTipoDocto.Items.Add(new CargarCombobox("Boleta", "B"));
-                CbTipoDocto.Items.Add(new CargarCombobox("Factura", "F"));
+                NumCorrelativo();
+                CargarComboBoxTipoDocto();
 
                 if (CbTipoDocto.Items.Count > 0)
                 {
@@ -408,7 +396,7 @@ namespace AppPrincipal
         //BOTON IMPRIMIR
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 if (TxtNumeroDocumento.Text == "")
                 {
@@ -427,14 +415,20 @@ namespace AppPrincipal
                     MessageBox.Show("SELECCIONE UN EMPLEADO");
                 }
                 else
-                {*/
+                {
 
                     ServicioVentas serVent = new ServicioVentas();
                     Detalle_Venta det = new Detalle_Venta();
                     Venta vent = new Venta();
 
+                    CargarCombobox seleccion = CbTipoDocto.SelectedItem as CargarCombobox;
+
+                    if (seleccion == null)
+                        return;
+
+
                     vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
-                    vent.tipoVenta = CbTipoDocto.SelectedText;
+                    vent.tipoVenta = Convert.ToString(CbTipoDocto.Text);
                     vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
                     vent.idCliente = int.Parse(TxtIdCliente.Text); ;
                     vent.fechaVenta = DpFecha.Text;
@@ -452,21 +446,21 @@ namespace AppPrincipal
                         det.montoDetalleVenta = Convert.ToInt32(DgVentaProducto[6, row.Index].Value.ToString());
 
                     }
-
                     BindingList<Detalle_Venta> lista;
 
                     lista = (BindingList<Detalle_Venta>)DgVentaProducto.DataSource;
                     vent.detallesVenta = lista.ToList();
 
+
                     serVent.CrearVenta(vent);
                     LimpiarPantall();
-               /* }
+              }
             }
             catch (Exception)
             {
 
                 MessageBox.Show("ERROR");
-            }*/
+            }
           
         }
 
@@ -513,6 +507,54 @@ namespace AppPrincipal
             else
             {
                 LblCantidadObligatoria.Visible = false;
+            }
+        }
+
+      
+
+        public class CargarCombobox
+        {
+            public string Nombre;
+            public string Id;
+
+            public CargarCombobox()
+            {
+            }
+
+            public CargarCombobox(string nombre, string id)
+            {
+                Nombre = "";
+                Id = "";
+            }
+            public override string ToString()
+            {
+                return Id;
+            }
+        }
+
+
+
+        //CARGA DATOS EN COMBOBOX TIPO DOCTO
+        private void CargarComboBoxTipoDocto()
+        {
+            try
+            {
+                CbTipoDocto.DataSource = null;
+                
+                List<CargarCombobox> lista = new List<CargarCombobox>();
+                lista.Add(new CargarCombobox() { Nombre = "Boleta", Id = "B" });
+                lista.Add(new CargarCombobox() { Nombre = "Factura", Id = "F" });
+
+                CbTipoDocto.DataSource = lista;
+
+                if (CbTipoDocto.Items.Count > 0)
+                {
+                    CbTipoDocto.SelectedIndex = 0;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL CARGAR TIPO DOCUMENTO");
             }
         }
     }

@@ -18,9 +18,12 @@ namespace AppPrincipal
 {
     public partial class FormularioProducto : Form
     {
+        public static FormularioProducto f1;
+   
         public FormularioProducto()
         {
             InitializeComponent();
+            FormularioProducto.f1 = this;
         }
 
         //BOTON QUE CIERRA EL FORMULARIO PRINCIPAL DE PRODUCTOS
@@ -89,6 +92,7 @@ namespace AppPrincipal
                 //OCULTA LAS COLUMNAS
                 this.DGlistadeproductos.Columns[0].Visible = false;
                 this.DGlistadeproductos.Columns[6].Visible = false;
+                this.DGlistadeproductos.Columns[8].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
@@ -97,7 +101,7 @@ namespace AppPrincipal
                 this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
                 this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
                 this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                this.DGlistadeproductos.Columns[8].HeaderText = "PRECIO";
+                this.DGlistadeproductos.Columns[10].HeaderText = "PRECIO";
                 DGlistadeproductos.Show();
             }
             catch (Exception)

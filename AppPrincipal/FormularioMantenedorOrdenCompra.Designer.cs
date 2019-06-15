@@ -61,8 +61,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnBuscarOrdenCompra = new System.Windows.Forms.Button();
-            this.TxtEstado = new System.Windows.Forms.TextBox();
             this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
+            this.CbEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
@@ -114,8 +114,10 @@
             // 
             // TxtNumero
             // 
+            this.TxtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumero.Location = new System.Drawing.Point(15, 75);
             this.TxtNumero.Name = "TxtNumero";
+            this.TxtNumero.ReadOnly = true;
             this.TxtNumero.Size = new System.Drawing.Size(248, 20);
             this.TxtNumero.TabIndex = 6;
             this.TxtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
@@ -375,19 +377,12 @@
             this.BtnBuscarOrdenCompra.UseVisualStyleBackColor = false;
             this.BtnBuscarOrdenCompra.Click += new System.EventHandler(this.BtnBuscarOrdenCompra_Click);
             // 
-            // TxtEstado
-            // 
-            this.TxtEstado.Location = new System.Drawing.Point(415, 75);
-            this.TxtEstado.Name = "TxtEstado";
-            this.TxtEstado.Size = new System.Drawing.Size(100, 20);
-            this.TxtEstado.TabIndex = 36;
-            this.TxtEstado.Text = "S";
-            // 
             // DgListadoProductoOC
             // 
             this.DgListadoProductoOC.AllowUserToAddRows = false;
             this.DgListadoProductoOC.AllowUserToDeleteRows = false;
             this.DgListadoProductoOC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgListadoProductoOC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,14 +408,22 @@
             this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);
             this.DgListadoProductoOC.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgListadoProductoOC_DataBindingComplete);
             // 
+            // CbEstado
+            // 
+            this.CbEstado.FormattingEnabled = true;
+            this.CbEstado.Location = new System.Drawing.Point(415, 73);
+            this.CbEstado.Name = "CbEstado";
+            this.CbEstado.Size = new System.Drawing.Size(76, 21);
+            this.CbEstado.TabIndex = 38;
+            // 
             // FormularioMantenedorOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 528);
             this.ControlBox = false;
+            this.Controls.Add(this.CbEstado);
             this.Controls.Add(this.DgListadoProductoOC);
-            this.Controls.Add(this.TxtEstado);
             this.Controls.Add(this.BtnBuscarOrdenCompra);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.pictureBox1);
@@ -494,11 +497,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnBuscarOrdenCompra;
-        public System.Windows.Forms.TextBox TxtEstado;
         public System.Windows.Forms.TextBox TxtNumero;
         public System.Windows.Forms.DateTimePicker DPfechaInicio;
         public System.Windows.Forms.DateTimePicker DPfechaTermino;
         public System.Windows.Forms.ComboBox CbEmpleado;
         public System.Windows.Forms.DataGridView DgListadoProductoOC;
+        public System.Windows.Forms.ComboBox CbEstado;
     }
 }

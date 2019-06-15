@@ -75,6 +75,9 @@
             this.DpFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.LblIdCliente = new System.Windows.Forms.Label();
+            this.TxtSumCant = new System.Windows.Forms.TextBox();
+            this.txtSumValor = new System.Windows.Forms.TextBox();
+            this.LblBoletaFactura = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgVentaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(322, 9);
+            this.LblTitulo.Location = new System.Drawing.Point(334, 1);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(247, 37);
             this.LblTitulo.TabIndex = 3;
@@ -95,7 +98,7 @@
             // 
             this.LblFecha.AutoSize = true;
             this.LblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFecha.Location = new System.Drawing.Point(450, 83);
+            this.LblFecha.Location = new System.Drawing.Point(458, 83);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(42, 13);
             this.LblFecha.TabIndex = 8;
@@ -258,7 +261,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgVentaProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgVentaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgVentaProducto.Location = new System.Drawing.Point(15, 211);
+            this.DgVentaProducto.Location = new System.Drawing.Point(12, 214);
             this.DgVentaProducto.Name = "DgVentaProducto";
             this.DgVentaProducto.ReadOnly = true;
             this.DgVentaProducto.Size = new System.Drawing.Size(853, 181);
@@ -520,7 +523,7 @@
             this.CbTipoDocto.FormattingEnabled = true;
             this.CbTipoDocto.Location = new System.Drawing.Point(104, 51);
             this.CbTipoDocto.Name = "CbTipoDocto";
-            this.CbTipoDocto.Size = new System.Drawing.Size(187, 21);
+            this.CbTipoDocto.Size = new System.Drawing.Size(46, 21);
             this.CbTipoDocto.TabIndex = 54;
             // 
             // label1
@@ -561,7 +564,6 @@
             this.TxtIdCliente.ReadOnly = true;
             this.TxtIdCliente.Size = new System.Drawing.Size(141, 20);
             this.TxtIdCliente.TabIndex = 58;
-            this.TxtIdCliente.Visible = false;
             // 
             // LblIdCliente
             // 
@@ -573,11 +575,40 @@
             this.LblIdCliente.Text = "IdCliente";
             this.LblIdCliente.Visible = false;
             // 
+            // TxtSumCant
+            // 
+            this.TxtSumCant.Location = new System.Drawing.Point(897, 399);
+            this.TxtSumCant.Name = "TxtSumCant";
+            this.TxtSumCant.ReadOnly = true;
+            this.TxtSumCant.Size = new System.Drawing.Size(100, 20);
+            this.TxtSumCant.TabIndex = 60;
+            // 
+            // txtSumValor
+            // 
+            this.txtSumValor.Location = new System.Drawing.Point(897, 434);
+            this.txtSumValor.Name = "txtSumValor";
+            this.txtSumValor.ReadOnly = true;
+            this.txtSumValor.Size = new System.Drawing.Size(100, 20);
+            this.txtSumValor.TabIndex = 61;
+            // 
+            // LblBoletaFactura
+            // 
+            this.LblBoletaFactura.AutoSize = true;
+            this.LblBoletaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBoletaFactura.Location = new System.Drawing.Point(156, 54);
+            this.LblBoletaFactura.Name = "LblBoletaFactura";
+            this.LblBoletaFactura.Size = new System.Drawing.Size(101, 13);
+            this.LblBoletaFactura.TabIndex = 62;
+            this.LblBoletaFactura.Text = "Boleta o Factura";
+            // 
             // FromularioVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.LblBoletaFactura);
+            this.Controls.Add(this.txtSumValor);
+            this.Controls.Add(this.TxtSumCant);
             this.Controls.Add(this.LblIdCliente);
             this.Controls.Add(this.TxtIdCliente);
             this.Controls.Add(this.DpFecha);
@@ -683,5 +714,8 @@
         public System.Windows.Forms.DateTimePicker DpFecha;
         public System.Windows.Forms.TextBox TxtIdCliente;
         public System.Windows.Forms.Label LblIdCliente;
+        private System.Windows.Forms.TextBox TxtSumCant;
+        private System.Windows.Forms.TextBox txtSumValor;
+        private System.Windows.Forms.Label LblBoletaFactura;
     }
 }

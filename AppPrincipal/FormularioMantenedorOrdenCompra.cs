@@ -17,11 +17,65 @@ namespace AppPrincipal
     public partial class FormularioMantenedorOrdenCompra : Form
     {
         Validaciones val = new Validaciones();
-        
+
 
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
+            CargarCbEstado();
+            NumCorrelativo();
+
+        }
+
+
+        public class CargarCombobox
+        {
+            public string Nombre;
+            public string Id;
+
+            public CargarCombobox()
+            {
+            }
+
+            public CargarCombobox(string nombre, string id)
+            {
+                Nombre = "";
+                Id = "";
+            }
+            public override string ToString()
+            {
+                return Id;
+            }
+        }
+
+        private void CargarCbEstado()
+        {
+
+            try
+            {
+                CbEstado.DataSource = null;
+
+                List<CargarCombobox> lista = new List<CargarCombobox>();
+                lista.Add(new CargarCombobox() { Nombre = "SOLICITADO", Id = "S" });
+                lista.Add(new CargarCombobox() { Nombre = "ANULADO", Id = "A" });
+
+                CbEstado.DataSource = lista;
+
+                if (CbEstado.Items.Count > 0)
+                {
+                    CbEstado.SelectedIndex = 0;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR AL CARGAR TIPO DOCUMENTO");
+            }
+        }
+
+        private void NumCorrelativo()
+        {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            TxtNumero.Text = Convert.ToString(rnd.Next(0,1000));    
         }
 
         private void ListaOrdenC()
@@ -44,14 +98,14 @@ namespace AppPrincipal
         {
             try
             {
-                TxtNumero.Text = "";
+      
                 DPfechaInicio.Value = DateTime.Now;
                 DPfechaTermino.Value = DateTime.Now;
                 TxtIdProducto.Text = "";
                 TxtCodProducto.Text = "";
                 TxtNombreProducto.Text = "";
                 TxtCantidad.Text = "";
-                TxtEstado.Text = "S";
+
 
                 BtnAgregar.Enabled = true;
                 BtnBorrar.Enabled = false;
@@ -59,6 +113,7 @@ namespace AppPrincipal
 
                 DgListadoProductoOC.Rows.Clear();
                 DgListadoProductoOC.Refresh();
+                NumCorrelativo();
 
                 if (CbEmpleado.Items.Count > 1)
                 {
@@ -120,6 +175,7 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("SELECCIONE UN EMPLEADO");
                 }
+
                 else
                 {
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
@@ -127,7 +183,7 @@ namespace AppPrincipal
                     Orden_Compra oc = new Orden_Compra();
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
-                    oc.estadoOrdenCompra = TxtEstado.Text;
+                    oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
                     oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue) ;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
@@ -150,7 +206,8 @@ namespace AppPrincipal
                     oc.detallesOrdenCompra = lista.ToList();
                    
                     ser.CrearOrdenCompra(oc);
-                LimpiarPantalla();
+                    LimpiarPantalla();
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                 }
             }
             catch (Exception)
@@ -194,6 +251,7 @@ namespace AppPrincipal
                         detalle = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
                         //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
                         //Limpiar();
+                    
                         DetalleOrdenCompra det = new DetalleOrdenCompra();
                         det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
                         det.idOrdenCompra = int.Parse(TxtNumero.Text);
@@ -286,7 +344,6 @@ namespace AppPrincipal
                 BtnAgregar.Enabled = true;
                 BtnBorrar.Enabled = false;
                 BtnEditar.Enabled = false;
-                TxtEstado.Text = "S";
                 fechaInicio();
                 FechaTermino();
                 ListaOrdenC();

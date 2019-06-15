@@ -17,6 +17,12 @@ namespace AppPrincipal
         public FomularioTipoProducto()
         {
             InitializeComponent();
+            NumCorrelativo();
+        }
+        private void NumCorrelativo()
+        {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

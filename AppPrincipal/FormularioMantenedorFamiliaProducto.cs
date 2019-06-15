@@ -17,9 +17,15 @@ namespace AppPrincipal
         public FormularioMantenedorFamiliaProducto()
         {
             InitializeComponent();
+            NumCorrelativo();
         }
 
 
+        private void NumCorrelativo()
+        {
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
+        }
         //BOTON CANCELAR
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
@@ -94,7 +100,7 @@ namespace AppPrincipal
                     //fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
                     fp.descripcionFamiliaProducto = TxtDescripcion.Text;
                     fp.idRubro = int.Parse(CbRubro.SelectedValue.ToString());
-                    fp.descripcionRubro = CbRubro.SelectionStart.ToString();
+                    fp.descripcionRubro = Convert.ToString(CbRubro.Text);
                     fp.idProveedor = int.Parse(CbProveedor.SelectedValue.ToString());
 
                     ser.CrearFamiliaProducto(fp);

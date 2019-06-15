@@ -49,21 +49,6 @@ namespace ServiciosConexionFerme
             Console.WriteLine(resp);
         }
 
-
-        //ELIMINAR
-        public void EliminarCargo(Cargo car)
-        {
-            var json = JsonConvert.SerializeObject(car);
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/cargos/borrar", jsonp);
-            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-        }
-
-
-
         //LISTAR CARGO
         public JArray ListarCargo()
         {
@@ -75,6 +60,5 @@ namespace ServiciosConexionFerme
             string s = reader.ReadToEnd();
             return JsonConvert.DeserializeObject<JArray>(s);
         }
-
     }
 }

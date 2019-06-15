@@ -66,7 +66,7 @@ namespace ServiciosConexionFerme
         }
 
         //OBTENER SUBDETALLE VENTA
-        public List<Detalle_Venta> subdetalleOrdenCompra(Venta Vent)
+        public List<Detalle_Venta> subdetalleventa(Venta Vent)
         {
 
             var json = JsonConvert.SerializeObject(Vent);

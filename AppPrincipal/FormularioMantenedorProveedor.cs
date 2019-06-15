@@ -19,7 +19,7 @@ namespace AppPrincipal
             InitializeComponent();
             TxtIdProveedor.Text = "0";
         }
-
+       
 
         //BOTON CANCELAR EL CUAL ENVIA UN MENSAJE PARA CONFIRMAR EL CIERRE DE LA APLICACION
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -33,6 +33,8 @@ namespace AppPrincipal
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
+                    //acceso a la instancia del form1:
+                    FormularioProveedor.f1.Text = "xx";
                 }
 
             }
@@ -53,6 +55,7 @@ namespace AppPrincipal
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
             TxtIdProveedor.Text = "";
+            FormularioProveedor.f1.Text = "xx";
         }
 
         //BOTON GUARDAR
@@ -125,11 +128,12 @@ namespace AppPrincipal
                     FormularioProveedor fp = new FormularioProveedor();
                     ServicioProveedores serp = new ServicioProveedores();
                     fp.DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
-                    fp.DgMostrarListaProveedor.Refresh();
+                    FormularioProveedor.f1.Text = "xx";
 
                     MessageBox.Show("PROVEEDOR GUARDARDO");
 
                     Limpiar();
+                    FormularioProveedor.f1.Text = "xx";
                 }
 
             }
