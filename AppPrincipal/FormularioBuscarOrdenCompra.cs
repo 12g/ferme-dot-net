@@ -22,17 +22,16 @@ namespace AppPrincipal
 
 
             FrmOrdenCompra = parametro;
-            try
+           try
             {
                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
-                ServicioEmpleado sertp = new ServicioEmpleado();
-                FrmOrdenCompra.CbEmpleado.DataSource = sertp.ListaEmpleados();
-                FrmOrdenCompra.CbEmpleado.DisplayMember = "nombreCompletoPersona";
-                FrmOrdenCompra.CbEmpleado.ValueMember = "idEmpleado";
+            
+
+                                
                 //OCULTAR COLUMNA
                 // this.DgMostrarOrdenCompra.Columns[0].Visible = false;
-                this.DgMostrarOrdenCompra.Columns[6].Visible = false;
+                //this.DgMostrarOrdenCompra.Columns[6].Visible = false;
                 this.DgMostrarOrdenCompra.Columns[5].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
@@ -46,7 +45,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE ORDEN DE COMPRA");
             }
         }
 

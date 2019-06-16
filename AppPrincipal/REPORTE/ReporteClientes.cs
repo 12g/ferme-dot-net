@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppPrincipal
+namespace AppPrincipal.REPORTE
 {
-    public partial class ReporteBoleta : Form
+    public partial class ReporteClientes : Form
     {
-        public ReporteBoleta()
+        public ReporteClientes()
         {
             InitializeComponent();
         }
 
-        private void ReporteBoleta_Load(object sender, EventArgs e)
+        private void ReporteClientes_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'ConexionFerme.PERSONA' Puede moverla o quitarla según sea necesario.
+            this.PERSONATableAdapter.Fill(this.ConexionFerme.PERSONA);
 
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }

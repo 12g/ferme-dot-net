@@ -21,5 +21,29 @@ namespace AppPrincipal
         {
             this.Close();
         }
+
+        private void FormularioInformes_Load(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void BtnReporteVerProducto_Click(object sender, EventArgs e)
+        {
+            REPORTE.ReporteProducto rt = new REPORTE.ReporteProducto();
+            rt.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            REPORTE.ReporteClientes rc = new REPORTE.ReporteClientes();
+            rc.ShowDialog();
+        }
+
+        private void BtnReportOrdenCompra_Click(object sender, EventArgs e)
+        {
+            REPORTE.ReporteOrdenCompra ro = new REPORTE.ReporteOrdenCompra();
+            ro.ShowDialog();
+        }
     }
 }

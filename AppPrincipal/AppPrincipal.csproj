@@ -258,11 +258,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteBoleta.cs">
+    <Compile Include="REPORTE\ConexionFerme.cs">
+      <DependentUpon>ConexionFerme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ConexionFerme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConexionFerme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\RepOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteBoleta.Designer.cs">
-      <DependentUpon>ReporteBoleta.cs</DependentUpon>
+    <Compile Include="REPORTE\RepOrdenCompra.Designer.cs">
+      <DependentUpon>RepOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteClientes.Designer.cs">
+      <DependentUpon>ReporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ReporteOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteOrdenCompra.Designer.cs">
+      <DependentUpon>ReporteOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ReporteProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteProducto.Designer.cs">
+      <DependentUpon>ReporteProducto.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FomularioTipoProducto.resx">
       <DependentUpon>FomularioTipoProducto.cs</DependentUpon>
@@ -342,9 +368,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReporteBoleta.resx">
-      <DependentUpon>ReporteBoleta.cs</DependentUpon>
+    <EmbeddedResource Include="REPORTE\RepOrdenCompra.resx">
+      <DependentUpon>RepOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReportCliente.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReporteOrdenCompra.resx">
+      <DependentUpon>ReporteOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReporteProducto.resx">
+      <DependentUpon>ReporteProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReportMostrarOrdenCompra.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReportOrdenCompra.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReportProductos.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -355,6 +394,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="REPORTE\ConexionFerme.xsc">
+      <DependentUpon>ConexionFerme.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTE\ConexionFerme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConexionFerme.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTE\ConexionFerme.xss">
+      <DependentUpon>ConexionFerme.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

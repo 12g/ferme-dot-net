@@ -19,6 +19,7 @@ namespace AppPrincipal
         {
             InitializeComponent();
             NumCorrelativo();
+            CargarCbEmpleado();
         }
 
         private void NumCorrelativo()

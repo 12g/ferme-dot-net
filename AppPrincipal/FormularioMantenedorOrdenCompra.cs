@@ -12,6 +12,7 @@ using System.IO;
 using ServiciosConexionFerme;
 using System.Reflection;
 
+
 namespace AppPrincipal
 {
     public partial class FormularioMantenedorOrdenCompra : Form
@@ -206,6 +207,10 @@ namespace AppPrincipal
                     oc.detallesOrdenCompra = lista.ToList();
                    
                     ser.CrearOrdenCompra(oc);
+
+                   
+
+
                     LimpiarPantalla();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                 }
