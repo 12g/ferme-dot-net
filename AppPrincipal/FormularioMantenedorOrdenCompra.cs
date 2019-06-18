@@ -15,14 +15,17 @@ using System.Reflection;
 
 namespace AppPrincipal
 {
+  
     public partial class FormularioMantenedorOrdenCompra : Form
     {
+        private int indicefilaseleccionada;
         Validaciones val = new Validaciones();
-
+        public List<DetalleOrdenCompra> detalleOC;
 
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
+
             CargarCbEstado();
             NumCorrelativo();
 
@@ -84,9 +87,11 @@ namespace AppPrincipal
 
             try
             {
-                BindingList<DetalleOrdenCompra> lista;
+                BindingList<DetalleOrdenCVista> lista =new  BindingList<DetalleOrdenCVista>();
 
-                DgListadoProductoOC.DataSource = new BindingList<DetalleOrdenCompra>();
+                DgListadoProductoOC.DataSource = lista;
+                //
+                detalleOC  = new List<DetalleOrdenCompra>(); 
             }
             catch (Exception)
             {
@@ -180,7 +185,6 @@ namespace AppPrincipal
                 else
                 {
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
-                    DetalleOrdenCompra det = new DetalleOrdenCompra();
                     Orden_Compra oc = new Orden_Compra();
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
@@ -189,22 +193,7 @@ namespace AppPrincipal
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
 
-                foreach (DataGridViewRow row in DgListadoProductoOC.Rows)
-                     {
-
-                         det.idDetalleOrdenCompra = Convert.ToInt32(DgListadoProductoOC[0, row.Index].Value.ToString());
-                         det.idOrdenCompra = Convert.ToInt32(DgListadoProductoOC[1, row.Index].Value.ToString());
-                         det.idProducto = Convert.ToInt32(DgListadoProductoOC[2, row.Index].Value.ToString());
-                         det.codigoProducto = long.Parse(DgListadoProductoOC[3, row.Index].Value.ToString());
-                         det.nombreProducto = DgListadoProductoOC[4, row.Index].Value.ToString();
-                         det.cantidadProducto = Convert.ToInt32(DgListadoProductoOC[5, row.Index].Value.ToString());
-
-                     }
-
-                    BindingList<DetalleOrdenCompra> lista;
-
-                    lista = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
-                    oc.detallesOrdenCompra = lista.ToList();
+                    oc.detallesOrdenCompra = detalleOC;
                    
                     ser.CrearOrdenCompra(oc);
 
@@ -252,11 +241,16 @@ namespace AppPrincipal
                 {
                    try
                     {
-                        BindingList<DetalleOrdenCompra> detalle;
-                        detalle = (BindingList<DetalleOrdenCompra>)DgListadoProductoOC.DataSource;
-                        //DgListadoProductoOC.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtCantidad.Text);
-                        //Limpiar();
-                    
+                        BindingList<DetalleOrdenCVista> detalle;
+                        detalle = (BindingList<DetalleOrdenCVista>)DgListadoProductoOC.DataSource;
+                      
+
+                        DetalleOrdenCVista dv = new DetalleOrdenCVista();
+                        dv.CODIGO = long.Parse(TxtCodProducto.Text);
+                        dv.NOMBRE = TxtNombreProducto.Text;
+                        dv.CANTIDAD = int.Parse(TxtCantidad.Text);
+
+                        detalle.Add(dv);
                         DetalleOrdenCompra det = new DetalleOrdenCompra();
                         det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
                         det.idOrdenCompra = int.Parse(TxtNumero.Text);
@@ -265,7 +259,8 @@ namespace AppPrincipal
                         det.nombreProducto = TxtNombreProducto.Text;
                         det.cantidadProducto = int.Parse(TxtCantidad.Text);
 
-                        detalle.Add(det);
+                        detalleOC.Add(det);
+
                         Console.WriteLine(detalle.ToString());
                         DgListadoProductoOC.DataSource = null;
                         DgListadoProductoOC.DataSource = detalle;
@@ -378,10 +373,11 @@ namespace AppPrincipal
                 {
                     try
                     {
-                        int poc = DgListadoProductoOC.CurrentRow.Index;
-                        DgListadoProductoOC[0, poc].Value = TxtCodProducto.Text;
-                        DgListadoProductoOC[1, poc].Value = TxtNombreProducto.Text;
-                        DgListadoProductoOC[2, poc].Value = TxtCantidad.Text;
+                       
+                        DgListadoProductoOC[2, indicefilaseleccionada].Value = TxtCantidad.Text;
+
+                        DetalleOrdenCompra det =  detalleOC.ElementAt<DetalleOrdenCompra>(indicefilaseleccionada);
+                        det.cantidadProducto = int.Parse(TxtCantidad.Text);
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
@@ -435,10 +431,10 @@ namespace AppPrincipal
             try
             {
 
-                int poc = DgListadoProductoOC.CurrentRow.Index;
-                TxtCodProducto.Text = DgListadoProductoOC[0, poc].Value.ToString();
-                TxtNombreProducto.Text = DgListadoProductoOC[1, poc].Value.ToString();
-                TxtCantidad.Text = DgListadoProductoOC[2, poc].Value.ToString();
+                indicefilaseleccionada = DgListadoProductoOC.CurrentRow.Index;
+                TxtCodProducto.Text = DgListadoProductoOC[0, indicefilaseleccionada].Value.ToString();
+                TxtNombreProducto.Text = DgListadoProductoOC[1, indicefilaseleccionada].Value.ToString();
+                TxtCantidad.Text = DgListadoProductoOC[2, indicefilaseleccionada].Value.ToString();
 
                 BtnAgregar.Enabled = false;
                 BtnEditar.Enabled = true;

@@ -58,6 +58,7 @@
     <Compile Include="Cargo.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DetalleOrdenCompra.cs" />
+    <Compile Include="DetalleOrdenCVista.cs" />
     <Compile Include="Detalle_Venta.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Familia_Producto.cs" />

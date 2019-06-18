@@ -19,7 +19,8 @@ FROM            FERME.ORDEN_COMPRA INNER JOIN
                          FERME.DETALLE_ORDEN_COMPRA ON FERME.ORDEN_COMPRA.ID_ORDEN_COMPRA = FERME.DETALLE_ORDEN_COMPRA.ID_ORDEN_COMPRA INNER JOIN
                          FERME.PRODUCTO ON FERME.DETALLE_ORDEN_COMPRA.ID_PRODUCTO = FERME.PRODUCTO.ID_PRODUCTO INNER JOIN
                          FERME.EMPLEADO ON FERME.ORDEN_COMPRA.ID_EMPLEADO = FERME.EMPLEADO.ID_EMPLEADO INNER JOIN
-                         FERME.PERSONA ON FERME.EMPLEADO.ID_PERSONA = FERME.PERSONA.ID_PERSONA</CommandText>
+                         FERME.PERSONA ON FERME.EMPLEADO.ID_PERSONA = FERME.PERSONA.ID_PERSONA
+ORDER BY FERME.ORDEN_COMPRA.ID_ORDEN_COMPRA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -133,7 +134,7 @@ FROM            FERME.CLIENTE INNER JOIN
   <xs:element name="ConexionFerme" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ConexionFerme" msprop:Generator_UserDSName="ConexionFerme">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataOrdenCompra" msprop:Generator_TableClassName="DataOrdenCompraDataTable" msprop:Generator_TableVarName="tableDataOrdenCompra" msprop:Generator_RowChangedName="DataOrdenCompraRowChanged" msprop:Generator_TablePropName="DataOrdenCompra" msprop:Generator_RowDeletingName="DataOrdenCompraRowDeleting" msprop:Generator_RowChangingName="DataOrdenCompraRowChanging" msprop:Generator_RowEvHandlerName="DataOrdenCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="DataOrdenCompraRowDeleted" msprop:Generator_RowClassName="DataOrdenCompraRow" msprop:Generator_UserTableName="DataOrdenCompra" msprop:Generator_RowEvArgName="DataOrdenCompraRowChangeEvent">
+        <xs:element name="DataOrdenCompra" msprop:Generator_TableClassName="DataOrdenCompraDataTable" msprop:Generator_TableVarName="tableDataOrdenCompra" msprop:Generator_TablePropName="DataOrdenCompra" msprop:Generator_RowDeletingName="DataOrdenCompraRowDeleting" msprop:Generator_RowChangingName="DataOrdenCompraRowChanging" msprop:Generator_RowEvHandlerName="DataOrdenCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="DataOrdenCompraRowDeleted" msprop:Generator_UserTableName="DataOrdenCompra" msprop:Generator_RowChangedName="DataOrdenCompraRowChanged" msprop:Generator_RowEvArgName="DataOrdenCompraRowChangeEvent" msprop:Generator_RowClassName="DataOrdenCompraRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_ORDEN_COMPRA" msprop:Generator_ColumnVarNameInTable="columnID_ORDEN_COMPRA" msprop:Generator_ColumnPropNameInRow="ID_ORDEN_COMPRA" msprop:Generator_ColumnPropNameInTable="ID_ORDEN_COMPRAColumn" msprop:Generator_UserColumnName="ID_ORDEN_COMPRA" type="xs:decimal" />
@@ -165,7 +166,7 @@ FROM            FERME.CLIENTE INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataProducto" msprop:Generator_TableClassName="DataProductoDataTable" msprop:Generator_TableVarName="tableDataProducto" msprop:Generator_TablePropName="DataProducto" msprop:Generator_RowDeletingName="DataProductoRowDeleting" msprop:Generator_RowChangingName="DataProductoRowChanging" msprop:Generator_RowEvHandlerName="DataProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataProductoRowDeleted" msprop:Generator_UserTableName="DataProducto" msprop:Generator_RowChangedName="DataProductoRowChanged" msprop:Generator_RowEvArgName="DataProductoRowChangeEvent" msprop:Generator_RowClassName="DataProductoRow">
+        <xs:element name="DataProducto" msprop:Generator_TableClassName="DataProductoDataTable" msprop:Generator_TableVarName="tableDataProducto" msprop:Generator_RowChangedName="DataProductoRowChanged" msprop:Generator_TablePropName="DataProducto" msprop:Generator_RowDeletingName="DataProductoRowDeleting" msprop:Generator_RowChangingName="DataProductoRowChanging" msprop:Generator_RowEvHandlerName="DataProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataProductoRowDeleted" msprop:Generator_RowClassName="DataProductoRow" msprop:Generator_UserTableName="DataProducto" msprop:Generator_RowEvArgName="DataProductoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_PRODUCTO" msprop:Generator_ColumnVarNameInTable="columnID_PRODUCTO" msprop:Generator_ColumnPropNameInRow="ID_PRODUCTO" msprop:Generator_ColumnPropNameInTable="ID_PRODUCTOColumn" msprop:Generator_UserColumnName="ID_PRODUCTO" type="xs:int" />
@@ -196,14 +197,14 @@ FROM            FERME.CLIENTE INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CANTPRODUCTO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCANTPRODUCTO" msprop:Generator_ColumnPropNameInRow="CANTPRODUCTO" msprop:Generator_ColumnPropNameInTable="CANTPRODUCTOColumn" msprop:Generator_UserColumnName="CANTPRODUCTO" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PERSONA" msprop:Generator_TableClassName="PERSONADataTable" msprop:Generator_TableVarName="tablePERSONA" msprop:Generator_RowChangedName="PERSONARowChanged" msprop:Generator_TablePropName="PERSONA" msprop:Generator_RowDeletingName="PERSONARowDeleting" msprop:Generator_RowChangingName="PERSONARowChanging" msprop:Generator_RowEvHandlerName="PERSONARowChangeEventHandler" msprop:Generator_RowDeletedName="PERSONARowDeleted" msprop:Generator_RowClassName="PERSONARow" msprop:Generator_UserTableName="PERSONA" msprop:Generator_RowEvArgName="PERSONARowChangeEvent">
+        <xs:element name="PERSONA" msprop:Generator_TableClassName="PERSONADataTable" msprop:Generator_TableVarName="tablePERSONA" msprop:Generator_TablePropName="PERSONA" msprop:Generator_RowDeletingName="PERSONARowDeleting" msprop:Generator_RowChangingName="PERSONARowChanging" msprop:Generator_RowEvHandlerName="PERSONARowChangeEventHandler" msprop:Generator_RowDeletedName="PERSONARowDeleted" msprop:Generator_UserTableName="PERSONA" msprop:Generator_RowChangedName="PERSONARowChanged" msprop:Generator_RowEvArgName="PERSONARowChangeEvent" msprop:Generator_RowClassName="PERSONARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RUT" msprop:Generator_ColumnVarNameInTable="columnRUT" msprop:Generator_ColumnPropNameInRow="RUT" msprop:Generator_ColumnPropNameInTable="RUTColumn" msprop:Generator_UserColumnName="RUT">

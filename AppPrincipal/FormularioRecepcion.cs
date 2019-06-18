@@ -19,10 +19,10 @@ namespace AppPrincipal
         {
             InitializeComponent();
             CargarCbEstado();
-            ListaOrdenC();
+            ListaOrdenC();            
         }
 
-
+        //DA FORMATO A FECHA DD/MM/YYYY
         private void fechaInicio()
         {
             DpFechaCreacion.Format = DateTimePickerFormat.Custom;
@@ -30,6 +30,7 @@ namespace AppPrincipal
             DpFechaCreacion.CustomFormat = "dd/MM/yyyy";
         }
 
+        //DA FORMATO A FECHA DD/MM/YYYY
         private void FechaTermino()
         {
             DpFechaRecepcion.Format = DateTimePickerFormat.Custom;

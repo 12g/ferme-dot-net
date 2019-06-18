@@ -564,6 +564,7 @@
             this.TxtIdCliente.ReadOnly = true;
             this.TxtIdCliente.Size = new System.Drawing.Size(141, 20);
             this.TxtIdCliente.TabIndex = 58;
+            this.TxtIdCliente.Visible = false;
             // 
             // LblIdCliente
             // 
@@ -582,6 +583,7 @@
             this.TxtSumCant.ReadOnly = true;
             this.TxtSumCant.Size = new System.Drawing.Size(100, 20);
             this.TxtSumCant.TabIndex = 60;
+            this.TxtSumCant.Visible = false;
             // 
             // txtSumValor
             // 
@@ -590,6 +592,7 @@
             this.txtSumValor.ReadOnly = true;
             this.txtSumValor.Size = new System.Drawing.Size(100, 20);
             this.txtSumValor.TabIndex = 61;
+            this.txtSumValor.Visible = false;
             // 
             // LblBoletaFactura
             // 

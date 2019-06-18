@@ -49,21 +49,7 @@ namespace ServiciosConexionFerme
             Console.WriteLine(json);
         }
 
-        //SE SERIALIZA EL EMPLEADO PARA CONVERTIR A JSON
-        public void CrearDetOrdenCompra(DetalleOrdenCompra OrC)
-        {
-
-            var json = JsonConvert.SerializeObject(OrC);
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/ordenes_compra/guardar", jsonp);
-            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-
-            //Console.WriteLine(resp);
-            Console.WriteLine(json);
-        }
+    
 
         //OBTENER SUBDETALLE ORDEN DE COMPRA
         public List<DetalleOrdenCompra> subdetalleOrdenCompra(Orden_Compra OrC)
@@ -74,25 +60,26 @@ namespace ServiciosConexionFerme
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/ordenes_compra/guardar", jsonp);
+            var responseMessage = httpClient.PostAsync("gestion/ordenes_compra/detalles", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-            List<DetalleOrdenCompra> ListaDetalle = JsonConvert.DeserializeObject<List<DetalleOrdenCompra>>(resp);
+           
             
             Console.WriteLine(resp);
+            List<DetalleOrdenCompra> ListaDetalle = JsonConvert.DeserializeObject<List<DetalleOrdenCompra>>(resp);
             //Console.WriteLine(json);
 
             return ListaDetalle;
         }
 
         //LISTAR ORDEN COMPRA
-        public JArray ListarOrdenCompra()
+        public List<Orden_Compra> ListarOrdenCompra()
         {
             string uri = "http://localhost:8082/api/gestion/ordenes_compra";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
             string s = reader.ReadToEnd();
-            return JsonConvert.DeserializeObject<JArray>(s);
+          return JsonConvert.DeserializeObject<List<Orden_Compra>>(s);
         }
     }
 }

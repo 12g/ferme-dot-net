@@ -15,12 +15,11 @@ namespace Biblioteca
         public int idDetalleVenta { get; set; }
 
         //[System.ComponentModel.Browsable(false)]
-        public int idProducto { get; set; }
-
-        //[System.ComponentModel.Browsable(false)]
         public int idVenta { get; set; }
 
-       
+        //[System.ComponentModel.Browsable(false)]
+        public int idProducto { get; set; }
+
         //[DisplayName("CODIGO DEL PRODUCTO")]
         public long codigoProducto { get; set; }
 
