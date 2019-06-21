@@ -76,13 +76,13 @@ namespace AppPrincipal
             try
             {
                 try
-                {    //LOS DATOS SE CARGAN EN EL FORMULARIO DE VENTAS 
+                {   
+                    //LOS DATOS SE CARGAN EN EL FORMULARIO DE VENTAS 
                     FrmVentas.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
                     FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
                     FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
                     FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[4].Value.ToString();
                     this.Close();
-
 
                 }
                 catch (Exception)

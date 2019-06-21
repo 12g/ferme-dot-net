@@ -130,11 +130,12 @@ namespace AppPrincipal
                     FrmOrdenCompra.DgListadoProductoOC.DataSource = detCv;
                     FrmOrdenCompra.detalleOC = lista;
 
-                    FrmOrdenCompra.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
-                    FrmOrdenCompra.CbEmpleado.SelectedText = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
-                    FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
-                    FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells[3].Value.ToString();
-                    FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells[4].Value.ToString();
+                    FrmOrdenCompra.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idOrdenCompra"].Value.ToString();
+                    FrmOrdenCompra.TxtIdEmplado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idEmpleado"].Value.ToString();
+                    FrmOrdenCompra.CbEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombrePersonaEmpleado"].Value.ToString();
+                    FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
+                    FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
+                    FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
                     //FrmOrdenCompra.DgListadoProductoOC.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
 
                     this.Close();
@@ -144,7 +145,7 @@ namespace AppPrincipal
                 catch (Exception)
                 {
 
-                    //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO DE MANTENEDOR DE ORDEN DE COMPRA
+                    //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO RECEPCION ORDEN COMPRA 
                     //SE CASTEA EL OBJETO ORDEN COMPRA
                     Orden_Compra oc = (Orden_Compra)DgMostrarOrdenCompra.CurrentRow.DataBoundItem;
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();

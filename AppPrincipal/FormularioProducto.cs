@@ -18,12 +18,11 @@ namespace AppPrincipal
 {
     public partial class FormularioProducto : Form
     {
-        public static FormularioProducto f1;
+       
    
         public FormularioProducto()
         {
             InitializeComponent();
-            FormularioProducto.f1 = this;
         }
 
         //BOTON QUE CIERRA EL FORMULARIO PRINCIPAL DE PRODUCTOS
@@ -47,17 +46,18 @@ namespace AppPrincipal
                 FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
                 if (DGlistadeproductos.SelectedRows.Count > 0)
                 {
-                    fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells[0].Value.ToString();
-                    fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells[1].Value.ToString();
-                    fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells[2].Value.ToString();
-                    fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells[7].Value.ToString();
-                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells[4].Value.ToString();
-                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells[5].Value.ToString();
-                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells[3].Value.ToString();
-                    fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells[8].Value.ToString();
+                    fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells["idProducto"].Value.ToString();
+                    fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
+                    fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
+                    fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
+                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells["stockActualProducto"].Value.ToString();
+                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells["stockCriticoProducto"].Value.ToString();
+                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
+                    fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
                     fmp.ShowDialog();
 
                     ServicioProducto servp = new ServicioProducto();
+                    DGlistadeproductos.DataSource = null;
                     DGlistadeproductos.DataSource = servp.GetRESTData();
                     DGlistadeproductos.Refresh();
                 }
@@ -76,8 +76,6 @@ namespace AppPrincipal
         private void FormularioProducto_Load_1(object sender, EventArgs e)
         {
             ListaProducto();
-
-            ServicioProducto ser = new ServicioProducto();
         }
 
 
@@ -85,23 +83,25 @@ namespace AppPrincipal
         public void ListaProducto()
         {
             ServicioProducto ser = new ServicioProducto();
-            try
+           try
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
 
                 //OCULTA LAS COLUMNAS
-                this.DGlistadeproductos.Columns[0].Visible = false;
-                this.DGlistadeproductos.Columns[6].Visible = false;
-                this.DGlistadeproductos.Columns[8].Visible = false;
+                this.DGlistadeproductos.Columns["idProducto"].Visible = false;
+                this.DGlistadeproductos.Columns["idTipoProducto"].Visible = false;
+                this.DGlistadeproductos.Columns["idFamiliaProducto"].Visible = false;
+                this.DGlistadeproductos.Columns["descripcionFamiliaProducto"].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DGlistadeproductos.Columns[1].HeaderText = "CODIGO";
-                this.DGlistadeproductos.Columns[2].HeaderText = "NOMBRE PRODUCTO";
-                this.DGlistadeproductos.Columns[3].HeaderText = "DESCRIPCION PRODUCTO";
-                this.DGlistadeproductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                this.DGlistadeproductos.Columns[5].HeaderText = "STOCK CRITICO";
-                this.DGlistadeproductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                this.DGlistadeproductos.Columns[10].HeaderText = "PRECIO";
+                this.DGlistadeproductos.Columns["codigoProducto"].HeaderText = "CODIGO";
+                this.DGlistadeproductos.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
+                this.DGlistadeproductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION PRODUCTO";
+                this.DGlistadeproductos.Columns["precioProducto"].HeaderText = "PRECIO";
+                this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText = "STOCK ACTUAL";
+                this.DGlistadeproductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
+                this.DGlistadeproductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
+
                 DGlistadeproductos.Show();
             }
             catch (Exception)

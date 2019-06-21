@@ -15,6 +15,9 @@ namespace Biblioteca
         [DisplayName("COD EMPLEADO")]
         public int idEmpleado { get; set; }
 
+        [DisplayName("NOMBRE EMPLEADO")]
+        public string nombrePersonaEmpleado { get; set; }
+
         [DisplayName("ESTADO")]
         public string estadoOrdenCompra { get; set; }
 
@@ -24,6 +27,12 @@ namespace Biblioteca
         [DisplayName("FECHA RECEPCION")]
         public string fechaRecepcionOrdenCompra { get; set; }
         public List<DetalleOrdenCompra> detallesOrdenCompra { get; set; }
+
+
+
+
+       
+
     }
 }
 

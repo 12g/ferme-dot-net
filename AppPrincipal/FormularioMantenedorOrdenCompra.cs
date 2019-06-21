@@ -18,6 +18,10 @@ namespace AppPrincipal
   
     public partial class FormularioMantenedorOrdenCompra : Form
     {
+        //SE DECLARA UNA VARIABLE PARA GENERAR UN NUMERO CORRELATIVO
+        private static int visitCounter = 0;
+
+        
         private int indicefilaseleccionada;
         Validaciones val = new Validaciones();
         public List<DetalleOrdenCompra> detalleOC;
@@ -27,7 +31,6 @@ namespace AppPrincipal
             InitializeComponent();
 
             CargarCbEstado();
-            NumCorrelativo();
 
         }
 
@@ -76,12 +79,6 @@ namespace AppPrincipal
             }
         }
 
-        private void NumCorrelativo()
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            TxtNumero.Text = Convert.ToString(rnd.Next(0,1000));    
-        }
-
         private void ListaOrdenC()
         {
 
@@ -119,7 +116,10 @@ namespace AppPrincipal
 
                 DgListadoProductoOC.Rows.Clear();
                 DgListadoProductoOC.Refresh();
-                NumCorrelativo();
+
+                //CODIGO QUE GENERA UN NUMERO CORRELATIVO
+                 visitCounter++; // Increase each time a form is loaded
+                 TxtNumero.Text = visitCounter.ToString("0"); // 
 
                 if (CbEmpleado.Items.Count > 1)
                 {
@@ -189,7 +189,8 @@ namespace AppPrincipal
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
                     oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
-                    oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue) ;
+                    oc.idEmpleado = int.Parse(TxtIdEmplado.Text);
+                    oc.nombrePersonaEmpleado = CbEmpleado.Text;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
 
@@ -202,7 +203,7 @@ namespace AppPrincipal
 
                     LimpiarPantalla();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
-                }
+               }
             }
             catch (Exception)
             {
@@ -241,31 +242,31 @@ namespace AppPrincipal
                 {
                    try
                     {
-                        BindingList<DetalleOrdenCVista> detalle;
-                        detalle = (BindingList<DetalleOrdenCVista>)DgListadoProductoOC.DataSource;
-                      
-
-                        DetalleOrdenCVista dv = new DetalleOrdenCVista();
-                        dv.CODIGO = long.Parse(TxtCodProducto.Text);
-                        dv.NOMBRE = TxtNombreProducto.Text;
-                        dv.CANTIDAD = int.Parse(TxtCantidad.Text);
-
-                        detalle.Add(dv);
-                        DetalleOrdenCompra det = new DetalleOrdenCompra();
-                        det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
-                        det.idOrdenCompra = int.Parse(TxtNumero.Text);
-                        det.idProducto = int.Parse(TxtIdProducto.Text);
-                        det.codigoProducto = long.Parse(TxtCodProducto.Text);
-                        det.nombreProducto = TxtNombreProducto.Text;
-                        det.cantidadProducto = int.Parse(TxtCantidad.Text);
-
-                        detalleOC.Add(det);
-
-                        Console.WriteLine(detalle.ToString());
-                        DgListadoProductoOC.DataSource = null;
-                        DgListadoProductoOC.DataSource = detalle;
-                        DgListadoProductoOC.Refresh();
+                       
+                            BindingList<DetalleOrdenCVista> detalle;
+                            detalle = (BindingList<DetalleOrdenCVista>)DgListadoProductoOC.DataSource;
                         
+                            DetalleOrdenCVista dv = new DetalleOrdenCVista();
+                            dv.CODIGO = long.Parse(TxtCodProducto.Text);
+                            dv.NOMBRE = TxtNombreProducto.Text;
+                            dv.CANTIDAD = int.Parse(TxtCantidad.Text);
+
+                            detalle.Add(dv);
+                            DetalleOrdenCompra det = new DetalleOrdenCompra();
+                            det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
+                            det.idOrdenCompra = int.Parse(TxtNumero.Text);
+                            det.idProducto = int.Parse(TxtIdProducto.Text);
+                            det.codigoProducto = long.Parse(TxtCodProducto.Text);
+                            det.nombreProducto = TxtNombreProducto.Text;
+                            det.cantidadProducto = int.Parse(TxtCantidad.Text);
+
+                            detalleOC.Add(det);
+
+                            Console.WriteLine(detalle.ToString());
+                            DgListadoProductoOC.DataSource = null;
+                            DgListadoProductoOC.DataSource = detalle;
+                            DgListadoProductoOC.Refresh();
+                
                         Limpiar();
                     }
                     catch (Exception)
@@ -325,7 +326,8 @@ namespace AppPrincipal
             fbp.ShowDialog();
         }
 
-      
+  
+
         private void FormularioMantenedorOrdenCompra_Load(object sender, EventArgs e)
         {
             try
@@ -347,6 +349,10 @@ namespace AppPrincipal
                 fechaInicio();
                 FechaTermino();
                 ListaOrdenC();
+
+                //CODIGO QUE GENERA UN NUMERO CORRELATIVO
+                visitCounter++; // Increase each time a form is loaded
+                TxtNumero.Text = visitCounter.ToString("0"); //
             }
             catch (Exception)
             {

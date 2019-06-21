@@ -14,35 +14,25 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorProducto : Form
     {
-     
+        private static int visitCounter = 0;
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
             TxtIdProducto.Text = "0";
-            NumCorrelativo();
+           
         }
-        private void NumCorrelativo()
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
-        }
-
-
+      
         //EVENTO CANELAR Y SALIR DEL MENU CREAR PRODUCTO
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             try
             {
-                //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
-
                 MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
                 DialogResult dr = MessageBox.Show("¿Está seguro que desea salir?", "", botones, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
-                    FormularioProducto.f1.Text = "xx";
                 }
-
             }
             catch
             {
@@ -58,13 +48,7 @@ namespace AppPrincipal
             TxtPrecio.Text = "";
             TxtStockActual.Text = "";
             TxtStockCritico.Text = "";
-            TxtIdProducto.Text = "";
-
-            FormularioProducto prod = new FormularioProducto();
-            ServicioProducto serp = new ServicioProducto();
-            FormularioProducto.f1.Text = "xx";
-            prod.DGlistadeproductos.DataSource = serp.GetRESTData();
-            prod.DGlistadeproductos.Refresh();
+            TxtIdProducto.Text = "";            
         }
 
 
@@ -79,7 +63,7 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("INGRESE UN CODIGO PARA EL PRODUCTO");
                 }
-                else if (TxtCodigo.Text.Length <= 1 || TxtCodigo.Text.Length >= 1000000000)
+                else if (TxtCodigo.Text.Length < 1 || TxtCodigo.Text.Length >= 1000000000)
                 {
                     MessageBox.Show("INGRESE UN CODIGO VALIDO PARA EL PRODUCTO");
                 }
@@ -161,19 +145,10 @@ namespace AppPrincipal
                     pro.stockCriticoProducto = int.Parse(TxtStockCritico.Text);
 
                     CargarComBobox();
-                    serp.CrearProducto(pro);
-
-
-                    ServicioOrdenCompra or = new ServicioOrdenCompra();
-
-                   
+                    serp.CrearProducto(pro);                   
                     MessageBox.Show("PRODUCTO GUARDADO");
 
                     Limpiar();
-                    FormularioProducto.f1.Text = "xx";
-                    prod.DGlistadeproductos.DataSource = serp.GetRESTData();
-                    prod.DGlistadeproductos.Refresh();
-
                 }
             }
             catch (Exception)
@@ -204,8 +179,8 @@ namespace AppPrincipal
 
         private void FormularioMantenedorProducto_Load(object sender, EventArgs e)
         {
-            ServicioProducto serpr = new ServicioProducto();
-            TipoProducto tp = new TipoProducto();
+            visitCounter++; // Increase each time a form is loaded
+            TxtCodigo.Text = visitCounter.ToString("0"); // 
             CargarComBobox();
         }
 

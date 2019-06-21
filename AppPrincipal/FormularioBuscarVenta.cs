@@ -135,8 +135,6 @@ namespace AppPrincipal
 
             try
             {
-                BindingList<Detalle_Venta> lista;
-
                 DgMostrarVentasRealizadas.DataSource = new BindingList<Detalle_Venta>();
             }
             catch (Exception)

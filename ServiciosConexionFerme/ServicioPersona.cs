@@ -34,7 +34,7 @@ namespace ServiciosConexionFerme
         }
 
         //SERIALIZA EL CLIENTE PARA CONVERTIR A JSON
-        public void GuardarCliente(Persona per)
+        public void GuardarUsario(Persona per)
         {
 
             var json = JsonConvert.SerializeObject(per);
@@ -49,7 +49,20 @@ namespace ServiciosConexionFerme
         }
 
         //LISTARCLIENTES
-        public JArray ListarEmpleado()
+        public JArray ListarPersona()
+        {
+
+            string uri = "http://localhost:8082/api/gestion/personas";
+            var webRequest = (HttpWebRequest)WebRequest.Create(uri);
+            var webResponse = (HttpWebResponse)webRequest.GetResponse();
+            var reader = new StreamReader(webResponse.GetResponseStream());
+            string s = reader.ReadToEnd();
+            return JsonConvert.DeserializeObject<JArray>(s);
+
+        }
+
+        //LISTARCLIENTES
+        public JArray ListarUsuario()
         {
 
             string uri = "http://localhost:8082/api/gestion/usuarios";

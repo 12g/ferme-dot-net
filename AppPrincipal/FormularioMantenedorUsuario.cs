@@ -40,6 +40,7 @@ namespace AppPrincipal
             try
             {
                 Persona pers = new Persona();
+                Usuario usr = new Usuario();
                 ServicioPersona serEmp = new ServicioPersona();
                 Validaciones val = new Validaciones();
 
@@ -57,13 +58,14 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    pers.idPersona = int.Parse(TxtIdUsuario.Text);
-                    pers.rutPersona = TxtRut.Text;
-                    pers.nombreCompletoPersona = TxtNombre.Text;
-                    pers.nombreUsuario = TxtUsuario.Text;
-                    pers.claveUsuario = TxtContraseña.Text;
-
-                    serEmp.GuardarCliente(pers);
+                    usr.idUsuario = int.Parse(TxtIdUsuario.Text);
+                    usr.idPersona = int.Parse(TxtIdUsuario.Text);
+                    usr.rutPersona = TxtRut.Text;
+                    usr.nombreCompletoPersona = TxtNombre.Text;
+                    usr.nombreUsuario = TxtUsuario.Text;
+                    usr.claveUsuario = TxtUsuario.Text;
+                  
+                    serEmp.GuardarUsario(pers);
                 }
             }
             catch (Exception)

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
-    <Height>3.55463in</Height>
+    <Height>3.33588in</Height>
     <Style />
   </Body>
-  <Width>8.53459in</Width>
+  <Width>8.65959in</Width>
   <Page>
     <PageHeader>
       <Height>3.70417cm</Height>
@@ -100,9 +100,44 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.29646cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Derechos Reservados Grupo N°1</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Top>0.7225cm</Top>
+          <Left>8.53059cm</Left>
+          <Height>0.57396cm</Height>
+          <Width>5.9925cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

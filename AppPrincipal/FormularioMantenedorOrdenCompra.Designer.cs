@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMantenedorOrdenCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -63,6 +63,8 @@
             this.BtnBuscarOrdenCompra = new System.Windows.Forms.Button();
             this.DgListadoProductoOC = new System.Windows.Forms.DataGridView();
             this.CbEstado = new System.Windows.Forms.ComboBox();
+            this.TxtIdEmplado = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoProductoOC)).BeginInit();
             this.SuspendLayout();
@@ -303,7 +305,7 @@
             // 
             // TxtIdProducto
             // 
-            this.TxtIdProducto.Location = new System.Drawing.Point(415, 183);
+            this.TxtIdProducto.Location = new System.Drawing.Point(415, 168);
             this.TxtIdProducto.Name = "TxtIdProducto";
             this.TxtIdProducto.ReadOnly = true;
             this.TxtIdProducto.Size = new System.Drawing.Size(96, 20);
@@ -314,7 +316,7 @@
             // 
             this.LblIdProducto.AutoSize = true;
             this.LblIdProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdProducto.Location = new System.Drawing.Point(412, 168);
+            this.LblIdProducto.Location = new System.Drawing.Point(412, 151);
             this.LblIdProducto.Name = "LblIdProducto";
             this.LblIdProducto.Size = new System.Drawing.Size(69, 13);
             this.LblIdProducto.TabIndex = 30;
@@ -383,23 +385,23 @@
             this.DgListadoProductoOC.AllowUserToDeleteRows = false;
             this.DgListadoProductoOC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgListadoProductoOC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgListadoProductoOC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgListadoProductoOC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgListadoProductoOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgListadoProductoOC.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgListadoProductoOC.DefaultCellStyle = dataGridViewCellStyle4;
             this.DgListadoProductoOC.Location = new System.Drawing.Point(16, 264);
             this.DgListadoProductoOC.Name = "DgListadoProductoOC";
             this.DgListadoProductoOC.ReadOnly = true;
@@ -416,12 +418,35 @@
             this.CbEstado.Size = new System.Drawing.Size(76, 21);
             this.CbEstado.TabIndex = 38;
             // 
+            // TxtIdEmplado
+            // 
+            this.TxtIdEmplado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIdEmplado.Location = new System.Drawing.Point(415, 205);
+            this.TxtIdEmplado.Name = "TxtIdEmplado";
+            this.TxtIdEmplado.ReadOnly = true;
+            this.TxtIdEmplado.Size = new System.Drawing.Size(96, 20);
+            this.TxtIdEmplado.TabIndex = 39;
+            this.TxtIdEmplado.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(412, 189);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "IdEmpleado";
+            this.label3.Visible = false;
+            // 
             // FormularioMantenedorOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 528);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtIdEmplado);
             this.Controls.Add(this.CbEstado);
             this.Controls.Add(this.DgListadoProductoOC);
             this.Controls.Add(this.BtnBuscarOrdenCompra);
@@ -503,5 +528,7 @@
         public System.Windows.Forms.ComboBox CbEmpleado;
         public System.Windows.Forms.DataGridView DgListadoProductoOC;
         public System.Windows.Forms.ComboBox CbEstado;
+        public System.Windows.Forms.TextBox TxtIdEmplado;
+        private System.Windows.Forms.Label label3;
     }
 }
