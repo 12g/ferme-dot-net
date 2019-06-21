@@ -106,7 +106,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                MessageBox.Show("NO HAY PRODUCTOS CREADOS PARA MOSTRAR");
             }
         }
 

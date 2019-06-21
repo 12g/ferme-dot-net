@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Biblioteca;
+﻿using Biblioteca;
 using ServiciosConexionFerme;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace AppPrincipal
 {
@@ -45,60 +39,31 @@ namespace AppPrincipal
         {
             try
             {
-                Empleado empl = new Empleado();
-                ServicioEmpleado serEmp = new ServicioEmpleado();
+                Persona pers = new Persona();
+                ServicioPersona serEmp = new ServicioPersona();
                 Validaciones val = new Validaciones();
 
-                if (TxtRut.Text == "")
+                if (TxtNombre.Text == "" || TxtRut.Text == "")
                 {
-                    LblRutObligatorio.Visible = true;
+                    MessageBox.Show("SELECCIONE UN USUARIO");
                 }
-                else if (TxtRut.Text.Length <= 7 || TxtRut.Text.Length >= 13)
+                else if (TxtUsuario.Text == "")
                 {
-                    MessageBox.Show("EL RUT DEBE TENER MINIMO UN LARGO DE 7 Y MAXIMO 10 DIGITOS");
-                    LblRutObligatorio.Visible = true;
+                    MessageBox.Show("INGRESE UN NUMBRE DE USUARIO");
                 }
-                else if (TxtNombre.Text == "" || val.IsNumeric(TxtNombre.Text))
+                else if (TxtContraseña.Text =="")
                 {
-                    LblNombreObligatorio.Visible = true;
-                }
-                else if (TxtNombre.Text.Length <= 3)
-                {
-                    MessageBox.Show("INGRESE UN NOMBRE VALIDO");
-                    LblNombreObligatorio.Visible = true;
-                }
-                else if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
-                {
-                    LblDireccionObligatoria.Visible = true;
-                }
-                else if (TxtDireccion.Text.Length <= 3)
-                {
-                    MessageBox.Show("INGRESE UNA DIRECCION VALIDA");
-                    LblDireccionObligatoria.Visible = true;
-                }
-                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
-                {
-                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
-                    LblEmailObligatorio.Visible = true;
-                }
-                else if (TxtTelefono1.Text == "")
-                {
-                    LblTelefono1Obligatorio.Visible = true;
+                    MessageBox.Show("INGRESE UNA CONTRASEÑA ");
                 }
                 else
                 {
-                    //empl.idEmpleado = 1;
-                    //empl.idCargo = 1;
-                    //empl.idPersona = 2;
-                    empl.rutPersona = TxtRut.Text;
-                    empl.nombreCompletoPersona = TxtNombre.Text;
-                    empl.direccionPersona = TxtDireccion.Text;
-                    empl.emailPersona = TxtEmail.Text;
-                    empl.fonoPersona1 = int.Parse(TxtTelefono1.Text);
-                    empl.fonoPersona2 = int.Parse(TxtTelefono2.Text);
-                    empl.fonoPersona3 = int.Parse(TxtTelefono3.Text);
+                    pers.idPersona = int.Parse(TxtIdUsuario.Text);
+                    pers.rutPersona = TxtRut.Text;
+                    pers.nombreCompletoPersona = TxtNombre.Text;
+                    pers.nombreUsuario = TxtUsuario.Text;
+                    pers.claveUsuario = TxtContraseña.Text;
 
-                    serEmp.CrearEmpleado(empl);
+                    serEmp.GuardarCliente(pers);
                 }
             }
             catch (Exception)
@@ -109,81 +74,16 @@ namespace AppPrincipal
             
         }
 
-        private void TxtRut_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-            bool respuesta = false;
-            string rut = TxtRut.Text;
-            TxtRut.Text = val.formatoRut(rut);
-            rut = TxtRut.Text;
-            respuesta = val.validarRut(rut);
-
-            if (respuesta == false)
-            {
-                TxtRut.Focus();
-                TxtRut.BackColor = Color.Red;
-                MessageBox.Show("INGRESE UN RUT VALIDO");
-            }
-            else
-            {
-                TxtRut.ForeColor = Color.Black;
-                TxtRut.BackColor = Color.White;
-                LblRutObligatorio.Visible = false;
-                // MessageBox.Show("Rut OK");
-            }
-        }
-
-        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validaciones val = new Validaciones();
-            val.SoloLetras(e);
-        }
-
-        private void TxtNombre_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-            if (TxtNombre.Text == "")
-            {
-                LblNombreObligatorio.Visible = true;
-            }
-            else
-            {
-                LblNombreObligatorio.Visible = false;
-            }
-        }
-
-        private void LblDireccionObligatoria_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-
-            if (TxtDireccion.Text == "")
-            {
-                LblDireccionObligatoria.Visible = true;
-            }
-            else
-            {
-                LblDireccionObligatoria.Visible = false;
-            }
-        }
-
-        private void TxtEmail_Leave(object sender, EventArgs e)
-        {
-            if (val.ValidarEmail(TxtEmail.Text))
-            {
-                LblEmailObligatorio.Visible = true;
-            }
-            else
-            {
-                LblEmailObligatorio.Visible = false;
-                MessageBox.Show("INGRESE UNA DIRECCION DE CORREO ELECTRONICO VALIDA");
-                TxtEmail.SelectAll();
-                TxtEmail.Focus();
-            }
-        }
 
         private void FormularioMantenedorUsuario_Load(object sender, EventArgs e)
         {
             TxtFecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            FormularioBuscarUsuario usr = new FormularioBuscarUsuario(this);
+            usr.ShowDialog();
         }
     }
 }

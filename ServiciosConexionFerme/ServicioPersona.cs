@@ -13,52 +13,54 @@ using Newtonsoft.Json.Linq;
 
 namespace ServiciosConexionFerme
 {
-    public class ServicioProducto
+   public class ServicioPersona
     {
         //METODO DE CONEXION
         public void GetResource()
         {
             var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            var responseMessage = httpClient.GetAsync("gestion/productos").Result;
+            var responseMessage = httpClient.GetAsync("gestion/usuarios").Result;
 
             string responseAsync = responseMessage.Content.ReadAsStringAsync().Result;
-            var jsonObj = JsonConvert.DeserializeObject<Producto[]>(responseAsync);
+            var jsonObj = JsonConvert.DeserializeObject<Cliente[]>(responseAsync);
 
             foreach (var item in jsonObj)
             {
-                Console.WriteLine(item.idProducto);
+                Console.WriteLine(item.idCliente);
             }
 
-            //Console.WriteLine(responseAsync);
+            Console.WriteLine(responseAsync);
         }
 
-        //SE SERIALIZA EL EMPLEADO PARA CONVERTIR A JSON
-        public void CrearProducto(Producto pro)
+        //SERIALIZA EL CLIENTE PARA CONVERTIR A JSON
+        public void GuardarCliente(Persona per)
         {
 
-            var json = JsonConvert.SerializeObject(pro);
+            var json = JsonConvert.SerializeObject(per);
             var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/productos/guardar", jsonp);
+            var responseMessage = httpClient.PostAsync("gestion/usuarios/guardar", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
 
-            //Console.WriteLine(resp);
-            Console.WriteLine(json);
+            Console.WriteLine(resp);
         }
 
-  
-        //LISTAR PRODUCTO
-        public JArray GetRESTData()
+        //LISTARCLIENTES
+        public JArray ListarEmpleado()
         {
-            string uri = "http://localhost:8082/api/gestion/productos";
+
+            string uri = "http://localhost:8082/api/gestion/usuarios";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
             string s = reader.ReadToEnd();
             return JsonConvert.DeserializeObject<JArray>(s);
+
         }
+
+
     }
 }

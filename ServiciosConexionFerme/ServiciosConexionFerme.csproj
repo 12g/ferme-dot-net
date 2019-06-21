@@ -54,6 +54,7 @@
     <Compile Include="ServicioEmpleado.cs" />
     <Compile Include="ServicioFamiliaProducto.cs" />
     <Compile Include="ServicioOrdenCompra.cs" />
+    <Compile Include="ServicioPersona.cs" />
     <Compile Include="ServicioProducto.cs" />
     <Compile Include="ServicioProveedores.cs" />
     <Compile Include="ServiciosRubro.cs" />

@@ -49,16 +49,6 @@ namespace ServiciosConexionFerme
             Console.WriteLine(resp);
         }
 
-        public void EliminarCliente(Cliente Cli)
-        {
-            var json = JsonConvert.SerializeObject(Cli);
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/clientes/borrar", jsonp);
-            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-        }
 
         //LISTARCLIENTES
         public JArray ListarClientes()

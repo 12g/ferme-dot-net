@@ -268,7 +268,7 @@ namespace AppPrincipal
                         
                         Limpiar();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
                     }

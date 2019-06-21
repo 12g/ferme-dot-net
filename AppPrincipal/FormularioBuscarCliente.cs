@@ -110,7 +110,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("");
+                MessageBox.Show("NO SE PUEDE SELECCIONAR");
             }
         }
     }

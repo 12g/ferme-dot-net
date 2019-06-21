@@ -11,9 +11,10 @@ namespace Biblioteca
         public int? idVenta { get; set; }
         public string tipoVenta { get; set; }
         public string fechaVenta { get; set; }
-        public int subtotalVenta { get; set; }
+        
         public int idEmpleado { get; set; }
         public int idCliente { get; set; }
+        public int subtotalVenta { get; set; }
         public List<Detalle_Venta> detallesVenta { get; set; }
     }
 }

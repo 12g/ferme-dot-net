@@ -15,11 +15,15 @@ namespace AppPrincipal
     public partial class FormularioRecepcion : Form
     {
         Validaciones val = new Validaciones();
+        public List<DetalleOrdenCompra> detalleOC;
+
         public FormularioRecepcion()
         {
             InitializeComponent();
             CargarCbEstado();
-            ListaOrdenC();            
+            ListaOrdenC();
+            fechaInicio();
+            FechaTermino();
         }
 
         //DA FORMATO A FECHA DD/MM/YYYY
@@ -95,8 +99,8 @@ namespace AppPrincipal
             try
             {
                 TxtNumero.Text = "";
-                DpFechaCreacion.Value = DateTime.Now;
-                DpFechaRecepcion.Value = DateTime.Now;
+                fechaInicio();
+                FechaTermino();
                 TxtEmpleado.Text = "";
 
 
@@ -127,9 +131,11 @@ namespace AppPrincipal
 
             try
             {
-                BindingList<DetalleOrdenCompra> lista;
+                BindingList<DetalleOrdenCVista> lista = new BindingList<DetalleOrdenCVista>();
 
-                DgListadoRecepcion.DataSource = new BindingList<DetalleOrdenCompra>();
+                DgListadoRecepcion.DataSource = lista;
+                //
+                detalleOC = new List<DetalleOrdenCompra>();
             }
             catch (Exception)
             {
@@ -155,7 +161,6 @@ namespace AppPrincipal
                 else
                 {
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
-                    DetalleOrdenCompra det = new DetalleOrdenCompra();
                     Orden_Compra oc = new Orden_Compra();
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
@@ -164,24 +169,10 @@ namespace AppPrincipal
                     oc.fechaSolicitudOrdenCompra = DpFechaCreacion.Text;
                     oc.fechaRecepcionOrdenCompra = DpFechaRecepcion.Text;
 
-                    foreach (DataGridViewRow row in DgListadoRecepcion.Rows)
-                    {
-
-                        det.idDetalleOrdenCompra = Convert.ToInt32(DgListadoRecepcion[0, row.Index].Value.ToString());
-                        det.idOrdenCompra = Convert.ToInt32(DgListadoRecepcion[1, row.Index].Value.ToString());
-                        det.idProducto = Convert.ToInt32(DgListadoRecepcion[2, row.Index].Value.ToString());
-                        det.codigoProducto = long.Parse(DgListadoRecepcion[3, row.Index].Value.ToString());
-                        det.nombreProducto = DgListadoRecepcion[4, row.Index].Value.ToString();
-                        det.cantidadProducto = Convert.ToInt32(DgListadoRecepcion[5, row.Index].Value.ToString());
-
-                    }
-
-                    BindingList<DetalleOrdenCompra> lista;
-
-                    lista = (BindingList<DetalleOrdenCompra>)DgListadoRecepcion.DataSource;
-                    oc.detallesOrdenCompra = lista.ToList();
+                    oc.detallesOrdenCompra = detalleOC;
 
                     ser.CrearOrdenCompra(oc);
+
                     LimpiarPantalla();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                 }

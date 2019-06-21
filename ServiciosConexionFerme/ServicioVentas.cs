@@ -49,21 +49,7 @@ namespace ServiciosConexionFerme
             Console.WriteLine(json);
         }
 
-        //SE SERIALIZA LA VENTA PARA CONVERTIR A JSON
-        public void CrearDetalleVenta(Detalle_Venta OrC)
-        {
-
-            var json = JsonConvert.SerializeObject(OrC);
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/ventas/guardar", jsonp);
-            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-
-            //Console.WriteLine(resp);
-            Console.WriteLine(json);
-        }
+      
 
         //OBTENER SUBDETALLE VENTA
         public List<Detalle_Venta> subdetalleventa(Venta Vent)
@@ -74,25 +60,26 @@ namespace ServiciosConexionFerme
             httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/ventas/guardar", jsonp);
+            var responseMessage = httpClient.PostAsync("gestion/ventas/detalles", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-            List<Detalle_Venta> ListaDetalle = JsonConvert.DeserializeObject<List<Detalle_Venta>>(resp);
+           
 
             Console.WriteLine(resp);
+            List<Detalle_Venta> ListaDetalle = JsonConvert.DeserializeObject<List<Detalle_Venta>>(resp);
             //Console.WriteLine(json);
 
             return ListaDetalle;
         }
 
         //LISTAR VENTA
-        public JArray ListarVenta()
+        public List<Venta> ListarVenta()
         {
             string uri = "http://localhost:8082/api/gestion/ventas";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
             string s = reader.ReadToEnd();
-            return JsonConvert.DeserializeObject<JArray>(s);
+            return JsonConvert.DeserializeObject<List<Venta>>(s);
         }
     }
 }

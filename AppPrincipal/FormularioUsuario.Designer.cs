@@ -41,6 +41,7 @@
             this.BtnCargo = new System.Windows.Forms.Button();
             this.BtnCrearEmpleado = new System.Windows.Forms.Button();
             this.DGlistadoUsuario = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +118,7 @@
             this.BtnCrearUsuario.Name = "BtnCrearUsuario";
             this.BtnCrearUsuario.Size = new System.Drawing.Size(116, 39);
             this.BtnCrearUsuario.TabIndex = 10;
-            this.BtnCrearUsuario.Text = "Usuario";
+            this.BtnCrearUsuario.Text = "Crear Usuario";
             this.BtnCrearUsuario.UseVisualStyleBackColor = true;
             this.BtnCrearUsuario.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
@@ -194,12 +195,24 @@
             this.DGlistadoUsuario.TabIndex = 15;
             this.DGlistadoUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistadoUsuario_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(890, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 39);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Editar Usuario";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormularioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1018, 524);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DGlistadoUsuario);
             this.Controls.Add(this.BtnCrearEmpleado);
             this.Controls.Add(this.BtnCargo);
@@ -230,5 +243,6 @@
         private System.Windows.Forms.Button BtnCargo;
         private System.Windows.Forms.Button BtnCrearEmpleado;
         public System.Windows.Forms.DataGridView DGlistadoUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

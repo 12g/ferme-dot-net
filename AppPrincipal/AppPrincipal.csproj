@@ -55,6 +55,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -116,6 +119,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FomularioTipoProducto.cs">
@@ -148,6 +154,18 @@
     <Compile Include="FormularioBuscarProducto.Designer.cs">
       <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarUsuario.Designer.cs">
+      <DependentUpon>FormularioBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarUsuarioCreado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarUsuarioCreado.Designer.cs">
+      <DependentUpon>FormularioBuscarUsuarioCreado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioBuscarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +177,12 @@
     </Compile>
     <Compile Include="FormularioCliente.Designer.cs">
       <DependentUpon>FormularioCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioEditarUsuario.Designer.cs">
+      <DependentUpon>FormularioEditarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioInformes.cs">
       <SubType>Form</SubType>
@@ -305,11 +329,20 @@
     <EmbeddedResource Include="FormularioBuscarProducto.resx">
       <DependentUpon>FormularioBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarUsuario.resx">
+      <DependentUpon>FormularioBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarUsuarioCreado.resx">
+      <DependentUpon>FormularioBuscarUsuarioCreado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioBuscarVenta.resx">
       <DependentUpon>FormularioBuscarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCliente.resx">
       <DependentUpon>FormularioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioEditarUsuario.resx">
+      <DependentUpon>FormularioEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioInformes.resx">
       <DependentUpon>FormularioInformes.cs</DependentUpon>

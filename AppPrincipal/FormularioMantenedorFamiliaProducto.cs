@@ -97,7 +97,7 @@ namespace AppPrincipal
                     ServicioFamiliaProducto ser = new ServicioFamiliaProducto();
                     Familia_Producto fp = new Familia_Producto();
 
-                    //fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
+                    fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
                     fp.descripcionFamiliaProducto = TxtDescripcion.Text;
                     fp.idRubro = int.Parse(CbRubro.SelectedValue.ToString());
                     fp.descripcionRubro = Convert.ToString(CbRubro.Text);

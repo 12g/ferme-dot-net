@@ -236,7 +236,7 @@ namespace AppPrincipal
                 Empleado emp = new Empleado();
                 ServicioEmpleado serv = new ServicioEmpleado();
 
-                emp.idEmpleado = int.Parse(TxtIdEmpleado.Text);
+               // emp.idEmpleado = int.Parse(TxtIdEmpleado.Text);
                 emp.idCargo = int.Parse(CbxCargo.SelectedValue.ToString());
                 emp.rutPersona = TxtRutCliente.Text;
                 emp.nombreCompletoPersona = TxtNombre.Text;

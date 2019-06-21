@@ -14,31 +14,21 @@ namespace AppPrincipal
 {
     public partial class FormularioBuscarOrdenCompra : Form
     {
-       
+        
+        private FormularioRecepcion FrmRecepcion;
         private FormularioMantenedorOrdenCompra FrmOrdenCompra;
+        
         //inicia en formulario mantenedor de recepcion
         public FormularioBuscarOrdenCompra(FormularioMantenedorOrdenCompra parametro)
         {
             InitializeComponent();
-
+            
 
             FrmOrdenCompra = parametro;
            try
             {
                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
-
-               /* //OCULTAR COLUMNA
-                //this.DgMostrarOrdenCompra.Columns[6].Visible = false;
-                this.DgMostrarOrdenCompra.Columns[5].Visible = false;
-
-                //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarOrdenCompra.Columns[0].HeaderText = "CODIGO";
-                this.DgMostrarOrdenCompra.Columns[1].HeaderText = "COD VENDEDOR       ";
-                this.DgMostrarOrdenCompra.Columns[2].HeaderText = "ESTADO";
-                this.DgMostrarOrdenCompra.Columns[3].HeaderText = "FECHA CREACION     ";
-                this.DgMostrarOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION    ";*/
-
             }
             catch (Exception)
             {
@@ -46,8 +36,7 @@ namespace AppPrincipal
             }
         }
 
-        //inicia en formulario recepcion
-        private FormularioRecepcion FrmRecepcion;
+       
         public FormularioBuscarOrdenCompra(FormularioRecepcion parametro)
         {
             InitializeComponent();
@@ -58,25 +47,10 @@ namespace AppPrincipal
             {
                 ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
-
-
-                //OCULTAR COLUMNA
-                //this.DgMostrarOrdenCompra.Columns[6].Visible = false;
-                this.DgMostrarOrdenCompra.Columns[5].Visible = false;
-
-                //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarOrdenCompra.Columns[0].HeaderText = "CODIGO";
-                this.DgMostrarOrdenCompra.Columns[1].HeaderText = "COD VENDEDOR       ";
-                this.DgMostrarOrdenCompra.Columns[2].HeaderText = "ESTADO";
-                this.DgMostrarOrdenCompra.Columns[3].HeaderText = "FECHA CREACION     ";
-                this.DgMostrarOrdenCompra.Columns[4].HeaderText = "FECHA RECEPCION    ";
-                //this.DgMostrarOrdenCompra.Columns[7].HeaderText = "TIPO PRODUCTO";
-                // this.DgMostrarProductos.Columns[8].HeaderText = "PRECIO";
-
            }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE ORDEN DE COMPRA");
             }
         }
 
@@ -170,6 +144,27 @@ namespace AppPrincipal
                 catch (Exception)
                 {
 
+                    //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO DE MANTENEDOR DE ORDEN DE COMPRA
+                    //SE CASTEA EL OBJETO ORDEN COMPRA
+                    Orden_Compra oc = (Orden_Compra)DgMostrarOrdenCompra.CurrentRow.DataBoundItem;
+                    ServicioOrdenCompra ser = new ServicioOrdenCompra();
+                    BindingList<DetalleOrdenCVista> detCv = new BindingList<DetalleOrdenCVista>();
+                    List<DetalleOrdenCompra> lista = ser.subdetalleOrdenCompra(oc);
+
+
+                    foreach (DetalleOrdenCompra detoc in lista)
+                    {
+                        DetalleOrdenCVista ClaseDetalleCv = new DetalleOrdenCVista();
+                        ClaseDetalleCv.CODIGO = detoc.codigoProducto;
+                        ClaseDetalleCv.NOMBRE = detoc.nombreProducto;
+                        ClaseDetalleCv.CANTIDAD = detoc.cantidadProducto;
+
+                        detCv.Add(ClaseDetalleCv);
+                    }
+
+                    FrmRecepcion.DgListadoRecepcion.DataSource = detCv;
+                    FrmRecepcion.detalleOC = lista;
+
                     FrmRecepcion.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells[0].Value.ToString();
                     FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells[1].Value.ToString();
                     FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[2].Value.ToString();
@@ -182,8 +177,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                //MessageBox.Show("ERROR AL AGREGAR ORDEN COMPRA");
-                Console.WriteLine();
+               MessageBox.Show("ERROR AL AGREGAR ORDEN COMPRA");
             }
 
         }
@@ -194,8 +188,6 @@ namespace AppPrincipal
 
             try
             {
-                BindingList<DetalleOrdenCompra> lista;
-
                 DgMostrarOrdenCompra.DataSource = new BindingList<DetalleOrdenCompra>();
             }
             catch (Exception)

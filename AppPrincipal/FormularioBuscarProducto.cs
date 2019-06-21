@@ -14,6 +14,8 @@ namespace AppPrincipal
 {
     public partial class FormularioBuscarProducto : Form
     {
+        private FormularioMantenedorOrdenCompra FrmOrdenCompra;
+        private FromularioVentas FrmVentas;
         public FormularioBuscarProducto(FormularioMantenedorOrdenCompra parametro)
         {
             InitializeComponent();
@@ -68,11 +70,6 @@ namespace AppPrincipal
             }
         }
 
-
-        private FormularioMantenedorOrdenCompra FrmOrdenCompra;
-        private FromularioVentas FrmVentas;
-
-
         //SELECCIONAMOS UNA FILA Y LOS DATOS SE CARGAN EN EL FORMULARIO CORRESPONDIENTE
         private void DgMostrarProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -83,7 +80,7 @@ namespace AppPrincipal
                     FrmVentas.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
                     FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
                     FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[10].Value.ToString();
+                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[4].Value.ToString();
                     this.Close();
 
 
@@ -145,23 +142,32 @@ namespace AppPrincipal
                 FrmVentas = parametro;
                 try
                 {
+                try
+                {
                     ServicioProducto serp = new ServicioProducto();
                     DgMostrarProductos.DataSource = serp.GetRESTData();
 
                     //OCULTAR COLUMNA
-                    //this.DgMostrarProductos.Columns[0].Visible = false;
-                    //this.DgMostrarProductos.Columns[6].Visible = false;
-                    //this.DgMostrarProductos.Columns[8].Visible = false;
+                    this.DgMostrarProductos.Columns[0].Visible = false;
+                    this.DgMostrarProductos.Columns[6].Visible = false;
+                    this.DgMostrarProductos.Columns[8].Visible = false;
+                    this.DgMostrarProductos.Columns[7].Visible = false;
 
-                    //DA NOMBRE A LAS COLUMNAS
-                    //this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
-                    //this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
-                    //this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
-                    //this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
-                    //this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
-                    //this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-                    //this.DgMostrarProductos.Columns[10].HeaderText = "PRECIO";
+                   /* //DA NOMBRE A LAS COLUMNAS
+                    this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
+                    this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
+                    this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
+                    this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
+                    this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
+                    this.DgMostrarProductos.Columns[9].HeaderText = "DESCRIPCION";
+                    this.DgMostrarProductos.Columns[10].HeaderText = "PRECIO";
+                    */
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                }
+            }
                 catch (Exception)
                 {
                     MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");

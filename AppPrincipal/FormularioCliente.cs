@@ -45,7 +45,7 @@ namespace AppPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE CLIENTES");
+                MessageBox.Show("NO HAY CLIENTES PARA MOSTRAR");
             }
         }
 

@@ -64,9 +64,10 @@
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtCodigo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.TxtCodigo.Location = new System.Drawing.Point(32, 115);
             this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.ReadOnly = true;
             this.TxtCodigo.Size = new System.Drawing.Size(212, 20);
             this.TxtCodigo.TabIndex = 2;
             // 
