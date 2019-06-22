@@ -59,7 +59,10 @@ namespace AppPrincipal
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             FormularioMantenedorCliente fmc = new FormularioMantenedorCliente();
-            fmc.ShowDialog();
+            if (fmc.ShowDialog() == DialogResult.OK)
+            {
+                ListarCliente();
+            }
         }
 
         //BOTON EDITAR/METODO PARA SELECCIONAR UN CLIENTE DE LA LISTA Y EDITARLO
@@ -80,11 +83,10 @@ namespace AppPrincipal
                     fmc.TxtTelefono2.Text = DGMostrarListaCliente.CurrentRow.Cells[6].Value.ToString();
                     fmc.TxtTelefono3.Text = DGMostrarListaCliente.CurrentRow.Cells[7].Value.ToString();
 
-                    fmc.ShowDialog();
-
-                    ServicioCliente servp = new ServicioCliente();
-                    DGMostrarListaCliente.DataSource = servp.ListarClientes();
-                    DGMostrarListaCliente.Refresh();
+                    if (fmc.ShowDialog() == DialogResult.OK)
+                    {
+                        ListarCliente();
+                    }
                 }
                 else
                 {

@@ -76,7 +76,7 @@ namespace AppPrincipal
 
                 List<CargarCombobox> lista = new List<CargarCombobox>();
                 lista.Add(new CargarCombobox() { Nombre = "RECEPCIONADO", Id = "R" });
-                lista.Add(new CargarCombobox() { Nombre = "RECHAZADO", Id = "RR" });
+                lista.Add(new CargarCombobox() { Nombre = "CANCELADO", Id = "C" });
 
                 CbxEstadoRecepcion.DataSource = lista;
 

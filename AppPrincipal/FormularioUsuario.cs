@@ -61,7 +61,10 @@ namespace AppPrincipal
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             FormularioMantenedorUsuario fmu = new FormularioMantenedorUsuario();
-            fmu.ShowDialog();
+            if (fmu.ShowDialog() == DialogResult.OK)
+            {
+                Listaempleado();
+            }
         }
 
         //CREAR CARGO
@@ -83,6 +86,7 @@ namespace AppPrincipal
             {
                 ServicioEmpleado ser = new ServicioEmpleado();
                 FormularioMantenedorEmpleado fmp = new FormularioMantenedorEmpleado();
+
                 if (DGlistadoUsuario.SelectedRows.Count > 0)
                 {
                     fmp.TxtIdEmpleado.Text = DGlistadoUsuario.CurrentRow.Cells[8].Value.ToString();
@@ -96,10 +100,10 @@ namespace AppPrincipal
                     fmp.TxtTelefono2.Text = DGlistadoUsuario.CurrentRow.Cells[6].Value.ToString();
                     fmp.TxtTelefono3.Text = DGlistadoUsuario.CurrentRow.Cells[7].Value.ToString();
 
-                    fmp.ShowDialog();
-
-                    DGlistadoUsuario.DataSource = ser.ListaEmpleados();
-                    DGlistadoUsuario.Refresh();
+                    if (fmp.ShowDialog() == DialogResult.OK)
+                    {
+                        Listaempleado();
+                    }
                 }
                 else
                 {

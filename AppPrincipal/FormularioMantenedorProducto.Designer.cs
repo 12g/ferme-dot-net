@@ -54,10 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.IdProducto = new System.Windows.Forms.Label();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
-            this.LblIdTipoProducto = new System.Windows.Forms.Label();
-            this.TxtIdTipoProducto = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtDescripcionTipoProducto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -137,9 +133,9 @@
             // 
             this.TxtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPrecio.Location = new System.Drawing.Point(40, 200);
+            this.TxtPrecio.Location = new System.Drawing.Point(42, 196);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(138, 20);
+            this.TxtPrecio.Size = new System.Drawing.Size(116, 20);
             this.TxtPrecio.TabIndex = 12;
             this.TxtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio_KeyPress);
             // 
@@ -166,10 +162,10 @@
             // TxtDescripcion
             // 
             this.TxtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(243, 140);
+            this.TxtDescripcion.Location = new System.Drawing.Point(243, 137);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(261, 197);
+            this.TxtDescripcion.Size = new System.Drawing.Size(261, 179);
             this.TxtDescripcion.TabIndex = 17;
             // 
             // LblDescripcion
@@ -186,7 +182,7 @@
             // 
             this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(68, 414);
+            this.BtnGuardar.Location = new System.Drawing.Point(57, 350);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(135, 41);
             this.BtnGuardar.TabIndex = 19;
@@ -198,7 +194,7 @@
             // 
             this.BtnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(301, 414);
+            this.BtnCancelar.Location = new System.Drawing.Point(290, 350);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(121, 41);
             this.BtnCancelar.TabIndex = 20;
@@ -210,9 +206,9 @@
             // 
             this.TxtStockActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtStockActual.Location = new System.Drawing.Point(27, 246);
+            this.TxtStockActual.Location = new System.Drawing.Point(27, 244);
             this.TxtStockActual.Name = "TxtStockActual";
-            this.TxtStockActual.Size = new System.Drawing.Size(156, 20);
+            this.TxtStockActual.Size = new System.Drawing.Size(153, 20);
             this.TxtStockActual.TabIndex = 21;
             this.TxtStockActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtStockActual_KeyPress);
             // 
@@ -220,7 +216,7 @@
             // 
             this.TxtStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtStockCritico.Location = new System.Drawing.Point(27, 298);
+            this.TxtStockCritico.Location = new System.Drawing.Point(27, 296);
             this.TxtStockCritico.Name = "TxtStockCritico";
             this.TxtStockCritico.Size = new System.Drawing.Size(153, 20);
             this.TxtStockCritico.TabIndex = 22;
@@ -279,7 +275,7 @@
             this.LblDescripcionObligatoria.AutoSize = true;
             this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(318, 119);
+            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(320, 121);
             this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
             this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
             this.LblDescripcionObligatoria.TabIndex = 29;
@@ -315,54 +311,12 @@
             this.TxtIdProducto.TabIndex = 32;
             this.TxtIdProducto.Visible = false;
             // 
-            // LblIdTipoProducto
-            // 
-            this.LblIdTipoProducto.AutoSize = true;
-            this.LblIdTipoProducto.Location = new System.Drawing.Point(24, 336);
-            this.LblIdTipoProducto.Name = "LblIdTipoProducto";
-            this.LblIdTipoProducto.Size = new System.Drawing.Size(80, 13);
-            this.LblIdTipoProducto.TabIndex = 33;
-            this.LblIdTipoProducto.Text = "IdTipoProducto";
-            this.LblIdTipoProducto.Visible = false;
-            // 
-            // TxtIdTipoProducto
-            // 
-            this.TxtIdTipoProducto.Location = new System.Drawing.Point(27, 352);
-            this.TxtIdTipoProducto.Name = "TxtIdTipoProducto";
-            this.TxtIdTipoProducto.ReadOnly = true;
-            this.TxtIdTipoProducto.Size = new System.Drawing.Size(153, 20);
-            this.TxtIdTipoProducto.TabIndex = 34;
-            this.TxtIdTipoProducto.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(240, 336);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "DescripcionTipoProducto";
-            this.label2.Visible = false;
-            // 
-            // TxtDescripcionTipoProducto
-            // 
-            this.TxtDescripcionTipoProducto.Location = new System.Drawing.Point(243, 352);
-            this.TxtDescripcionTipoProducto.Name = "TxtDescripcionTipoProducto";
-            this.TxtDescripcionTipoProducto.ReadOnly = true;
-            this.TxtDescripcionTipoProducto.Size = new System.Drawing.Size(153, 20);
-            this.TxtDescripcionTipoProducto.TabIndex = 36;
-            this.TxtDescripcionTipoProducto.Visible = false;
-            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 502);
+            this.ClientSize = new System.Drawing.Size(520, 438);
             this.ControlBox = false;
-            this.Controls.Add(this.TxtDescripcionTipoProducto);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtIdTipoProducto);
-            this.Controls.Add(this.LblIdTipoProducto);
             this.Controls.Add(this.TxtIdProducto);
             this.Controls.Add(this.IdProducto);
             this.Controls.Add(this.label1);
@@ -427,9 +381,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label IdProducto;
         public System.Windows.Forms.TextBox TxtIdProducto;
-        private System.Windows.Forms.Label LblIdTipoProducto;
-        public System.Windows.Forms.TextBox TxtIdTipoProducto;
-        private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox TxtDescripcionTipoProducto;
     }
 }

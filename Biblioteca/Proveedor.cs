@@ -16,8 +16,7 @@ namespace Biblioteca
         public int fonoPersona1 { get; set; }
         public int fonoPersona2 { get; set; }
         public int fonoPersona3 { get; set; }
-        public int? idProveedor { get; set; }
-        public object razonSocialProveedor { get; set; }
-        public object idRubro { get; set; }
+        public int idProveedor { get; set; }
+        public string razonSocialProveedor { get; set; }
     }
 }

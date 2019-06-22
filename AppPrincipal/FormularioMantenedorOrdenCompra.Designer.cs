@@ -403,6 +403,7 @@
             this.DgListadoProductoOC.Location = new System.Drawing.Point(16, 264);
             this.DgListadoProductoOC.Name = "DgListadoProductoOC";
             this.DgListadoProductoOC.ReadOnly = true;
+            this.DgListadoProductoOC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgListadoProductoOC.Size = new System.Drawing.Size(852, 199);
             this.DgListadoProductoOC.TabIndex = 37;
             this.DgListadoProductoOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListadoProductoOC_CellClick);

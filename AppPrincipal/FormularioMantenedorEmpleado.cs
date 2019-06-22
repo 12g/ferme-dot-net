@@ -248,12 +248,9 @@ namespace AppPrincipal
 
                 serv.CrearEmpleado(emp);
 
-                FormularioUsuario form = new FormularioUsuario();
-                form.DGlistadoUsuario.DataSource = serv.ListaEmpleados();
-                form.DGlistadoUsuario.Refresh();
+                this.DialogResult = DialogResult.OK;
 
-
-                MessageBox.Show("EMPLEADO GUARDADO");
+                 MessageBox.Show("EMPLEADO GUARDADO");
 
                 Limpiar();
 

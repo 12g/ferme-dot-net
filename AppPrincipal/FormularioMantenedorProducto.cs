@@ -19,7 +19,10 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdProducto.Text = "0";
-           
+
+            visitCounter++; // Increase each time a form is loaded
+            TxtCodigo.Text = visitCounter.ToString("0"); // 
+
         }
       
         //EVENTO CANELAR Y SALIR DEL MENU CREAR PRODUCTO
@@ -32,6 +35,10 @@ namespace AppPrincipal
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
+
+
+                    FormularioProducto P = new FormularioProducto();
+                    P.DGlistadeproductos.Refresh();
                 }
             }
             catch
@@ -48,7 +55,7 @@ namespace AppPrincipal
             TxtPrecio.Text = "";
             TxtStockActual.Text = "";
             TxtStockCritico.Text = "";
-            TxtIdProducto.Text = "";            
+            TxtIdProducto.Text = "";
         }
 
 
@@ -145,7 +152,10 @@ namespace AppPrincipal
                     pro.stockCriticoProducto = int.Parse(TxtStockCritico.Text);
 
                     CargarComBobox();
-                    serp.CrearProducto(pro);                   
+                    serp.CrearProducto(pro);
+
+                    this.DialogResult = DialogResult.OK;
+
                     MessageBox.Show("PRODUCTO GUARDADO");
 
                     Limpiar();
@@ -179,8 +189,7 @@ namespace AppPrincipal
 
         private void FormularioMantenedorProducto_Load(object sender, EventArgs e)
         {
-            visitCounter++; // Increase each time a form is loaded
-            TxtCodigo.Text = visitCounter.ToString("0"); // 
+           
             CargarComBobox();
         }
 

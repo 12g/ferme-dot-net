@@ -18,12 +18,11 @@ namespace AppPrincipal
 {
     public partial class FormularioProveedor : Form
     {
-        public static FormularioProveedor f1;
+     
         public FormularioProveedor()
         {
             InitializeComponent();
-            ListarProveedor();
-            FormularioProveedor.f1 = this;
+            ListarProveedor();  
         }
 
 
@@ -50,7 +49,6 @@ namespace AppPrincipal
                 this.DgMostrarListaProveedor.Columns[6].HeaderText = "TELEFONO 2";
                 this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
                 this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL                           ";
-                FormularioProveedor.f1 = this;
 
             }
             catch (Exception)
@@ -72,10 +70,10 @@ namespace AppPrincipal
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
-            fmp.ShowDialog();
-            ServicioProveedores ser = new ServicioProveedores();
-            DgMostrarListaProveedor.DataSource = ser.ListadoProveedor();
-            DgMostrarListaProveedor.Refresh();
+            if (fmp.ShowDialog() == DialogResult.OK)
+            {
+                ListarProveedor();
+            }
         }
 
         //BOTON EDITAR/METODO PARA SELECCIONAR UN PRODUCTO DE LA LISTA Y EDITARLO
@@ -94,14 +92,11 @@ namespace AppPrincipal
                     fmp.TxtTelefono1.Text = DgMostrarListaProveedor.CurrentRow.Cells[5].Value.ToString();
                     fmp.TxtTelefono2.Text = DgMostrarListaProveedor.CurrentRow.Cells[6].Value.ToString();
                     fmp.TxtTelefono3.Text = DgMostrarListaProveedor.CurrentRow.Cells[7].Value.ToString();
-                    ServicioProveedores ser = new ServicioProveedores();
-                    DgMostrarListaProveedor.DataSource = ser.ListadoProveedor();
-                    DgMostrarListaProveedor.Refresh();
-                    fmp.ShowDialog();
-                    ServicioProveedores serp = new ServicioProveedores();
-                    DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
-                    FormularioProveedor.f1 = this;
 
+                    if (fmp.ShowDialog() == DialogResult.OK)
+                    {
+                        ListarProveedor();
+                    }
                 }
                 else
                 {

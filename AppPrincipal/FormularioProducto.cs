@@ -19,7 +19,7 @@ namespace AppPrincipal
     public partial class FormularioProducto : Form
     {
        
-   
+        
         public FormularioProducto()
         {
             InitializeComponent();
@@ -35,7 +35,10 @@ namespace AppPrincipal
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             FormularioMantenedorProducto frp = new FormularioMantenedorProducto();
-           frp.ShowDialog();
+            if (frp.ShowDialog() == DialogResult.OK)
+            {
+                ListaProducto();
+            }
         }
 
         //BOTON EDITAR/METODO PARA SELECCIONAR UN PRODUCTO DE LA LISTA Y EDITARLO
@@ -44,17 +47,21 @@ namespace AppPrincipal
             try
             {
                 FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
-                if (DGlistadeproductos.SelectedRows.Count > 0)
+               
+                    if (DGlistadeproductos.SelectedRows.Count > 0)
+                    {
+                        fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells["idProducto"].Value.ToString();
+                        fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
+                        fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
+                        fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
+                        fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells["stockActualProducto"].Value.ToString();
+                        fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells["stockCriticoProducto"].Value.ToString();
+                        fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
+                        fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
+                    }
+                if (fmp.ShowDialog() == DialogResult.OK)
                 {
-                    fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells["idProducto"].Value.ToString();
-                    fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
-                    fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
-                    fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
-                    fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells["stockActualProducto"].Value.ToString();
-                    fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells["stockCriticoProducto"].Value.ToString();
-                    fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
-                    fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
-                    fmp.ShowDialog();
+                    ListaProducto();
                 }
                 else
                 {
@@ -82,7 +89,7 @@ namespace AppPrincipal
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
 
-                //OCULTA LAS COLUMNAS
+               //OCULTA LAS COLUMNAS
                 this.DGlistadeproductos.Columns["idProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idTipoProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idFamiliaProducto"].Visible = false;

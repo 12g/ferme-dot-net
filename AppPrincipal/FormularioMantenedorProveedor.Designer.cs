@@ -306,7 +306,6 @@
             this.TxtIdProveedor.ReadOnly = true;
             this.TxtIdProveedor.Size = new System.Drawing.Size(127, 20);
             this.TxtIdProveedor.TabIndex = 29;
-            this.TxtIdProveedor.Visible = false;
             // 
             // FormularioMantenedorProveedor
             // 

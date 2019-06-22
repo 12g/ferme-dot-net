@@ -33,10 +33,7 @@ namespace AppPrincipal
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
-                    //acceso a la instancia del form1:
-                    FormularioProveedor.f1.Text = "xx";
                 }
-
             }
             catch
             {
@@ -55,7 +52,6 @@ namespace AppPrincipal
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
             TxtIdProveedor.Text = "";
-            FormularioProveedor.f1.Text = "xx";
         }
 
         //BOTON GUARDAR
@@ -113,7 +109,6 @@ namespace AppPrincipal
                     ServicioProveedores sp = new ServicioProveedores();
 
                     pro.idProveedor = int.Parse(TxtIdProveedor.Text);
-                    pro.idRubro = CbxRubro.SelectedIndex;
                     pro.rutPersona = TxtRut.Text;
                     pro.razonSocialProveedor = TxtRazonSocial.Text;
                     pro.nombreCompletoPersona = TxtRazonSocial.Text;
@@ -125,15 +120,12 @@ namespace AppPrincipal
 
                     sp.CrearProveedor(pro);
 
-                    FormularioProveedor fp = new FormularioProveedor();
-                    ServicioProveedores serp = new ServicioProveedores();
-                    fp.DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
-                    FormularioProveedor.f1.Text = "xx";
+                    this.DialogResult = DialogResult.OK;
 
                     MessageBox.Show("PROVEEDOR GUARDARDO");
 
                     Limpiar();
-                    FormularioProveedor.f1.Text = "xx";
+                  
                 }
 
             }

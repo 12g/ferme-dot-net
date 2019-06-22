@@ -14,18 +14,17 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorFamiliaProducto : Form
     {
+        private static int visitCounter = 0;
         public FormularioMantenedorFamiliaProducto()
         {
             InitializeComponent();
-            NumCorrelativo();
+            visitCounter++; // Increase each time a form is loaded
+            TxtCodigo.Text = visitCounter.ToString("01"); // 
+
         }
 
 
-        private void NumCorrelativo()
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
-        }
+
         //BOTON CANCELAR
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
@@ -105,7 +104,10 @@ namespace AppPrincipal
 
                     ser.CrearFamiliaProducto(fp);
 
-                    MessageBox.Show("GUARDADO");
+                    FormularioProducto P = new FormularioProducto();
+                    P.DGlistadeproductos.Refresh();
+
+                    MessageBox.Show("FAMILIA PRODUCTO GUARDADA EXITOSAMENTE");
 
                     Limpiar();
 
