@@ -55,11 +55,6 @@ namespace AppPrincipal
                     fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
                     fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
                     fmp.ShowDialog();
-
-                    ServicioProducto servp = new ServicioProducto();
-                    DGlistadeproductos.DataSource = null;
-                    DGlistadeproductos.DataSource = servp.GetRESTData();
-                    DGlistadeproductos.Refresh();
                 }
                 else
                 {
@@ -98,7 +93,7 @@ namespace AppPrincipal
                 this.DGlistadeproductos.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
                 this.DGlistadeproductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION PRODUCTO";
                 this.DGlistadeproductos.Columns["precioProducto"].HeaderText = "PRECIO";
-                this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText = "STOCK ACTUAL";
+                this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText ="STOCK ACTUAL";
                 this.DGlistadeproductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
                 this.DGlistadeproductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
 

@@ -165,7 +165,7 @@ namespace AppPrincipal
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
                     oc.estadoOrdenCompra = Convert.ToString(CbxEstadoRecepcion.Text);
-                    oc.idEmpleado = Convert.ToInt32(TxtEmpleado.Text);
+                    oc.idEmpleado = Convert.ToInt32(TxtIdEmpleado.Text);
                     oc.fechaSolicitudOrdenCompra = DpFechaCreacion.Text;
                     oc.fechaRecepcionOrdenCompra = DpFechaRecepcion.Text;
 
@@ -192,6 +192,7 @@ namespace AppPrincipal
                 DpFechaRecepcion.Value = DateTime.Now;
                 TxtEmpleado.Text = "";
                 TxtNumero.Text = "";
+                TxtIdEmpleado.Text = "";
 
                 DgListadoRecepcion.Rows.Clear();
                 DgListadoRecepcion.Refresh();

@@ -26,12 +26,10 @@ namespace Biblioteca
 
         [DisplayName("FECHA RECEPCION")]
         public string fechaRecepcionOrdenCompra { get; set; }
+
         public List<DetalleOrdenCompra> detallesOrdenCompra { get; set; }
+        public List<DetalleOrdenCVista> detallesOrdenVista { get; set; }
 
-
-
-
-       
 
     }
 }

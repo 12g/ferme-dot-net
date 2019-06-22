@@ -189,7 +189,7 @@ namespace AppPrincipal
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
                     oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
-                    oc.idEmpleado = int.Parse(TxtIdEmplado.Text);
+                    oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue); ;
                     oc.nombrePersonaEmpleado = CbEmpleado.Text;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
@@ -197,9 +197,6 @@ namespace AppPrincipal
                     oc.detallesOrdenCompra = detalleOC;
                    
                     ser.CrearOrdenCompra(oc);
-
-                   
-
 
                     LimpiarPantalla();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
@@ -253,8 +250,8 @@ namespace AppPrincipal
 
                             detalle.Add(dv);
                             DetalleOrdenCompra det = new DetalleOrdenCompra();
-                            det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
-                            det.idOrdenCompra = int.Parse(TxtNumero.Text);
+                            //det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
+                            //det.idOrdenCompra = int.Parse(TxtNumero.Text);
                             det.idProducto = int.Parse(TxtIdProducto.Text);
                             det.codigoProducto = long.Parse(TxtCodProducto.Text);
                             det.nombreProducto = TxtNombreProducto.Text;

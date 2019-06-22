@@ -50,8 +50,9 @@
             this.lblTitulomenu = new System.Windows.Forms.Label();
             this.lblTituloMenu2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.DpFechaCreacion = new System.Windows.Forms.DateTimePicker();
+            this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
+            this.LblIdEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgListadoRecepcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -272,16 +273,6 @@
             this.label4.TabIndex = 54;
             this.label4.Text = "R : recepcionado";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(546, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "RR : rechazado";
-            // 
             // DpFechaCreacion
             // 
             this.DpFechaCreacion.Enabled = false;
@@ -291,13 +282,33 @@
             this.DpFechaCreacion.Size = new System.Drawing.Size(246, 20);
             this.DpFechaCreacion.TabIndex = 56;
             // 
+            // TxtIdEmpleado
+            // 
+            this.TxtIdEmpleado.Location = new System.Drawing.Point(437, 196);
+            this.TxtIdEmpleado.Name = "TxtIdEmpleado";
+            this.TxtIdEmpleado.ReadOnly = true;
+            this.TxtIdEmpleado.Size = new System.Drawing.Size(247, 20);
+            this.TxtIdEmpleado.TabIndex = 57;
+            // 
+            // LblIdEmpleado
+            // 
+            this.LblIdEmpleado.AutoSize = true;
+            this.LblIdEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdEmpleado.Location = new System.Drawing.Point(434, 180);
+            this.LblIdEmpleado.Name = "LblIdEmpleado";
+            this.LblIdEmpleado.Size = new System.Drawing.Size(73, 13);
+            this.LblIdEmpleado.TabIndex = 58;
+            this.LblIdEmpleado.Text = "IdEmpleado";
+            this.LblIdEmpleado.Visible = false;
+            // 
             // FormularioRecepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.LblIdEmpleado);
+            this.Controls.Add(this.TxtIdEmpleado);
             this.Controls.Add(this.DpFechaCreacion);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitulomenu);
@@ -348,7 +359,8 @@
         public System.Windows.Forms.ComboBox CbxEstadoRecepcion;
         public System.Windows.Forms.TextBox TxtEmpleado;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         public System.Windows.Forms.DateTimePicker DpFechaCreacion;
+        public System.Windows.Forms.TextBox TxtIdEmpleado;
+        private System.Windows.Forms.Label LblIdEmpleado;
     }
 }

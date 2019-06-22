@@ -30,17 +30,16 @@ namespace AppPrincipal
             this.DgMostrarProductos.Columns[0].Visible = false;
             this.DgMostrarProductos.Columns[6].Visible = false;
             this.DgMostrarProductos.Columns[8].Visible = false;
+            this.DgMostrarProductos.Columns[3].Visible = false;
+            this.DgMostrarProductos.Columns[4].Visible = false;
+            this.DgMostrarProductos.Columns[5].Visible = false;
+            this.DgMostrarProductos.Columns[7].Visible = false;
+            this.DgMostrarProductos.Columns[9].Visible = false;
+            this.DgMostrarProductos.Columns[10].Visible = false;
 
             //DA NOMBRE A LAS COLUMNAS
             this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
             this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
-            this.DgMostrarProductos.Columns[3].HeaderText = "DESCRIPCION";
-            this.DgMostrarProductos.Columns[4].HeaderText = "STOCK ACTUAL";
-            this.DgMostrarProductos.Columns[5].HeaderText = "STOCK CRITICO";
-            this.DgMostrarProductos.Columns[7].HeaderText = "TIPO PRODUCTO";
-            this.DgMostrarProductos.Columns[9].HeaderText = "DESCRIPCION";
-            this.DgMostrarProductos.Columns[10].HeaderText = "PRECIO";
-            
           }
             catch (Exception)
             {
