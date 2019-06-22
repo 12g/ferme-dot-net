@@ -35,7 +35,7 @@ namespace AppPrincipal
             {
                 DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
 
-                //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
+               //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
                 this.DgMostrarListaProveedor.Columns[0].Visible = false;
                 this.DgMostrarListaProveedor.Columns[1].Visible = false;
                 this.DgMostrarListaProveedor.Columns[8].Visible = false;
@@ -48,7 +48,7 @@ namespace AppPrincipal
                 this.DgMostrarListaProveedor.Columns[5].HeaderText = "TELEFONO 1";
                 this.DgMostrarListaProveedor.Columns[6].HeaderText = "TELEFONO 2";
                 this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
-                this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL                           ";
+                this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL ";
 
             }
             catch (Exception)
@@ -84,6 +84,7 @@ namespace AppPrincipal
                 FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
                 if (DgMostrarListaProveedor.SelectedRows.Count > 0)
                 {
+                    fmp.TxtIdPersona.Text = DgMostrarListaProveedor.CurrentRow.Cells[0].Value.ToString();
                     fmp.TxtIdProveedor.Text = DgMostrarListaProveedor.CurrentRow.Cells[8].Value.ToString();
                     fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
                     fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[2].Value.ToString();

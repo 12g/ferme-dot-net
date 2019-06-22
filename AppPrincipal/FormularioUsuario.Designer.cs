@@ -153,7 +153,7 @@
             this.DGlistadoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGlistadoUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGlistadoUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGlistadoUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.DGlistadoUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGlistadoUsuario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -193,7 +193,6 @@
             this.DGlistadoUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGlistadoUsuario.Size = new System.Drawing.Size(834, 418);
             this.DGlistadoUsuario.TabIndex = 15;
-            this.DGlistadoUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistadoUsuario_CellContentClick);
             // 
             // button1
             // 

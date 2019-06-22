@@ -54,6 +54,8 @@
             this.LblTelefono3 = new System.Windows.Forms.Label();
             this.IdProveedor = new System.Windows.Forms.Label();
             this.TxtIdProveedor = new System.Windows.Forms.TextBox();
+            this.TxtIdPersona = new System.Windows.Forms.TextBox();
+            this.LblIdPersona = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -306,6 +308,26 @@
             this.TxtIdProveedor.ReadOnly = true;
             this.TxtIdProveedor.Size = new System.Drawing.Size(127, 20);
             this.TxtIdProveedor.TabIndex = 29;
+            this.TxtIdProveedor.Visible = false;
+            // 
+            // TxtIdPersona
+            // 
+            this.TxtIdPersona.Location = new System.Drawing.Point(347, 37);
+            this.TxtIdPersona.Name = "TxtIdPersona";
+            this.TxtIdPersona.ReadOnly = true;
+            this.TxtIdPersona.Size = new System.Drawing.Size(127, 20);
+            this.TxtIdPersona.TabIndex = 30;
+            this.TxtIdPersona.Visible = false;
+            // 
+            // LblIdPersona
+            // 
+            this.LblIdPersona.AutoSize = true;
+            this.LblIdPersona.Location = new System.Drawing.Point(344, 21);
+            this.LblIdPersona.Name = "LblIdPersona";
+            this.LblIdPersona.Size = new System.Drawing.Size(55, 13);
+            this.LblIdPersona.TabIndex = 31;
+            this.LblIdPersona.Text = "IdPersona";
+            this.LblIdPersona.Visible = false;
             // 
             // FormularioMantenedorProveedor
             // 
@@ -313,6 +335,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.LblIdPersona);
+            this.Controls.Add(this.TxtIdPersona);
             this.Controls.Add(this.TxtIdProveedor);
             this.Controls.Add(this.IdProveedor);
             this.Controls.Add(this.LblTelefono3);
@@ -377,5 +401,7 @@
         public System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label IdProveedor;
         public System.Windows.Forms.TextBox TxtIdProveedor;
+        public System.Windows.Forms.TextBox TxtIdPersona;
+        private System.Windows.Forms.Label LblIdPersona;
     }
 }

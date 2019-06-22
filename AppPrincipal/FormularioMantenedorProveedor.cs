@@ -18,6 +18,7 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdProveedor.Text = "0";
+            TxtIdPersona.Text = "0";
         }
        
 
@@ -52,6 +53,7 @@ namespace AppPrincipal
             TxtTelefono2.Text = "0";
             TxtTelefono3.Text = "0";
             TxtIdProveedor.Text = "";
+            TxtIdPersona.Text = "";
         }
 
         //BOTON GUARDAR
@@ -108,6 +110,7 @@ namespace AppPrincipal
                     Proveedor pro = new Proveedor();
                     ServicioProveedores sp = new ServicioProveedores();
 
+                    pro.idPersona = int.Parse(TxtIdPersona.Text);
                     pro.idProveedor = int.Parse(TxtIdProveedor.Text);
                     pro.rutPersona = TxtRut.Text;
                     pro.razonSocialProveedor = TxtRazonSocial.Text;

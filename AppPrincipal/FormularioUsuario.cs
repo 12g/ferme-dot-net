@@ -20,7 +20,6 @@ namespace AppPrincipal
             Listaempleado();
         }
 
-
         //CARGA LISTA EMPLEADO
         public void Listaempleado()
         {
@@ -61,10 +60,7 @@ namespace AppPrincipal
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             FormularioMantenedorUsuario fmu = new FormularioMantenedorUsuario();
-            if (fmu.ShowDialog() == DialogResult.OK)
-            {
-                Listaempleado();
-            }
+            fmu.ShowDialog();
         }
 
         //CREAR CARGO
@@ -78,8 +74,12 @@ namespace AppPrincipal
         private void BtnCrearEmpleado_Click(object sender, EventArgs e)
         {
             FormularioMantenedorEmpleado fme = new FormularioMantenedorEmpleado();
-            fme.ShowDialog();
+            if (fme.ShowDialog() == DialogResult.OK)
+            {
+                Listaempleado();
+            }
         }
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             try
@@ -146,12 +146,6 @@ namespace AppPrincipal
                 ServicioEmpleado ser = new ServicioEmpleado();
                 DGlistadoUsuario.DataSource = ser.ListaEmpleados();
             }
-        }
-
-        private void DGlistadoUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Listaempleado();
-            ServicioEmpleado serv = new ServicioEmpleado();
         }
     }
 }
