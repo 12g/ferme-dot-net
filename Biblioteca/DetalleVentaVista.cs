@@ -8,7 +8,7 @@ namespace Biblioteca
 {
    public class DetalleVentaVista
     {
-        public long CODIGO { get; set; }
+        public string CODIGO { get; set; }
         public string NOMBRE { get; set; }
         public int CANTIDAD { get; set; }
         public int MONTO { get; set; }

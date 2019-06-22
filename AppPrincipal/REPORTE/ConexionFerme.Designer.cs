@@ -753,6 +753,8 @@ namespace AppPrincipal.REPORTE {
             
             private global::System.Data.DataColumn columnDESCRIPCION;
             
+            private global::System.Data.DataColumn columnCODIGO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataProductoDataTable() {
@@ -844,6 +846,14 @@ namespace AppPrincipal.REPORTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CODIGOColumn {
+                get {
+                    return this.columnCODIGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -879,7 +889,7 @@ namespace AppPrincipal.REPORTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataProductoRow AddDataProductoRow(int ID_PRODUCTO, string NOMBRE_TIPO, string NOMBRE, int STOCK_ACTUAL, int STOCK_CRITICO, long PRECIO, string DESCRIPCION) {
+            public DataProductoRow AddDataProductoRow(int ID_PRODUCTO, string NOMBRE_TIPO, string NOMBRE, int STOCK_ACTUAL, int STOCK_CRITICO, long PRECIO, string DESCRIPCION, string CODIGO) {
                 DataProductoRow rowDataProductoRow = ((DataProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_PRODUCTO,
@@ -888,7 +898,8 @@ namespace AppPrincipal.REPORTE {
                         STOCK_ACTUAL,
                         STOCK_CRITICO,
                         PRECIO,
-                        DESCRIPCION};
+                        DESCRIPCION,
+                        CODIGO};
                 rowDataProductoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataProductoRow);
                 return rowDataProductoRow;
@@ -918,6 +929,7 @@ namespace AppPrincipal.REPORTE {
                 this.columnSTOCK_CRITICO = base.Columns["STOCK_CRITICO"];
                 this.columnPRECIO = base.Columns["PRECIO"];
                 this.columnDESCRIPCION = base.Columns["DESCRIPCION"];
+                this.columnCODIGO = base.Columns["CODIGO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -937,6 +949,8 @@ namespace AppPrincipal.REPORTE {
                 base.Columns.Add(this.columnPRECIO);
                 this.columnDESCRIPCION = new global::System.Data.DataColumn("DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDESCRIPCION);
+                this.columnCODIGO = new global::System.Data.DataColumn("CODIGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCODIGO);
                 this.columnID_PRODUCTO.AllowDBNull = false;
                 this.columnNOMBRE_TIPO.AllowDBNull = false;
                 this.columnNOMBRE_TIPO.MaxLength = 50;
@@ -946,6 +960,8 @@ namespace AppPrincipal.REPORTE {
                 this.columnSTOCK_CRITICO.AllowDBNull = false;
                 this.columnPRECIO.AllowDBNull = false;
                 this.columnDESCRIPCION.MaxLength = 300;
+                this.columnCODIGO.AllowDBNull = false;
+                this.columnCODIGO.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1906,6 +1922,17 @@ namespace AppPrincipal.REPORTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CODIGO {
+                get {
+                    return ((string)(this[this.tableDataProducto.CODIGOColumn]));
+                }
+                set {
+                    this[this.tableDataProducto.CODIGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDESCRIPCIONNull() {
                 return this.IsNull(this.tableDataProducto.DESCRIPCIONColumn);
             }
@@ -2609,6 +2636,7 @@ ORDER BY FERME.ORDEN_COMPRA.ID_ORDEN_COMPRA";
             tableMapping.ColumnMappings.Add("STOCK_CRITICO", "STOCK_CRITICO");
             tableMapping.ColumnMappings.Add("PRECIO", "PRECIO");
             tableMapping.ColumnMappings.Add("DESCRIPCION", "DESCRIPCION");
+            tableMapping.ColumnMappings.Add("CODIGO", "CODIGO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2626,7 +2654,7 @@ ORDER BY FERME.ORDEN_COMPRA.ID_ORDEN_COMPRA";
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        FERME.PRODUCTO.ID_PRODUCTO, FERME.TIPO_PRODUCTO.NOMBRE_TIPO, FERME.PRODUCTO.NOMBRE, FERME.PRODUCTO.STOCK_ACTUAL, 
-                         FERME.PRODUCTO.STOCK_CRITICO, FERME.PRODUCTO.PRECIO, FERME.PRODUCTO.DESCRIPCION
+                         FERME.PRODUCTO.STOCK_CRITICO, FERME.PRODUCTO.PRECIO, FERME.PRODUCTO.DESCRIPCION, FERME.PRODUCTO.CODIGO
 FROM            FERME.PRODUCTO INNER JOIN
                          FERME.TIPO_PRODUCTO ON FERME.PRODUCTO.ID_TIPO_PRODUCTO = FERME.TIPO_PRODUCTO.ID_TIPO_PRODUCTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

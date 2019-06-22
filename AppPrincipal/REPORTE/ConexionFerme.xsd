@@ -40,11 +40,11 @@ ORDER BY FERME.ORDEN_COMPRA.ID_ORDEN_COMPRA</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataProductoTableAdapter" GeneratorDataComponentClassName="DataProductoTableAdapter" Name="DataProducto" UserDataComponentName="DataProductoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        FERME.PRODUCTO.ID_PRODUCTO, FERME.TIPO_PRODUCTO.NOMBRE_TIPO, FERME.PRODUCTO.NOMBRE, FERME.PRODUCTO.STOCK_ACTUAL, 
-                         FERME.PRODUCTO.STOCK_CRITICO, FERME.PRODUCTO.PRECIO, FERME.PRODUCTO.DESCRIPCION
+                         FERME.PRODUCTO.STOCK_CRITICO, FERME.PRODUCTO.PRECIO, FERME.PRODUCTO.DESCRIPCION, FERME.PRODUCTO.CODIGO
 FROM            FERME.PRODUCTO INNER JOIN
                          FERME.TIPO_PRODUCTO ON FERME.PRODUCTO.ID_TIPO_PRODUCTO = FERME.TIPO_PRODUCTO.ID_TIPO_PRODUCTO</CommandText>
                     <Parameters />
@@ -60,6 +60,7 @@ FROM            FERME.PRODUCTO INNER JOIN
               <Mapping SourceColumn="STOCK_CRITICO" DataSetColumn="STOCK_CRITICO" />
               <Mapping SourceColumn="PRECIO" DataSetColumn="PRECIO" />
               <Mapping SourceColumn="DESCRIPCION" DataSetColumn="DESCRIPCION" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -191,6 +192,13 @@ FROM            FERME.CLIENTE INNER JOIN
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

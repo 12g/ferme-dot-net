@@ -29,6 +29,16 @@ namespace AppPrincipal
             {
                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
+
+                this.DgMostrarOrdenCompra.Columns["idEmpleado"].Visible = false;
+                this.DgMostrarOrdenCompra.Columns["rutEmpleado"].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarOrdenCompra.Columns["idOrdenCompra"].HeaderText = "CODIGO";
+                this.DgMostrarOrdenCompra.Columns["nombreEmpleado"].HeaderText = "EMPLEADO";
+                this.DgMostrarOrdenCompra.Columns["estadoOrdenCompra"].HeaderText = "ESTADO";
+                this.DgMostrarOrdenCompra.Columns["fechaSolicitudOrdenCompra"].HeaderText = "FECHA SOLICITUD";
+                this.DgMostrarOrdenCompra.Columns["fechaRecepcionOrdenCompra"].HeaderText = "FECHA RECEPCION";
             }
             catch (Exception)
             {
@@ -120,7 +130,7 @@ namespace AppPrincipal
                    foreach (DetalleOrdenCompra detoc in lista)
                   {
                      DetalleOrdenCVista ClaseDetalleCv = new DetalleOrdenCVista();
-                     ClaseDetalleCv.CODIGO = detoc.codigoProducto;
+                     ClaseDetalleCv.CODIGO = detoc.codigoProducto.ToString();
                      ClaseDetalleCv.NOMBRE = detoc.nombreProducto;
                      ClaseDetalleCv.CANTIDAD = detoc.cantidadProducto;
 
@@ -131,12 +141,10 @@ namespace AppPrincipal
                     FrmOrdenCompra.detalleOC = lista;
 
                     FrmOrdenCompra.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idOrdenCompra"].Value.ToString();
-                    //FrmOrdenCompra.TxtIdEmplado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idEmpleado"].Value.ToString();
-                    FrmOrdenCompra.CbEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombrePersonaEmpleado"].Value.ToString();
+                    FrmOrdenCompra.CbEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
                     FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
-                    //FrmOrdenCompra.DgListadoProductoOC.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
 
                     this.Close();
 
@@ -156,7 +164,7 @@ namespace AppPrincipal
                     foreach (DetalleOrdenCompra detoc in lista)
                     {
                         DetalleOrdenCVista ClaseDetalleCv = new DetalleOrdenCVista();
-                        ClaseDetalleCv.CODIGO = detoc.codigoProducto;
+                        ClaseDetalleCv.CODIGO = detoc.codigoProducto.ToString();
                         ClaseDetalleCv.NOMBRE = detoc.nombreProducto;
                         ClaseDetalleCv.CANTIDAD = detoc.cantidadProducto;
 

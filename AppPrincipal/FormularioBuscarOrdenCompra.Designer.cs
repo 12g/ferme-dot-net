@@ -44,7 +44,7 @@
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.Location = new System.Drawing.Point(233, 435);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(275, 43);
+            this.BtnCancelar.Size = new System.Drawing.Size(416, 43);
             this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -57,11 +57,12 @@
             this.DgMostrarOrdenCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgMostrarOrdenCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMostrarOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMostrarOrdenCompra.Location = new System.Drawing.Point(17, 91);
             this.DgMostrarOrdenCompra.Name = "DgMostrarOrdenCompra";
             this.DgMostrarOrdenCompra.ReadOnly = true;
-            this.DgMostrarOrdenCompra.Size = new System.Drawing.Size(712, 333);
+            this.DgMostrarOrdenCompra.Size = new System.Drawing.Size(853, 333);
             this.DgMostrarOrdenCompra.TabIndex = 6;
             this.DgMostrarOrdenCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarOrdenCompra_CellDoubleClick);
             // 
@@ -87,7 +88,7 @@
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(204, 9);
+            this.LblTitulo.Location = new System.Drawing.Point(274, 9);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(328, 29);
             this.LblTitulo.TabIndex = 9;
@@ -97,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 486);
+            this.ClientSize = new System.Drawing.Size(888, 486);
             this.ControlBox = false;
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.LblBuscar);

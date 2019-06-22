@@ -190,7 +190,7 @@ namespace AppPrincipal
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
                     oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
                     oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue); ;
-                    oc.nombrePersonaEmpleado = CbEmpleado.Text;
+                    oc.nombreEmpleado = CbEmpleado.Text;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
                     oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
 
@@ -244,7 +244,7 @@ namespace AppPrincipal
                             detalle = (BindingList<DetalleOrdenCVista>)DgListadoProductoOC.DataSource;
                         
                             DetalleOrdenCVista dv = new DetalleOrdenCVista();
-                            dv.CODIGO = long.Parse(TxtCodProducto.Text);
+                            dv.CODIGO = TxtCodProducto.Text;
                             dv.NOMBRE = TxtNombreProducto.Text;
                             dv.CANTIDAD = int.Parse(TxtCantidad.Text);
 
@@ -253,7 +253,7 @@ namespace AppPrincipal
                             //det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
                             //det.idOrdenCompra = int.Parse(TxtNumero.Text);
                             det.idProducto = int.Parse(TxtIdProducto.Text);
-                            det.codigoProducto = long.Parse(TxtCodProducto.Text);
+                            det.codigoProducto = TxtCodProducto.Text;
                             det.nombreProducto = TxtNombreProducto.Text;
                             det.cantidadProducto = int.Parse(TxtCantidad.Text);
 

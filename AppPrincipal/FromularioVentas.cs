@@ -17,6 +17,7 @@ namespace AppPrincipal
     {
         private int indicefilaseleccionada;
         public List<Detalle_Venta> detalleVen;
+        public List<DetalleVentaVista> detallevv;
         public FromularioVentas()
         {
             InitializeComponent();
@@ -97,7 +98,7 @@ namespace AppPrincipal
         {
             Validaciones val = new Validaciones();
             
-           {
+         /*  {
                 if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
                 {
                     LblCantidadObligatoria.Visible = true;
@@ -110,7 +111,7 @@ namespace AppPrincipal
                 else
                 {
                     try
-                    {
+                    {*/
                     
 
 
@@ -118,7 +119,7 @@ namespace AppPrincipal
                         detalle = (BindingList<DetalleVentaVista>)DgVentaProducto.DataSource;
 
                         DetalleVentaVista vv = new DetalleVentaVista();
-                        vv.CODIGO = long.Parse(TxtCodigo.Text);
+                        vv.CODIGO = TxtCodigo.Text;
                         vv.NOMBRE = TxtNombreProducto.Text;
                         vv.CANTIDAD = int.Parse(TxtCantidad.Text);
                         vv.MONTO = int.Parse(TxtPrecio.Text);
@@ -134,7 +135,7 @@ namespace AppPrincipal
                         dv.idDetalleVenta = int.Parse(TxtNumeroDocumento.Text);
                         dv.idVenta = int.Parse(TxtNumeroDocumento.Text);
                         dv.idProducto = int.Parse(TxtIdProducto.Text);
-                        dv.codigoProducto = long.Parse(TxtCodigo.Text);
+                        dv.codigoProducto = TxtCodigo.Text;
                         dv.nombreProducto = TxtNombreProducto.Text;
                         dv.unidadesProducto = int.Parse(TxtCantidad.Text);
                         dv.montoDetalleVenta = int.Parse(TxtPrecio.Text);
@@ -152,13 +153,13 @@ namespace AppPrincipal
                         BtnEditar.Enabled = false;
 
                         Limpiar();
-                   }
+                  /* }
                     catch (Exception)
                     {
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
                     }  
                 }
-            }
+            }*/
            
         }
         //BOTON EDITAR PRODUCTO
@@ -183,15 +184,15 @@ namespace AppPrincipal
                     {
                         DgVentaProducto[2, indicefilaseleccionada].Value = TxtCantidad.Text;
 
-                        Detalle_Venta det = detalleVen.ElementAt<Detalle_Venta>(indicefilaseleccionada);
-                        det.unidadesProducto = int.Parse(TxtCantidad.Text);
+                        DetalleVentaVista det = detallevv.ElementAt<DetalleVentaVista>(indicefilaseleccionada);
+                        det.CANTIDAD = int.Parse(TxtCantidad.Text);
 
-                        det.Subtotal = det.unidadesProducto * det.montoDetalleVenta;
+                        det.SUBTOTAL = det.CANTIDAD * det.MONTO;
 
                         //CALCULA EL IVA Y EL TOTAL DE VENTAS
-                        TxtSubtotal.Text = Convert.ToString(det.Subtotal);
-                        TxtIva.Text = Convert.ToString(det.Subtotal * 19 / 100);
-                        TxtTotal.Text = Convert.ToString(det.Subtotal * 19 / 100 + det.Subtotal);
+                        TxtSubtotal.Text = Convert.ToString(det.SUBTOTAL);
+                        TxtIva.Text = Convert.ToString(det.SUBTOTAL * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(det.SUBTOTAL * 19 / 100 + det.SUBTOTAL);
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
