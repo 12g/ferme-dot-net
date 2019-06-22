@@ -122,6 +122,12 @@ namespace AppPrincipal
                         vv.NOMBRE = TxtNombreProducto.Text;
                         vv.CANTIDAD = int.Parse(TxtCantidad.Text);
                         vv.MONTO = int.Parse(TxtPrecio.Text);
+                        vv.SUBTOTAL = vv.MONTO * vv.CANTIDAD;
+
+                        //CALCULA EL IVA Y EL TOTAL DE VENTAS
+                        TxtSubtotal.Text = Convert.ToString(vv.SUBTOTAL);
+                        TxtIva.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100 + vv.SUBTOTAL);
 
                         detalle.Add(vv);
                         Detalle_Venta dv = new Detalle_Venta();
@@ -138,6 +144,7 @@ namespace AppPrincipal
                         DgVentaProducto.DataSource = null;
                         DgVentaProducto.DataSource = detalle;
                         DgVentaProducto.Refresh();
+
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
@@ -179,6 +186,13 @@ namespace AppPrincipal
                         Detalle_Venta det = detalleVen.ElementAt<Detalle_Venta>(indicefilaseleccionada);
                         det.unidadesProducto = int.Parse(TxtCantidad.Text);
 
+                        det.Subtotal = det.unidadesProducto * det.montoDetalleVenta;
+
+                        //CALCULA EL IVA Y EL TOTAL DE VENTAS
+                        TxtSubtotal.Text = Convert.ToString(det.Subtotal);
+                        TxtIva.Text = Convert.ToString(det.Subtotal * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(det.Subtotal * 19 / 100 + det.Subtotal);
+
                         Limpiar();
                         BtnAgregar.Enabled = true;
                         BtnBorrar.Enabled = false;
@@ -205,7 +219,7 @@ namespace AppPrincipal
             {
                 int poc = DgVentaProducto.CurrentRow.Index;
                 DgVentaProducto.Rows.RemoveAt(poc);
-                cantidadprecio();
+                //cantidadprecio();
 
                 Limpiar();
                 BtnAgregar.Enabled = true;
@@ -243,50 +257,6 @@ namespace AppPrincipal
         {
             FormularioBuscarCliente frm = new FormularioBuscarCliente(this);
             frm.ShowDialog();
-        }
-
-
-
-        //CALCULA EL SUBTOTAL Y EL TOTAL AL AGREGAR UN PRODUCTO 
-        private void cantidadprecio()
-        {
-            try
-            {
-                 //MULTIPLICA LA CANTIDAD * PRECIO
-                 for (int i = 0; i < DgVentaProducto.Rows.Count; i++)
-                 {
-                     int num1 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[2].Value));
-                     int num2 = int.Parse(Convert.ToString(DgVentaProducto.Rows[i].Cells[3].Value));
-                     DgVentaProducto.Rows[i].Cells[4].Value = num1 * num2;
-                 }
-                 
-
-
-                //SUMA LA  COLUMNA CANTIDAD PRODUCTO
-                int suma = 0;
-
-                foreach (DataGridViewRow row in DgVentaProducto.Rows)
-                {
-                    if (row.Cells[4].Value == DBNull.Value)
-                        continue;
-
-                    this.DgVentaProducto.Columns[4].Visible = false;
-                    int valorcell = 4;
-                    int.TryParse(Convert.ToString(row.Cells[4].Value), out valorcell);
-
-                    suma += Convert.ToInt32(valorcell);
-                }
-
-                TxtSubtotal.Text = Convert.ToString(suma);
-                TxtIva.Text = Convert.ToString(suma * 19 / 100);
-                TxtTotal.Text = Convert.ToString(suma * 19 / 100 + suma);
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("ERROR AL CALCULAR EL NETO,IVA Y TOTAL");
-            }
-
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -409,7 +379,7 @@ namespace AppPrincipal
                     
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
                     vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
-                    vent.idEmpleado = int.Parse(TxtIdEmpleado.Text);
+                    vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
                     vent.fechaVenta = DpFecha.Text;
                     vent.tipoVenta = CbTipoDocto.Text;

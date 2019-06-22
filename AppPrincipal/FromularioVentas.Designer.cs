@@ -517,6 +517,7 @@
             this.TxtIdProducto.ReadOnly = true;
             this.TxtIdProducto.Size = new System.Drawing.Size(144, 20);
             this.TxtIdProducto.TabIndex = 52;
+            this.TxtIdProducto.Visible = false;
             // 
             // CbTipoDocto
             // 
@@ -565,6 +566,7 @@
             this.TxtIdCliente.ReadOnly = true;
             this.TxtIdCliente.Size = new System.Drawing.Size(141, 20);
             this.TxtIdCliente.TabIndex = 58;
+            this.TxtIdCliente.Visible = false;
             // 
             // LblIdCliente
             // 
@@ -611,6 +613,7 @@
             this.TxtIdEmpleado.ReadOnly = true;
             this.TxtIdEmpleado.Size = new System.Drawing.Size(144, 20);
             this.TxtIdEmpleado.TabIndex = 63;
+            this.TxtIdEmpleado.Visible = false;
             // 
             // LblIdEmpleado
             // 

@@ -25,10 +25,17 @@ namespace AppPrincipal
             {
                 ServicioVentas ser = new ServicioVentas();
                 DgMostrarVentasRealizadas.DataSource = ser.ListarVenta();
-                this.DgMostrarVentasRealizadas.Columns["idVenta"].Visible = false;
+                this.DgMostrarVentasRealizadas.Columns["idEmpleado"].Visible = false;
+                this.DgMostrarVentasRealizadas.Columns["idCliente"].Visible = false;
+                this.DgMostrarVentasRealizadas.Columns["rutPersonaEmpleado"].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarVentasRealizadas.Columns["tipoVenta"].HeaderText = "CODIGO";
+                this.DgMostrarVentasRealizadas.Columns["idVenta"].HeaderText = "CODIGO";
+                this.DgMostrarVentasRealizadas.Columns["tipoVenta"].HeaderText = "TIPO VENTA";
+                this.DgMostrarVentasRealizadas.Columns["fechaVenta"].HeaderText = "FECHA VENTA";
+                this.DgMostrarVentasRealizadas.Columns["nombreCompletoPersonaEmpleado"].HeaderText = "VENDEDOR";
+                this.DgMostrarVentasRealizadas.Columns["nombreCompletoPersonaCliente"].HeaderText = "CLIENTE";
+                this.DgMostrarVentasRealizadas.Columns["rutPersonaCliente"].HeaderText = "RUT CLIENTE";
             }
             catch (Exception)
             {

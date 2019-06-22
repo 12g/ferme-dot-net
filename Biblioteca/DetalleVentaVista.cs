@@ -13,5 +13,6 @@ namespace Biblioteca
         public int CANTIDAD { get; set; }
         public int MONTO { get; set; }
         public int SUBTOTAL{ get; set; }
+
     }
 }
