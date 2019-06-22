@@ -52,6 +52,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LblIdCliente = new System.Windows.Forms.Label();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
+            this.TxtIdPersona = new System.Windows.Forms.TextBox();
+            this.LblIdPersona = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -292,12 +294,33 @@
             this.TxtIdCliente.TabIndex = 27;
             this.TxtIdCliente.Visible = false;
             // 
+            // TxtIdPersona
+            // 
+            this.TxtIdPersona.Location = new System.Drawing.Point(309, 43);
+            this.TxtIdPersona.Name = "TxtIdPersona";
+            this.TxtIdPersona.ReadOnly = true;
+            this.TxtIdPersona.Size = new System.Drawing.Size(144, 20);
+            this.TxtIdPersona.TabIndex = 28;
+            this.TxtIdPersona.Visible = false;
+            // 
+            // LblIdPersona
+            // 
+            this.LblIdPersona.AutoSize = true;
+            this.LblIdPersona.Location = new System.Drawing.Point(306, 24);
+            this.LblIdPersona.Name = "LblIdPersona";
+            this.LblIdPersona.Size = new System.Drawing.Size(55, 13);
+            this.LblIdPersona.TabIndex = 29;
+            this.LblIdPersona.Text = "IdPersona";
+            this.LblIdPersona.Visible = false;
+            // 
             // FormularioMantenedorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 446);
             this.ControlBox = false;
+            this.Controls.Add(this.LblIdPersona);
+            this.Controls.Add(this.TxtIdPersona);
             this.Controls.Add(this.TxtIdCliente);
             this.Controls.Add(this.LblIdCliente);
             this.Controls.Add(this.label1);
@@ -358,5 +381,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblIdCliente;
         public System.Windows.Forms.TextBox TxtIdCliente;
+        public System.Windows.Forms.TextBox TxtIdPersona;
+        private System.Windows.Forms.Label LblIdPersona;
     }
 }

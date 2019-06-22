@@ -27,20 +27,20 @@ namespace AppPrincipal
                 ServicioCliente sercl = new ServicioCliente();
                 DGMostrarListaCliente.DataSource = sercl.ListarClientes();
 
-                //OCULTA LAS FILAS
+               //OCULTA LAS FILAS
                 this.DGMostrarListaCliente.Columns[0].Visible = false;
                 this.DGMostrarListaCliente.Columns[8].Visible = false;
 
 
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DGMostrarListaCliente.Columns[1].HeaderText = "NOMBRE                  ";
-                this.DGMostrarListaCliente.Columns[2].HeaderText = "RUT               ";
-                this.DGMostrarListaCliente.Columns[3].HeaderText = "DIRECCION                ";
-                this.DGMostrarListaCliente.Columns[4].HeaderText = "EMAIL               ";
-                this.DGMostrarListaCliente.Columns[5].HeaderText = "TELEFONO 1      ";
-                this.DGMostrarListaCliente.Columns[6].HeaderText = "TELEFONO 2      ";
-                this.DGMostrarListaCliente.Columns[7].HeaderText = "TELEFONO 3      ";
+                this.DGMostrarListaCliente.Columns[1].HeaderText = "NOMBRE";
+                this.DGMostrarListaCliente.Columns[2].HeaderText = "RUT";
+                this.DGMostrarListaCliente.Columns[3].HeaderText = "DIRECCION";
+                this.DGMostrarListaCliente.Columns[4].HeaderText = "EMAIL";
+                this.DGMostrarListaCliente.Columns[5].HeaderText = "TELEFONO 1";
+                this.DGMostrarListaCliente.Columns[6].HeaderText = "TELEFONO 2";
+                this.DGMostrarListaCliente.Columns[7].HeaderText = "TELEFONO 3";
 
             }
             catch (Exception)
@@ -74,6 +74,7 @@ namespace AppPrincipal
 
                 if (DGMostrarListaCliente.SelectedRows.Count >0)
                 {
+                    fmc.TxtIdPersona.Text = DGMostrarListaCliente.CurrentRow.Cells[0].Value.ToString();
                     fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[8].Value.ToString();
                     fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[2].Value.ToString();
                     fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells[1].Value.ToString();

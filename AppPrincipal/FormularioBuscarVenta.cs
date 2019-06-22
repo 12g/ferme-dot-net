@@ -25,6 +25,10 @@ namespace AppPrincipal
             {
                 ServicioVentas ser = new ServicioVentas();
                 DgMostrarVentasRealizadas.DataSource = ser.ListarVenta();
+                this.DgMostrarVentasRealizadas.Columns["idVenta"].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarVentasRealizadas.Columns["tipoVenta"].HeaderText = "CODIGO";
             }
             catch (Exception)
             {
@@ -87,8 +91,8 @@ namespace AppPrincipal
         //SELECCIONAR UNA FILA Y LA ENVIA AL FORMULARIO VENTAS PARA VISUALIZARLA
         private void DgMostrarVentasRealizadas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-          /*  try
-            {*/
+           try
+            {
 
                 //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO DE MANTENEDOR DE ORDEN DE COMPRA
                 //SE CASTEA EL OBJETO ORDEN COMPRA
@@ -112,21 +116,25 @@ namespace AppPrincipal
                 frmventas.DgVentaProducto.DataSource = detCv;
                 frmventas.detalleVen = lista;
 
+                
+                frmventas.TxtNumeroDocumento.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["idVenta"].Value.ToString();
+                frmventas.CbTipoDocto.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["tipoVenta"].Value.ToString();
+                frmventas.DpFecha.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["fechaVenta"].Value.ToString();
+                frmventas.TxtTotal.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["subtotalVenta"].Value.ToString();
+                frmventas.CbEmpleado.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["nombreCompletoPersonaEmpleado"].Value.ToString();
+                frmventas.TxtIdEmpleado.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["idEmpleado"].Value.ToString();
+                frmventas.TxtIdCliente.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["idCliente"].Value.ToString();
+                frmventas.TxtNombreRazonSocial.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["nombreCompletoPersonaCliente"].Value.ToString();
+                frmventas.TxtRut.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["rutPersonaCliente"].Value.ToString();
+               
 
-                frmventas.TxtNumeroDocumento.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[0].Value.ToString();
-                frmventas.CbTipoDocto.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[1].Value.ToString();
-                frmventas.DpFecha.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[2].Value.ToString();
-                frmventas.CbEmpleado.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[3].Value.ToString();
-                frmventas.TxtRut.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[4].Value.ToString();
-                frmventas.TxtTotal.Text = DgMostrarVentasRealizadas.CurrentRow.Cells[5].Value.ToString();
 
-
-                this.Close();
-           /* }
+            this.Close();
+           }
             catch (Exception)
             {
                 MessageBox.Show("ERROR AL SELECCIONAR VENTA");
-            }*/
+            }
         }
 
         //lista detalle orden compra
@@ -135,7 +143,7 @@ namespace AppPrincipal
 
             try
             {
-                DgMostrarVentasRealizadas.DataSource = new BindingList<Detalle_Venta>();
+                DgMostrarVentasRealizadas.DataSource = new BindingList<Detalle_Venta>();               
             }
             catch (Exception)
             {

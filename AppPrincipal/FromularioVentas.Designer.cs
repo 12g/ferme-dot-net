@@ -78,6 +78,8 @@
             this.TxtSumCant = new System.Windows.Forms.TextBox();
             this.txtSumValor = new System.Windows.Forms.TextBox();
             this.LblBoletaFactura = new System.Windows.Forms.Label();
+            this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
+            this.LblIdEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgVentaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -515,7 +517,6 @@
             this.TxtIdProducto.ReadOnly = true;
             this.TxtIdProducto.Size = new System.Drawing.Size(144, 20);
             this.TxtIdProducto.TabIndex = 52;
-            this.TxtIdProducto.Visible = false;
             // 
             // CbTipoDocto
             // 
@@ -564,7 +565,6 @@
             this.TxtIdCliente.ReadOnly = true;
             this.TxtIdCliente.Size = new System.Drawing.Size(141, 20);
             this.TxtIdCliente.TabIndex = 58;
-            this.TxtIdCliente.Visible = false;
             // 
             // LblIdCliente
             // 
@@ -604,11 +604,31 @@
             this.LblBoletaFactura.TabIndex = 62;
             this.LblBoletaFactura.Text = "Boleta o Factura";
             // 
+            // TxtIdEmpleado
+            // 
+            this.TxtIdEmpleado.Location = new System.Drawing.Point(104, 2);
+            this.TxtIdEmpleado.Name = "TxtIdEmpleado";
+            this.TxtIdEmpleado.ReadOnly = true;
+            this.TxtIdEmpleado.Size = new System.Drawing.Size(144, 20);
+            this.TxtIdEmpleado.TabIndex = 63;
+            // 
+            // LblIdEmpleado
+            // 
+            this.LblIdEmpleado.AutoSize = true;
+            this.LblIdEmpleado.Location = new System.Drawing.Point(25, 5);
+            this.LblIdEmpleado.Name = "LblIdEmpleado";
+            this.LblIdEmpleado.Size = new System.Drawing.Size(63, 13);
+            this.LblIdEmpleado.TabIndex = 64;
+            this.LblIdEmpleado.Text = "IdEmpleado";
+            this.LblIdEmpleado.Visible = false;
+            // 
             // FromularioVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.LblIdEmpleado);
+            this.Controls.Add(this.TxtIdEmpleado);
             this.Controls.Add(this.LblBoletaFactura);
             this.Controls.Add(this.txtSumValor);
             this.Controls.Add(this.TxtSumCant);
@@ -720,5 +740,7 @@
         private System.Windows.Forms.TextBox TxtSumCant;
         private System.Windows.Forms.TextBox txtSumValor;
         private System.Windows.Forms.Label LblBoletaFactura;
+        public System.Windows.Forms.TextBox TxtIdEmpleado;
+        private System.Windows.Forms.Label LblIdEmpleado;
     }
 }

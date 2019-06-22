@@ -29,16 +29,16 @@ namespace AppPrincipal
                 ServicioEmpleado sere = new ServicioEmpleado();
                 DGlistadoUsuario.DataSource = sere.ListaEmpleados();
 
-                //OCULTAR COLUMNAS
+               ///OCULTAR COLUMNAS
                 this.DGlistadoUsuario.Columns[0].Visible = false;
                 this.DGlistadoUsuario.Columns[8].Visible = false;
 
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DGlistadoUsuario.Columns[1].HeaderText = "NOMBRE            ";
-                this.DGlistadoUsuario.Columns[2].HeaderText = "RUT            ";
-                this.DGlistadoUsuario.Columns[3].HeaderText = "DIRECCION         ";
-                this.DGlistadoUsuario.Columns[4].HeaderText = "EMAIL                 ";
+                this.DGlistadoUsuario.Columns[1].HeaderText = "NOMBRE";
+                this.DGlistadoUsuario.Columns[2].HeaderText = "RUT";
+                this.DGlistadoUsuario.Columns[3].HeaderText = "DIRECCION";
+                this.DGlistadoUsuario.Columns[4].HeaderText = "EMAIL";
                 this.DGlistadoUsuario.Columns[5].HeaderText = "TELEFONO 1";
                 this.DGlistadoUsuario.Columns[6].HeaderText = "TELEFONO 2";
                 this.DGlistadoUsuario.Columns[7].HeaderText = "TELEFONO 3";
@@ -89,6 +89,7 @@ namespace AppPrincipal
 
                 if (DGlistadoUsuario.SelectedRows.Count > 0)
                 {
+                    fmp.TxtIdPersona.Text = DGlistadoUsuario.CurrentRow.Cells[0].Value.ToString(); ;
                     fmp.TxtIdEmpleado.Text = DGlistadoUsuario.CurrentRow.Cells[8].Value.ToString();
                     fmp.TxtRutCliente.Text = DGlistadoUsuario.CurrentRow.Cells[2].Value.ToString();
                     fmp.CbxCargo.Text = DGlistadoUsuario.CurrentRow.Cells[9].Value.ToString();
@@ -99,6 +100,9 @@ namespace AppPrincipal
                     fmp.TxtTelefeno1.Text = DGlistadoUsuario.CurrentRow.Cells[5].Value.ToString();
                     fmp.TxtTelefono2.Text = DGlistadoUsuario.CurrentRow.Cells[6].Value.ToString();
                     fmp.TxtTelefono3.Text = DGlistadoUsuario.CurrentRow.Cells[7].Value.ToString();
+
+                     //BLOQUEA EL CAMPO DEL RUT AL MOMENTO DE EDITAR EL EMPLEADO
+                    //fmp.TxtRutCliente.Enabled = false;
 
                     if (fmp.ShowDialog() == DialogResult.OK)
                     {

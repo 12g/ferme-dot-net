@@ -403,28 +403,31 @@ namespace AppPrincipal
                  {
 
 
-            ServicioVentas ser = new ServicioVentas();
-            Venta vent = new Venta();
+                    ServicioVentas ser = new ServicioVentas();
+                    Venta vent = new Venta();
 
-            vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
-            vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
-            vent.idCliente = int.Parse(TxtIdCliente.Text);
-            vent.fechaVenta = DpFecha.Text;
-            vent.tipoVenta = CbTipoDocto.Text;
+                    
+                    vent.idCliente = int.Parse(TxtIdCliente.Text);
+                    vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
+                    vent.idEmpleado = int.Parse(TxtIdEmpleado.Text);
+                    vent.idCliente = int.Parse(TxtIdCliente.Text);
+                    vent.fechaVenta = DpFecha.Text;
+                    vent.tipoVenta = CbTipoDocto.Text;
 
-            vent.detallesVenta = detalleVen;
+                    vent.detallesVenta = detalleVen;
 
-            ser.CrearVenta(vent);
+                    ser.CrearVenta(vent);
 
-            LimpiarPantall();
-            MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
-                }
-            }
-            catch (Exception)
-            {
+                    LimpiarPantall();
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
+                 }
+             }
+
+             catch (Exception)
+             {
 
                 MessageBox.Show("ERROR");
-            }
+             }
           
         }
 

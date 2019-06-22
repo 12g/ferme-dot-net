@@ -54,6 +54,8 @@
             this.CbxCargo = new System.Windows.Forms.ComboBox();
             this.LblIdEmpleado = new System.Windows.Forms.Label();
             this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
+            this.TxtIdPersona = new System.Windows.Forms.TextBox();
+            this.lblIdpersona = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnGuardar
@@ -303,12 +305,33 @@
             this.TxtIdEmpleado.TabIndex = 40;
             this.TxtIdEmpleado.Visible = false;
             // 
+            // TxtIdPersona
+            // 
+            this.TxtIdPersona.Location = new System.Drawing.Point(322, 43);
+            this.TxtIdPersona.Name = "TxtIdPersona";
+            this.TxtIdPersona.ReadOnly = true;
+            this.TxtIdPersona.Size = new System.Drawing.Size(148, 20);
+            this.TxtIdPersona.TabIndex = 41;
+            this.TxtIdPersona.Visible = false;
+            // 
+            // lblIdpersona
+            // 
+            this.lblIdpersona.AutoSize = true;
+            this.lblIdpersona.Location = new System.Drawing.Point(325, 24);
+            this.lblIdpersona.Name = "lblIdpersona";
+            this.lblIdpersona.Size = new System.Drawing.Size(55, 13);
+            this.lblIdpersona.TabIndex = 42;
+            this.lblIdpersona.Text = "IdPersona";
+            this.lblIdpersona.Visible = false;
+            // 
             // FormularioMantenedorEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 408);
             this.ControlBox = false;
+            this.Controls.Add(this.lblIdpersona);
+            this.Controls.Add(this.TxtIdPersona);
             this.Controls.Add(this.TxtIdEmpleado);
             this.Controls.Add(this.LblIdEmpleado);
             this.Controls.Add(this.CbxCargo);
@@ -373,5 +396,7 @@
         public System.Windows.Forms.ComboBox CbxCargo;
         private System.Windows.Forms.Label LblIdEmpleado;
         public System.Windows.Forms.TextBox TxtIdEmpleado;
+        public System.Windows.Forms.TextBox TxtIdPersona;
+        private System.Windows.Forms.Label lblIdpersona;
     }
 }

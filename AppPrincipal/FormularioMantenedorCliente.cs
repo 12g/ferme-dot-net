@@ -23,6 +23,7 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdCliente.Text = "0";
+            TxtIdPersona.Text = "0";
         }
 
         //BOTON CANCELAR 
@@ -110,6 +111,7 @@ namespace AppPrincipal
                     Cliente cli = new Cliente();
                     ServicioCliente serv = new ServicioCliente();
 
+                    cli.idPersona = int.Parse(TxtIdPersona.Text);
                     cli.idCliente = int.Parse(TxtIdCliente.Text);
                     cli.rutPersona = TxtRutCliente.Text;
                     cli.nombreCompletoPersona = TxtNombre.Text;
