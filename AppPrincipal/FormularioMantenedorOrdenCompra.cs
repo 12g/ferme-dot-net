@@ -226,14 +226,14 @@ namespace AppPrincipal
           
            try
             {
-                if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 0 || !val.IsNumeric(TxtCantidad.Text))
+                if (TxtCodProducto.Text == "" || TxtNombreProducto.Text == "")
+                {
+                    MessageBox.Show("INGRESE UN PRODUCTO");
+                }
+                else if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 0 || !val.IsNumeric(TxtCantidad.Text))
                 {
                     LblCantidadObligatoria.Visible = true;
                     MessageBox.Show("INGRESE UNA CANTIDAD EN PRODUCTO");
-                }
-                else if (TxtCodProducto.Text == "" || TxtNombreProducto.Text == "")
-                {
-                    MessageBox.Show("INGRESE UN PRODUCTO");
                 }
                 else
                 {

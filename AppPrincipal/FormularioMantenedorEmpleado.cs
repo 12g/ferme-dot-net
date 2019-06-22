@@ -18,12 +18,8 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdEmpleado.Text = "0";
+            CargarComobox();
         }
-
-
-
-
-    
 
     //CASILLA TEXTBOX RUT EMPLEADO
     private void TxtRutCliente_Leave(object sender, EventArgs e)
@@ -277,11 +273,6 @@ namespace AppPrincipal
             CbxCargo.SelectedIndex = -1;
             CbxCargo.Text = "Seleccione";
         }
-    }
-
-    private void FormularioMantenedorEmpleado_Load(object sender, EventArgs e)
-    {
-        CargarComobox();
     }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

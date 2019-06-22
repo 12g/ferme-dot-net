@@ -18,12 +18,14 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorRubro : Form
     {
-        
-        
 
+
+        private static int visitCounter = 0;
         public FormularioMantenedorRubro()
         {
             InitializeComponent();
+            visitCounter++; // Increase each time a form is loaded
+            TxtRubro.Text = visitCounter.ToString("01"); // 
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

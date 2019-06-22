@@ -42,6 +42,7 @@
             this.LblBuscar = new System.Windows.Forms.Label();
             this.BtnFamiliaProducto = new System.Windows.Forms.Button();
             this.BtnTipoProducto = new System.Windows.Forms.Button();
+            this.BtnRubro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistadeproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             this.DGlistadeproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGlistadeproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGlistadeproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGlistadeproductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.DGlistadeproductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGlistadeproductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -139,7 +140,7 @@
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(901, 152);
+            this.btnEditar.Location = new System.Drawing.Point(901, 131);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(103, 36);
             this.btnEditar.TabIndex = 4;
@@ -151,7 +152,7 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(901, 217);
+            this.btnEliminar.Location = new System.Drawing.Point(901, 173);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
             this.btnEliminar.TabIndex = 5;
@@ -185,7 +186,7 @@
             // 
             this.BtnFamiliaProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnFamiliaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFamiliaProducto.Location = new System.Drawing.Point(901, 310);
+            this.BtnFamiliaProducto.Location = new System.Drawing.Point(900, 264);
             this.BtnFamiliaProducto.Name = "BtnFamiliaProducto";
             this.BtnFamiliaProducto.Size = new System.Drawing.Size(103, 47);
             this.BtnFamiliaProducto.TabIndex = 8;
@@ -197,13 +198,25 @@
             // 
             this.BtnTipoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTipoProducto.Location = new System.Drawing.Point(901, 373);
+            this.BtnTipoProducto.Location = new System.Drawing.Point(900, 317);
             this.BtnTipoProducto.Name = "BtnTipoProducto";
-            this.BtnTipoProducto.Size = new System.Drawing.Size(103, 47);
+            this.BtnTipoProducto.Size = new System.Drawing.Size(103, 49);
             this.BtnTipoProducto.TabIndex = 9;
             this.BtnTipoProducto.Text = "Tipo Producto";
             this.BtnTipoProducto.UseVisualStyleBackColor = true;
             this.BtnTipoProducto.Click += new System.EventHandler(this.BtnTipoProducto_Click);
+            // 
+            // BtnRubro
+            // 
+            this.BtnRubro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRubro.Location = new System.Drawing.Point(900, 372);
+            this.BtnRubro.Name = "BtnRubro";
+            this.BtnRubro.Size = new System.Drawing.Size(102, 48);
+            this.BtnRubro.TabIndex = 10;
+            this.BtnRubro.Text = "Crear Rubro";
+            this.BtnRubro.UseVisualStyleBackColor = true;
+            this.BtnRubro.Click += new System.EventHandler(this.BtnRubro_Click);
             // 
             // FormularioProducto
             // 
@@ -211,6 +224,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.Controls.Add(this.BtnRubro);
             this.Controls.Add(this.BtnTipoProducto);
             this.Controls.Add(this.BtnFamiliaProducto);
             this.Controls.Add(this.LblBuscar);
@@ -244,5 +258,6 @@
         private System.Windows.Forms.Button BtnTipoProducto;
         private System.Windows.Forms.Button btnCerrar;
         public System.Windows.Forms.DataGridView DGlistadeproductos;
+        private System.Windows.Forms.Button BtnRubro;
     }
 }

@@ -46,18 +46,19 @@ namespace AppPrincipal
         {
             try
             {
-                FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
+               FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
                
                     if (DGlistadeproductos.SelectedRows.Count > 0)
                     {
                         fmp.TxtIdProducto.Text = DGlistadeproductos.CurrentRow.Cells["idProducto"].Value.ToString();
                         fmp.TxtCodigo.Text = DGlistadeproductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
                         fmp.TxtNombreProducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
-                        fmp.CbTipoproducto.SelectedValue = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
+                        fmp.CbTipoproducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
                         fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells["stockActualProducto"].Value.ToString();
                         fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells["stockCriticoProducto"].Value.ToString();
                         fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
                         fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
+                        fmp.CbxFamiliaProducto.Text = DGlistadeproductos.CurrentRow.Cells["descripcionFamiliaProducto"].Value.ToString();
                     }
                 if (fmp.ShowDialog() == DialogResult.OK)
                 {
@@ -93,7 +94,7 @@ namespace AppPrincipal
                 this.DGlistadeproductos.Columns["idProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idTipoProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idFamiliaProducto"].Visible = false;
-                this.DGlistadeproductos.Columns["descripcionFamiliaProducto"].Visible = false;
+                //this.DGlistadeproductos.Columns["descripcionFamiliaProducto"].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadeproductos.Columns["codigoProducto"].HeaderText = "CODIGO";
@@ -103,6 +104,8 @@ namespace AppPrincipal
                 this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText ="STOCK ACTUAL";
                 this.DGlistadeproductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
                 this.DGlistadeproductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
+                this.DGlistadeproductos.Columns["descripcionFamiliaProducto"].HeaderText = "FAMILIA PRODUCTO";
+
 
                 DGlistadeproductos.Show();
             }
@@ -160,6 +163,12 @@ namespace AppPrincipal
         private void btnEliminar_Click(object sender, EventArgs e)
         {
          
+        }
+
+        private void BtnRubro_Click(object sender, EventArgs e)
+        {
+            FormularioMantenedorRubro fmr = new FormularioMantenedorRubro();
+            fmr.ShowDialog();
         }
     }
 }

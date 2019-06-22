@@ -14,16 +14,15 @@ namespace AppPrincipal
 {
     public partial class FomularioTipoProducto : Form
     {
+        private static int visitCounter = 0;
         public FomularioTipoProducto()
         {
             InitializeComponent();
-            NumCorrelativo();
+
+            visitCounter++; // Increase each time a form is loaded
+            TxtCodigo.Text = visitCounter.ToString("01"); // 
         }
-        private void NumCorrelativo()
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            TxtCodigo.Text = Convert.ToString(rnd.Next(0, 1000));
-        }
+       
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {

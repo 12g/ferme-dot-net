@@ -19,7 +19,7 @@ namespace AppPrincipal
         {
             InitializeComponent();
             TxtIdProducto.Text = "0";
-
+            CargarComBobox();
             visitCounter++; // Increase each time a form is loaded
             TxtCodigo.Text = visitCounter.ToString("0"); // 
 
@@ -35,10 +35,7 @@ namespace AppPrincipal
                 if (dr == DialogResult.Yes)
                 {
                     this.Close();
-
-
-                    FormularioProducto P = new FormularioProducto();
-                    P.DGlistadeproductos.Refresh();
+                    this.DialogResult = DialogResult.OK;
                 }
             }
             catch
@@ -134,6 +131,10 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("SELECCIONE UN TIPO PRODUCTO");
                 }
+                else if (CbxFamiliaProducto.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("SELECCIONE UNA FAMILIA PRODUCTO");
+                }
                 else
                 {
                     FormularioProducto prod = new FormularioProducto();
@@ -145,7 +146,9 @@ namespace AppPrincipal
                     pro.codigoProducto = TxtCodigo.Text;
                     pro.nombreProducto = TxtNombreProducto.Text;
                     pro.idTipoProducto = int.Parse(CbTipoproducto.SelectedValue.ToString());
+                    pro.idFamiliaProducto = int.Parse(CbxFamiliaProducto.SelectedValue.ToString());
                     pro.nombreTipoProducto = CbTipoproducto.SelectedValue.ToString();
+                    pro.descripcionFamiliaProducto = CbxFamiliaProducto.SelectedValue.ToString();
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
@@ -187,16 +190,13 @@ namespace AppPrincipal
             val.SoloNumero(e);
         }
 
-        private void FormularioMantenedorProducto_Load(object sender, EventArgs e)
-        {
-           
-            CargarComBobox();
-        }
 
         private void CargarComBobox()
         {
             ServicioTipoProducto sertp = new ServicioTipoProducto();
             CbTipoproducto.DataSource = sertp.ListaTipoProducto();
+
+
             CbTipoproducto.DisplayMember = "nombreTipoProducto";
             CbTipoproducto.ValueMember = "idTipoProducto";
 
@@ -204,6 +204,17 @@ namespace AppPrincipal
             {
                 CbTipoproducto.SelectedIndex = -1;
                 CbTipoproducto.Text = "Seleccione";
+            }
+
+
+            CbxFamiliaProducto.DataSource = sertp.ListaFAMILIAPRODUCTO();
+            CbxFamiliaProducto.DisplayMember = "descripcionFamiliaProducto";
+            CbxFamiliaProducto.ValueMember = "idFamiliaProducto";
+
+            if (CbxFamiliaProducto.Items.Count > 1)
+            {
+                CbxFamiliaProducto.SelectedIndex = -1;
+                CbxFamiliaProducto.Text = "Seleccione";
             }
         }
 

@@ -75,8 +75,6 @@
             this.DpFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.LblIdCliente = new System.Windows.Forms.Label();
-            this.TxtSumCant = new System.Windows.Forms.TextBox();
-            this.txtSumValor = new System.Windows.Forms.TextBox();
             this.LblBoletaFactura = new System.Windows.Forms.Label();
             this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
             this.LblIdEmpleado = new System.Windows.Forms.Label();
@@ -578,24 +576,6 @@
             this.LblIdCliente.Text = "IdCliente";
             this.LblIdCliente.Visible = false;
             // 
-            // TxtSumCant
-            // 
-            this.TxtSumCant.Location = new System.Drawing.Point(897, 399);
-            this.TxtSumCant.Name = "TxtSumCant";
-            this.TxtSumCant.ReadOnly = true;
-            this.TxtSumCant.Size = new System.Drawing.Size(100, 20);
-            this.TxtSumCant.TabIndex = 60;
-            this.TxtSumCant.Visible = false;
-            // 
-            // txtSumValor
-            // 
-            this.txtSumValor.Location = new System.Drawing.Point(897, 434);
-            this.txtSumValor.Name = "txtSumValor";
-            this.txtSumValor.ReadOnly = true;
-            this.txtSumValor.Size = new System.Drawing.Size(100, 20);
-            this.txtSumValor.TabIndex = 61;
-            this.txtSumValor.Visible = false;
-            // 
             // LblBoletaFactura
             // 
             this.LblBoletaFactura.AutoSize = true;
@@ -633,8 +613,6 @@
             this.Controls.Add(this.LblIdEmpleado);
             this.Controls.Add(this.TxtIdEmpleado);
             this.Controls.Add(this.LblBoletaFactura);
-            this.Controls.Add(this.txtSumValor);
-            this.Controls.Add(this.TxtSumCant);
             this.Controls.Add(this.LblIdCliente);
             this.Controls.Add(this.TxtIdCliente);
             this.Controls.Add(this.DpFecha);
@@ -740,8 +718,6 @@
         public System.Windows.Forms.DateTimePicker DpFecha;
         public System.Windows.Forms.TextBox TxtIdCliente;
         public System.Windows.Forms.Label LblIdCliente;
-        private System.Windows.Forms.TextBox TxtSumCant;
-        private System.Windows.Forms.TextBox txtSumValor;
         private System.Windows.Forms.Label LblBoletaFactura;
         public System.Windows.Forms.TextBox TxtIdEmpleado;
         private System.Windows.Forms.Label LblIdEmpleado;

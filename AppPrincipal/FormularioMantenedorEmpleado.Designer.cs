@@ -363,7 +363,6 @@
             this.Name = "FormularioMantenedorEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Empleado";
-            this.Load += new System.EventHandler(this.FormularioMantenedorEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

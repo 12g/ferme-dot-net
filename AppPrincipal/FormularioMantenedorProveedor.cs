@@ -270,18 +270,6 @@ namespace AppPrincipal
             val.SoloNumero(e);
         }
 
-        private void FormularioMantenedorProveedor_Load(object sender, EventArgs e)
-        {
-            ServiciosRubro serR = new ServiciosRubro();
-            CbxRubro.DataSource = serR.ListarRubro();
-            CbxRubro.DisplayMember = "descripcionRubro";
-            CbxRubro.ValueMember = "idRubro";
-
-            if (CbxRubro.Items.Count > 1)
-            {
-                CbxRubro.SelectedIndex = -1;
-                CbxRubro.Text = "Seleccione";
-            }
-        }
+       
     }
 }

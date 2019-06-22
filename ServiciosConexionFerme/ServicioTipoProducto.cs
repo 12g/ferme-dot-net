@@ -60,8 +60,19 @@ namespace ServiciosConexionFerme
             var reader = new StreamReader(webResponse.GetResponseStream());
             string s = reader.ReadToEnd();
             return JsonConvert.DeserializeObject<JArray>(s);
+        }
 
-           
+        //LISTAR FAMILIA PRODUCTO
+        public JArray ListaFAMILIAPRODUCTO()
+        {
+            string uri = "http://localhost:8082/api/gestion/familias_producto";
+            var webRequest = (HttpWebRequest)WebRequest.Create(uri);
+            var webResponse = (HttpWebResponse)webRequest.GetResponse();
+            var reader = new StreamReader(webResponse.GetResponseStream());
+            string s = reader.ReadToEnd();
+            return JsonConvert.DeserializeObject<JArray>(s);
+
+
         }
     }
 }

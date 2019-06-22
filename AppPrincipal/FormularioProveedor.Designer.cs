@@ -38,7 +38,6 @@
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            this.BtnRubro = new System.Windows.Forms.Button();
             this.DgMostrarListaProveedor = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarListaProveedor)).BeginInit();
             this.SuspendLayout();
@@ -120,18 +119,6 @@
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // BtnRubro
-            // 
-            this.BtnRubro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRubro.Location = new System.Drawing.Point(903, 295);
-            this.BtnRubro.Name = "BtnRubro";
-            this.BtnRubro.Size = new System.Drawing.Size(102, 41);
-            this.BtnRubro.TabIndex = 8;
-            this.BtnRubro.Text = "Crear Rubro";
-            this.BtnRubro.UseVisualStyleBackColor = true;
-            this.BtnRubro.Click += new System.EventHandler(this.BtnRubro_Click);
-            // 
             // DgMostrarListaProveedor
             // 
             this.DgMostrarListaProveedor.AllowUserToAddRows = false;
@@ -187,7 +174,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1034, 562);
             this.Controls.Add(this.DgMostrarListaProveedor);
-            this.Controls.Add(this.BtnRubro);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
@@ -213,7 +199,6 @@
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnCerrar;
-        private System.Windows.Forms.Button BtnRubro;
         public System.Windows.Forms.DataGridView DgMostrarListaProveedor;
     }
 }

@@ -46,8 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.LblEmailObligatorio = new System.Windows.Forms.Label();
-            this.LblRubro = new System.Windows.Forms.Label();
-            this.CbxRubro = new System.Windows.Forms.ComboBox();
             this.TxtTelefono2 = new System.Windows.Forms.TextBox();
             this.LblTelefono2 = new System.Windows.Forms.Label();
             this.TxtTelefono3 = new System.Windows.Forms.TextBox();
@@ -234,24 +232,6 @@
             this.LblEmailObligatorio.Text = "*";
             this.LblEmailObligatorio.Visible = false;
             // 
-            // LblRubro
-            // 
-            this.LblRubro.AutoSize = true;
-            this.LblRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRubro.Location = new System.Drawing.Point(288, 70);
-            this.LblRubro.Name = "LblRubro";
-            this.LblRubro.Size = new System.Drawing.Size(41, 13);
-            this.LblRubro.TabIndex = 22;
-            this.LblRubro.Text = "Rubro";
-            // 
-            // CbxRubro
-            // 
-            this.CbxRubro.FormattingEnabled = true;
-            this.CbxRubro.Location = new System.Drawing.Point(291, 85);
-            this.CbxRubro.Name = "CbxRubro";
-            this.CbxRubro.Size = new System.Drawing.Size(164, 21);
-            this.CbxRubro.TabIndex = 23;
-            // 
             // TxtTelefono2
             // 
             this.TxtTelefono2.Location = new System.Drawing.Point(179, 279);
@@ -343,8 +323,6 @@
             this.Controls.Add(this.TxtTelefono3);
             this.Controls.Add(this.LblTelefono2);
             this.Controls.Add(this.TxtTelefono2);
-            this.Controls.Add(this.CbxRubro);
-            this.Controls.Add(this.LblRubro);
             this.Controls.Add(this.LblEmailObligatorio);
             this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label3);
@@ -368,7 +346,6 @@
             this.Name = "FormularioMantenedorProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor Proveedor";
-            this.Load += new System.EventHandler(this.FormularioMantenedorProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,8 +368,6 @@
         private System.Windows.Forms.Label LblDireccionObligatoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LblEmailObligatorio;
-        private System.Windows.Forms.Label LblRubro;
-        private System.Windows.Forms.ComboBox CbxRubro;
         public System.Windows.Forms.TextBox TxtTelefono2;
         private System.Windows.Forms.Label LblTelefono2;
         public System.Windows.Forms.TextBox TxtTelefono3;

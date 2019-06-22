@@ -98,7 +98,7 @@ namespace AppPrincipal
         {
             Validaciones val = new Validaciones();
             
-         /*  {
+           {
                 if (TxtCantidad.Text == "" || Convert.ToInt32(TxtCantidad.Text) < 1 || !val.IsNumeric(TxtCantidad.Text))
                 {
                     LblCantidadObligatoria.Visible = true;
@@ -111,7 +111,7 @@ namespace AppPrincipal
                 else
                 {
                     try
-                    {*/
+                    {
                     
 
 
@@ -153,13 +153,13 @@ namespace AppPrincipal
                         BtnEditar.Enabled = false;
 
                         Limpiar();
-                  /* }
+                  }
                     catch (Exception)
                     {
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
                     }  
                 }
-            }*/
+            }
            
         }
         //BOTON EDITAR PRODUCTO

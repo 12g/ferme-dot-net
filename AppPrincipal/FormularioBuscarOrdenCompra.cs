@@ -27,7 +27,7 @@ namespace AppPrincipal
             FrmOrdenCompra = parametro;
            try
             {
-               ServicioOrdenCompra serp = new ServicioOrdenCompra();
+                ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
 
                 this.DgMostrarOrdenCompra.Columns["idEmpleado"].Visible = false;
@@ -57,7 +57,17 @@ namespace AppPrincipal
             {
                 ServicioOrdenCompra serp = new ServicioOrdenCompra();
                 DgMostrarOrdenCompra.DataSource = serp.ListarOrdenCompra();
-           }
+
+                this.DgMostrarOrdenCompra.Columns["idEmpleado"].Visible = false;
+                this.DgMostrarOrdenCompra.Columns["rutEmpleado"].Visible = false;
+
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarOrdenCompra.Columns["idOrdenCompra"].HeaderText = "CODIGO";
+                this.DgMostrarOrdenCompra.Columns["nombreEmpleado"].HeaderText = "EMPLEADO";
+                this.DgMostrarOrdenCompra.Columns["estadoOrdenCompra"].HeaderText = "ESTADO";
+                this.DgMostrarOrdenCompra.Columns["fechaSolicitudOrdenCompra"].HeaderText = "FECHA SOLICITUD";
+                this.DgMostrarOrdenCompra.Columns["fechaRecepcionOrdenCompra"].HeaderText = "FECHA RECEPCION";
+            }
             catch (Exception)
             {
                 MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE ORDEN DE COMPRA");
@@ -176,7 +186,7 @@ namespace AppPrincipal
 
                     FrmRecepcion.TxtNumero.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idOrdenCompra"].Value.ToString();
                     FrmRecepcion.TxtIdEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["idEmpleado"].Value.ToString();
-                    FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombrePersonaEmpleado"].Value.ToString();
+                    FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmRecepcion.DpFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
                     FrmRecepcion.DpFechaRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
