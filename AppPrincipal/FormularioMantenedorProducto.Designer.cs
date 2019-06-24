@@ -40,8 +40,6 @@
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.LblStockActual = new System.Windows.Forms.Label();
             this.LblStockCritico = new System.Windows.Forms.Label();
-            this.TxtDescripcion = new System.Windows.Forms.TextBox();
-            this.LblDescripcion = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.TxtStockActual = new System.Windows.Forms.TextBox();
@@ -50,13 +48,14 @@
             this.LblNombreProObligatorio = new System.Windows.Forms.Label();
             this.LblTipoProObligatorio = new System.Windows.Forms.Label();
             this.LblPrecioObligatorio = new System.Windows.Forms.Label();
-            this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.IdProducto = new System.Windows.Forms.Label();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.CbxFamiliaProducto = new System.Windows.Forms.ComboBox();
             this.LblFamiliaProducto = new System.Windows.Forms.Label();
             this.LblFamiliaObligatorio = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -162,25 +161,6 @@
             this.LblStockCritico.TabIndex = 15;
             this.LblStockCritico.Text = "Stock Critico";
             // 
-            // TxtDescripcion
-            // 
-            this.TxtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(325, 202);
-            this.TxtDescripcion.Multiline = true;
-            this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(279, 120);
-            this.TxtDescripcion.TabIndex = 17;
-            // 
-            // LblDescripcion
-            // 
-            this.LblDescripcion.AutoSize = true;
-            this.LblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcion.Location = new System.Drawing.Point(322, 183);
-            this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(74, 13);
-            this.LblDescripcion.TabIndex = 18;
-            this.LblDescripcion.Text = "Descripcion";
-            // 
             // BtnGuardar
             // 
             this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -273,18 +253,6 @@
             this.LblPrecioObligatorio.Text = "*";
             this.LblPrecioObligatorio.Visible = false;
             // 
-            // LblDescripcionObligatoria
-            // 
-            this.LblDescripcionObligatoria.AutoSize = true;
-            this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(398, 180);
-            this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
-            this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
-            this.LblDescripcionObligatoria.TabIndex = 29;
-            this.LblDescripcionObligatoria.Text = "*";
-            this.LblDescripcionObligatoria.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -344,19 +312,29 @@
             this.LblFamiliaObligatorio.Text = "*";
             this.LblFamiliaObligatorio.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(325, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormularioMantenedorProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 441);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblFamiliaObligatorio);
             this.Controls.Add(this.LblFamiliaProducto);
             this.Controls.Add(this.CbxFamiliaProducto);
             this.Controls.Add(this.TxtIdProducto);
             this.Controls.Add(this.IdProducto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LblDescripcionObligatoria);
             this.Controls.Add(this.LblPrecioObligatorio);
             this.Controls.Add(this.LblTipoProObligatorio);
             this.Controls.Add(this.LblNombreProObligatorio);
@@ -365,8 +343,6 @@
             this.Controls.Add(this.TxtStockActual);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.LblDescripcion);
-            this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblStockCritico);
             this.Controls.Add(this.LblStockActual);
             this.Controls.Add(this.TxtPrecio);
@@ -384,6 +360,7 @@
             this.Name = "FormularioMantenedorProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenedor de Producto";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,26 +375,24 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label LblStockActual;
         private System.Windows.Forms.Label LblStockCritico;
-        private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         public System.Windows.Forms.TextBox TxtCodigo;
         public System.Windows.Forms.TextBox TxtNombreProducto;
         public System.Windows.Forms.ComboBox CbTipoproducto;
         public System.Windows.Forms.TextBox TxtPrecio;
-        public System.Windows.Forms.TextBox TxtDescripcion;
         public System.Windows.Forms.TextBox TxtStockActual;
         public System.Windows.Forms.TextBox TxtStockCritico;
         private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblNombreProObligatorio;
         private System.Windows.Forms.Label LblTipoProObligatorio;
         private System.Windows.Forms.Label LblPrecioObligatorio;
-        private System.Windows.Forms.Label LblDescripcionObligatoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label IdProducto;
         public System.Windows.Forms.TextBox TxtIdProducto;
         public System.Windows.Forms.ComboBox CbxFamiliaProducto;
         private System.Windows.Forms.Label LblFamiliaProducto;
         private System.Windows.Forms.Label LblFamiliaObligatorio;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

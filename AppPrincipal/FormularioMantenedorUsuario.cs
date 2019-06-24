@@ -12,6 +12,9 @@ namespace AppPrincipal
         public FormularioMantenedorUsuario()
         {
             InitializeComponent();
+            TxtRut.Enabled = false;
+            TxtFecha.Enabled = false;
+            TxtNombre.Enabled = false;
         }
 
         //BOTON CANCELAR CREAR USUARIO
@@ -39,9 +42,8 @@ namespace AppPrincipal
         {
             try
             {
-                Persona pers = new Persona();
                 Usuario usr = new Usuario();
-                ServicioPersona serEmp = new ServicioPersona();
+                ServicioUsuario serEmp = new ServicioUsuario();
                 Validaciones val = new Validaciones();
 
                 if (TxtNombre.Text == "" || TxtRut.Text == "")
@@ -58,14 +60,13 @@ namespace AppPrincipal
                 }
                 else
                 {
-                    usr.idUsuario = int.Parse(TxtIdUsuario.Text);
-                    usr.idPersona = int.Parse(TxtIdUsuario.Text);
+                    usr.idPersona = int.Parse(txtidPersona.Text);
                     usr.rutPersona = TxtRut.Text;
                     usr.nombreCompletoPersona = TxtNombre.Text;
                     usr.nombreUsuario = TxtUsuario.Text;
                     usr.claveUsuario = TxtUsuario.Text;
                   
-                    serEmp.GuardarUsario(pers);
+                    serEmp.GuardarUsario(usr);
                 }
             }
             catch (Exception)

@@ -35,21 +35,14 @@ namespace AppPrincipal
             {
                 DgMostrarListaProveedor.DataSource = serp.ListadoProveedor();
 
-               //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
-                this.DgMostrarListaProveedor.Columns[0].Visible = false;
-                this.DgMostrarListaProveedor.Columns[1].Visible = false;
-                this.DgMostrarListaProveedor.Columns[8].Visible = false;
+                  //OCULTA LAS COLUMNAS DEL DATAGRIDVIEW
+                   this.DgMostrarListaProveedor.Columns["idPersona"].Visible = false;
+                   this.DgMostrarListaProveedor.Columns["idProveedor"].Visible = false;
+                   this.DgMostrarListaProveedor.Columns["nombreCompletoPersona"].Visible = false;
 
-
-                //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarListaProveedor.Columns[2].HeaderText = "RUT   ";
-                this.DgMostrarListaProveedor.Columns[3].HeaderText = "DIRECCION          ";
-                this.DgMostrarListaProveedor.Columns[4].HeaderText = "EMAIL                            ";
-                this.DgMostrarListaProveedor.Columns[5].HeaderText = "TELEFONO 1";
-                this.DgMostrarListaProveedor.Columns[6].HeaderText = "TELEFONO 2";
-                this.DgMostrarListaProveedor.Columns[7].HeaderText = "TELEFONO 3";
-                this.DgMostrarListaProveedor.Columns[9].HeaderText = "RAZON SOCIAL ";
-
+                   //DA NOMBRE A LAS COLUMNAS
+                   this.DgMostrarListaProveedor.Columns["rutPersona"].HeaderText = "RUT";
+                   this.DgMostrarListaProveedor.Columns["razonSocialProveedor"].HeaderText = "RAZON SOCIAL";
             }
             catch (Exception)
             {
@@ -84,16 +77,11 @@ namespace AppPrincipal
                 FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
                 if (DgMostrarListaProveedor.SelectedRows.Count > 0)
                 {
-                    fmp.TxtIdPersona.Text = DgMostrarListaProveedor.CurrentRow.Cells[0].Value.ToString();
-                    fmp.TxtIdProveedor.Text = DgMostrarListaProveedor.CurrentRow.Cells[8].Value.ToString();
-                    fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells[1].Value.ToString();
-                    fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells[2].Value.ToString();
-                    fmp.TxtDireccion.Text = DgMostrarListaProveedor.CurrentRow.Cells[3].Value.ToString();
-                    fmp.TxtEmail.Text = DgMostrarListaProveedor.CurrentRow.Cells[4].Value.ToString();
-                    fmp.TxtTelefono1.Text = DgMostrarListaProveedor.CurrentRow.Cells[5].Value.ToString();
-                    fmp.TxtTelefono2.Text = DgMostrarListaProveedor.CurrentRow.Cells[6].Value.ToString();
-                    fmp.TxtTelefono3.Text = DgMostrarListaProveedor.CurrentRow.Cells[7].Value.ToString();
-
+                    fmp.TxtIdPersona.Text = DgMostrarListaProveedor.CurrentRow.Cells["idPersona"].Value.ToString();
+                    fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells["rutPersona"].Value.ToString();
+                    fmp.TxtIdProveedor.Text = DgMostrarListaProveedor.CurrentRow.Cells["idProveedor"].Value.ToString();
+                    fmp.TxtRazonSocial.Text = DgMostrarListaProveedor.CurrentRow.Cells["razonSocialProveedor"].Value.ToString();
+                   
                     if (fmp.ShowDialog() == DialogResult.OK)
                     {
                         ListarProveedor();

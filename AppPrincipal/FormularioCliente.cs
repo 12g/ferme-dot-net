@@ -28,20 +28,15 @@ namespace AppPrincipal
                 DGMostrarListaCliente.DataSource = sercl.ListarClientes();
 
                //OCULTA LAS FILAS
-                this.DGMostrarListaCliente.Columns[0].Visible = false;
-                this.DGMostrarListaCliente.Columns[8].Visible = false;
+                this.DGMostrarListaCliente.Columns["idPersona"].Visible = false;
+                this.DGMostrarListaCliente.Columns["idCliente"].Visible = false;
 
 
 
                 //DA NOMBRE A LAS COLUMNAS
-                this.DGMostrarListaCliente.Columns[1].HeaderText = "NOMBRE";
-                this.DGMostrarListaCliente.Columns[2].HeaderText = "RUT";
-                this.DGMostrarListaCliente.Columns[3].HeaderText = "DIRECCION";
-                this.DGMostrarListaCliente.Columns[4].HeaderText = "EMAIL";
-                this.DGMostrarListaCliente.Columns[5].HeaderText = "TELEFONO 1";
-                this.DGMostrarListaCliente.Columns[6].HeaderText = "TELEFONO 2";
-                this.DGMostrarListaCliente.Columns[7].HeaderText = "TELEFONO 3";
-
+                this.DGMostrarListaCliente.Columns["rutPersona"].HeaderText = "RUT";
+                this.DGMostrarListaCliente.Columns["nombreCompletoPersona"].HeaderText = "NOMBRE";
+                
             }
             catch (Exception)
             {
@@ -74,15 +69,10 @@ namespace AppPrincipal
 
                 if (DGMostrarListaCliente.SelectedRows.Count >0)
                 {
-                    fmc.TxtIdPersona.Text = DGMostrarListaCliente.CurrentRow.Cells[0].Value.ToString();
-                    fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[8].Value.ToString();
-                    fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells[2].Value.ToString();
-                    fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells[1].Value.ToString();
-                    fmc.TxtDireccion.Text = DGMostrarListaCliente.CurrentRow.Cells[3].Value.ToString();
-                    fmc.TxtEmail.Text = DGMostrarListaCliente.CurrentRow.Cells[4].Value.ToString();
-                    fmc.TxtTelefeno1.Text = DGMostrarListaCliente.CurrentRow.Cells[5].Value.ToString();
-                    fmc.TxtTelefono2.Text = DGMostrarListaCliente.CurrentRow.Cells[6].Value.ToString();
-                    fmc.TxtTelefono3.Text = DGMostrarListaCliente.CurrentRow.Cells[7].Value.ToString();
+                    fmc.TxtIdPersona.Text = DGMostrarListaCliente.CurrentRow.Cells["idPersona"].Value.ToString();
+                    fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells["idCliente"].Value.ToString();
+                    fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells["rutPersona"].Value.ToString();
+                    fmc.TxtNombre.Text = DGMostrarListaCliente.CurrentRow.Cells["nombreCompletoPersona"].Value.ToString();
 
                     if (fmc.ShowDialog() == DialogResult.OK)
                     {

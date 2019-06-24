@@ -47,7 +47,6 @@ namespace AppPrincipal
         private void Limpiar()
         {
             TxtCodigo.Text = "";
-            TxtDescripcion.Text = "";
             TxtNombreProducto.Text = "";
             TxtPrecio.Text = "";
             TxtStockActual.Text = "";
@@ -115,18 +114,6 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("STOCK CRITICO NO DEBE SUPERAR LOS 1.000 UNIDADES");
                 }
-                else if (TxtDescripcion.Text == "")
-                {
-                    MessageBox.Show("INGRESE UNA DESCRIPCION DEL PRODUCTO");
-                }
-                else if (TxtDescripcion.Text.Length <= 3)
-                {
-                    MessageBox.Show("INGRESE UNA DESCRIPCION MAYOR A 3 LETRAS");
-                }
-                else if (TxtDescripcion.Text.Length >= 100)
-                {
-                    MessageBox.Show("DESCRIPCION SUPERA LOS 100 CARACTERES ");
-                }
                 else if (CbTipoproducto.SelectedIndex.Equals(-1))
                 {
                     MessageBox.Show("SELECCIONE UN TIPO PRODUCTO");
@@ -150,7 +137,6 @@ namespace AppPrincipal
                     pro.nombreTipoProducto = CbTipoproducto.SelectedValue.ToString();
                     pro.descripcionFamiliaProducto = CbxFamiliaProducto.SelectedValue.ToString();
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
-                    pro.descripcionProducto = TxtDescripcion.Text;
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
                     pro.stockCriticoProducto = int.Parse(TxtStockCritico.Text);
 

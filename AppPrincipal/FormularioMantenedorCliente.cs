@@ -51,11 +51,6 @@ namespace AppPrincipal
         {
             TxtRutCliente.Text = "";
             TxtNombre.Text = "";
-            TxtDireccion.Text = "";
-            TxtEmail.Text = "";
-            TxtTelefeno1.Text = "0";
-            TxtTelefono2.Text = "0";
-            TxtTelefono3.Text = "0";
             TxtIdCliente.Text = "";
         }
 
@@ -80,32 +75,6 @@ namespace AppPrincipal
                     MessageBox.Show("NOMBRE NO PUEDE ESTAR EN BLANCO ");
                     lblMensajeNombre.Visible = true;
                 }
-                else if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
-                {
-                    MessageBox.Show("DIRECCION NO PUEDE ESTAR EN BLANCO");
-                    lblMensajeDireccion.Visible = true;
-                }
-                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
-                {
-                    MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
-                    lblMensajeEmail.Visible = true;
-                }
-                else if (val.ValidarEmail(TxtEmail.Text) == false)
-                {
-                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
-                }
-                else if (!val.IsNumeric(TxtTelefeno1.Text) || TxtTelefeno1.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 1");
-                }
-                else if (!val.IsNumeric(TxtTelefono2.Text) || TxtTelefono2.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 2");
-                }
-                else if (!val.IsNumeric(TxtTelefono3.Text) || TxtTelefono3.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
-                }
                 else
                 {
                     Cliente cli = new Cliente();
@@ -115,11 +84,6 @@ namespace AppPrincipal
                     cli.idCliente = int.Parse(TxtIdCliente.Text);
                     cli.rutPersona = TxtRutCliente.Text;
                     cli.nombreCompletoPersona = TxtNombre.Text;
-                    cli.direccionPersona = TxtDireccion.Text;
-                    cli.emailPersona = TxtEmail.Text;
-                    cli.fonoPersona1 = int.Parse(TxtTelefeno1.Text);
-                    cli.fonoPersona2 = int.Parse(TxtTelefono2.Text);
-                    cli.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     serv.CrearCliente(cli);
 
@@ -193,75 +157,6 @@ namespace AppPrincipal
             {
                 lblMensajeNombre.Visible = false;
                 TxtNombre.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
-            }
-        }
-
-
-        //APARECE EL SIGNO * SI LA DIRECCION ESTA EN BLANCO
-        private void TxtDireccion_Leave(object sender, EventArgs e)
-        {
-            if (TxtDireccion.Text == "" || val.IsNumeric(TxtDireccion.Text))
-            {
-                lblMensajeDireccion.Visible = true;
-                TxtDireccion.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
-            }
-            else
-            {
-                lblMensajeDireccion.Visible = false;
-                TxtDireccion.CharacterCasing = CharacterCasing.Upper;//MAYUSCULAS
-            }
-        }
-
-
-        //SE USA EN EMAIL DE CLIENTE
-        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
-      
-        //EVENTO LEAVE PARA VALIDAR EL FORMATO DEL CORREO
-        private void TxtEmail_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (val.ValidarEmail(TxtEmail.Text))
-                {
-                    lblMensajeEmail.Visible = false;
-                }
-                else
-                {
-                    lblMensajeEmail.Visible = true;
-                    TxtEmail.SelectAll();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("INGRESE UN EMAIL VALIDO");
-            }
-            
-        }
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 1 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefeno1_Leave(object sender, EventArgs e)
-        {
-             if ( !val.IsNumeric(TxtTelefeno1.Text) )
-                {
-                    TxtTelefeno1.Text = "0";
-                }
-        }
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 2 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefono2_Leave(object sender, EventArgs e)
-        {
-            if (!val.IsNumeric(TxtTelefono2.Text))
-            {
-                TxtTelefono2.Text = "0";
-            }
-        }
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 3 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefono3_Leave(object sender, EventArgs e)
-        {
-            if (!val.IsNumeric(TxtTelefono3.Text))
-            {
-                TxtTelefono3.Text = "0";
             }
         }
 

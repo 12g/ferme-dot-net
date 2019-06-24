@@ -20,28 +20,23 @@ namespace AppPrincipal
             InitializeComponent();
 
             frmusuario = parametro;
-            try
+           try
             {
-                ServicioPersona serp = new ServicioPersona();
+                ServicioUsuario serp = new ServicioUsuario();
                 DgMostrarPersona.DataSource = serp.ListarPersona();
 
                 //OCULTAR COLUMNA
-                this.DgMostrarPersona.Columns[3].Visible = false;
-                this.DgMostrarPersona.Columns[4].Visible = false;
-                this.DgMostrarPersona.Columns[5].Visible = false;
-                this.DgMostrarPersona.Columns[6].Visible = false;
-                this.DgMostrarPersona.Columns[7].Visible = false;
-                
-
+                this.DgMostrarPersona.Columns["idPersona"].Visible = false;
+              
                 //DA NOMBRE A LAS COLUMNAS
-                this.DgMostrarPersona.Columns[1].HeaderText = "NOMBRE";
-                this.DgMostrarPersona.Columns[2].HeaderText = "RUT";
+                this.DgMostrarPersona.Columns["nombreCompletoPersona"].HeaderText = "NOMBRE";
+                this.DgMostrarPersona.Columns["rutPersona"].HeaderText = "RUT";
                
                 
             }
             catch (Exception)
             {
-                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");
+                MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE EMPLEADOS");
             }
         }
 
@@ -89,7 +84,7 @@ namespace AppPrincipal
             }
             else
             {
-                ServicioPersona ser = new ServicioPersona();
+                ServicioUsuario ser = new ServicioUsuario();
                 DgMostrarPersona.DataSource = ser.ListarPersona();
             }
         }
@@ -98,9 +93,9 @@ namespace AppPrincipal
         {
             try
             {
-                frmusuario.TxtIdUsuario.Text = DgMostrarPersona.CurrentRow.Cells[0].Value.ToString();
-                frmusuario.TxtRut.Text = DgMostrarPersona.CurrentRow.Cells[2].Value.ToString();
-                frmusuario.TxtNombre.Text = DgMostrarPersona.CurrentRow.Cells[1].Value.ToString();
+                frmusuario.txtidPersona.Text = DgMostrarPersona.CurrentRow.Cells["idPersona"].Value.ToString();
+                frmusuario.TxtRut.Text = DgMostrarPersona.CurrentRow.Cells["rutPersona"].Value.ToString();
+                frmusuario.TxtNombre.Text = DgMostrarPersona.CurrentRow.Cells["nombreCompletoPersona"].Value.ToString();
                 this.Close();
             }
             catch (Exception)

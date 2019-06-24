@@ -13,7 +13,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ServiciosConexionFerme
 {
-   public class ServicioPersona
+    public class ServicioUsuario
     {
         //METODO DE CONEXION
         public void GetResource()
@@ -32,9 +32,9 @@ namespace ServiciosConexionFerme
 
             Console.WriteLine(responseAsync);
         }
-
-        //SERIALIZA EL CLIENTE PARA CONVERTIR A JSON
-        public void GuardarUsario(Persona per)
+    
+        //SERIALIZA EL USUARIO PARA CONVERTIR A JSON
+        public void GuardarUsario(Usuario per)
         {
 
             var json = JsonConvert.SerializeObject(per);
@@ -51,7 +51,6 @@ namespace ServiciosConexionFerme
         //LISTARCLIENTES
         public JArray ListarPersona()
         {
-
             string uri = "http://localhost:8082/api/gestion/personas";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
@@ -60,6 +59,7 @@ namespace ServiciosConexionFerme
             return JsonConvert.DeserializeObject<JArray>(s);
 
         }
+
 
         //LISTARCLIENTES
         public JArray ListarUsuario()
@@ -73,7 +73,5 @@ namespace ServiciosConexionFerme
             return JsonConvert.DeserializeObject<JArray>(s);
 
         }
-
-
     }
 }

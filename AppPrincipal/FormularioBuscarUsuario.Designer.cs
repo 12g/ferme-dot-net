@@ -41,7 +41,7 @@
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(229, 9);
+            this.LblTitulo.Location = new System.Drawing.Point(119, 9);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(237, 29);
             this.LblTitulo.TabIndex = 11;
@@ -62,9 +62,9 @@
             this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(246, 467);
+            this.BtnCancelar.Location = new System.Drawing.Point(139, 365);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(236, 43);
+            this.BtnCancelar.Size = new System.Drawing.Size(186, 43);
             this.BtnCancelar.TabIndex = 9;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -85,11 +85,12 @@
             this.DgMostrarPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgMostrarPersona.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMostrarPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMostrarPersona.Location = new System.Drawing.Point(31, 113);
             this.DgMostrarPersona.Name = "DgMostrarPersona";
             this.DgMostrarPersona.ReadOnly = true;
-            this.DgMostrarPersona.Size = new System.Drawing.Size(676, 325);
+            this.DgMostrarPersona.Size = new System.Drawing.Size(420, 236);
             this.DgMostrarPersona.TabIndex = 7;
             this.DgMostrarPersona.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarPersona_CellDoubleClick);
             // 
@@ -97,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 522);
+            this.ClientSize = new System.Drawing.Size(493, 420);
             this.ControlBox = false;
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.LblBuscar);

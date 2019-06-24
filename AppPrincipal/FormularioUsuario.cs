@@ -38,11 +38,6 @@ namespace AppPrincipal
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadoUsuario.Columns["rutPersona"].HeaderText = "RUT";
                 this.DGlistadoUsuario.Columns["nombreCompletoPersona"].HeaderText = "NOMBRE";
-                this.DGlistadoUsuario.Columns["direccionPersona"].HeaderText = "DIRECCION";
-                this.DGlistadoUsuario.Columns["emailPersona"].HeaderText = "EMAIL";
-                this.DGlistadoUsuario.Columns["fonoPersona1"].HeaderText = "TELEFONO 1";
-                this.DGlistadoUsuario.Columns["fonoPersona2"].HeaderText = "TELEFONO 2";
-                this.DGlistadoUsuario.Columns["fonoPersona3"].HeaderText = "TELEFONO 3";
                 this.DGlistadoUsuario.Columns["descripcionCargo"].HeaderText = "CARGO";
             }
             catch (Exception)
@@ -96,12 +91,6 @@ namespace AppPrincipal
                     fmp.CbxCargo.Text = DGlistadoUsuario.CurrentRow.Cells["descripcionCargo"].Value.ToString();
                     fmp.TxtNombre.Text = DGlistadoUsuario.CurrentRow.Cells["nombreCompletoPersona"].Value.ToString();
 
-                    fmp.TxtDireccion.Text = DGlistadoUsuario.CurrentRow.Cells["direccionPersona"].Value.ToString();
-                    fmp.TxtEmail.Text = DGlistadoUsuario.CurrentRow.Cells["emailPersona"].Value.ToString();
-                    fmp.TxtTelefeno1.Text = DGlistadoUsuario.CurrentRow.Cells["fonoPersona1"].Value.ToString();
-                    fmp.TxtTelefono2.Text = DGlistadoUsuario.CurrentRow.Cells["fonoPersona2"].Value.ToString();
-                    fmp.TxtTelefono3.Text = DGlistadoUsuario.CurrentRow.Cells["fonoPersona3"].Value.ToString();
-
                      //BLOQUEA EL CAMPO DEL RUT AL MOMENTO DE EDITAR EL EMPLEADO
                     //fmp.TxtRutCliente.Enabled = false;
 
@@ -151,6 +140,12 @@ namespace AppPrincipal
                 ServicioEmpleado ser = new ServicioEmpleado();
                 DGlistadoUsuario.DataSource = ser.ListaEmpleados();
             }
+        }
+
+        private void BtnEditarUsuario_Click(object sender, EventArgs e)
+        {
+            FormularioEditarUsuario fb = new FormularioEditarUsuario();
+            fb.ShowDialog();
         }
     }
 }

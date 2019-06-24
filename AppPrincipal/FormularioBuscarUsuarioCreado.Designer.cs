@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioBuscarUsuarioCreado));
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.BtnCancelar.TabIndex = 14;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // TxtBuscarPersona
             // 
@@ -82,23 +84,29 @@
             this.DgMostrarPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgMostrarPersona.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMostrarPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMostrarPersona.Location = new System.Drawing.Point(11, 113);
             this.DgMostrarPersona.Name = "DgMostrarPersona";
             this.DgMostrarPersona.ReadOnly = true;
             this.DgMostrarPersona.Size = new System.Drawing.Size(649, 299);
             this.DgMostrarPersona.TabIndex = 12;
+            this.DgMostrarPersona.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarPersona_CellDoubleClick);
             // 
             // FormularioBuscarUsuarioCreado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 491);
+            this.ControlBox = false;
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.TxtBuscarPersona);
             this.Controls.Add(this.DgMostrarPersona);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormularioBuscarUsuarioCreado";
             this.Text = "FormularioBuscarUsuarioCreado";
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarPersona)).EndInit();

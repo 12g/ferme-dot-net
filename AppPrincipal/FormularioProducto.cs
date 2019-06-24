@@ -56,7 +56,6 @@ namespace AppPrincipal
                         fmp.CbTipoproducto.Text = DGlistadeproductos.CurrentRow.Cells["nombreTipoProducto"].Value.ToString();
                         fmp.TxtStockActual.Text = DGlistadeproductos.CurrentRow.Cells["stockActualProducto"].Value.ToString();
                         fmp.TxtStockCritico.Text = DGlistadeproductos.CurrentRow.Cells["stockCriticoProducto"].Value.ToString();
-                        fmp.TxtDescripcion.Text = DGlistadeproductos.CurrentRow.Cells["descripcionProducto"].Value.ToString();
                         fmp.TxtPrecio.Text = DGlistadeproductos.CurrentRow.Cells["precioProducto"].Value.ToString();
                         fmp.CbxFamiliaProducto.Text = DGlistadeproductos.CurrentRow.Cells["descripcionFamiliaProducto"].Value.ToString();
                     }
@@ -90,7 +89,7 @@ namespace AppPrincipal
             {
                 DGlistadeproductos.DataSource = ser.GetRESTData();
 
-               //OCULTA LAS COLUMNAS
+              //OCULTA LAS COLUMNAS
                 this.DGlistadeproductos.Columns["idProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idTipoProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idFamiliaProducto"].Visible = false;
@@ -99,8 +98,8 @@ namespace AppPrincipal
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadeproductos.Columns["codigoProducto"].HeaderText = "CODIGO";
                 this.DGlistadeproductos.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
-                this.DGlistadeproductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION PRODUCTO";
                 this.DGlistadeproductos.Columns["precioProducto"].HeaderText = "PRECIO";
+                //this.DGlistadeproductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION PRODUCTO";
                 this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText ="STOCK ACTUAL";
                 this.DGlistadeproductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
                 this.DGlistadeproductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
@@ -162,7 +161,16 @@ namespace AppPrincipal
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-         
+            try
+            {
+              
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR AL ELIMINAR PRODUCTO");
+            }
         }
 
         private void BtnRubro_Click(object sender, EventArgs e)

@@ -62,10 +62,10 @@ namespace ServiciosConexionFerme
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var responseMessage = httpClient.PostAsync("gestion/ordenes_compra/detalles", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-           
-            
-            Console.WriteLine(resp);
             List<DetalleOrdenCompra> ListaDetalle = JsonConvert.DeserializeObject<List<DetalleOrdenCompra>>(resp);
+
+            Console.WriteLine(resp);
+            
             //Console.WriteLine(json);
 
             return ListaDetalle;
@@ -79,7 +79,7 @@ namespace ServiciosConexionFerme
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
             string s = reader.ReadToEnd();
-          return JsonConvert.DeserializeObject<List<Orden_Compra>>(s);
+             return JsonConvert.DeserializeObject<List<Orden_Compra>>(s);
         }
     }
 }

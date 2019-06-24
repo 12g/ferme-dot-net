@@ -36,8 +36,6 @@
             this.TxtRut = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.IdUsuario = new System.Windows.Forms.Label();
-            this.TxtIdUsuario = new System.Windows.Forms.TextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.LblContraseña = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@
             this.LblFecha = new System.Windows.Forms.Label();
             this.TxtFecha = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.txtidPersona = new System.Windows.Forms.TextBox();
+            this.LblIdPersona = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -60,9 +60,9 @@
             // BtnAceptar
             // 
             this.BtnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(112, 273);
+            this.BtnAceptar.Location = new System.Drawing.Point(53, 227);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(117, 39);
+            this.BtnAceptar.Size = new System.Drawing.Size(167, 39);
             this.BtnAceptar.TabIndex = 2;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
@@ -71,9 +71,9 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(282, 273);
+            this.BtnCancelar.Location = new System.Drawing.Point(299, 227);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(117, 39);
+            this.BtnCancelar.Size = new System.Drawing.Size(167, 39);
             this.BtnCancelar.TabIndex = 3;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -93,7 +93,6 @@
             // 
             this.TxtRut.Location = new System.Drawing.Point(18, 72);
             this.TxtRut.Name = "TxtRut";
-            this.TxtRut.ReadOnly = true;
             this.TxtRut.Size = new System.Drawing.Size(144, 20);
             this.TxtRut.TabIndex = 5;
             // 
@@ -114,25 +113,6 @@
             this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(484, 20);
             this.TxtNombre.TabIndex = 9;
-            // 
-            // IdUsuario
-            // 
-            this.IdUsuario.AutoSize = true;
-            this.IdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdUsuario.Location = new System.Drawing.Point(8, 9);
-            this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.Size = new System.Drawing.Size(61, 13);
-            this.IdUsuario.TabIndex = 26;
-            this.IdUsuario.Text = "IdUsuario";
-            this.IdUsuario.Visible = false;
-            // 
-            // TxtIdUsuario
-            // 
-            this.TxtIdUsuario.Location = new System.Drawing.Point(11, 25);
-            this.TxtIdUsuario.Name = "TxtIdUsuario";
-            this.TxtIdUsuario.ReadOnly = true;
-            this.TxtIdUsuario.Size = new System.Drawing.Size(126, 20);
-            this.TxtIdUsuario.TabIndex = 27;
             // 
             // LblUsuario
             // 
@@ -182,7 +162,6 @@
             // 
             this.TxtFecha.Location = new System.Drawing.Point(311, 69);
             this.TxtFecha.Name = "TxtFecha";
-            this.TxtFecha.ReadOnly = true;
             this.TxtFecha.Size = new System.Drawing.Size(176, 20);
             this.TxtFecha.TabIndex = 33;
             // 
@@ -196,12 +175,34 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // txtidPersona
+            // 
+            this.txtidPersona.Location = new System.Drawing.Point(8, 25);
+            this.txtidPersona.Name = "txtidPersona";
+            this.txtidPersona.ReadOnly = true;
+            this.txtidPersona.Size = new System.Drawing.Size(126, 20);
+            this.txtidPersona.TabIndex = 36;
+            this.txtidPersona.Visible = false;
+            // 
+            // LblIdPersona
+            // 
+            this.LblIdPersona.AutoSize = true;
+            this.LblIdPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdPersona.Location = new System.Drawing.Point(5, 9);
+            this.LblIdPersona.Name = "LblIdPersona";
+            this.LblIdPersona.Size = new System.Drawing.Size(64, 13);
+            this.LblIdPersona.TabIndex = 37;
+            this.LblIdPersona.Text = "IdPersona";
+            this.LblIdPersona.Visible = false;
+            // 
             // FormularioMantenedorUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 325);
+            this.ClientSize = new System.Drawing.Size(551, 303);
             this.ControlBox = false;
+            this.Controls.Add(this.LblIdPersona);
+            this.Controls.Add(this.txtidPersona);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtFecha);
             this.Controls.Add(this.LblFecha);
@@ -209,8 +210,6 @@
             this.Controls.Add(this.LblContraseña);
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.LblUsuario);
-            this.Controls.Add(this.TxtIdUsuario);
-            this.Controls.Add(this.IdUsuario);
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.TxtRut);
@@ -236,8 +235,6 @@
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label LblRut;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.Label IdUsuario;
-        public System.Windows.Forms.TextBox TxtIdUsuario;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.Label LblContraseña;
         private System.Windows.Forms.Label LblFecha;
@@ -247,5 +244,7 @@
         public System.Windows.Forms.TextBox TxtNombre;
         public System.Windows.Forms.TextBox TxtUsuario;
         public System.Windows.Forms.TextBox TxtContraseña;
+        public System.Windows.Forms.TextBox txtidPersona;
+        private System.Windows.Forms.Label LblIdPersona;
     }
 }

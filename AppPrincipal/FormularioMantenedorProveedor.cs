@@ -47,11 +47,6 @@ namespace AppPrincipal
         {
             TxtRut.Text = "";
             TxtRazonSocial.Text = "";
-            TxtDireccion.Text = "";
-            TxtEmail.Text = "";
-            TxtTelefono1.Text = "0";
-            TxtTelefono2.Text = "0";
-            TxtTelefono3.Text = "0";
             TxtIdProveedor.Text = "";
             TxtIdPersona.Text = "";
         }
@@ -83,27 +78,6 @@ namespace AppPrincipal
                     MessageBox.Show("RAZON SOCIAL DEBE TENER MINIMO 4 LETRAS");
                     LblRazonSocialObligatorio.Visible = true;
                 }
-                else if (TxtEmail.Text == "" || val.IsNumeric(TxtEmail.Text))
-                {
-                    MessageBox.Show("EMAIL NO PUEDE ESTAR EN BLANCO");
-                    LblEmailObligatorio.Visible = true;
-                }
-                else if (val.ValidarEmail(TxtEmail.Text) == false)
-                {
-                    MessageBox.Show("INGRESE UN EMAIL VALIDO");
-                }
-                else if (!val.IsNumeric(TxtTelefono1.Text) || TxtTelefono1.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 1");
-                }
-                else if (!val.IsNumeric(TxtTelefono2.Text) || TxtTelefono2.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 2");
-                }
-                else if (!val.IsNumeric(TxtTelefono3.Text) || TxtTelefono3.TextLength >= 10)
-                {
-                    MessageBox.Show("INGRESE UN TELEFONO VALIDO EN  CAMPO TELEFONO 3");
-                }
                 else
                 {
 
@@ -115,11 +89,6 @@ namespace AppPrincipal
                     pro.rutPersona = TxtRut.Text;
                     pro.razonSocialProveedor = TxtRazonSocial.Text;
                     pro.nombreCompletoPersona = TxtRazonSocial.Text;
-                    pro.direccionPersona = TxtDireccion.Text;
-                    pro.emailPersona = TxtEmail.Text;
-                    pro.fonoPersona1 = int.Parse(TxtTelefono1.Text);
-                    pro.fonoPersona2 = int.Parse(TxtTelefono2.Text);
-                    pro.fonoPersona3 = int.Parse(TxtTelefono3.Text);
 
                     sp.CrearProveedor(pro);
 
@@ -198,78 +167,6 @@ namespace AppPrincipal
             Validaciones val = new Validaciones();
             val.SoloNumero(e);
         }
-
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 1 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefono1_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-
-            if (!val.IsNumeric(TxtTelefono1.Text))
-            {
-                TxtTelefono1.Text = "0";
-            }
-        }
-
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 2 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefono2_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-
-            if (!val.IsNumeric(TxtTelefono2.Text))
-            {
-                TxtTelefono2.Text = "0";
-            }
-        }
-
-
-
-        //EVENTO QUE VALIDA QUE EL CAMPO TELEFONO 3 NUNCA ESTE VACIO HE INICIE CON UN CERO
-        private void TxtTelefono3_Leave(object sender, EventArgs e)
-        {
-            Validaciones val = new Validaciones();
-
-            if (!val.IsNumeric(TxtTelefono3.Text))
-            {
-                TxtTelefono3.Text = "0";
-            }
-        }
-
-
-        
-        //METODO PARA VALIDAR EL FORMATO DEL EMAIL
-        //EVENTO LEAVE PARA VALIDAR EL FORMATO DEL CORREO
-        private void TxtEmail_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-
-                Validaciones val = new Validaciones();
-
-                if (val.ValidarEmail(TxtEmail.Text) )
-                {
-                    LblEmailObligatorio.Visible = false;
-                }
-                else
-                {
-                    LblEmailObligatorio.Visible = true;
-                    TxtEmail.SelectAll();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("INGRESE UN EMAIL VALIDO");
-            }
-        }
-
-        //SE VA A BUSCAR EL METODO SOLONUMERO EN TEXTBOX TELEFONO
-        private void TxtTelefono2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validaciones val = new Validaciones();
-            val.SoloNumero(e);
-        }
-
        
     }
 }

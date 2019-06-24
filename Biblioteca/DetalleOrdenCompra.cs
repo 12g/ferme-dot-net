@@ -16,6 +16,6 @@ namespace Biblioteca
         public string codigoProducto { get; set; }
         public string nombreProducto { get; set; }
         public int cantidadProducto { get; set; }
-
+        public int precioProducto { get; set; }
     }
 }

@@ -126,7 +126,7 @@ namespace AppPrincipal
         private void DgMostrarOrdenCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //detallar campos*******************************************
-            try
+           try
              {
                  try
                  {
