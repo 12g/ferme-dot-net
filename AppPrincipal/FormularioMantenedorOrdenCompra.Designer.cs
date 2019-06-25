@@ -38,8 +38,6 @@
             this.TxtNumero = new System.Windows.Forms.TextBox();
             this.LblFecha = new System.Windows.Forms.Label();
             this.DPfechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.DPfechaTermino = new System.Windows.Forms.DateTimePicker();
-            this.LblFechaTermino = new System.Windows.Forms.Label();
             this.CbEmpleado = new System.Windows.Forms.ComboBox();
             this.LblEmpleado = new System.Windows.Forms.Label();
             this.LblEstado = new System.Windows.Forms.Label();
@@ -142,24 +140,6 @@
             this.DPfechaInicio.Size = new System.Drawing.Size(250, 20);
             this.DPfechaInicio.TabIndex = 8;
             this.DPfechaInicio.Value = new System.DateTime(2019, 6, 11, 0, 0, 0, 0);
-            // 
-            // DPfechaTermino
-            // 
-            this.DPfechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DPfechaTermino.Location = new System.Drawing.Point(13, 183);
-            this.DPfechaTermino.Name = "DPfechaTermino";
-            this.DPfechaTermino.Size = new System.Drawing.Size(250, 20);
-            this.DPfechaTermino.TabIndex = 9;
-            // 
-            // LblFechaTermino
-            // 
-            this.LblFechaTermino.AutoSize = true;
-            this.LblFechaTermino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaTermino.Location = new System.Drawing.Point(13, 168);
-            this.LblFechaTermino.Name = "LblFechaTermino";
-            this.LblFechaTermino.Size = new System.Drawing.Size(91, 13);
-            this.LblFechaTermino.TabIndex = 10;
-            this.LblFechaTermino.Text = "Fecha Termino";
             // 
             // CbEmpleado
             // 
@@ -446,8 +426,6 @@
             this.Controls.Add(this.LblEstado);
             this.Controls.Add(this.LblEmpleado);
             this.Controls.Add(this.CbEmpleado);
-            this.Controls.Add(this.LblFechaTermino);
-            this.Controls.Add(this.DPfechaTermino);
             this.Controls.Add(this.DPfechaInicio);
             this.Controls.Add(this.LblFecha);
             this.Controls.Add(this.TxtNumero);
@@ -477,7 +455,6 @@
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblFecha;
-        private System.Windows.Forms.Label LblFechaTermino;
         private System.Windows.Forms.Label LblEmpleado;
         private System.Windows.Forms.Label LblEstado;
         private System.Windows.Forms.Label LblProducto;
@@ -500,7 +477,6 @@
         private System.Windows.Forms.Button BtnBuscarOrdenCompra;
         public System.Windows.Forms.TextBox TxtNumero;
         public System.Windows.Forms.DateTimePicker DPfechaInicio;
-        public System.Windows.Forms.DateTimePicker DPfechaTermino;
         public System.Windows.Forms.ComboBox CbEmpleado;
         public System.Windows.Forms.DataGridView DgListadoProductoOC;
         public System.Windows.Forms.ComboBox CbEstado;

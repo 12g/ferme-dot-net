@@ -103,7 +103,7 @@ namespace AppPrincipal
             {
       
                 DPfechaInicio.Value = DateTime.Now;
-                DPfechaTermino.Value = DateTime.Now;
+               
                 TxtIdProducto.Text = "";
                 TxtCodProducto.Text = "";
                 TxtNombreProducto.Text = "";
@@ -155,12 +155,7 @@ namespace AppPrincipal
             DPfechaInicio.CustomFormat = "dd/MM/yyyy";
         }
 
-        private void FechaTermino()
-        {
-            DPfechaTermino.Format = DateTimePickerFormat.Custom;
-            // Display the date as "Mon 26 Feb 2001".
-            DPfechaTermino.CustomFormat = "dd/MM/yyyy";
-        }
+      
 
         //BOTON GUARDAR ORDEN COMPRA
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -173,10 +168,7 @@ namespace AppPrincipal
                     MessageBox.Show("INGRESE UN NUMERO DE ORDEN DE COMPRA");
                 }
                 //Comparar fechas
-                else if (DPfechaInicio.Value.Date > DPfechaTermino.Value.Date)
-                {
-                    MessageBox.Show("La fecha TERMINO no puede ser menor a la fecha INICIO");
-                }
+               
                 else if (CbEmpleado.SelectedIndex.Equals(-1))
                 {
                     MessageBox.Show("SELECCIONE UN EMPLEADO");
@@ -186,13 +178,14 @@ namespace AppPrincipal
                 {
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
                     Orden_Compra oc = new Orden_Compra();
+                    oc.detallesOrdenVista = null;
 
                     oc.idOrdenCompra = int.Parse(TxtNumero.Text);
                     oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
                     oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue); ;
                     oc.nombreEmpleado = CbEmpleado.Text;
                     oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
-                    oc.fechaRecepcionOrdenCompra = DPfechaTermino.Text;
+       
 
                     oc.detallesOrdenCompra = detalleOC;
                    
@@ -250,8 +243,6 @@ namespace AppPrincipal
 
                             detalle.Add(dv);
                             DetalleOrdenCompra det = new DetalleOrdenCompra();
-                            //det.idDetalleOrdenCompra = int.Parse(TxtNumero.Text);
-                            //det.idOrdenCompra = int.Parse(TxtNumero.Text);
                             det.idProducto = int.Parse(TxtIdProducto.Text);
                             det.codigoProducto = TxtCodProducto.Text;
                             det.nombreProducto = TxtNombreProducto.Text;
@@ -344,7 +335,7 @@ namespace AppPrincipal
                 BtnBorrar.Enabled = false;
                 BtnEditar.Enabled = false;
                 fechaInicio();
-                FechaTermino();
+         
                 ListaOrdenC();
 
                 //CODIGO QUE GENERA UN NUMERO CORRELATIVO

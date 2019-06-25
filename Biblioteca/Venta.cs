@@ -9,35 +9,15 @@ namespace Biblioteca
 {
      public class Venta
     {
-       // [DisplayName("COD COMPRA")]
-        public int? idVenta { get; set; }
-
-        //[DisplayName("TIPOVENTA")]
+        public int idVenta { get; set; }
         public string tipoVenta { get; set; }
-
-        //[DisplayName("FECHA COMPRA")]
         public string fechaVenta { get; set; }
-
-        //[DisplayName("COD VENDEDOR")]
-        public int idEmpleado { get; set; }
-
-        //[DisplayName("NOMBRE VENDEDOR")]
-        public string nombreCompletoPersonaEmpleado { get; set; }
-
-        //[DisplayName("RUT CLIENTE")]
-        public string rutPersonaCliente { get; set; }
-
-        //[DisplayName("CLIENTE")]
-        public string nombreCompletoPersonaCliente { get; set; }
-
-        //[Browsable(false)]
-        public string rutPersonaEmpleado { get; set; }
-
-        //[Browsable(false)]
-        public int idCliente { get; set; }
-
-        //[DisplayName("TOTAL")]
         public int subtotalVenta { get; set; }
+        public int idEmpleado { get; set; }
+        public string nombreCompletoEmpleado { get; set; }
+        public int idCliente { get; set; }
+        public string nombreCompletoCliente { get; set; }
+        public string rutCliente { get; set; }
 
         public List<Detalle_Venta> detallesVenta { get; set; }
     }

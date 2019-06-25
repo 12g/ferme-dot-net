@@ -167,7 +167,7 @@ namespace AppPrincipal
                     oc.estadoOrdenCompra = Convert.ToString(CbxEstadoRecepcion.Text);
                     oc.idEmpleado = Convert.ToInt32(TxtIdEmpleado.Text);
                     oc.fechaSolicitudOrdenCompra = DpFechaCreacion.Text;
-                    oc.fechaRecepcionOrdenCompra = DpFechaRecepcion.Text;
+                    oc.fechaRecepcionOrdenCompra = null;
 
                     oc.detallesOrdenCompra = detalleOC;
 

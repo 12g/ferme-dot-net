@@ -133,6 +133,7 @@ namespace AppPrincipal
                     //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO DE MANTENEDOR DE ORDEN DE COMPRA
                     //SE CASTEA EL OBJETO ORDEN COMPRA
                     Orden_Compra oc = (Orden_Compra)DgMostrarOrdenCompra.CurrentRow.DataBoundItem;
+                    oc.detallesOrdenVista = null;
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
                     BindingList<DetalleOrdenCVista> detCv = new BindingList<DetalleOrdenCVista>();
                     List<DetalleOrdenCompra> lista = ser.subdetalleOrdenCompra(oc);
@@ -146,7 +147,6 @@ namespace AppPrincipal
 
                      detCv.Add(ClaseDetalleCv);
                    }
-
                     FrmOrdenCompra.DgListadoProductoOC.DataSource = detCv;
                     FrmOrdenCompra.detalleOC = lista;
 
@@ -154,10 +154,9 @@ namespace AppPrincipal
                     FrmOrdenCompra.CbEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
-                    FrmOrdenCompra.DPfechaTermino.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
-
+                
                     this.Close();
-
+                    
            
                }
                 catch (Exception)
@@ -166,6 +165,7 @@ namespace AppPrincipal
                     //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO RECEPCION ORDEN COMPRA 
                     //SE CASTEA EL OBJETO ORDEN COMPRA
                     Orden_Compra oc = (Orden_Compra)DgMostrarOrdenCompra.CurrentRow.DataBoundItem;
+                    oc.detallesOrdenVista = null;
                     ServicioOrdenCompra ser = new ServicioOrdenCompra();
                     BindingList<DetalleOrdenCVista> detCv = new BindingList<DetalleOrdenCVista>();
                     List<DetalleOrdenCompra> lista = ser.subdetalleOrdenCompra(oc);
@@ -189,7 +189,6 @@ namespace AppPrincipal
                     FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmRecepcion.DpFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
-                    FrmRecepcion.DpFechaRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
                    // FrmRecepcion.DgListadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
 
                     this.Close();

@@ -26,20 +26,20 @@ namespace AppPrincipal
                 ServicioProducto serp = new ServicioProducto();
                 DgMostrarProductos.DataSource = serp.GetRESTData();
 
-            //OCULTAR COLUMNA
-            this.DgMostrarProductos.Columns[0].Visible = false;
-            this.DgMostrarProductos.Columns[6].Visible = false;
-            this.DgMostrarProductos.Columns[8].Visible = false;
-            this.DgMostrarProductos.Columns[3].Visible = false;
-            this.DgMostrarProductos.Columns[4].Visible = false;
-            this.DgMostrarProductos.Columns[5].Visible = false;
-            this.DgMostrarProductos.Columns[7].Visible = false;
-            this.DgMostrarProductos.Columns[9].Visible = false;
-            this.DgMostrarProductos.Columns[10].Visible = false;
+           //OCULTAR COLUMNA
+            this.DgMostrarProductos.Columns["idProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["precioProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["stockActualProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["stockCriticoProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["idTipoProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["nombreTipoProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["idFamiliaProducto"].Visible = false;
+            this.DgMostrarProductos.Columns["descripcionFamiliaProducto"].Visible = false;
+
 
             //DA NOMBRE A LAS COLUMNAS
-            this.DgMostrarProductos.Columns[1].HeaderText = "CODIGO";
-            this.DgMostrarProductos.Columns[2].HeaderText = "PRODUCTO";
+            this.DgMostrarProductos.Columns["codigoProducto"].HeaderText = "CODIGO";
+            this.DgMostrarProductos.Columns["nombreProducto"].HeaderText = "PRODUCTO";
           }
             catch (Exception)
             {
