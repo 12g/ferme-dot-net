@@ -144,23 +144,22 @@ namespace AppPrincipal
                 {
                     ServicioProducto serp = new ServicioProducto();
                     DgMostrarProductos.DataSource = serp.GetRESTData();
+                //OCULTAR COLUMNA
+                this.DgMostrarProductos.Columns["idProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["precioProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["stockActualProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["stockCriticoProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["idTipoProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["nombreTipoProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["idFamiliaProducto"].Visible = false;
+                this.DgMostrarProductos.Columns["descripcionFamiliaProducto"].Visible = false;
 
-                    //OCULTAR COLUMNA
-                    this.DgMostrarProductos.Columns["idProducto"].Visible = false;
-                    this.DgMostrarProductos.Columns["idTipoProducto"].Visible = false;
-                    this.DgMostrarProductos.Columns["idFamiliaProducto"].Visible = false;
 
-                    //DA NOMBRE A LAS COLUMNAS
-                    this.DgMostrarProductos.Columns["codigoProducto"].HeaderText = "CODIGO";
-                    this.DgMostrarProductos.Columns["nombreProducto"].HeaderText = "PRODUCTO";
-                    this.DgMostrarProductos.Columns["precioProducto"].HeaderText = "PRECIO";
-                    this.DgMostrarProductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION";
-                    this.DgMostrarProductos.Columns["stockActualProducto"].HeaderText = "STOCK ACTUAL";
-                    this.DgMostrarProductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
-                    this.DgMostrarProductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
-                    this.DgMostrarProductos.Columns["descripcionFamiliaProducto"].HeaderText = "FAMILIA PRODUCTO";
-              
-                 }
+                //DA NOMBRE A LAS COLUMNAS
+                this.DgMostrarProductos.Columns["codigoProducto"].HeaderText = "CODIGO";
+                this.DgMostrarProductos.Columns["nombreProducto"].HeaderText = "PRODUCTO";
+
+            }
                 catch (Exception)
                 {
                     MessageBox.Show("NO SE PUEDE CARGAR LISTADO DE PRODUCTOS");

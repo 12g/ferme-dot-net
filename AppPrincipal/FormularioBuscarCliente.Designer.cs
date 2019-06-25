@@ -68,10 +68,12 @@
             // 
             this.DgMostrarCliente.AllowUserToAddRows = false;
             this.DgMostrarCliente.AllowUserToDeleteRows = false;
+            this.DgMostrarCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgMostrarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgMostrarCliente.Location = new System.Drawing.Point(27, 114);
             this.DgMostrarCliente.Name = "DgMostrarCliente";
             this.DgMostrarCliente.ReadOnly = true;
+            this.DgMostrarCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgMostrarCliente.Size = new System.Drawing.Size(742, 292);
             this.DgMostrarCliente.TabIndex = 6;
             this.DgMostrarCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarCliente_CellDoubleClick);

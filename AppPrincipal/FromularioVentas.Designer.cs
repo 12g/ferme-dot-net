@@ -78,6 +78,8 @@
             this.LblBoletaFactura = new System.Windows.Forms.Label();
             this.TxtIdEmpleado = new System.Windows.Forms.TextBox();
             this.LblIdEmpleado = new System.Windows.Forms.Label();
+            this.TxtIdpersona = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgVentaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -264,6 +266,7 @@
             this.DgVentaProducto.Location = new System.Drawing.Point(12, 214);
             this.DgVentaProducto.Name = "DgVentaProducto";
             this.DgVentaProducto.ReadOnly = true;
+            this.DgVentaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgVentaProducto.Size = new System.Drawing.Size(853, 181);
             this.DgVentaProducto.TabIndex = 26;
             this.DgVentaProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVentaProducto_CellClick);
@@ -605,11 +608,32 @@
             this.LblIdEmpleado.Text = "IdEmpleado";
             this.LblIdEmpleado.Visible = false;
             // 
+            // TxtIdpersona
+            // 
+            this.TxtIdpersona.Location = new System.Drawing.Point(507, 51);
+            this.TxtIdpersona.Name = "TxtIdpersona";
+            this.TxtIdpersona.ReadOnly = true;
+            this.TxtIdpersona.Size = new System.Drawing.Size(144, 20);
+            this.TxtIdpersona.TabIndex = 65;
+            this.TxtIdpersona.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(444, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "IdPersona";
+            this.label2.Visible = false;
+            // 
             // FromularioVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 541);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtIdpersona);
             this.Controls.Add(this.LblIdEmpleado);
             this.Controls.Add(this.TxtIdEmpleado);
             this.Controls.Add(this.LblBoletaFactura);
@@ -721,5 +745,7 @@
         private System.Windows.Forms.Label LblBoletaFactura;
         public System.Windows.Forms.TextBox TxtIdEmpleado;
         private System.Windows.Forms.Label LblIdEmpleado;
+        public System.Windows.Forms.TextBox TxtIdpersona;
+        private System.Windows.Forms.Label label2;
     }
 }

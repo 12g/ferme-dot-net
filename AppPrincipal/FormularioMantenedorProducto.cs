@@ -20,9 +20,6 @@ namespace AppPrincipal
             InitializeComponent();
             TxtIdProducto.Text = "0";
             CargarComBobox();
-            visitCounter++; // Increase each time a form is loaded
-            TxtCodigo.Text = visitCounter.ToString("0"); // 
-
         }
       
         //EVENTO CANELAR Y SALIR DEL MENU CREAR PRODUCTO
@@ -62,15 +59,7 @@ namespace AppPrincipal
             {
                Validaciones  val = new Validaciones();
 
-                 if (TxtCodigo.Text == "")
-                {
-                    MessageBox.Show("INGRESE UN CODIGO PARA EL PRODUCTO");
-                }
-                else if (TxtCodigo.Text.Length < 1 || TxtCodigo.Text.Length >= 1000000000)
-                {
-                    MessageBox.Show("INGRESE UN CODIGO VALIDO PARA EL PRODUCTO");
-                }
-                else if (TxtNombreProducto.Text == "")
+               if (TxtNombreProducto.Text == "")
                 {
                     MessageBox.Show("INGRESE UN NOMBRE PARA EL PRODUCTO");
                 }
@@ -202,12 +191,6 @@ namespace AppPrincipal
                 CbxFamiliaProducto.SelectedIndex = -1;
                 CbxFamiliaProducto.Text = "Seleccione";
             }
-        }
-
-        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validaciones val = new Validaciones();
-            val.SoloNumero(e);
         }
     }
 }

@@ -92,9 +92,9 @@
             // 
             this.TxtCodigo.Location = new System.Drawing.Point(27, 83);
             this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.ReadOnly = true;
             this.TxtCodigo.Size = new System.Drawing.Size(231, 20);
             this.TxtCodigo.TabIndex = 3;
-            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
             // 
             // TxtNombreProducto
             // 

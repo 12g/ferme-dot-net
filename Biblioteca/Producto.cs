@@ -9,7 +9,7 @@ namespace Biblioteca
     public class Producto
     {
         public int? idProducto { get; set; }
-        public string codigoProducto { get; set; }
+        public String codigoProducto { get; set; }
         public string nombreProducto { get; set; }
         public int precioProducto { get; set; }
         public int stockActualProducto { get; set; }

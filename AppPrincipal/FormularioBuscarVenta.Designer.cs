@@ -52,6 +52,7 @@
             this.DgMostrarVentasRealizadas.Location = new System.Drawing.Point(16, 99);
             this.DgMostrarVentasRealizadas.Name = "DgMostrarVentasRealizadas";
             this.DgMostrarVentasRealizadas.ReadOnly = true;
+            this.DgMostrarVentasRealizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgMostrarVentasRealizadas.Size = new System.Drawing.Size(806, 309);
             this.DgMostrarVentasRealizadas.TabIndex = 0;
             this.DgMostrarVentasRealizadas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarVentasRealizadas_CellDoubleClick);

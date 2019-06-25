@@ -26,18 +26,13 @@ namespace AppPrincipal
                 DgMostrarCliente.DataSource = serp.ListarClientes();
 
                 //OCULTAR COLUMNA
-                 this.DgMostrarCliente.Columns[0].Visible = false;
-                 this.DgMostrarCliente.Columns[8].Visible = false;
+                 this.DgMostrarCliente.Columns["idPersona"].Visible = false;
+                 this.DgMostrarCliente.Columns["idCliente"].Visible = false;
                 //this.DgMostrarProductos.Columns[8].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
-                 this.DgMostrarCliente.Columns[1].HeaderText = "NOMBRE";
-                 this.DgMostrarCliente.Columns[2].HeaderText = "RUT";
-                 this.DgMostrarCliente.Columns[3].HeaderText = "DIRECCION";
-                 this.DgMostrarCliente.Columns[4].HeaderText = "EMAIL";
-                 this.DgMostrarCliente.Columns[5].HeaderText = "TELEFONO 1";
-                 this.DgMostrarCliente.Columns[6].HeaderText = "TELEFONO 2";
-                 this.DgMostrarCliente.Columns[7].HeaderText = "TELEFONO 3";
+                 this.DgMostrarCliente.Columns["nombreCompletoPersona"].HeaderText = "NOMBRE";
+                 this.DgMostrarCliente.Columns["rutPersona"].HeaderText = "RUT";
             }
             catch (Exception)
             {
@@ -102,10 +97,11 @@ namespace AppPrincipal
         private void DgMostrarCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
-                frmventas.TxtIdCliente.Text = DgMostrarCliente.CurrentRow.Cells[8].Value.ToString();
-                frmventas.TxtRut.Text = DgMostrarCliente.CurrentRow.Cells[2].Value.ToString();
-                frmventas.TxtNombreRazonSocial.Text = DgMostrarCliente.CurrentRow.Cells[1].Value.ToString();
+            {  
+                frmventas.TxtIdpersona.Text = DgMostrarCliente.CurrentRow.Cells["idPersona"].Value.ToString();
+                frmventas.TxtIdCliente.Text = DgMostrarCliente.CurrentRow.Cells["idCliente"].Value.ToString();
+                frmventas.TxtRut.Text = DgMostrarCliente.CurrentRow.Cells["rutPersona"].Value.ToString();
+                frmventas.TxtNombreRazonSocial.Text = DgMostrarCliente.CurrentRow.Cells["nombreCompletoPersona"].Value.ToString();
                 this.Close();
             }
             catch (Exception)

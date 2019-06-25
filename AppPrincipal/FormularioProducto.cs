@@ -44,7 +44,7 @@ namespace AppPrincipal
         //BOTON EDITAR/METODO PARA SELECCIONAR UN PRODUCTO DE LA LISTA Y EDITARLO
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            try
+           try
             {
                FormularioMantenedorProducto fmp = new FormularioMantenedorProducto();
                
