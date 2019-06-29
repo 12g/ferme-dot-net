@@ -50,10 +50,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(144, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(255, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(246, 32);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "CREAR USUARIO";
             // 
@@ -91,8 +91,10 @@
             // 
             // TxtRut
             // 
+            this.TxtRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRut.Location = new System.Drawing.Point(18, 72);
             this.TxtRut.Name = "TxtRut";
+            this.TxtRut.ReadOnly = true;
             this.TxtRut.Size = new System.Drawing.Size(144, 20);
             this.TxtRut.TabIndex = 5;
             // 
@@ -108,6 +110,7 @@
             // 
             // TxtNombre
             // 
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(18, 125);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.ReadOnly = true;
@@ -160,13 +163,16 @@
             // 
             // TxtFecha
             // 
+            this.TxtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtFecha.Location = new System.Drawing.Point(311, 69);
             this.TxtFecha.Name = "TxtFecha";
+            this.TxtFecha.ReadOnly = true;
             this.TxtFecha.Size = new System.Drawing.Size(176, 20);
             this.TxtFecha.TabIndex = 33;
             // 
             // BtnBuscar
             // 
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.Location = new System.Drawing.Point(168, 69);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 23);

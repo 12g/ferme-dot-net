@@ -18,10 +18,8 @@ namespace AppPrincipal
   
     public partial class FormularioMantenedorOrdenCompra : Form
     {
-        //SE DECLARA UNA VARIABLE PARA GENERAR UN NUMERO CORRELATIVO
-        private static int visitCounter = 0;
+      
 
-        
         private int indicefilaseleccionada;
         Validaciones val = new Validaciones();
         public List<DetalleOrdenCompra> detalleOC;
@@ -116,10 +114,6 @@ namespace AppPrincipal
 
                 DgListadoProductoOC.Rows.Clear();
                 DgListadoProductoOC.Refresh();
-
-                //CODIGO QUE GENERA UN NUMERO CORRELATIVO
-                 visitCounter++; // Increase each time a form is loaded
-                 TxtNumero.Text = visitCounter.ToString("0"); // 
 
                 if (CbEmpleado.Items.Count > 1)
                 {
@@ -232,17 +226,18 @@ namespace AppPrincipal
                 {
                    try
                     {
-                       
                             BindingList<DetalleOrdenCVista> detalle;
                             detalle = (BindingList<DetalleOrdenCVista>)DgListadoProductoOC.DataSource;
                         
                             DetalleOrdenCVista dv = new DetalleOrdenCVista();
+
                             dv.CODIGO = TxtCodProducto.Text;
                             dv.NOMBRE = TxtNombreProducto.Text;
                             dv.CANTIDAD = int.Parse(TxtCantidad.Text);
 
                             detalle.Add(dv);
                             DetalleOrdenCompra det = new DetalleOrdenCompra();
+
                             det.idProducto = int.Parse(TxtIdProducto.Text);
                             det.codigoProducto = TxtCodProducto.Text;
                             det.nombreProducto = TxtNombreProducto.Text;
@@ -320,6 +315,7 @@ namespace AppPrincipal
         {
             try
             {
+               
                 ServicioEmpleado sere = new ServicioEmpleado();
                 CbEmpleado.DataSource = sere.ListaEmpleados();
                 CbEmpleado.DisplayMember = "nombreCompletoPersona";
@@ -337,10 +333,6 @@ namespace AppPrincipal
                 fechaInicio();
          
                 ListaOrdenC();
-
-                //CODIGO QUE GENERA UN NUMERO CORRELATIVO
-                visitCounter++; // Increase each time a form is loaded
-                TxtNumero.Text = visitCounter.ToString("0"); //
             }
             catch (Exception)
             {

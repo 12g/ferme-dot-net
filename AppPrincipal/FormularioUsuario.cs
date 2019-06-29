@@ -59,12 +59,7 @@ namespace AppPrincipal
             fmu.ShowDialog();
         }
 
-        //CREAR CARGO
-        private void BtnCargo_Click(object sender, EventArgs e)
-        {
-            FormularioMantenedorCargo car = new FormularioMantenedorCargo();
-            car.ShowDialog();
-        }
+      
 
         //CREAR EMPLEADO
         private void BtnCrearEmpleado_Click(object sender, EventArgs e)
@@ -91,8 +86,8 @@ namespace AppPrincipal
                     fmp.CbxCargo.Text = DGlistadoUsuario.CurrentRow.Cells["descripcionCargo"].Value.ToString();
                     fmp.TxtNombre.Text = DGlistadoUsuario.CurrentRow.Cells["nombreCompletoPersona"].Value.ToString();
 
-                     //BLOQUEA EL CAMPO DEL RUT AL MOMENTO DE EDITAR EL EMPLEADO
-                    //fmp.TxtRutCliente.Enabled = false;
+                    //AL PRESIONAR EDITAR SE BLOQUEA EL CAMPO DEL RUT
+                    fmp.TxtRutCliente.Enabled = false;
 
                     if (fmp.ShowDialog() == DialogResult.OK)
                     {

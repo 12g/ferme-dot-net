@@ -31,14 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMantenedorRubro));
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.TxtRubro = new System.Windows.Forms.TextBox();
-            this.LblCodigo = new System.Windows.Forms.Label();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.LblCodigoObligatorio = new System.Windows.Forms.Label();
             this.LblDescripcionObligatoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -46,37 +43,18 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(175, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(118, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(116, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "RUBRO";
-            // 
-            // TxtRubro
-            // 
-            this.TxtRubro.Location = new System.Drawing.Point(88, 104);
-            this.TxtRubro.Name = "TxtRubro";
-            this.TxtRubro.Size = new System.Drawing.Size(162, 20);
-            this.TxtRubro.TabIndex = 3;
-            this.TxtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRubro_KeyPress);
-            this.TxtRubro.Leave += new System.EventHandler(this.TxtRubro_Leave);
-            // 
-            // LblCodigo
-            // 
-            this.LblCodigo.AutoSize = true;
-            this.LblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCodigo.Location = new System.Drawing.Point(36, 107);
-            this.LblCodigo.Name = "LblCodigo";
-            this.LblCodigo.Size = new System.Drawing.Size(46, 13);
-            this.LblCodigo.TabIndex = 4;
-            this.LblCodigo.Text = "Codigo";
             // 
             // LblDescripcion
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcion.Location = new System.Drawing.Point(12, 140);
+            this.LblDescripcion.Location = new System.Drawing.Point(27, 65);
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(74, 13);
             this.LblDescripcion.TabIndex = 5;
@@ -84,9 +62,10 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(88, 140);
+            this.TxtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescripcion.Location = new System.Drawing.Point(30, 81);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(355, 20);
+            this.TxtDescripcion.Size = new System.Drawing.Size(400, 20);
             this.TxtDescripcion.TabIndex = 6;
             this.TxtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescripcion_KeyPress);
             this.TxtDescripcion.Leave += new System.EventHandler(this.TxtDescripcion_Leave);
@@ -94,7 +73,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(75, 227);
+            this.BtnGuardar.Location = new System.Drawing.Point(81, 122);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(110, 42);
             this.BtnGuardar.TabIndex = 7;
@@ -105,7 +84,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(279, 227);
+            this.BtnCancelar.Location = new System.Drawing.Point(275, 122);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(110, 42);
             this.BtnCancelar.TabIndex = 8;
@@ -117,24 +96,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // LblCodigoObligatorio
-            // 
-            this.LblCodigoObligatorio.AutoSize = true;
-            this.LblCodigoObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCodigoObligatorio.ForeColor = System.Drawing.Color.Red;
-            this.LblCodigoObligatorio.Location = new System.Drawing.Point(256, 105);
-            this.LblCodigoObligatorio.Name = "LblCodigoObligatorio";
-            this.LblCodigoObligatorio.Size = new System.Drawing.Size(88, 15);
-            this.LblCodigoObligatorio.TabIndex = 10;
-            this.LblCodigoObligatorio.Text = "* Obligatorio";
-            this.LblCodigoObligatorio.Visible = false;
-            // 
             // LblDescripcionObligatoria
             // 
             this.LblDescripcionObligatoria.AutoSize = true;
             this.LblDescripcionObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDescripcionObligatoria.ForeColor = System.Drawing.Color.Red;
-            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(449, 144);
+            this.LblDescripcionObligatoria.Location = new System.Drawing.Point(436, 81);
             this.LblDescripcionObligatoria.Name = "LblDescripcionObligatoria";
             this.LblDescripcionObligatoria.Size = new System.Drawing.Size(14, 16);
             this.LblDescripcionObligatoria.TabIndex = 11;
@@ -145,16 +112,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 314);
+            this.ClientSize = new System.Drawing.Size(473, 180);
             this.ControlBox = false;
             this.Controls.Add(this.LblDescripcionObligatoria);
-            this.Controls.Add(this.LblCodigoObligatorio);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblDescripcion);
-            this.Controls.Add(this.LblCodigo);
-            this.Controls.Add(this.TxtRubro);
             this.Controls.Add(this.lblTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -171,14 +135,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label LblCodigoObligatorio;
         private System.Windows.Forms.Label LblDescripcionObligatoria;
-        public System.Windows.Forms.TextBox TxtRubro;
         public System.Windows.Forms.TextBox TxtDescripcion;
     }
 }

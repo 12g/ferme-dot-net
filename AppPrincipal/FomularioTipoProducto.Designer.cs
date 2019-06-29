@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FomularioTipoProducto));
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
-            this.LblCodigo = new System.Windows.Forms.Label();
             this.LblTipoProducto = new System.Windows.Forms.Label();
             this.CbFamiliaProducto = new System.Windows.Forms.ComboBox();
             this.LblFamilia = new System.Windows.Forms.Label();
@@ -43,7 +41,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(61, 286);
+            this.BtnGuardar.Location = new System.Drawing.Point(57, 189);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(130, 44);
             this.BtnGuardar.TabIndex = 0;
@@ -54,32 +52,13 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(269, 286);
+            this.BtnCancelar.Location = new System.Drawing.Point(269, 189);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(125, 44);
             this.BtnCancelar.TabIndex = 1;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.TxtCodigo.Location = new System.Drawing.Point(32, 115);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.ReadOnly = true;
-            this.TxtCodigo.Size = new System.Drawing.Size(212, 20);
-            this.TxtCodigo.TabIndex = 2;
-            // 
-            // LblCodigo
-            // 
-            this.LblCodigo.AutoSize = true;
-            this.LblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCodigo.Location = new System.Drawing.Point(29, 94);
-            this.LblCodigo.Name = "LblCodigo";
-            this.LblCodigo.Size = new System.Drawing.Size(46, 13);
-            this.LblCodigo.TabIndex = 3;
-            this.LblCodigo.Text = "Codigo";
             // 
             // LblTipoProducto
             // 
@@ -93,8 +72,9 @@
             // 
             // CbFamiliaProducto
             // 
+            this.CbFamiliaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbFamiliaProducto.FormattingEnabled = true;
-            this.CbFamiliaProducto.Location = new System.Drawing.Point(32, 169);
+            this.CbFamiliaProducto.Location = new System.Drawing.Point(32, 95);
             this.CbFamiliaProducto.Name = "CbFamiliaProducto";
             this.CbFamiliaProducto.Size = new System.Drawing.Size(399, 21);
             this.CbFamiliaProducto.TabIndex = 5;
@@ -103,7 +83,7 @@
             // 
             this.LblFamilia.AutoSize = true;
             this.LblFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFamilia.Location = new System.Drawing.Point(29, 153);
+            this.LblFamilia.Location = new System.Drawing.Point(29, 79);
             this.LblFamilia.Name = "LblFamilia";
             this.LblFamilia.Size = new System.Drawing.Size(46, 13);
             this.LblFamilia.TabIndex = 6;
@@ -113,7 +93,7 @@
             // 
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombre.Location = new System.Drawing.Point(29, 207);
+            this.LblNombre.Location = new System.Drawing.Point(29, 128);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(158, 13);
             this.LblNombre.TabIndex = 7;
@@ -121,7 +101,8 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(32, 224);
+            this.TxtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescripcion.Location = new System.Drawing.Point(32, 144);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(399, 20);
             this.TxtDescripcion.TabIndex = 8;
@@ -130,17 +111,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 355);
+            this.ClientSize = new System.Drawing.Size(476, 247);
             this.ControlBox = false;
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblFamilia);
             this.Controls.Add(this.CbFamiliaProducto);
             this.Controls.Add(this.LblTipoProducto);
-            this.Controls.Add(this.LblCodigo);
-            this.Controls.Add(this.TxtCodigo);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -157,8 +137,6 @@
 
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.TextBox TxtCodigo;
-        private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label LblTipoProducto;
         private System.Windows.Forms.ComboBox CbFamiliaProducto;
         private System.Windows.Forms.Label LblFamilia;

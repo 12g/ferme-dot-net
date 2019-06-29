@@ -14,7 +14,6 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorProducto : Form
     {
-        private static int visitCounter = 0;
         public FormularioMantenedorProducto()
         {
             InitializeComponent();
@@ -119,11 +118,11 @@ namespace AppPrincipal
 
 
                     pro.idProducto = int.Parse(TxtIdProducto.Text);
-                    pro.codigoProducto = TxtCodigo.Text;
-                    pro.nombreProducto = TxtNombreProducto.Text;
+                    pro.codigoProducto = TxtCodigo.Text.ToLower();
+                    pro.nombreProducto = TxtNombreProducto.Text.ToLower();
                     pro.idTipoProducto = int.Parse(CbTipoproducto.SelectedValue.ToString());
                     pro.idFamiliaProducto = int.Parse(CbxFamiliaProducto.SelectedValue.ToString());
-                    pro.nombreTipoProducto = CbTipoproducto.SelectedValue.ToString();
+                    pro.nombreTipoProducto = CbTipoproducto.SelectedValue.ToString().ToLower();
                     pro.descripcionFamiliaProducto = CbxFamiliaProducto.SelectedValue.ToString();
                     pro.precioProducto = int.Parse(TxtPrecio.Text);
                     pro.stockActualProducto = int.Parse(TxtStockActual.Text);
@@ -134,7 +133,7 @@ namespace AppPrincipal
 
                     this.DialogResult = DialogResult.OK;
 
-                    MessageBox.Show("PRODUCTO GUARDADO");
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
 
                     Limpiar();
                 }

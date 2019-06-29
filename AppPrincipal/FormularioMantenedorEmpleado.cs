@@ -120,16 +120,16 @@ namespace AppPrincipal
                 emp.idPersona = int.Parse(TxtIdPersona.Text);
                 emp.idEmpleado = int.Parse(TxtIdEmpleado.Text);
                 emp.idCargo = int.Parse(CbxCargo.SelectedValue.ToString());
-                emp.rutPersona = TxtRutCliente.Text;
-                emp.nombreCompletoPersona = TxtNombre.Text;
+                emp.rutPersona = TxtRutCliente.Text.ToLower();
+                emp.nombreCompletoPersona = TxtNombre.Text.ToLower();
 
                 serv.CrearEmpleado(emp);
 
                 this.DialogResult = DialogResult.OK;
 
-                 MessageBox.Show("EMPLEADO GUARDADO");
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
 
-                Limpiar();
+                    Limpiar();
 
            }
         }

@@ -90,6 +90,7 @@
             // 
             // TxtCodigo
             // 
+            this.TxtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCodigo.Location = new System.Drawing.Point(27, 83);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.ReadOnly = true;
@@ -98,6 +99,7 @@
             // 
             // TxtNombreProducto
             // 
+            this.TxtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombreProducto.Location = new System.Drawing.Point(325, 84);
             this.TxtNombreProducto.Name = "TxtNombreProducto";
             this.TxtNombreProducto.Size = new System.Drawing.Size(277, 20);
@@ -115,6 +117,7 @@
             // 
             // CbTipoproducto
             // 
+            this.CbTipoproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTipoproducto.FormattingEnabled = true;
             this.CbTipoproducto.Location = new System.Drawing.Point(27, 137);
             this.CbTipoproducto.Name = "CbTipoproducto";
@@ -135,6 +138,7 @@
             // 
             this.TxtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrecio.Location = new System.Drawing.Point(42, 199);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(216, 20);
@@ -189,6 +193,7 @@
             // 
             this.TxtStockActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtStockActual.Location = new System.Drawing.Point(27, 247);
             this.TxtStockActual.Name = "TxtStockActual";
             this.TxtStockActual.Size = new System.Drawing.Size(231, 20);
@@ -199,6 +204,7 @@
             // 
             this.TxtStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtStockCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtStockCritico.Location = new System.Drawing.Point(27, 302);
             this.TxtStockCritico.Name = "TxtStockCritico";
             this.TxtStockCritico.Size = new System.Drawing.Size(231, 20);
@@ -284,6 +290,7 @@
             // 
             // CbxFamiliaProducto
             // 
+            this.CbxFamiliaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxFamiliaProducto.FormattingEnabled = true;
             this.CbxFamiliaProducto.Location = new System.Drawing.Point(325, 137);
             this.CbxFamiliaProducto.Name = "CbxFamiliaProducto";

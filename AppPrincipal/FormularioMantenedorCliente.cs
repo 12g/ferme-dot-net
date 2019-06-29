@@ -89,7 +89,7 @@ namespace AppPrincipal
 
                     this.DialogResult = DialogResult.OK;
 
-                    MessageBox.Show("CLIENTE GUARDADO");
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
 
                     Limpiar();
                 }

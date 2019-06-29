@@ -71,7 +71,6 @@
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.CbTipoDocto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnGuardar = new System.Windows.Forms.Button();
             this.DpFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.LblIdCliente = new System.Windows.Forms.Label();
@@ -121,6 +120,7 @@
             this.TxtNumeroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumeroDocumento.Location = new System.Drawing.Point(104, 80);
             this.TxtNumeroDocumento.Name = "TxtNumeroDocumento";
+            this.TxtNumeroDocumento.ReadOnly = true;
             this.TxtNumeroDocumento.Size = new System.Drawing.Size(187, 20);
             this.TxtNumeroDocumento.TabIndex = 11;
             this.TxtNumeroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumeroDocumento_KeyPress);
@@ -326,9 +326,9 @@
             // 
             this.BtnNuevVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnNuevVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevVenta.Location = new System.Drawing.Point(626, 462);
+            this.BtnNuevVenta.Location = new System.Drawing.Point(564, 448);
             this.BtnNuevVenta.Name = "BtnNuevVenta";
-            this.BtnNuevVenta.Size = new System.Drawing.Size(138, 43);
+            this.BtnNuevVenta.Size = new System.Drawing.Size(171, 56);
             this.BtnNuevVenta.TabIndex = 31;
             this.BtnNuevVenta.Text = "Nuevo";
             this.BtnNuevVenta.UseVisualStyleBackColor = true;
@@ -350,11 +350,11 @@
             // 
             this.BtnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.Location = new System.Drawing.Point(263, 461);
+            this.BtnImprimir.Location = new System.Drawing.Point(271, 448);
             this.BtnImprimir.Name = "BtnImprimir";
-            this.BtnImprimir.Size = new System.Drawing.Size(138, 43);
+            this.BtnImprimir.Size = new System.Drawing.Size(175, 57);
             this.BtnImprimir.TabIndex = 33;
-            this.BtnImprimir.Text = "Imprimir";
+            this.BtnImprimir.Text = "Guardar";
             this.BtnImprimir.UseVisualStyleBackColor = true;
             this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
@@ -539,17 +539,6 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Tipo Docto";
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(443, 462);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(138, 43);
-            this.BtnGuardar.TabIndex = 56;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            // 
             // DpFecha
             // 
             this.DpFecha.Enabled = false;
@@ -640,7 +629,6 @@
             this.Controls.Add(this.LblIdCliente);
             this.Controls.Add(this.TxtIdCliente);
             this.Controls.Add(this.DpFecha);
-            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CbTipoDocto);
             this.Controls.Add(this.TxtIdProducto);
@@ -738,7 +726,6 @@
         public System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox CbTipoDocto;
-        private System.Windows.Forms.Button BtnGuardar;
         public System.Windows.Forms.DateTimePicker DpFecha;
         public System.Windows.Forms.TextBox TxtIdCliente;
         public System.Windows.Forms.Label LblIdCliente;

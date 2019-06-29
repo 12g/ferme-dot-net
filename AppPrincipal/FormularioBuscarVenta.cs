@@ -109,6 +109,7 @@ namespace AppPrincipal
             ServicioVentas ser = new ServicioVentas();
             BindingList<DetalleVentaVista> detCv = new BindingList<DetalleVentaVista>();
             List<Detalle_Venta> lista = ser.subdetalleventa(oc);
+                Producto pro = new Producto();
 
             foreach (Detalle_Venta detVenta in lista)
             {
@@ -116,7 +117,6 @@ namespace AppPrincipal
                 ClaseDetalleV.CODIGO = detVenta.codigoProducto;
                 ClaseDetalleV.NOMBRE = detVenta.nombreProducto;
                 ClaseDetalleV.CANTIDAD = detVenta.unidadesProducto;
-                ClaseDetalleV.MONTO = detVenta.montoDetalleVenta;
                 ClaseDetalleV.SUBTOTAL = detVenta.Subtotal;
 
                 detCv.Add(ClaseDetalleV);

@@ -82,8 +82,10 @@
             // 
             // TxtNumero
             // 
+            this.TxtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumero.Location = new System.Drawing.Point(25, 94);
             this.TxtNumero.Name = "TxtNumero";
+            this.TxtNumero.ReadOnly = true;
             this.TxtNumero.Size = new System.Drawing.Size(248, 20);
             this.TxtNumero.TabIndex = 37;
             // 
@@ -119,6 +121,7 @@
             // 
             // DpFechaRecepcion
             // 
+            this.DpFechaRecepcion.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DpFechaRecepcion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DpFechaRecepcion.Location = new System.Drawing.Point(26, 196);
             this.DpFechaRecepcion.Name = "DpFechaRecepcion";
@@ -137,6 +140,7 @@
             // 
             // CbxEstadoRecepcion
             // 
+            this.CbxEstadoRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxEstadoRecepcion.FormattingEnabled = true;
             this.CbxEstadoRecepcion.Location = new System.Drawing.Point(437, 93);
             this.CbxEstadoRecepcion.Name = "CbxEstadoRecepcion";
@@ -145,6 +149,7 @@
             // 
             // TxtEmpleado
             // 
+            this.TxtEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEmpleado.Location = new System.Drawing.Point(437, 147);
             this.TxtEmpleado.Name = "TxtEmpleado";
             this.TxtEmpleado.ReadOnly = true;
@@ -277,6 +282,7 @@
             // 
             // DpFechaCreacion
             // 
+            this.DpFechaCreacion.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DpFechaCreacion.Enabled = false;
             this.DpFechaCreacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DpFechaCreacion.Location = new System.Drawing.Point(26, 147);

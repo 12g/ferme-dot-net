@@ -69,6 +69,7 @@ namespace AppPrincipal
 
                 if (DGMostrarListaCliente.SelectedRows.Count >0)
                 {
+                    fmc.TxtRutCliente.Enabled = false;
                     fmc.TxtIdPersona.Text = DGMostrarListaCliente.CurrentRow.Cells["idPersona"].Value.ToString();
                     fmc.TxtIdCliente.Text = DGMostrarListaCliente.CurrentRow.Cells["idCliente"].Value.ToString();
                     fmc.TxtRutCliente.Text = DGMostrarListaCliente.CurrentRow.Cells["rutPersona"].Value.ToString();

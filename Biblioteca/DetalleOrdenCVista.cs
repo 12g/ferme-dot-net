@@ -11,5 +11,6 @@ namespace Biblioteca
         public string CODIGO { get; set; }
         public string NOMBRE { get; set; }
         public int CANTIDAD { get; set; }
+        public int SUBTOTAL { get; set; }
     }
 }

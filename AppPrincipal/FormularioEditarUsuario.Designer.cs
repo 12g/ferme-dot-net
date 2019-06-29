@@ -61,8 +61,10 @@
             // 
             // TxtFecha
             // 
+            this.TxtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtFecha.Location = new System.Drawing.Point(315, 69);
             this.TxtFecha.Name = "TxtFecha";
+            this.TxtFecha.ReadOnly = true;
             this.TxtFecha.Size = new System.Drawing.Size(176, 20);
             this.TxtFecha.TabIndex = 50;
             // 
@@ -132,8 +134,10 @@
             // 
             // TxtNombre
             // 
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(22, 125);
             this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(484, 20);
             this.TxtNombre.TabIndex = 42;
             // 
@@ -149,8 +153,10 @@
             // 
             // TxtRut
             // 
+            this.TxtRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRut.Location = new System.Drawing.Point(22, 72);
             this.TxtRut.Name = "TxtRut";
+            this.TxtRut.ReadOnly = true;
             this.TxtRut.Size = new System.Drawing.Size(144, 20);
             this.TxtRut.TabIndex = 40;
             // 
@@ -189,10 +195,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(142, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(261, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(250, 32);
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "EDITAR USUARIO";
             // 
@@ -221,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(526, 297);
+            this.ClientSize = new System.Drawing.Size(522, 293);
             this.ControlBox = false;
             this.Controls.Add(this.LblIdpersona);
             this.Controls.Add(this.TxtIdPersona);

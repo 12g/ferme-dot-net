@@ -14,13 +14,9 @@ namespace AppPrincipal
 {
     public partial class FomularioTipoProducto : Form
     {
-        private static int visitCounter = 0;
         public FomularioTipoProducto()
         {
             InitializeComponent();
-
-            visitCounter++; // Increase each time a form is loaded
-            TxtCodigo.Text = visitCounter.ToString("01"); // 
         }
        
 
@@ -47,7 +43,6 @@ namespace AppPrincipal
         //LIMPIAR 
         private void Limpiar()
         {
-            TxtCodigo.Text = "";
             TxtDescripcion.Text = "";
             CbFamiliaProducto.Text = "Seleccione";
         }
@@ -61,21 +56,26 @@ namespace AppPrincipal
                 {
                     MessageBox.Show("SELECCIONE UN TIPO PRODUCTO");
                 }
-                else if (TxtDescripcion.Text =="")
+                else if (TxtDescripcion.Text == "")
                 {
                     MessageBox.Show("INGRESE UNA DESCRIPCION PARA EL TIPO PRODUCTO");
+                }
+                else if (TxtDescripcion.Text.Length < 3)
+                {
+                    MessageBox.Show("INGRESE UNA DESCRIPCION DE AS DE 3 LETRAS");
                 }
                 else
                 {
                     ServicioTipoProducto sertp = new ServicioTipoProducto();
                     TipoProducto tp = new TipoProducto();
-                    
-                    tp.idTipoProducto = int.Parse(TxtCodigo.Text);
+
+                    tp.idTipoProducto = null;
                     tp.idFamiliaProducto = int.Parse(CbFamiliaProducto.SelectedValue.ToString());
                     tp.nombreFamiliaProducto = CbFamiliaProducto.SelectedText.ToString();
-                    tp.nombreTipoProducto = TxtDescripcion.Text;
+                    tp.nombreTipoProducto = TxtDescripcion.Text.ToLower();
 
                     sertp.CrearTipoProducto(tp);
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                     Limpiar();
 
                 }

@@ -12,9 +12,16 @@ namespace AppPrincipal
         public FormularioMantenedorUsuario()
         {
             InitializeComponent();
+
             TxtRut.Enabled = false;
             TxtFecha.Enabled = false;
             TxtNombre.Enabled = false;
+
+            TxtContraseña.Text = "";
+            // The password character is an asterisk.  
+            TxtContraseña.PasswordChar = '*';
+            // The control will allow no more than 14 characters.  
+            TxtContraseña.MaxLength = 50;
         }
 
         //BOTON CANCELAR CREAR USUARIO
@@ -61,12 +68,15 @@ namespace AppPrincipal
                 else
                 {
                     usr.idPersona = int.Parse(txtidPersona.Text);
-                    usr.rutPersona = TxtRut.Text;
-                    usr.nombreCompletoPersona = TxtNombre.Text;
+                    usr.rutPersona = TxtRut.Text.ToLower();
+                    usr.nombreCompletoPersona = TxtNombre.Text.ToLower();
                     usr.nombreUsuario = TxtUsuario.Text;
                     usr.claveUsuario = TxtUsuario.Text;
-                  
+
+
                     serEmp.GuardarUsario(usr);
+                    limpiar();
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                 }
             }
             catch (Exception)
@@ -87,6 +97,17 @@ namespace AppPrincipal
         {
             FormularioBuscarUsuario usr = new FormularioBuscarUsuario(this);
             usr.ShowDialog();
+        }
+
+
+        private void limpiar()
+        {
+            TxtContraseña.Text = "";
+            TxtFecha.Text = DateTime.Now.ToShortDateString();
+            txtidPersona.Text = "";
+            TxtNombre.Text = "";
+            TxtRut.Text = "";
+            TxtUsuario.Text = "";
         }
     }
 }

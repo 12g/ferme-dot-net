@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioBuscarCliente));
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblBuscar = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
@@ -40,7 +41,7 @@
             // 
             this.LblTitulo.AutoSize = true;
             this.LblTitulo.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(253, 9);
+            this.LblTitulo.Location = new System.Drawing.Point(178, 9);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(231, 29);
             this.LblTitulo.TabIndex = 3;
@@ -74,7 +75,7 @@
             this.DgMostrarCliente.Name = "DgMostrarCliente";
             this.DgMostrarCliente.ReadOnly = true;
             this.DgMostrarCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgMostrarCliente.Size = new System.Drawing.Size(742, 292);
+            this.DgMostrarCliente.Size = new System.Drawing.Size(523, 292);
             this.DgMostrarCliente.TabIndex = 6;
             this.DgMostrarCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgMostrarCliente_CellDoubleClick);
             // 
@@ -83,9 +84,9 @@
             this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(258, 425);
+            this.BtnCancelar.Location = new System.Drawing.Point(183, 425);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(275, 43);
+            this.BtnCancelar.Size = new System.Drawing.Size(203, 43);
             this.BtnCancelar.TabIndex = 7;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -95,12 +96,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.ClientSize = new System.Drawing.Size(589, 480);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.DgMostrarCliente);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.LblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioBuscarCliente";
             this.Text = "FormularioBuscarCliente";
             ((System.ComponentModel.ISupportInitialize)(this.DgMostrarCliente)).EndInit();

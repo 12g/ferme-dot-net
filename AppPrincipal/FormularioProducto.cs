@@ -93,13 +93,11 @@ namespace AppPrincipal
                 this.DGlistadeproductos.Columns["idProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idTipoProducto"].Visible = false;
                 this.DGlistadeproductos.Columns["idFamiliaProducto"].Visible = false;
-                //this.DGlistadeproductos.Columns["descripcionFamiliaProducto"].Visible = false;
 
                 //DA NOMBRE A LAS COLUMNAS
                 this.DGlistadeproductos.Columns["codigoProducto"].HeaderText = "CODIGO";
                 this.DGlistadeproductos.Columns["nombreProducto"].HeaderText = "NOMBRE PRODUCTO";
                 this.DGlistadeproductos.Columns["precioProducto"].HeaderText = "PRECIO";
-                //this.DGlistadeproductos.Columns["descripcionProducto"].HeaderText = "DESCRIPCION PRODUCTO";
                 this.DGlistadeproductos.Columns["stockActualProducto"].HeaderText ="STOCK ACTUAL";
                 this.DGlistadeproductos.Columns["stockCriticoProducto"].HeaderText = "STOCK CRITICO";
                 this.DGlistadeproductos.Columns["nombreTipoProducto"].HeaderText = "TIPO PRODUCTO";
@@ -163,7 +161,7 @@ namespace AppPrincipal
         {
             try
             {
-              
+               
 
             }
             catch (Exception)

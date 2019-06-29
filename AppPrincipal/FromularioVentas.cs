@@ -18,17 +18,11 @@ namespace AppPrincipal
         private int indicefilaseleccionada;
         public List<Detalle_Venta> detalleVen;
         public List<DetalleVentaVista> detallevv;
+
         public FromularioVentas()
         {
             InitializeComponent();
-            NumCorrelativo();
             CargarCbEmpleado();
-        }
-
-        private void NumCorrelativo()
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            TxtNumeroDocumento.Text = Convert.ToString(rnd.Next(0, 10000));
         }
 
         //CARGAR LISTADO 
@@ -119,26 +113,30 @@ namespace AppPrincipal
                         detalle = (BindingList<DetalleVentaVista>)DgVentaProducto.DataSource;
 
                         DetalleVentaVista vv = new DetalleVentaVista();
+
                         vv.CODIGO = TxtCodigo.Text;
                         vv.NOMBRE = TxtNombreProducto.Text;
                         vv.CANTIDAD = int.Parse(TxtCantidad.Text);
                         vv.MONTO = int.Parse(TxtPrecio.Text);
                         vv.SUBTOTAL = vv.MONTO * vv.CANTIDAD;
 
+                        detalle.Add(vv);
+                        
+
                         //CALCULA EL IVA Y EL TOTAL DE VENTAS
                         TxtSubtotal.Text = Convert.ToString(vv.SUBTOTAL);
                         TxtIva.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100);
                         TxtTotal.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100 + vv.SUBTOTAL);
 
-                        detalle.Add(vv);
+
                         Detalle_Venta dv = new Detalle_Venta();
-                        dv.idDetalleVenta = int.Parse(TxtNumeroDocumento.Text);
-                        dv.idVenta = int.Parse(TxtNumeroDocumento.Text);
+
                         dv.idProducto = int.Parse(TxtIdProducto.Text);
                         dv.codigoProducto = TxtCodigo.Text;
                         dv.nombreProducto = TxtNombreProducto.Text;
                         dv.unidadesProducto = int.Parse(TxtCantidad.Text);
                         dv.montoDetalleVenta = int.Parse(TxtPrecio.Text);
+                        dv.Subtotal = dv.montoDetalleVenta * dv.unidadesProducto;
 
                         detalleVen.Add(dv);
                         Console.WriteLine(detalle.ToString());
@@ -238,6 +236,7 @@ namespace AppPrincipal
             try
             {
                 indicefilaseleccionada = DgVentaProducto.CurrentRow.Index;
+
                 TxtCodigo.Text = DgVentaProducto[0, indicefilaseleccionada].Value.ToString();
                 TxtNombreProducto.Text = DgVentaProducto[1, indicefilaseleccionada].Value.ToString();
                 TxtCantidad.Text = DgVentaProducto[2, indicefilaseleccionada].Value.ToString();
@@ -304,7 +303,7 @@ namespace AppPrincipal
 
         private void LimpiarPantall()
         {
-            try
+           try
             {
                 TxtIdProducto.Text = "";
                 TxtCantidad.Text = "";
@@ -319,12 +318,13 @@ namespace AppPrincipal
                 TxtSubtotal.Text = "";
                 TxtTotal.Text = "";
 
+               
                 if (CbEmpleado.Items.Count > 1)
                 {
                     CbEmpleado.SelectedIndex = -1;
                     CbEmpleado.Text = "Seleccione";
                 }
-                NumCorrelativo();
+
                 CargarComboBoxTipoDocto();
 
                 if (CbTipoDocto.Items.Count > 0)
@@ -354,15 +354,7 @@ namespace AppPrincipal
         {
              try
              {
-                 if (TxtNumeroDocumento.Text == "")
-                 {
-                     MessageBox.Show("INGRESE UN NUMERO DE DOCUMENTO");
-                 }
-                 else if (TxtNumeroDocumento.Text.Length < 0)
-                 {
-                     MessageBox.Show("NUMERO DEBE SER MAYOR A CERO 0");
-                 }
-                 else if (TxtRut.Text == "" || TxtNombreRazonSocial.Text == "")
+                 if (TxtRut.Text == "" || TxtNombreRazonSocial.Text == "")
                  {
                      MessageBox.Show("SELECCIONE UN CLIENTE");
                  }
@@ -372,18 +364,18 @@ namespace AppPrincipal
                  }
                  else
                  {
-
+                 
 
                     ServicioVentas ser = new ServicioVentas();
                     Venta vent = new Venta();
 
                     
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
-                    vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
                     vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
                     vent.fechaVenta = DpFecha.Text;
                     vent.tipoVenta = CbTipoDocto.Text;
+                    vent.subtotalVenta = int.Parse(TxtTotal.Text);
 
                     vent.detallesVenta = detalleVen;
 
@@ -391,7 +383,7 @@ namespace AppPrincipal
 
                     LimpiarPantall();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
-                 }
+                }
              }
 
              catch (Exception)

@@ -134,6 +134,7 @@
             // DPfechaInicio
             // 
             this.DPfechaInicio.CustomFormat = "";
+            this.DPfechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DPfechaInicio.Location = new System.Drawing.Point(13, 128);
             this.DPfechaInicio.Name = "DPfechaInicio";
@@ -143,6 +144,7 @@
             // 
             // CbEmpleado
             // 
+            this.CbEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbEmpleado.FormattingEnabled = true;
             this.CbEmpleado.Location = new System.Drawing.Point(415, 127);
             this.CbEmpleado.Name = "CbEmpleado";
@@ -181,6 +183,7 @@
             // 
             // TxtCodProducto
             // 
+            this.TxtCodProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCodProducto.Location = new System.Drawing.Point(16, 229);
             this.TxtCodProducto.Name = "TxtCodProducto";
             this.TxtCodProducto.ReadOnly = true;
@@ -189,6 +192,7 @@
             // 
             // TxtNombreProducto
             // 
+            this.TxtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombreProducto.Location = new System.Drawing.Point(288, 231);
             this.TxtNombreProducto.Name = "TxtNombreProducto";
             this.TxtNombreProducto.ReadOnly = true;
@@ -197,6 +201,7 @@
             // 
             // TxtCantidad
             // 
+            this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCantidad.Location = new System.Drawing.Point(691, 232);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(140, 20);
@@ -391,6 +396,7 @@
             // 
             // CbEstado
             // 
+            this.CbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbEstado.FormattingEnabled = true;
             this.CbEstado.Location = new System.Drawing.Point(415, 73);
             this.CbEstado.Name = "CbEstado";

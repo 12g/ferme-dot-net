@@ -93,6 +93,7 @@
             // 
             // TxtRut
             // 
+            this.TxtRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRut.Location = new System.Drawing.Point(12, 64);
             this.TxtRut.Name = "TxtRut";
             this.TxtRut.Size = new System.Drawing.Size(222, 20);
@@ -112,6 +113,7 @@
             // 
             // TxtRazonSocial
             // 
+            this.TxtRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRazonSocial.Location = new System.Drawing.Point(12, 123);
             this.TxtRazonSocial.Name = "TxtRazonSocial";
             this.TxtRazonSocial.Size = new System.Drawing.Size(293, 20);

@@ -77,19 +77,19 @@ namespace AppPrincipal
                 try
                 {   
                     //LOS DATOS SE CARGAN EN EL FORMULARIO DE VENTAS 
-                    FrmVentas.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
-                    FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                    FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
-                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells[4].Value.ToString();
+                    FrmVentas.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells["idProducto"].Value.ToString();
+                    FrmVentas.TxtCodigo.Text = DgMostrarProductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
+                    FrmVentas.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
+                    FrmVentas.TxtPrecio.Text = DgMostrarProductos.CurrentRow.Cells["precioProducto"].Value.ToString();
                     this.Close();
 
                 }
                 catch (Exception)
                 {
                     //LOS DATOS SE CARGAN EN EL FORMULARIO ORDEN DE COMPRA
-                    FrmOrdenCompra.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells[0].Value.ToString();
-                    FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells[1].Value.ToString();
-                    FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells[2].Value.ToString();
+                    FrmOrdenCompra.TxtIdProducto.Text = DgMostrarProductos.CurrentRow.Cells["idProducto"].Value.ToString();
+                    FrmOrdenCompra.TxtCodProducto.Text = DgMostrarProductos.CurrentRow.Cells["codigoProducto"].Value.ToString();
+                    FrmOrdenCompra.TxtNombreProducto.Text = DgMostrarProductos.CurrentRow.Cells["nombreProducto"].Value.ToString();
                     this.Close();
                 }
             }

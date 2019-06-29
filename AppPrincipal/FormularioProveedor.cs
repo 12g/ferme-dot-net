@@ -77,6 +77,7 @@ namespace AppPrincipal
                 FormularioMantenedorProveedor fmp = new FormularioMantenedorProveedor();
                 if (DgMostrarListaProveedor.SelectedRows.Count > 0)
                 {
+                    fmp.TxtRut.Enabled = false;
                     fmp.TxtIdPersona.Text = DgMostrarListaProveedor.CurrentRow.Cells["idPersona"].Value.ToString();
                     fmp.TxtRut.Text = DgMostrarListaProveedor.CurrentRow.Cells["rutPersona"].Value.ToString();
                     fmp.TxtIdProveedor.Text = DgMostrarListaProveedor.CurrentRow.Cells["idProveedor"].Value.ToString();

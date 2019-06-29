@@ -14,13 +14,10 @@ namespace AppPrincipal
 {
     public partial class FormularioMantenedorFamiliaProducto : Form
     {
-        private static int visitCounter = 0;
+       
         public FormularioMantenedorFamiliaProducto()
         {
-            InitializeComponent();
-            visitCounter++; // Increase each time a form is loaded
-            TxtCodigo.Text = visitCounter.ToString("01"); // 
-
+            InitializeComponent();    
         }
 
 
@@ -96,8 +93,8 @@ namespace AppPrincipal
                     ServicioFamiliaProducto ser = new ServicioFamiliaProducto();
                     Familia_Producto fp = new Familia_Producto();
 
-                    fp.idFamiliaProducto = int.Parse(TxtCodigo.Text);
-                    fp.descripcionFamiliaProducto = TxtDescripcion.Text;
+                    fp.idFamiliaProducto = null;
+                    fp.descripcionFamiliaProducto = TxtDescripcion.Text.ToLower();
                     fp.idRubro = int.Parse(CbRubro.SelectedValue.ToString());
                     fp.descripcionRubro = Convert.ToString(CbRubro.Text);
                     fp.idProveedor = int.Parse(CbProveedor.SelectedValue.ToString());
@@ -107,7 +104,7 @@ namespace AppPrincipal
                     FormularioProducto P = new FormularioProducto();
                     P.DGlistadeproductos.Refresh();
 
-                    MessageBox.Show("FAMILIA PRODUCTO GUARDADA EXITOSAMENTE");
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
 
                     Limpiar();
 
@@ -124,7 +121,6 @@ namespace AppPrincipal
         //LIMPIAR PANTALLA
         private void Limpiar()
         {
-            TxtCodigo.Text = "";
             TxtDescripcion.Text = "";
             CbProveedor.Text = "Seleccionar";
             CbRubro.Text = "Seleccionar";

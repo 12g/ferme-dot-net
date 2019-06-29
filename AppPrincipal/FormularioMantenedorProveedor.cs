@@ -86,15 +86,15 @@ namespace AppPrincipal
 
                     pro.idPersona = int.Parse(TxtIdPersona.Text);
                     pro.idProveedor = int.Parse(TxtIdProveedor.Text);
-                    pro.rutPersona = TxtRut.Text;
-                    pro.razonSocialProveedor = TxtRazonSocial.Text;
+                    pro.rutPersona = TxtRut.Text.ToLower();
+                    pro.razonSocialProveedor = TxtRazonSocial.Text.ToLower();
                     pro.nombreCompletoPersona = TxtRazonSocial.Text;
 
                     sp.CrearProveedor(pro);
 
                     this.DialogResult = DialogResult.OK;
 
-                    MessageBox.Show("PROVEEDOR GUARDARDO");
+                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
 
                     Limpiar();
                   

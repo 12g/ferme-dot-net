@@ -50,23 +50,6 @@ namespace ServiciosConexionFerme
         }
 
 
-        //SE SERIALIZA EL EMPLEADO PARA CONVERTIR A JSON
-        public void EliminarProducto(Producto pro)
-        {
-
-            var json = JsonConvert.SerializeObject(pro);
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var responseMessage = httpClient.PostAsync("gestion/productos/borrar", jsonp);
-            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
-
-            //Console.WriteLine(resp);
-            Console.WriteLine(json);
-        }
-
-
         //LISTAR PRODUCTO
         public JArray GetRESTData()
         {

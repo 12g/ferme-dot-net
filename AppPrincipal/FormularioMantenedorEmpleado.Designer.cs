@@ -92,6 +92,7 @@
             // 
             // TxtRutCliente
             // 
+            this.TxtRutCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRutCliente.Location = new System.Drawing.Point(12, 88);
             this.TxtRutCliente.Name = "TxtRutCliente";
             this.TxtRutCliente.Size = new System.Drawing.Size(151, 20);
@@ -122,6 +123,7 @@
             // 
             // TxtNombre
             // 
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(12, 133);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(464, 20);
@@ -153,6 +155,7 @@
             // 
             // CbxCargo
             // 
+            this.CbxCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxCargo.FormattingEnabled = true;
             this.CbxCargo.Location = new System.Drawing.Point(178, 87);
             this.CbxCargo.Name = "CbxCargo";
