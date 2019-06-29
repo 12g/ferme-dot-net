@@ -9,7 +9,7 @@ namespace ServiciosConexionFerme
    public class Sesion
     {
         private int idSesion;
-        private string hasSesion;
+        private string hashSesion;
         private int idUsuario;
         private string nombreUsuario;
         private int? idCargo;

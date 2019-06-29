@@ -62,6 +62,7 @@
     <Compile Include="ServicioUsuario.cs" />
     <Compile Include="ServicioVentas.cs" />
     <Compile Include="Sesion.cs" />
+    <Compile Include="UrlConexion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">

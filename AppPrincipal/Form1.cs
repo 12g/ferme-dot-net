@@ -158,7 +158,7 @@ namespace AppPrincipal
             }
             else
             {
-                foreach (Form item in PanelContendorFormulario.Controls)
+                foreach (Form item in PanelContendorFormulario.Controls.OfType<Form>())
                 {
                     item.Close();
                 }

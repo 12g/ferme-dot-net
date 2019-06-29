@@ -19,7 +19,7 @@ namespace ServiciosConexionFerme
         public void GetResource()
         {
             var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
+            httpClient.BaseAddress = new Uri(UrlConexion.url);
             var responseMessage = httpClient.GetAsync("gestion/empleados").Result;
 
             string responseAsync = responseMessage.Content.ReadAsStringAsync().Result;
@@ -40,7 +40,7 @@ namespace ServiciosConexionFerme
 
             var json = JsonConvert.SerializeObject(emp);
             var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:8082/api/");
+            httpClient.BaseAddress = new Uri(UrlConexion.url);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var responseMessage = httpClient.PostAsync("gestion/empleados/guardar", jsonp);

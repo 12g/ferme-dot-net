@@ -102,11 +102,12 @@ namespace AppPrincipal
             {
                 Program.se = resutadoLogin;
                 FormularioPrincipal form1 = new FormularioPrincipal();
+                form1.ShowDialog();
+
                 LblDatosInvalidos.Visible = false;
             }
             else
             {
-                MessageBox.Show("ERROR");
                 LblDatosInvalidos.Visible = true;
             }
         }
