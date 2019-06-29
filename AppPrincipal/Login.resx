@@ -3912,28 +3912,10 @@
   <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>388, 0</value>
   </metadata>
-  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 168, 388, 0</value>
-  </metadata>
-  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 168</value>
-  </metadata>
-  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>388, 0</value>
-  </metadata>
-  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>323, 100, 388, 0</value>
-  </metadata>
-  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>323, 100</value>
-  </metadata>
-  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>388, 0</value>
-  </metadata>
   <data name="BtnCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7CAAAOwgEVKEqAAABB3klEQVR4Xu2dC9RlRXXnP98i
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7AAAAOwAFq1okJAABB3klEQVR4Xu2dC9RlRXXnP98i
         CPjCaEYZ4yPGNy6NzkpWyBo1s2airpioeRiTCWaSGZMYlcRo1Ci+FVATNZoHEdSIChEU5Y0QBTTRKAh0
         UFtAVIRuummaftPdZ/6/w91NWdQ5p86959xbt746a+117/d99zunatf+//euXbvqrqyUq2igaKBooGig
         aKBooGigaKBooGigaKBooGigaKBooGigaKBooGigaKBooGigaKBooGigaKBooGigaKBooGigaKBooGig
@@ -4221,7 +4203,7 @@
   <data name="BtnMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAngklEQVR4Xu3dX4iVd3rAcZ0N
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7AAAAOwAFq1okJAAAngklEQVR4Xu3dX4iVd3rAcZ0N
         myok21w0ay+7DESEMc5kRk+nkLEl7M1eVCgSe9mL2KtC2BtXFhExSG8DexOWeLNCLwIuwV0aUOlSCUHc
         JeDF7o1UU3ZkA0FWaRIU3PR57Ksd/4zOn3PmvO/7fBYOSakZ5/yez/v7fc+fObNpk/8NbQXm5ua2TU9P
         vz4zM/NW3I6/9tpr78btZPz7B/HPj+KfH8c/L8ftavz7F/HP23H7xs0aMMBAUQO3m73wau6NzR6Ze2Xu

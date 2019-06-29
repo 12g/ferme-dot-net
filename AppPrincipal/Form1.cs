@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using Biblioteca;
+using ServiciosConexionFerme;
+using System.Collections;
 
 namespace AppPrincipal
 {
@@ -105,33 +107,63 @@ namespace AppPrincipal
 
         private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
+
+            ServicioSesion sesi = new ServicioSesion();
+
+            bool Valida = false;
+
             try
             {
-                Form Formulario;
-                Formulario = PanelContendorFormulario.Controls.OfType<MIForm>().FirstOrDefault();//busca en la coleccion el formulario
-                                                                                                 //si el formulario / instancia no exite
-
-                if (Formulario == null)
-                {
-                    Formulario = new MIForm();
-                    Formulario.TopLevel = false;
-                    Formulario.FormBorderStyle = FormBorderStyle.None;
-                    Formulario.Dock = DockStyle.Fill;
-                    PanelContendorFormulario.Controls.Add(Formulario);
-                    PanelContendorFormulario.Tag = Formulario;
-                    Formulario.Show();
-                    Formulario.BringToFront();
-                }
-                //SI EL FORMULARIO /INSTANCIA EXISTE
-                else
-                {
-                    Formulario.BringToFront();
-                }
+                Valida = sesi.ValidaConexion(Program.se);
             }
-            catch (Exception)
+            catch
             {
 
-                MessageBox.Show("NO HAY DATOS");
+            }
+
+            if (Valida == true)
+            {
+
+
+
+                try
+                {
+
+                    Form Formulario;
+                    Formulario = PanelContendorFormulario.Controls.OfType<MIForm>().FirstOrDefault();//busca en la coleccion el formulario
+                                                                                                     //si el formulario / instancia no exite
+
+                    if (Formulario == null)
+                    {
+                        Formulario = new MIForm();
+                        Formulario.TopLevel = false;
+                        Formulario.FormBorderStyle = FormBorderStyle.None;
+                        Formulario.Dock = DockStyle.Fill;
+                        PanelContendorFormulario.Controls.Add(Formulario);
+                        PanelContendorFormulario.Tag = Formulario;
+                        Formulario.Show();
+                        Formulario.BringToFront();
+                    }
+                    //SI EL FORMULARIO /INSTANCIA EXISTE
+                    else
+                    {
+                        Formulario.BringToFront();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("NO HAY DATOS");
+                }
+            }
+            else
+            {
+                foreach (Form item in PanelContendorFormulario.Controls)
+                {
+                    item.Close();
+                }
+
+                Login formlogin = new Login();
             }
            
         }
@@ -141,6 +173,7 @@ namespace AppPrincipal
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
+            
             AbrirFormInPanel<FormularioProducto>();
             btnProducto.BackColor = Color.FromArgb(178,34,34);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);

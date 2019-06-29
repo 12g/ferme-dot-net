@@ -56,10 +56,12 @@
     <Compile Include="ServicioOrdenCompra.cs" />
     <Compile Include="ServicioProducto.cs" />
     <Compile Include="ServicioProveedores.cs" />
+    <Compile Include="ServicioSesion.cs" />
     <Compile Include="ServiciosRubro.cs" />
     <Compile Include="ServicioTipoProducto.cs" />
     <Compile Include="ServicioUsuario.cs" />
     <Compile Include="ServicioVentas.cs" />
+    <Compile Include="Sesion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">

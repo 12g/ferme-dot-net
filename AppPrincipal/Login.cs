@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Biblioteca;
+using ServiciosConexionFerme;
 
 namespace AppPrincipal
 {
@@ -82,6 +84,31 @@ namespace AppPrincipal
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
+        //BOTON ACEPTAR PARA INGRESAR AL PROGRAMA
+        private void BtnAcceder_Click(object sender, EventArgs e)
+        {
+            LoginRequest log = new LoginRequest();
+
+            log.usuario = TxtUsuario.Text;
+            log.clave = TxtContraseña.Text;
+       
+            ServicioSesion se = new ServicioSesion();
+            Sesion resutadoLogin = se.ConexionLogin(log);
+
+            if (resutadoLogin != null)
+            {
+                Program.se = resutadoLogin;
+                FormularioPrincipal form1 = new FormularioPrincipal();
+                LblDatosInvalidos.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("ERROR");
+                LblDatosInvalidos.Visible = true;
+            }
         }
     }
 }

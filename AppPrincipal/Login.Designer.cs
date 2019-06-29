@@ -42,6 +42,7 @@
             this.BtnAcceder = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.LblDatosInvalidos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
@@ -175,6 +176,7 @@
             this.BtnAcceder.TabIndex = 3;
             this.BtnAcceder.Text = "ACCEDER";
             this.BtnAcceder.UseVisualStyleBackColor = false;
+            this.BtnAcceder.Click += new System.EventHandler(this.BtnAcceder_Click);
             // 
             // BtnCerrar
             // 
@@ -198,12 +200,24 @@
             this.BtnMinimizar.TabStop = false;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
+            // LblDatosInvalidos
+            // 
+            this.LblDatosInvalidos.AutoSize = true;
+            this.LblDatosInvalidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDatosInvalidos.Location = new System.Drawing.Point(422, 286);
+            this.LblDatosInvalidos.Name = "LblDatosInvalidos";
+            this.LblDatosInvalidos.Size = new System.Drawing.Size(193, 24);
+            this.LblDatosInvalidos.TabIndex = 8;
+            this.LblDatosInvalidos.Text = "DATOS INVALIDOS";
+            this.LblDatosInvalidos.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.LblDatosInvalidos);
             this.Controls.Add(this.BtnMinimizar);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnAcceder);
@@ -244,5 +258,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblTitulomenu;
         private System.Windows.Forms.Label lblTituloMenu2;
+        private System.Windows.Forms.Label LblDatosInvalidos;
     }
 }
