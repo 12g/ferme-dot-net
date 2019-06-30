@@ -105,9 +105,53 @@ namespace AppPrincipal
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        //BOTON CERRAR SESION
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ServicioSesion sesi = new ServicioSesion();
+
+                bool Valida = false;
+
+                try
+                {
+                    Valida = sesi.ValidaConexion(Program.se);
+                }
+                catch (Exception ee)
+                {
+                    Console.WriteLine(ee.StackTrace);
+                }
+
+                if (Valida == true)
+                {
+                    Valida = sesi.CerrarConexion(Program.se);
+                }
+
+                else
+                {
+                    foreach (Form item in PanelContendorFormulario.Controls.OfType<Form>())
+                    {
+                        item.Close();
+                    }
+
+                    Application.Exit();
+                    Login formlogin = new Login();
+                    formlogin.ShowDialog();
+                }
+            }
+            catch(Exception ii)
+            {
+                Console.WriteLine(ii.StackTrace);
+            }
+
+        }
+
+
         private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
-
+            
             ServicioSesion sesi = new ServicioSesion();
 
             bool Valida = false;
@@ -115,12 +159,12 @@ namespace AppPrincipal
             try
             {
                 Valida = sesi.ValidaConexion(Program.se);
+
             }
-            catch
+            catch(Exception e)
             {
-
+                Console.WriteLine(e.StackTrace); 
             }
-
             if (Valida == true)
             {
 
@@ -164,8 +208,9 @@ namespace AppPrincipal
                 }
 
                 Login formlogin = new Login();
-            }
-           
+                formlogin.ShowDialog();
+            }         
+
         }
 
 
@@ -274,6 +319,7 @@ namespace AppPrincipal
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(178, 34, 34);
         }
+
 
         //METODO PARA MOSTRAR FECHA Y HORA DEL SISTEMA
         /*private void TimehorayFecha_Tick(object sender, EventArgs e)

@@ -74,7 +74,7 @@ namespace ServiciosConexionFerme
         //LISTAR VENTA
         public List<Venta> ListarVenta()
         {
-            string uri = "http://localhost:8082/api/gestion/ventas";
+            string uri = UrlConexion.url + "gestion/ventas";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

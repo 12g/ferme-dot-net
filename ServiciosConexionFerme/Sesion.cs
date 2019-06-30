@@ -8,10 +8,11 @@ namespace ServiciosConexionFerme
 {
    public class Sesion
     {
-        private int idSesion;
-        private string hashSesion;
-        private int idUsuario;
-        private string nombreUsuario;
-        private int? idCargo;
+        public int? idSesion;
+        public string hashSesion;
+        public int idUsuario;
+        public string nombreUsuario;
+        public int? idCargo;
+
     }
 }

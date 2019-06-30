@@ -50,6 +50,7 @@
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -275,6 +276,7 @@
             // PanelBarraTitulo
             // 
             this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.PanelBarraTitulo.Controls.Add(this.BtnCerrarSesion);
             this.PanelBarraTitulo.Controls.Add(this.IconoResetearApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMinimizarApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMaximizarApp);
@@ -371,6 +373,17 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // BtnCerrarSesion
+            // 
+            this.BtnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(765, 12);
+            this.BtnCerrarSesion.Name = "BtnCerrarSesion";
+            this.BtnCerrarSesion.Size = new System.Drawing.Size(122, 31);
+            this.BtnCerrarSesion.TabIndex = 1;
+            this.BtnCerrarSesion.Text = "Cerrar Sesion";
+            this.BtnCerrarSesion.UseVisualStyleBackColor = true;
+            this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +434,7 @@
         private System.Windows.Forms.Button BtnOrdenCompra;
         private System.Windows.Forms.Button btnProducto;
         public System.Windows.Forms.Button BtnVentas;
+        private System.Windows.Forms.Button BtnCerrarSesion;
     }
 }
 

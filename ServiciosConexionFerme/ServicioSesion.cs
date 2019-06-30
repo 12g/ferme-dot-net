@@ -25,9 +25,12 @@ namespace ServiciosConexionFerme
             var responseMessage = httpClient.PostAsync("sesiones/abrir", jsonp);
             var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
 
+            var JsonSerializerSettings = new JsonSerializerSettings();
+            JsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
+
             if (resp != null && resp != "")
             {
-                Sesion LoginResp = JsonConvert.DeserializeObject<Sesion>(resp);
+                Sesion LoginResp = JsonConvert.DeserializeObject<Sesion>(resp,JsonSerializerSettings);
                 return LoginResp;
             }
             else
@@ -41,7 +44,7 @@ namespace ServiciosConexionFerme
         {
             var json = JsonConvert.SerializeObject(se);
             var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("");
+            httpClient.BaseAddress = new Uri(UrlConexion.url);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var responseMessage = httpClient.PostAsync("sesiones/validar", jsonp);
@@ -49,6 +52,21 @@ namespace ServiciosConexionFerme
 
             return (resp == "true");
            
+        }
+
+
+        public bool CerrarConexion(Sesion se)
+        {
+            var json = JsonConvert.SerializeObject(se);
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(UrlConexion.url);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            System.Net.Http.HttpContent jsonp = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var responseMessage = httpClient.PostAsync("sesiones/cerrar", jsonp);
+            var resp = responseMessage.Result.Content.ReadAsStringAsync().Result;
+
+            return (resp == "true");
+
         }
 
 

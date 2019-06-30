@@ -8,11 +8,14 @@ namespace ServiciosConexionFerme
 {
    public class UrlConexion
     {
-        private static string _url = UrlConexion.url;
+        private static string _url = "http://localhost:8082/api/";
         public static string url
         {
             get { return _url; }
             set { _url = value; }
         }
+
+
+
     }
 }

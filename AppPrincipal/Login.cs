@@ -90,6 +90,7 @@ namespace AppPrincipal
         //BOTON ACEPTAR PARA INGRESAR AL PROGRAMA
         private void BtnAcceder_Click(object sender, EventArgs e)
         {
+            
             LoginRequest log = new LoginRequest();
 
             log.usuario = TxtUsuario.Text;
