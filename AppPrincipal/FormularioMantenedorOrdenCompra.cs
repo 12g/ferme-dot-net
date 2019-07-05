@@ -27,7 +27,7 @@ namespace AppPrincipal
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
-
+            DPfechaInicio.Enabled = false;
             CargarCbEstado();
 
         }
@@ -106,6 +106,7 @@ namespace AppPrincipal
                 TxtCodProducto.Text = "";
                 TxtNombreProducto.Text = "";
                 TxtCantidad.Text = "";
+                TxtNumero.Text = "";
 
 
                 BtnAgregar.Enabled = true;
@@ -138,7 +139,7 @@ namespace AppPrincipal
             catch (Exception)
             {
 
-                MessageBox.Show("ERROR AL GENERAR UNA ORDEN DE COMPRA");
+                MessageBox.Show("ERROR AL GENERAR UNA NUEVA ORDEN DE COMPRA");
             }
         }
 
@@ -156,37 +157,38 @@ namespace AppPrincipal
         {
            try
             {
-                if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
-                {
-
-                    MessageBox.Show("INGRESE UN NUMERO DE ORDEN DE COMPRA");
-                }
-                //Comparar fechas
-               
-                else if (CbEmpleado.SelectedIndex.Equals(-1))
+                if (CbEmpleado.SelectedIndex.Equals(-1))
                 {
                     MessageBox.Show("SELECCIONE UN EMPLEADO");
                 }
 
                 else
                 {
-                    ServicioOrdenCompra ser = new ServicioOrdenCompra();
-                    Orden_Compra oc = new Orden_Compra();
-                    oc.detallesOrdenVista = null;
+                    try
+                    {
+                        ServicioOrdenCompra ser = new ServicioOrdenCompra();
+                        Orden_Compra oc = new Orden_Compra();
+                        oc.detallesOrdenVista = null;
 
-                    oc.idOrdenCompra = int.Parse(TxtNumero.Text);
-                    oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
-                    oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue); ;
-                    oc.nombreEmpleado = CbEmpleado.Text;
-                    oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
-       
+                        oc.idOrdenCompra = int.Parse(TxtNumero.Text);
+                        oc.estadoOrdenCompra = Convert.ToString(CbEstado.Text);
+                        oc.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue); ;
+                        oc.nombreEmpleado = CbEmpleado.Text;
+                        oc.fechaSolicitudOrdenCompra = DPfechaInicio.Text;
 
-                    oc.detallesOrdenCompra = detalleOC;
+
+                        oc.detallesOrdenCompra = detalleOC;
+
+                        ser.CrearOrdenCompra(oc);
+
+                        LimpiarPantalla();
+                        MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(" DEBE INGRESAR PRODUCTOS");
+                    }
                    
-                    ser.CrearOrdenCompra(oc);
-
-                    LimpiarPantalla();
-                    MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                }
             }
             catch (Exception)
@@ -266,23 +268,7 @@ namespace AppPrincipal
             }
           
         }
-
-        //TXTNUMERO EVENTO LEAVE EL CUAL SE EJECUTA UN LEAVE EN CASO DE NO CUMPLIR CON LA CONDICION DADA
-        private void TxtNumero_Leave(object sender, EventArgs e)
-        {
-            if (TxtNumero.Text == "" || Convert.ToInt32(TxtNumero.Text) < 1 || !val.IsNumeric(TxtNumero.Text))
-            {
-               
-                MessageBox.Show("INGRESE UN NUMERO EN CAMPO NUMERO");
-            }
-           
-        }
-
-        //SE LLAMA AL EVENTO QUE VALIDA QUE INGRESEN SOLAMENTE NUMEROS
-        private void TxtNumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            val.SoloNumero(e);
-        }
+        
 
         //SE LLAMA AL EVENTO QUE VALIDA QUE SE INGRESEN SOLAMENTE NUMEROS
         private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)

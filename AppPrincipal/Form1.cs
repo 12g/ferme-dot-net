@@ -16,9 +16,11 @@ namespace AppPrincipal
 {
     public partial class FormularioPrincipal : Form
     {
+     
         public FormularioPrincipal()
         {
             InitializeComponent();
+    
         }
 
 
@@ -109,41 +111,25 @@ namespace AppPrincipal
         //BOTON CERRAR SESION
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
+
             try
             {
-                ServicioSesion sesi = new ServicioSesion();
+                //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
 
-                bool Valida = false;
-
-                try
+                MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
+                DialogResult dr = MessageBox.Show("¿Está seguro que desea salir del sistema?", "", botones, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
                 {
-                    Valida = sesi.ValidaConexion(Program.se);
-                }
-                catch (Exception ee)
-                {
-                    Console.WriteLine(ee.StackTrace);
-                }
+                    
+                    ServicioSesion sesi = new ServicioSesion();
 
-                if (Valida == true)
-                {
-                    Valida = sesi.CerrarConexion(Program.se);
-                }
-
-                else
-                {
-                    foreach (Form item in PanelContendorFormulario.Controls.OfType<Form>())
-                    {
-                        item.Close();
-                    }
-
-                    Application.Exit();
-                    Login formlogin = new Login();
-                    formlogin.ShowDialog();
+                       sesi.CerrarConexion(Program.se);
+                        Application.Exit();
                 }
             }
-            catch(Exception ii)
+            catch
             {
-                Console.WriteLine(ii.StackTrace);
+                MessageBox.Show("Error al cerrar Aplicacion");
             }
 
         }
@@ -207,8 +193,8 @@ namespace AppPrincipal
                     item.Close();
                 }
 
-                Login formlogin = new Login();
-                formlogin.ShowDialog();
+
+                Application.Exit();
             }         
 
         }

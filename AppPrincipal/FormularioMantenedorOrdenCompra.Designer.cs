@@ -118,8 +118,7 @@
             this.TxtNumero.ReadOnly = true;
             this.TxtNumero.Size = new System.Drawing.Size(248, 20);
             this.TxtNumero.TabIndex = 6;
-            this.TxtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
-            this.TxtNumero.Leave += new System.EventHandler(this.TxtNumero_Leave);
+
             // 
             // LblFecha
             // 

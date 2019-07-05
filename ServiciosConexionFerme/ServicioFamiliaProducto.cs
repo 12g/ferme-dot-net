@@ -54,7 +54,7 @@ namespace ServiciosConexionFerme
         //LISTAR FAMILIA PRODUCTO
         public JArray ListarFamiliaProducto()
         {
-            string uri = "http://localhost:8082/api/gestion/familias_producto";
+            string uri = UrlConexion.url + "gestion/familias_producto";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

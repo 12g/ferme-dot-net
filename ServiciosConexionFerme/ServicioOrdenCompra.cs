@@ -74,7 +74,7 @@ namespace ServiciosConexionFerme
         //LISTAR ORDEN COMPRA
         public List<Orden_Compra> ListarOrdenCompra()
         {
-            string uri = "http://localhost:8082/api/gestion/ordenes_compra";
+            string uri = UrlConexion.url + "gestion/ordenes_compra";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

@@ -52,7 +52,7 @@ namespace ServiciosConexionFerme
         //LISTAR PROVEEDOR
         public JArray ListadoProveedor()
         {
-            string uri = "http://localhost:8082/api/gestion/proveedores";
+            string uri = UrlConexion.url + "gestion/proveedores";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

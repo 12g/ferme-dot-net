@@ -51,7 +51,7 @@ namespace ServiciosConexionFerme
         //LISTARCLIENTES
         public JArray ListarPersona()
         {
-            string uri = "http://localhost:8082/api/gestion/personas";
+            string uri = UrlConexion.url  + "gestion/personas";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
@@ -65,7 +65,7 @@ namespace ServiciosConexionFerme
         public JArray ListarUsuario()
         {
 
-            string uri = "http://localhost:8082/api/gestion/usuarios";
+            string uri = UrlConexion.url  + "gestion/usuarios";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

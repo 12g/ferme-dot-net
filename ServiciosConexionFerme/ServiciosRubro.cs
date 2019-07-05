@@ -64,7 +64,7 @@ namespace ServiciosConexionFerme
         //LISTAR RUBRO
         public JArray ListarRubro()
         {
-            string uri = "http://localhost:8082/api/gestion/rubros";
+            string uri = UrlConexion.url + "gestion/rubros";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());

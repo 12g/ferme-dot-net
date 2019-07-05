@@ -272,6 +272,7 @@ namespace AppPrincipal
             {
                 ServicioEmpleado see = new ServicioEmpleado();
                 CbEmpleado.DataSource = see.ListaEmpleados();
+               
                 CbEmpleado.DisplayMember = "nombreCompletoPersona";
                 CbEmpleado.ValueMember = "idEmpleado";
 
@@ -279,6 +280,7 @@ namespace AppPrincipal
                 {
                     CbEmpleado.SelectedIndex = -1;
                     CbEmpleado.Text = "Seleccione";
+                    this.CbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
             }
             catch (Exception)
@@ -323,6 +325,7 @@ namespace AppPrincipal
                 {
                     CbEmpleado.SelectedIndex = -1;
                     CbEmpleado.Text = "Seleccione";
+                    this.CbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 CargarComboBoxTipoDocto();
@@ -330,6 +333,7 @@ namespace AppPrincipal
                 if (CbTipoDocto.Items.Count > 0)
                 {
                     CbTipoDocto.SelectedIndex = 0;
+                    this.CbTipoDocto.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 DgVentaProducto.Rows.Clear();
@@ -476,11 +480,13 @@ namespace AppPrincipal
                 lista.Add(new CargarCombobox() { Nombre = "Boleta", Id = "B" });
                 lista.Add(new CargarCombobox() { Nombre = "Factura", Id = "F" });
 
+
                 CbTipoDocto.DataSource = lista;
 
                 if (CbTipoDocto.Items.Count > 0)
                 {
                     CbTipoDocto.SelectedIndex = 0;
+                    this.CbTipoDocto.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
             }
             catch (Exception)

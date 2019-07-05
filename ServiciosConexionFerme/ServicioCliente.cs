@@ -54,7 +54,7 @@ namespace ServiciosConexionFerme
         public JArray ListarClientes()
         {
             
-                string uri = "http://localhost:8082/api/gestion/clientes";
+                string uri = UrlConexion.url + "gestion/clientes";
                 var webRequest = (HttpWebRequest)WebRequest.Create(uri);
                 var webResponse = (HttpWebResponse)webRequest.GetResponse();
                 var reader = new StreamReader(webResponse.GetResponseStream());

@@ -53,7 +53,7 @@ namespace ServiciosConexionFerme
         public JArray ListarCargo()
         {
 
-            string uri = "http://localhost:8082/api/gestion/cargos";
+            string uri = UrlConexion.url + "gestion/cargos";
             var webRequest = (HttpWebRequest)WebRequest.Create(uri);
             var webResponse = (HttpWebResponse)webRequest.GetResponse();
             var reader = new StreamReader(webResponse.GetResponseStream());
