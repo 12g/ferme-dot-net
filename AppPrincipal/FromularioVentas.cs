@@ -151,7 +151,7 @@ namespace AppPrincipal
                         BtnEditar.Enabled = false;
 
                         Limpiar();
-                  }
+                    }
                     catch (Exception)
                     {
                         MessageBox.Show("ERROR AL AGREGAR PRODUCTOS A LA LISTA");
