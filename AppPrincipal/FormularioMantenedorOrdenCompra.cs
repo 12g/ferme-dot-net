@@ -18,18 +18,23 @@ namespace AppPrincipal
   
     public partial class FormularioMantenedorOrdenCompra : Form
     {
-      
-
         private int indicefilaseleccionada;
         Validaciones val = new Validaciones();
         public List<DetalleOrdenCompra> detalleOC;
+        int x = 200;
 
         public FormularioMantenedorOrdenCompra()
         {
             InitializeComponent();
             DPfechaInicio.Enabled = false;
             CargarCbEstado();
+            NumeroCorrelativo();
+        }
 
+        private void NumeroCorrelativo()
+        {
+            x++;
+            TxtNumero.Text = x.ToString();
         }
 
 
@@ -99,15 +104,16 @@ namespace AppPrincipal
         {
             try
             {
-      
+                
+                    
                 DPfechaInicio.Value = DateTime.Now;
                
                 TxtIdProducto.Text = "";
                 TxtCodProducto.Text = "";
                 TxtNombreProducto.Text = "";
                 TxtCantidad.Text = "";
-                TxtNumero.Text = "";
 
+                NumeroCorrelativo();
 
                 BtnAgregar.Enabled = true;
                 BtnBorrar.Enabled = false;
@@ -186,7 +192,7 @@ namespace AppPrincipal
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show(" DEBE INGRESAR PRODUCTOS");
+                        MessageBox.Show("ERROR AL GUARDAR ORDEN DE COMPRA");
                     }
                    
                }

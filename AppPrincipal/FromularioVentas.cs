@@ -18,12 +18,22 @@ namespace AppPrincipal
         private int indicefilaseleccionada;
         public List<Detalle_Venta> detalleVen;
         public List<DetalleVentaVista> detallevv;
-       
+        int x = 200;
 
         public FromularioVentas()
         {
+            
+
             InitializeComponent();
             CargarCbEmpleado();
+            NumeroCorrelativo();
+        }
+
+        private void NumeroCorrelativo()
+        {
+            
+            x++;
+            TxtNumeroDocumento.Text = x.ToString();
         }
 
         //CARGAR LISTADO 
@@ -307,20 +317,21 @@ namespace AppPrincipal
         {
            try
             {
+                NumeroCorrelativo();
+
                 TxtIdProducto.Text = "";
                 TxtCantidad.Text = "";
                 TxtCodigo.Text = "";
                 DpFecha.Text = DateTime.Now.ToShortDateString();
-                TxtIva.Text = "";
+                TxtIva.Text = "0";
                 TxtNombreProducto.Text = "";
                 TxtNombreRazonSocial.Text = "";
-                TxtNumeroDocumento.Text = "";
-                TxtPrecio.Text = "";
+                TxtPrecio.Text = "0";
                 TxtRut.Text = "";
-                TxtSubtotal.Text = "";
-                TxtTotal.Text = "";
+                TxtSubtotal.Text = "0";
+                TxtTotal.Text = "0";
 
-               
+
                 if (CbEmpleado.Items.Count > 1)
                 {
                     CbEmpleado.SelectedIndex = -1;
@@ -350,6 +361,7 @@ namespace AppPrincipal
         private void BtnNuevVenta_Click(object sender, EventArgs e)
         {
             LimpiarPantall();
+        
         }
 
 
@@ -372,8 +384,9 @@ namespace AppPrincipal
 
                     ServicioVentas ser = new ServicioVentas();
                     Venta vent = new Venta();
-
-                    
+                    vent.detalleventavista = null;
+       
+                    vent.idVenta = int.Parse(TxtNumeroDocumento.Text);
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
                     vent.idEmpleado = Convert.ToInt32(CbEmpleado.SelectedValue);
                     vent.idCliente = int.Parse(TxtIdCliente.Text);
@@ -384,10 +397,9 @@ namespace AppPrincipal
                     vent.detallesVenta = detalleVen;
 
                     ser.CrearVenta(vent);
-
                     LimpiarPantall();
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
-                }
+               }
              }
 
              catch (Exception)

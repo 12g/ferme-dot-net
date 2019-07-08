@@ -9,7 +9,7 @@ namespace Biblioteca
 {
      public class Venta
     {
-        public int idVenta { get; set; }
+        public int? idVenta { get; set; }
         public string tipoVenta { get; set; }
         public string fechaVenta { get; set; }
         public int subtotalVenta { get; set; }
@@ -20,5 +20,6 @@ namespace Biblioteca
         public string rutCliente { get; set; }
 
         public List<Detalle_Venta> detallesVenta { get; set; }
+        public List<DetalleVentaVista> detalleventavista { get; set; } 
     }
 }

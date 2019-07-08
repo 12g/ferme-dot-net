@@ -117,6 +117,7 @@
             // 
             // TxtNumeroDocumento
             // 
+            this.TxtNumeroDocumento.CausesValidation = false;
             this.TxtNumeroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumeroDocumento.Location = new System.Drawing.Point(104, 80);
             this.TxtNumeroDocumento.Name = "TxtNumeroDocumento";
