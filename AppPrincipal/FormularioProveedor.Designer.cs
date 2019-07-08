@@ -106,6 +106,7 @@
             this.BtnEliminar.TabIndex = 6;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Visible = false;
             // 
             // BtnCerrar
             // 

@@ -1,6 +1,6 @@
 ﻿namespace AppPrincipal.REPORTE
 {
-    partial class ReporteClientes
+    partial class ReporteEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.PERSONABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteEmpleados));
+            this.TablaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ConexionFerme = new AppPrincipal.REPORTE.ConexionFerme();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PERSONATableAdapter = new AppPrincipal.REPORTE.ConexionFermeTableAdapters.PERSONATableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.PERSONABindingSource)).BeginInit();
+            this.TablaEmpleadosTableAdapter = new AppPrincipal.REPORTE.ConexionFermeTableAdapters.TablaEmpleadosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexionFerme)).BeginInit();
             this.SuspendLayout();
             // 
-            // PERSONABindingSource
+            // TablaEmpleadosBindingSource
             // 
-            this.PERSONABindingSource.DataMember = "PERSONA";
-            this.PERSONABindingSource.DataSource = this.ConexionFerme;
+            this.TablaEmpleadosBindingSource.DataMember = "TablaEmpleados";
+            this.TablaEmpleadosBindingSource.DataSource = this.ConexionFerme;
             // 
             // ConexionFerme
             // 
@@ -52,29 +53,30 @@
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PERSONABindingSource;
+            reportDataSource1.Value = this.TablaEmpleadosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AppPrincipal.REPORTE.ReportCliente.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AppPrincipal.REPORTE.ReportEmpleados.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(674, 581);
+            this.reportViewer1.Size = new System.Drawing.Size(731, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // PERSONATableAdapter
+            // TablaEmpleadosTableAdapter
             // 
-            this.PERSONATableAdapter.ClearBeforeFill = true;
+            this.TablaEmpleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // ReporteClientes
+            // ReporteEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 581);
+            this.ClientSize = new System.Drawing.Size(731, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReporteClientes";
-            this.Text = "ReporteClientes";
-            this.Load += new System.EventHandler(this.ReporteClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PERSONABindingSource)).EndInit();
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ReporteEmpleados";
+            this.Text = "ReporteEmpleados";
+            this.Load += new System.EventHandler(this.ReporteEmpleados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TablaEmpleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexionFerme)).EndInit();
             this.ResumeLayout(false);
 
@@ -83,8 +85,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource PERSONABindingSource;
+        private System.Windows.Forms.BindingSource TablaEmpleadosBindingSource;
         private ConexionFerme ConexionFerme;
-        private ConexionFermeTableAdapters.PERSONATableAdapter PERSONATableAdapter;
+        private ConexionFermeTableAdapters.TablaEmpleadosTableAdapter TablaEmpleadosTableAdapter;
     }
 }

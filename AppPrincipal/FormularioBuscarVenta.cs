@@ -102,14 +102,14 @@ namespace AppPrincipal
             try
              {
              
-            //CARGA LOS DATOS DE LA ORDEN DE COMPRA EN EL FORMULARIO DE MANTENEDOR DE ORDEN DE COMPRA
+            //CARGA LOS DATOS DE LA VENTA EN EL FORMULARIO DE MANTENEDOR DE VENTA
             //SE CASTEA EL OBJETO ORDEN COMPRA
             Venta oc = (Venta)DgMostrarVentasRealizadas.CurrentRow.DataBoundItem;
 
             ServicioVentas ser = new ServicioVentas();
             BindingList<DetalleVentaVista> detCv = new BindingList<DetalleVentaVista>();
             List<Detalle_Venta> lista = ser.subdetalleventa(oc);
-                Producto pro = new Producto();
+            Producto pro = new Producto();
 
             foreach (Detalle_Venta detVenta in lista)
             {
@@ -117,12 +117,15 @@ namespace AppPrincipal
                 ClaseDetalleV.CODIGO = detVenta.codigoProducto;
                 ClaseDetalleV.NOMBRE = detVenta.nombreProducto;
                 ClaseDetalleV.CANTIDAD = detVenta.unidadesProducto;
-                ClaseDetalleV.SUBTOTAL = detVenta.Subtotal;
-
+                ClaseDetalleV.MONTO = detVenta.montoDetalleVenta;
+                ClaseDetalleV.SUBTOTAL = detVenta.unidadesProducto * detVenta.montoDetalleVenta;
+                    
                 detCv.Add(ClaseDetalleV);
             }
 
-            frmventas.DgVentaProducto.DataSource = detCv;
+
+
+                frmventas.DgVentaProducto.DataSource = detCv;
             frmventas.detalleVen = lista;
 
 

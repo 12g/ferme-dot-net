@@ -18,6 +18,7 @@ namespace AppPrincipal
         private int indicefilaseleccionada;
         public List<Detalle_Venta> detalleVen;
         public List<DetalleVentaVista> detallevv;
+       
 
         public FromularioVentas()
         {
@@ -52,6 +53,7 @@ namespace AppPrincipal
 
         private void FromularioVentas_Load(object sender, EventArgs e)
         {
+
             fechaInicio();
 
             CargarCbEmpleado();
@@ -107,8 +109,6 @@ namespace AppPrincipal
                     try
                     {
                     
-
-
                         BindingList<DetalleVentaVista> detalle;
                         detalle = (BindingList<DetalleVentaVista>)DgVentaProducto.DataSource;
 

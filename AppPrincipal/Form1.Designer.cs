@@ -43,7 +43,7 @@
             this.lblTitulomenu = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
-            this.BtnCerrarSesion = new System.Windows.Forms.Button();
+            this.LblMostrarUsuario = new System.Windows.Forms.Label();
             this.IconoResetearApp = new System.Windows.Forms.PictureBox();
             this.IconoMinimizarApp = new System.Windows.Forms.PictureBox();
             this.IconoMaximizarApp = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,6 @@
             this.BtnDeslizarMenu = new System.Windows.Forms.PictureBox();
             this.PanelContendorFormulario = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.LblMostrarUsuario = new System.Windows.Forms.Label();
             this.PanelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
@@ -278,7 +277,6 @@
             // 
             this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
             this.PanelBarraTitulo.Controls.Add(this.LblMostrarUsuario);
-            this.PanelBarraTitulo.Controls.Add(this.BtnCerrarSesion);
             this.PanelBarraTitulo.Controls.Add(this.IconoResetearApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMinimizarApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMaximizarApp);
@@ -291,16 +289,15 @@
             this.PanelBarraTitulo.TabIndex = 1;
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
-            // BtnCerrarSesion
+            // LblMostrarUsuario
             // 
-            this.BtnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrarSesion.Location = new System.Drawing.Point(765, 12);
-            this.BtnCerrarSesion.Name = "BtnCerrarSesion";
-            this.BtnCerrarSesion.Size = new System.Drawing.Size(122, 31);
-            this.BtnCerrarSesion.TabIndex = 1;
-            this.BtnCerrarSesion.Text = "Cerrar Sesion";
-            this.BtnCerrarSesion.UseVisualStyleBackColor = true;
-            this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
+            this.LblMostrarUsuario.AutoSize = true;
+            this.LblMostrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMostrarUsuario.Location = new System.Drawing.Point(110, 13);
+            this.LblMostrarUsuario.Name = "LblMostrarUsuario";
+            this.LblMostrarUsuario.Size = new System.Drawing.Size(81, 24);
+            this.LblMostrarUsuario.TabIndex = 2;
+            this.LblMostrarUsuario.Text = "Usuario";
             // 
             // IconoResetearApp
             // 
@@ -386,16 +383,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // LblMostrarUsuario
-            // 
-            this.LblMostrarUsuario.AutoSize = true;
-            this.LblMostrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMostrarUsuario.Location = new System.Drawing.Point(110, 13);
-            this.LblMostrarUsuario.Name = "LblMostrarUsuario";
-            this.LblMostrarUsuario.Size = new System.Drawing.Size(81, 24);
-            this.LblMostrarUsuario.TabIndex = 2;
-            this.LblMostrarUsuario.Text = "Usuario";
-            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +424,6 @@
         private System.Windows.Forms.PictureBox IconoMaximizarApp;
         private System.Windows.Forms.Panel PanelContendorFormulario;
         private System.Windows.Forms.Label LblGrupoN1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel PanelMenuVertical;
         private System.Windows.Forms.Button BtnInformes;
         private System.Windows.Forms.Button BtnUsuario;
@@ -447,8 +433,8 @@
         private System.Windows.Forms.Button BtnOrdenCompra;
         private System.Windows.Forms.Button btnProducto;
         public System.Windows.Forms.Button BtnVentas;
-        private System.Windows.Forms.Button BtnCerrarSesion;
         public System.Windows.Forms.Label LblMostrarUsuario;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

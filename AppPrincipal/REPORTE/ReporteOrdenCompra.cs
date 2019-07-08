@@ -19,9 +19,8 @@ namespace AppPrincipal.REPORTE
 
         private void ReporteOrdenCompra_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'ConexionFerme.DataOrdenCompra' Puede moverla o quitarla según sea necesario.
-            this.DataOrdenCompraTableAdapter.Fill(this.ConexionFerme.DataOrdenCompra);
-
+            // TODO: esta línea de código carga datos en la tabla 'ConexionFerme.TablaOrdenCompra' Puede moverla o quitarla según sea necesario.
+            this.TablaOrdenCompraTableAdapter.Fill(this.ConexionFerme.TablaOrdenCompra);
             this.reportViewer1.RefreshReport();
         }
     }

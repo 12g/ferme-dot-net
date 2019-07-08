@@ -1,6 +1,6 @@
 ﻿namespace AppPrincipal.REPORTE
 {
-    partial class ReporteClientes
+    partial class ReporteVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,52 +30,54 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.PERSONABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ConexionFerme = new AppPrincipal.REPORTE.ConexionFerme();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVentas));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PERSONATableAdapter = new AppPrincipal.REPORTE.ConexionFermeTableAdapters.PERSONATableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.PERSONABindingSource)).BeginInit();
+            this.ConexionFerme = new AppPrincipal.REPORTE.ConexionFerme();
+            this.TablaVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TablaVentasTableAdapter = new AppPrincipal.REPORTE.ConexionFermeTableAdapters.TablaVentasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ConexionFerme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaVentasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // PERSONABindingSource
+            // reportViewer1
             // 
-            this.PERSONABindingSource.DataMember = "PERSONA";
-            this.PERSONABindingSource.DataSource = this.ConexionFerme;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.TablaVentasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AppPrincipal.REPORTE.ReportVentas.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1004, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // ConexionFerme
             // 
             this.ConexionFerme.DataSetName = "ConexionFerme";
             this.ConexionFerme.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportViewer1
+            // TablaVentasBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PERSONABindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AppPrincipal.REPORTE.ReportCliente.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(674, 581);
-            this.reportViewer1.TabIndex = 0;
+            this.TablaVentasBindingSource.DataMember = "TablaVentas";
+            this.TablaVentasBindingSource.DataSource = this.ConexionFerme;
             // 
-            // PERSONATableAdapter
+            // TablaVentasTableAdapter
             // 
-            this.PERSONATableAdapter.ClearBeforeFill = true;
+            this.TablaVentasTableAdapter.ClearBeforeFill = true;
             // 
-            // ReporteClientes
+            // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 581);
+            this.ClientSize = new System.Drawing.Size(1004, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReporteClientes";
-            this.Text = "ReporteClientes";
-            this.Load += new System.EventHandler(this.ReporteClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PERSONABindingSource)).EndInit();
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ReporteVentas";
+            this.Text = "ReporteVentas";
+            this.Load += new System.EventHandler(this.ReporteVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConexionFerme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaVentasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +85,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource PERSONABindingSource;
+        private System.Windows.Forms.BindingSource TablaVentasBindingSource;
         private ConexionFerme ConexionFerme;
-        private ConexionFermeTableAdapters.PERSONATableAdapter PERSONATableAdapter;
+        private ConexionFermeTableAdapters.TablaVentasTableAdapter TablaVentasTableAdapter;
     }
 }

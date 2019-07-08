@@ -20,10 +20,9 @@ namespace AppPrincipal
         public FormularioPrincipal()
         {
             InitializeComponent();
-    
         }
 
-
+       
         //METODO PARA ARRASTRAR EL FORMULARIO
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -64,6 +63,9 @@ namespace AppPrincipal
                 DialogResult dr = MessageBox.Show("¿Está seguro que desea salir del sistema?", "",botones, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
+                    ServicioSesion sesi = new ServicioSesion();
+
+                    sesi.CerrarConexion(Program.se);
                     Application.Exit();
                 }
             }
@@ -107,34 +109,6 @@ namespace AppPrincipal
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-        //BOTON CERRAR SESION
-        private void BtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                //MessageBox.Show("DESEA CERRAR LA APLICACION ? ","",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
-
-                MessageBoxButtons botones = MessageBoxButtons.YesNoCancel;
-                DialogResult dr = MessageBox.Show("¿Está seguro que desea salir del sistema?", "", botones, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    
-                    ServicioSesion sesi = new ServicioSesion();
-
-                       sesi.CerrarConexion(Program.se);
-                        Application.Exit();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error al cerrar Aplicacion");
-            }
-
-        }
-
-
         private void AbrirFormInPanel<MIForm>() where MIForm : Form, new()
         {
             
@@ -151,6 +125,8 @@ namespace AppPrincipal
             {
                 Console.WriteLine(e.StackTrace); 
             }
+            
+
             if (Valida == true)
             {
 
@@ -173,6 +149,8 @@ namespace AppPrincipal
                         PanelContendorFormulario.Tag = Formulario;
                         Formulario.Show();
                         Formulario.BringToFront();
+                       
+                        
                     }
                     //SI EL FORMULARIO /INSTANCIA EXISTE
                     else
@@ -195,18 +173,43 @@ namespace AppPrincipal
 
 
                 Application.Exit();
-            }         
-
+            }    
         }
 
+        private void TipoPermiso()
+        {
 
+            Sesion se = new Sesion();
+            if (se.idCargo == 53)
+            {
+                
+                
+                
+
+            }
+            else if (se.idCargo == 52 && se.idCargo != 53 && se.idCargo != 51)
+            {
+               
+                
+            }
+            else if (se.idCargo == 51)
+            {
+                
+               
+            }
+            else
+            {
+                MessageBox.Show("NO TIENE PERMISOS PARA USAR EL MODULO");
+            }
+        }
+       
 
         //EVENTO DEL BOTON PRODUCTO EN EL PANEL PRINCIPAL
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            
             AbrirFormInPanel<FormularioProducto>();
-            btnProducto.BackColor = Color.FromArgb(178,34,34);
+
+            btnProducto.BackColor = Color.FromArgb(178, 34, 34);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
             BtnCliente.BackColor = Color.FromArgb(128, 0, 0);
@@ -214,14 +217,13 @@ namespace AppPrincipal
             BtnRecepcion.BackColor = Color.FromArgb(128, 0, 0);
             BtnUsuario.BackColor = Color.FromArgb(128, 0, 0);
             BtnInformes.BackColor = Color.FromArgb(128, 0, 0);
-
-
         }
 
         //EVENTO DEL BOTON CLIENTE EN EL PANEL PRINCIPAL
         private void BtnCliente_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioCliente>();
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
@@ -237,6 +239,8 @@ namespace AppPrincipal
         private void BtnOrdenCompra_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel<FormularioMantenedorOrdenCompra>();
+
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(178, 34, 34);
@@ -251,7 +255,9 @@ namespace AppPrincipal
         //BOTON USUARIO
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
+
             AbrirFormInPanel<FormularioUsuario>();
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
@@ -265,9 +271,9 @@ namespace AppPrincipal
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-          
+
             AbrirFormInPanel<FromularioVentas>();
- 
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);
@@ -280,8 +286,10 @@ namespace AppPrincipal
 
         private void BtnRecepcion_Click(object sender, EventArgs e)
         {
+
+
             AbrirFormInPanel<FormularioRecepcion>();
-            
+
             btnProducto.BackColor = Color.FromArgb(128, 0, 0);
             BtnProveedor.BackColor = Color.FromArgb(128, 0, 0);
             BtnOrdenCompra.BackColor = Color.FromArgb(128, 0, 0);

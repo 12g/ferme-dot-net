@@ -296,6 +296,12 @@
     <Compile Include="REPORTE\ReporteClientes.Designer.cs">
       <DependentUpon>ReporteClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTE\ReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteEmpleados.Designer.cs">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="REPORTE\ReporteOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +313,18 @@
     </Compile>
     <Compile Include="REPORTE\ReporteProducto.Designer.cs">
       <DependentUpon>ReporteProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ReporteProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteProveedor.Designer.cs">
+      <DependentUpon>ReporteProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE\ReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE\ReporteVentas.Designer.cs">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FomularioTipoProducto.resx">
       <DependentUpon>FomularioTipoProducto.cs</DependentUpon>
@@ -399,15 +417,26 @@
     <EmbeddedResource Include="REPORTE\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReportEmpleados.rdlc" />
     <EmbeddedResource Include="REPORTE\ReporteOrdenCompra.resx">
       <DependentUpon>ReporteOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTE\ReporteProducto.resx">
       <DependentUpon>ReporteProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="REPORTE\ReportMostrarOrdenCompra.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReporteProveedor.resx">
+      <DependentUpon>ReporteProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTE\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORTE\ReportOrdenCompra.rdlc" />
     <EmbeddedResource Include="REPORTE\ReportProductos.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReportProveedor.rdlc" />
+    <EmbeddedResource Include="REPORTE\ReportVentas.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

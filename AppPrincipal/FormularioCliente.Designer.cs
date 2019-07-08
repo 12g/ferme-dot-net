@@ -119,6 +119,7 @@
             this.BtnEliminar.TabIndex = 15;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Visible = false;
             // 
             // DGMostrarListaCliente
             // 
