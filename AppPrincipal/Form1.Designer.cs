@@ -43,7 +43,6 @@
             this.lblTitulomenu = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
-            this.LblMostrarUsuario = new System.Windows.Forms.Label();
             this.IconoResetearApp = new System.Windows.Forms.PictureBox();
             this.IconoMinimizarApp = new System.Windows.Forms.PictureBox();
             this.IconoMaximizarApp = new System.Windows.Forms.PictureBox();
@@ -276,7 +275,6 @@
             // PanelBarraTitulo
             // 
             this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
-            this.PanelBarraTitulo.Controls.Add(this.LblMostrarUsuario);
             this.PanelBarraTitulo.Controls.Add(this.IconoResetearApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMinimizarApp);
             this.PanelBarraTitulo.Controls.Add(this.IconoMaximizarApp);
@@ -288,16 +286,6 @@
             this.PanelBarraTitulo.Size = new System.Drawing.Size(1034, 50);
             this.PanelBarraTitulo.TabIndex = 1;
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
-            // 
-            // LblMostrarUsuario
-            // 
-            this.LblMostrarUsuario.AutoSize = true;
-            this.LblMostrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMostrarUsuario.Location = new System.Drawing.Point(110, 13);
-            this.LblMostrarUsuario.Name = "LblMostrarUsuario";
-            this.LblMostrarUsuario.Size = new System.Drawing.Size(81, 24);
-            this.LblMostrarUsuario.TabIndex = 2;
-            this.LblMostrarUsuario.Text = "Usuario";
             // 
             // IconoResetearApp
             // 
@@ -400,7 +388,6 @@
             this.PanelMenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
-            this.PanelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoResetearApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoMinimizarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoMaximizarApp)).EndInit();
@@ -433,7 +420,6 @@
         private System.Windows.Forms.Button BtnOrdenCompra;
         private System.Windows.Forms.Button btnProducto;
         public System.Windows.Forms.Button BtnVentas;
-        public System.Windows.Forms.Label LblMostrarUsuario;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
