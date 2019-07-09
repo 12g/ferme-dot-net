@@ -131,12 +131,6 @@ namespace AppPrincipal
                         vv.SUBTOTAL = vv.MONTO * vv.CANTIDAD;
 
                         detalle.Add(vv);
-                        
-
-                        //CALCULA EL IVA Y EL TOTAL DE VENTAS
-                        TxtSubtotal.Text = Convert.ToString(vv.SUBTOTAL);
-                        TxtIva.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100);
-                        TxtTotal.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100 + vv.SUBTOTAL);
 
 
                         Detalle_Venta dv = new Detalle_Venta();
@@ -147,6 +141,11 @@ namespace AppPrincipal
                         dv.unidadesProducto = int.Parse(TxtCantidad.Text);
                         dv.montoDetalleVenta = int.Parse(TxtPrecio.Text);
                         dv.Subtotal = dv.montoDetalleVenta * dv.unidadesProducto;
+
+                        //CALCULA EL IVA Y EL TOTAL DE VENTAS
+                        TxtSubtotal.Text = Convert.ToString(dv.Subtotal);
+                        TxtIva.Text = Convert.ToString(dv.Subtotal * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(dv.Subtotal * 19 / 100 + dv.Subtotal);
 
                         detalleVen.Add(dv);
                         Console.WriteLine(detalle.ToString());
@@ -173,7 +172,7 @@ namespace AppPrincipal
         //BOTON EDITAR PRODUCTO
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            try
+           try
             {
                 Validaciones val = new Validaciones();
 
@@ -192,21 +191,22 @@ namespace AppPrincipal
                     {
                         DgVentaProducto[2, indicefilaseleccionada].Value = TxtCantidad.Text;
 
-                        DetalleVentaVista det = detallevv.ElementAt<DetalleVentaVista>(indicefilaseleccionada);
-                        det.CANTIDAD = int.Parse(TxtCantidad.Text);
+                        Detalle_Venta det = detalleVen.ElementAt<Detalle_Venta>(indicefilaseleccionada);
+                        det.unidadesProducto = int.Parse(TxtCantidad.Text);
 
-                        det.SUBTOTAL = det.CANTIDAD * det.MONTO;
+                        det.Subtotal = det.montoDetalleVenta * det.unidadesProducto;
 
+            
                         //CALCULA EL IVA Y EL TOTAL DE VENTAS
-                        TxtSubtotal.Text = Convert.ToString(det.SUBTOTAL);
-                        TxtIva.Text = Convert.ToString(det.SUBTOTAL * 19 / 100);
-                        TxtTotal.Text = Convert.ToString(det.SUBTOTAL * 19 / 100 + det.SUBTOTAL);
+                        TxtSubtotal.Text = Convert.ToString(det.Subtotal);
+                        TxtIva.Text = Convert.ToString(det.Subtotal * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(det.Subtotal * 19 / 100 + det.Subtotal);
 
                         Limpiar();
                         BtnAgregar.Enabled = true;
                         BtnBorrar.Enabled = false;
                         BtnEditar.Enabled = false;
-                    }
+                   }
                     catch (Exception)
                     {
 
@@ -222,16 +222,21 @@ namespace AppPrincipal
             }
         }
 
+
+        //BOTON BORRAR PRODUCTOS DEL DATAGRIDVIEW
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
             try
             {
+
                 int poc = DgVentaProducto.CurrentRow.Index;
                 DgVentaProducto.Rows.RemoveAt(poc);
-                //cantidadprecio();
 
                 Limpiar();
                 BtnAgregar.Enabled = true;
+                BtnBorrar.Enabled = false;
+                BtnEditar.Enabled = false;
+                
                 MessageBox.Show("PRODUCTO BORRADO");
             }
             catch (Exception)

@@ -297,7 +297,6 @@
             this.BtnEditar.TabIndex = 28;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = false;
-            this.BtnEditar.Visible = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnBorrar
