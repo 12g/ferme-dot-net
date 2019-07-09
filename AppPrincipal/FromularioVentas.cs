@@ -142,10 +142,17 @@ namespace AppPrincipal
                         dv.montoDetalleVenta = int.Parse(TxtPrecio.Text);
                         dv.Subtotal = dv.montoDetalleVenta * dv.unidadesProducto;
 
-                        //CALCULA EL IVA Y EL TOTAL DE VENTAS
-                        TxtSubtotal.Text = Convert.ToString(dv.Subtotal);
-                        TxtIva.Text = Convert.ToString(dv.Subtotal * 19 / 100);
-                        TxtTotal.Text = Convert.ToString(dv.Subtotal * 19 / 100 + dv.Subtotal);
+                        
+                        foreach (DataGridViewRow row in DgVentaProducto.Rows)
+                        {
+                            if (row.Cells["Subtotal"].Value != null) //1 es "Cantidad"
+                                vv.SUBTOTAL += (Int32)row.Cells["Subtotal"].Value;
+                        }
+
+                        TxtSubtotal.Text = Convert.ToString(vv.SUBTOTAL);
+                        TxtIva.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100);
+                        TxtTotal.Text = Convert.ToString(vv.SUBTOTAL * 19 / 100 + vv.SUBTOTAL);
+
 
                         detalleVen.Add(dv);
                         Console.WriteLine(detalle.ToString());
@@ -194,9 +201,15 @@ namespace AppPrincipal
                         Detalle_Venta det = detalleVen.ElementAt<Detalle_Venta>(indicefilaseleccionada);
                         det.unidadesProducto = int.Parse(TxtCantidad.Text);
 
-                        det.Subtotal = det.montoDetalleVenta * det.unidadesProducto;
+                       
 
-            
+                        
+                        foreach (DataGridViewRow row in DgVentaProducto.Rows)
+                        {
+                            if (row.Cells["Subtotal"].Value != null) //1 es "Cantidad"
+                                det.Subtotal += (Int32)row.Cells["Subtotal"].Value;
+                        }
+
                         //CALCULA EL IVA Y EL TOTAL DE VENTAS
                         TxtSubtotal.Text = Convert.ToString(det.Subtotal);
                         TxtIva.Text = Convert.ToString(det.Subtotal * 19 / 100);

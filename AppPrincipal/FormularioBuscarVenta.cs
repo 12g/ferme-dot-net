@@ -105,25 +105,34 @@ namespace AppPrincipal
             //CARGA LOS DATOS DE LA VENTA EN EL FORMULARIO DE MANTENEDOR DE VENTA
             //SE CASTEA EL OBJETO ORDEN COMPRA
             Venta oc = (Venta)DgMostrarVentasRealizadas.CurrentRow.DataBoundItem;
-
+            oc.detalleventavista = null;
             ServicioVentas ser = new ServicioVentas();
             BindingList<DetalleVentaVista> detCv = new BindingList<DetalleVentaVista>();
+
             List<Detalle_Venta> lista = ser.subdetalleventa(oc);
-            DetalleVentaVista ClaseDetalleV = new DetalleVentaVista();
+
+            
+          
 
                 foreach (Detalle_Venta detVenta in lista)
             {
-                
+                DetalleVentaVista ClaseDetalleV = new DetalleVentaVista();
                 ClaseDetalleV.CODIGO = detVenta.codigoProducto;
                 ClaseDetalleV.NOMBRE = detVenta.nombreProducto;
                 ClaseDetalleV.CANTIDAD = detVenta.unidadesProducto;
                 ClaseDetalleV.MONTO = detVenta.montoDetalleVenta;
-                ClaseDetalleV.SUBTOTAL = detVenta.unidadesProducto * detVenta.montoDetalleVenta;
-                    
-                detCv.Add(ClaseDetalleV);
-            }
 
-            frmventas.DgVentaProducto.DataSource = detCv;
+                    ClaseDetalleV.SUBTOTAL = ClaseDetalleV.MONTO * ClaseDetalleV.CANTIDAD;
+                    frmventas.TxtSubtotal.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL);
+                    frmventas.TxtIva.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL * 19 / 100);
+                    frmventas.TxtTotal.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL * 19 / 100 + ClaseDetalleV.SUBTOTAL);
+
+                    detCv.Add(ClaseDetalleV);
+                }
+                
+
+
+                frmventas.DgVentaProducto.DataSource = detCv;
             frmventas.detalleVen = lista;
 
             frmventas.TxtNumeroDocumento.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["idVenta"].Value.ToString();
@@ -136,11 +145,7 @@ namespace AppPrincipal
             frmventas.TxtNombreRazonSocial.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["nombreCompletoCliente"].Value.ToString();
             frmventas.TxtRut.Text = DgMostrarVentasRealizadas.CurrentRow.Cells["rutCliente"].Value.ToString();
 
-             //CALCULA EL IVA Y EL TOTAL DE VENTAS
-             frmventas.TxtSubtotal.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL);
-             frmventas.TxtIva.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL * 19 / 100);
-             frmventas.TxtTotal.Text = Convert.ToString(ClaseDetalleV.SUBTOTAL * 19 / 100 + ClaseDetalleV.SUBTOTAL);
-
+              
                 this.Close();
            }
             catch (Exception)
