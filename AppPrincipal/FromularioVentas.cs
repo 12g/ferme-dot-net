@@ -347,6 +347,10 @@ namespace AppPrincipal
                     this.CbTipoDocto.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
+                BtnAgregar.Enabled = true;
+                BtnBorrar.Enabled = false;
+                BtnEditar.Enabled = false;
+
                 DgVentaProducto.Rows.Clear();
                 DgVentaProducto.Refresh();
             }
@@ -398,6 +402,9 @@ namespace AppPrincipal
 
                     ser.CrearVenta(vent);
                     LimpiarPantall();
+                    BtnAgregar.Enabled = true;
+                    BtnBorrar.Enabled = false;
+                    BtnEditar.Enabled = false;
                     MessageBox.Show("REGISTRO SE HA GUARDADO EXITOSAMENTE");
                }
              }

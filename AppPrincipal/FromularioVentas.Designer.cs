@@ -291,12 +291,13 @@
             this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEditar.BackColor = System.Drawing.SystemColors.Control;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.Location = new System.Drawing.Point(897, 269);
+            this.BtnEditar.Location = new System.Drawing.Point(897, 305);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(109, 41);
             this.BtnEditar.TabIndex = 28;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Visible = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnBorrar
@@ -304,7 +305,7 @@
             this.BtnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnBorrar.BackColor = System.Drawing.SystemColors.Control;
             this.BtnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBorrar.Location = new System.Drawing.Point(897, 329);
+            this.BtnBorrar.Location = new System.Drawing.Point(897, 258);
             this.BtnBorrar.Name = "BtnBorrar";
             this.BtnBorrar.Size = new System.Drawing.Size(109, 41);
             this.BtnBorrar.TabIndex = 29;
