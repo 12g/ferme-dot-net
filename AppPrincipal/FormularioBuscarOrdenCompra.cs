@@ -154,7 +154,7 @@ namespace AppPrincipal
                     FrmOrdenCompra.CbEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmOrdenCompra.CbEstado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmOrdenCompra.DPfechaInicio.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
-                
+
                     this.Close();
                     
            
@@ -189,7 +189,18 @@ namespace AppPrincipal
                     FrmRecepcion.TxtEmpleado.Text = DgMostrarOrdenCompra.CurrentRow.Cells["nombreEmpleado"].Value.ToString();
                     FrmRecepcion.CbxEstadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["estadoOrdenCompra"].Value.ToString();
                     FrmRecepcion.DpFechaCreacion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaSolicitudOrdenCompra"].Value.ToString();
-                   // FrmRecepcion.DgListadoRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells[5].Value.ToString();
+
+                    try
+                    {
+                        FrmRecepcion.DpFechaRecepcion.Text = DgMostrarOrdenCompra.CurrentRow.Cells["fechaRecepcionOrdenCompra"].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                        FrmRecepcion.DpFechaRecepcion.Text = DateTime.Now.ToShortDateString();
+                    }
+                  
+                       
 
                     this.Close();
                 }

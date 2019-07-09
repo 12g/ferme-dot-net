@@ -188,8 +188,8 @@ namespace AppPrincipal
         {
             try
             {
-                DpFechaCreacion.Value = DateTime.Now;
-                DpFechaRecepcion.Value = DateTime.Now;
+                DpFechaCreacion.Text = DateTime.Now.ToShortDateString();
+                DpFechaRecepcion.Text = DateTime.Now.ToShortDateString();
                 TxtEmpleado.Text = "";
                 TxtNumero.Text = "";
                 TxtIdEmpleado.Text = "";

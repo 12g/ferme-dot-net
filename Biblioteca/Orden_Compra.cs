@@ -16,7 +16,7 @@ namespace Biblioteca
         public string rutEmpleado { get; set; }
         public string estadoOrdenCompra { get; set; }
         public string fechaSolicitudOrdenCompra { get; set; }
-        public string fechaRecepcionOrdenCompra { get; set; }
+        public String fechaRecepcionOrdenCompra { get; set; }
 
         public List<DetalleOrdenCompra> detallesOrdenCompra { get; set; }
         public List<DetalleOrdenCVista> detallesOrdenVista { get; set; }
